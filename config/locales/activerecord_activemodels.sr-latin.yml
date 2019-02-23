@@ -1,0 +1,17 @@
+sr-latin:
+  activerecord:
+    models:
+      user:
+        one: Zaposlen
+        few: Zaposlena
+        other: Zaposleni
+        accusative: zaposlenog
+    attributes:
+      user:
+        name: Naziv
+        email: Imejl
+        company: Kompanija
+        password: Lozinka
+        password_confirmation: Potvrda lozinke
+        current_password: Trenutna lozinka
+        remember_me: Zapamti me

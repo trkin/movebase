@@ -58,3 +58,6 @@ gem 'fontello_rails_converter'
 
 # user authentication
 gem 'devise'
+
+# bootstrap form
+gem 'bootstrap_form'
