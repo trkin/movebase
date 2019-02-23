@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # pick icons
 gem 'fontello_rails_converter'
+
+# user authentication
+gem 'devise'
