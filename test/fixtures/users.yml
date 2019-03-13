@@ -1,11 +1,16 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+DEFAULTS: &DEFAULTS
+  name: $LABEL name
+  email: $LABEL@email.com
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+superadmin:
+  <<: *DEFAULTS
+  superadmin: true
+
+personal_kayak_and_running:
+  <<: *DEFAULTS
+
+kayak_club_admin:
+  <<: *DEFAULTS
+
+kayak_club_not_admin:
+  <<: *DEFAULTS

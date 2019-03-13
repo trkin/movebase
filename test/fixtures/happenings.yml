@@ -1,0 +1,77 @@
+kayak_regata:
+  name:
+    en: May's First kayak regatta
+    sr-latin: Majski kajakaški kup Novog Sada
+  club: kayak_club
+  venue: sodros
+  repeating: <%= Happening.repeatings[:yearly_repeating] %>
+
+personal_long_kayaking:
+  name:
+    en: Personal long kayaking from NS to BG
+  venue: strand
+  start_date: 2019-02-23
+  website: http://blog.trk.in.rs
+
+triathlon:
+  name:
+    en: Triathlon
+  venue: strand
+  start_date: 2019-06-23
+
+quadrathlon_munich:
+  name:
+    en: Quadrathlon Munich
+  venue: munich
+
+wednesday_walking_23:
+  name:
+    en: Wednesday walking 23
+  club: hiking_club
+  venue: bus_station_popovica
+  start_date: 2019-02-20
+  repeating: <%= Happening.repeatings[:weekly_repeating] %>
+
+wednesday_walking_24:
+  name:
+    en: Wednesday walking 24
+  club: hiking_club
+  venue: bus_station_popovica
+  start_date: 2019-02-27
+  repeating: <%= Happening.repeatings[:weekly_repeating] %>
+
+walking_with_children_to_the_tower:
+  name:
+    en: Walking with children to the tower
+  club: personal_running
+  venue: bus_station_popovica
+  start_date: 2019-03-17
+
+walk_or_run_tracking:
+  name:
+    en: Walk or run tracking
+  club: hiking_club
+  venue: bus_station_popovica
+  start_date: 2019-03-17
+
+half_marathon:
+  name:
+    en: Half marthon
+  club: personal_running
+  venue: strand
+  start_date: 2019-05-17
+  repeating: <%= Happening.repeatings[:yearly_repeating] %>
+
+sky_running:
+  name:
+    en: Sky running Stara planina
+  venue: stara_planina
+  start_date: 2019-05-17
+  repeating: <%= Happening.repeatings[:yearly_repeating] %>
+
+stairs_run_vrsac:
+  name:
+    en: Stairs run in Vrsac
+  venue: vrsac
+  start_date: 2019-05-26
+  repeating: <%= Happening.repeatings[:yearly_repeating] %>

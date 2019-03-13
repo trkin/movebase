@@ -15,3 +15,6 @@ en:
         password_confirmation: Password confirmation
         current_password: Current password
         remember_me: Remember me
+  activemodel:
+    attributes:
+      search_happenings:

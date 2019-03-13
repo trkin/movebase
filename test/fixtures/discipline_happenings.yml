@@ -1,0 +1,150 @@
+kayak_regata__sprint_kayak__senior_500_m:
+  name:
+    en: kayak_regata__sprint_kayak__senior_500_m
+  discipline: sprint_kayak
+  happening: kayak_regata
+  age_min: 16
+  distance_m: 500
+  gender: <%= DisciplineHappening.genders[:man] %>
+
+kayak_regata__sprint_kayak_for_2__senior_500_m:
+  name:
+    en: kayak_regata__sprint_kayak_for_2__senior_500_m
+  discipline: sprint_kayak_for_2
+  happening: kayak_regata
+  age_min: 16
+  distance_m: 500
+  gender: <%= DisciplineHappening.genders[:man] %>
+
+kayak_regata__sprint_kayak__junior_500_m:
+  name:
+    en: kayak_regata__sprint_kayak__junior_500_m
+  discipline: sprint_kayak
+  happening: kayak_regata
+  age_min: 15
+  age_max: 18
+  distance_m: 500
+  gender: <%= DisciplineHappening.genders[:man] %>
+
+kayak_regata__sprint_kayak__junior_200_w:
+  name:
+    en: kayak_regata__sprint_kayak__junior_200_w
+  discipline: sprint_kayak
+  happening: kayak_regata
+  age_min: 15
+  age_max: 18
+  distance_m: 200
+  gender: <%= DisciplineHappening.genders[:women] %>
+
+kayak_regata__sprint_kayak_without_registration:
+  name:
+    en: kayak_regata__sprint_kayak_without_registration
+  discipline: sprint_kayak
+  happening: kayak_regata
+
+personal_long_kayaking:
+  name:
+    en: personal_long_kayaking
+  discipline: sprint_kayak_or_recreational_kayak
+  happening: personal_long_kayaking
+  distance_m: 80_000
+
+triathlon_mini_till_12:
+  name:
+    en: triathlon mini till 12
+  discipline: triathlon
+  happening: triathlon
+  age_max: 12
+  distance_m: 2550
+
+triathlon_kids_13_14:
+  name:
+    en: triathlon 13 14
+  discipline: triathlon
+  happening: triathlon
+  age_min: 13
+  age_max: 14
+  distance_m: 6020
+
+triathlon_elit_18p:
+  name:
+    en: triathlon 18+
+  discipline: triathlon
+  happening: triathlon
+  age_min: 18
+  distance_m: 25750
+
+quadrathlon_munich:
+  name:
+    en: quadrathlon_munich
+  discipline: kayak_4_5_m_triathlon
+  happening: quadrathlon_munich
+
+wednesday_walking_23:
+  name:
+    en: wednesday_walking_23
+  discipline: walking_only
+  happening: wednesday_walking_23
+
+wednesday_walking_24:
+  name:
+    en: wednesday_walking_24
+  discipline: walking_only
+  happening: wednesday_walking_24
+
+walking_with_children_to_the_tower:
+  name:
+    en: walking_with_children_to_the_tower
+  discipline: walking_only
+  happening: walking_with_children_to_the_tower
+
+walk_or_run_tracking:
+  name:
+    en: walk_or_run_tracking
+  discipline: walking_or_running
+  happening: walk_or_run_tracking
+
+half_marathon:
+  name:
+    en: half_marathon
+  discipline: running
+  happening: half_marathon
+  distance_m: 21_100
+
+sky_running_babin_zub:
+  name:
+    en: Trail Babin zub
+  discipline: walking_or_running
+  happening: sky_running
+  distance_m: 36_000
+  elevation_m: 2_400
+  max_time_s: 32_400
+
+sky_running_ultra_kopren:
+  name:
+    en: Ultra trail Kopren
+  discipline: walking_or_running
+  happening: sky_running
+  distance_m: 94_000
+  elevation_m: 4_000
+  max_time_s: 79_200
+
+stairs_run_vrsac__men:
+  name:
+    en: Man
+  gender: <%= DisciplineHappening.genders[:man] %>
+  discipline: walking_or_running
+  happening: stairs_run_vrsac
+  distance_m: 750
+  elevation_m: 107
+  start_time: 2019-05-26 10:45
+
+stairs_run_vrsac__women:
+  name:
+    en: Women
+  gender: <%= DisciplineHappening.genders[:women] %>
+  discipline: walking_or_running
+  happening: stairs_run_vrsac
+  distance_m: 750
+  elevation_m: 107
+  start_time: 2019-05-26 10:30

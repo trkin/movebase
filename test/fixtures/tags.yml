@@ -1,0 +1,19 @@
+cross_country:
+  kind: <%= Tag.kinds[:terain] %>
+  name:
+    en: Cross country
+
+lake:
+  kind: <%= Tag.kinds[:terain] %>
+  name:
+    en: Lake
+
+pool:
+  kind: <%= Tag.kinds[:terain] %>
+  name:
+    en: Pool
+
+stairs:
+  kind: <%= Tag.kinds[:terain] %>
+  name:
+    en: Stairs

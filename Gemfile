@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0.beta1'
@@ -61,3 +61,12 @@ gem 'devise'
 
 # bootstrap form
 gem 'bootstrap_form'
+
+# translation
+gem 'mobility', '~> 0.8.6'
+
+# money
+gem 'money-rails', '~> 1.12'
+
+# list of cities per state
+gem 'city-state'

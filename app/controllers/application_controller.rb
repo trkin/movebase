@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
       if current_user.present? && current_user.locale != params[:locale]
         current_user.locale = params[:locale]
         current_user.save!
-        flash[:notice] = "#{t('language')} #{t('notice_successfully_changed')}"
+        flash[:notice] = t('data_item_name_successfully_updated', item_name: t('language'))
       end
     end
     redirect_to root_path

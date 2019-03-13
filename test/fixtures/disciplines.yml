@@ -1,0 +1,41 @@
+sprint_kayak:
+  activity: kayaking
+  name:
+    en: Sprint kayak
+
+sprint_kayak_for_2:
+  activity: kayaking
+  name:
+    en: Sprint kayak for two K-2
+  number_of_crew: 2
+
+sprint_kayak_or_recreational_kayak:
+  activity: kayaking
+  name:
+    en: Recreational kayaking
+
+triathlon:
+  activity: triathlon
+  name:
+    en: Triathlon (Swim, Bike, Run)
+
+kayak_4_5_m_triathlon:
+  activity: kayak_triathlon
+  name:
+    en: Kayak(max4.5m) bike run
+
+
+walking_only:
+  activity: walking_and_running
+  name:
+    en: Walking only
+
+running:
+  activity: walking_and_running
+  name:
+    en: Only running
+
+walking_or_running:
+  activity: walking_and_running
+  name:
+    en: Walking or running

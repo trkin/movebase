@@ -1,4 +1,5 @@
 sr:
+  language: језик
   language_name:
     en: English
     sr: Српски
@@ -18,7 +19,11 @@ sr:
   update: Ажурирање
   delete: Избриши
   are_you_sure_to_remove_item_name: Да ли сте сигурни да желите да обришете %{item_name} ?
-  data_item_name_successfully_created: 'Податак %{item_name} успешно направљен'
-  data_item_name_successfully_updated: 'Податак %{item_name} успешно ажуриран'
-  data_item_name_successfully_changed: 'Податак %{item_name} успешно промењен'
-  data_item_name_successfully_deleted: 'Податак %{item_name} успешно обрисан'
+  data_item_name_successfully_created: 'Податак %{item_name} је успешно направљен'
+  data_item_name_successfully_updated: 'Податак %{item_name} је успешно ажуриран'
+  data_item_name_successfully_changed: 'Податак %{item_name} је успешно промењен'
+  data_item_name_successfully_deleted: 'Податак %{item_name} је успешно обрисан'
+  choose_place_and_activity: Изабери место и активност, а ми ћемо ти предложити догађаје...
+  where_are_you_going_on_the_weekend: 'Где ћеш ићи за викенд ?'
+  search: Пронађи
+  please_select: Молим изаберите

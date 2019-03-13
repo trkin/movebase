@@ -10,11 +10,130 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_23_085716) do
+ActiveRecord::Schema.define(version: 2019_05_03_114813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "activities", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.jsonb "name"
+    t.jsonb "description"
+    t.string "icon_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "activity_associations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "activity_id", null: false
+    t.uuid "associated_id", null: false
+    t.integer "kind", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_activity_associations_on_activity_id"
+    t.index ["associated_id"], name: "index_activity_associations_on_associated_id"
+  end
+
+  create_table "club_users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "club_id", null: false
+    t.uuid "user_id", null: false
+    t.integer "status", default: 0, null: false
+    t.boolean "admin", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id", "user_id"], name: "index_club_users_on_club_id_and_user_id", unique: true
+    t.index ["club_id"], name: "index_club_users_on_club_id"
+    t.index ["user_id"], name: "index_club_users_on_user_id"
+  end
+
+  create_table "clubs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "venue_id", null: false
+    t.jsonb "name", default: {}
+    t.string "website"
+    t.string "email"
+    t.string "phone"
+    t.boolean "personal", default: false, null: false
+    t.string "national_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["venue_id"], name: "index_clubs_on_venue_id"
+  end
+
+  create_table "discipline_happening_tags", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "discipline_happening_id", null: false
+    t.uuid "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["discipline_happening_id"], name: "index_discipline_happening_tags_on_discipline_happening_id"
+    t.index ["tag_id"], name: "index_discipline_happening_tags_on_tag_id"
+  end
+
+  create_table "discipline_happenings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "discipline_id", null: false
+    t.uuid "happening_id", null: false
+    t.jsonb "name", default: {}
+    t.integer "gender", default: 0, null: false
+    t.integer "distance_m"
+    t.integer "elevation_m"
+    t.integer "max_time_s"
+    t.integer "age_min"
+    t.integer "age_max"
+    t.integer "price_without_discount_cents", default: 0, null: false
+    t.string "price_without_discount_currency", default: "USD", null: false
+    t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["discipline_id"], name: "index_discipline_happenings_on_discipline_id"
+    t.index ["happening_id"], name: "index_discipline_happenings_on_happening_id"
+  end
+
+  create_table "discipline_requirements", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "discipline_id", null: false
+    t.uuid "requirement_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["discipline_id"], name: "index_discipline_requirements_on_discipline_id"
+    t.index ["requirement_id"], name: "index_discipline_requirements_on_requirement_id"
+  end
+
+  create_table "disciplines", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "activity_id", null: false
+    t.jsonb "name", default: {}
+    t.integer "number_of_crew", default: 1, null: false
+    t.integer "number_of_relays", default: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_disciplines_on_activity_id"
+  end
+
+  create_table "happenings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "venue_id", null: false
+    t.uuid "club_id"
+    t.jsonb "name", default: {}
+    t.date "start_date"
+    t.date "end_date"
+    t.string "website"
+    t.integer "repeating", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_happenings_on_club_id"
+    t.index ["venue_id"], name: "index_happenings_on_venue_id"
+  end
+
+  create_table "requirements", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "kind"
+    t.jsonb "name", default: {}
+    t.jsonb "description", default: {}
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.jsonb "name", default: {}
+    t.integer "kind"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", default: "", null: false
@@ -45,4 +164,31 @@ ActiveRecord::Schema.define(version: 2019_02_23_085716) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  create_table "venues", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.jsonb "name", default: {}
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "zip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "activity_associations", "activities"
+  add_foreign_key "activity_associations", "activities", column: "associated_id"
+  add_foreign_key "club_users", "clubs"
+  add_foreign_key "club_users", "users"
+  add_foreign_key "clubs", "venues"
+  add_foreign_key "discipline_happening_tags", "discipline_happenings"
+  add_foreign_key "discipline_happening_tags", "tags"
+  add_foreign_key "discipline_happenings", "disciplines"
+  add_foreign_key "discipline_happenings", "happenings"
+  add_foreign_key "discipline_requirements", "disciplines"
+  add_foreign_key "discipline_requirements", "requirements"
+  add_foreign_key "disciplines", "activities"
+  add_foreign_key "happenings", "clubs"
+  add_foreign_key "happenings", "venues"
 end

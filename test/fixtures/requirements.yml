@@ -1,0 +1,39 @@
+club_registration:
+  kind: <%= Requirement.kinds[:registration] %>
+  name:
+    en: Club registration
+
+sprint_kayak:
+  kind: <%= Requirement.kinds[:equipment] %>
+  name:
+    en: Sprint kayak (old or new)
+
+sprint_kayak_for_2:
+  kind: <%= Requirement.kinds[:equipment] %>
+  name:
+    en: Sprint kayak for 2
+
+recreational_kayak:
+  kind: <%= Requirement.kinds[:equipment] %>
+  name:
+    en: Recreational kayak (Danube TID)
+
+recreational_kayak_4_5_m:
+  kind: <%= Requirement.kinds[:equipment] %>
+  name:
+    en: Touring kayak max length 4.5m
+
+sit_on_top_kayak:
+  kind: <%= Requirement.kinds[:equipment] %>
+  name:
+    en: Sit on top kayak (Fishing)
+
+sup:
+  kind: <%= Requirement.kinds[:equipment] %>
+  name:
+    en: Stand up paddle boarding
+
+bicycle:
+  kind: <%= Requirement.kinds[:equipment] %>
+  name:
+    en: Bicycle

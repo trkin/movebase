@@ -1,0 +1,37 @@
+# https://www.latlong.net/
+sodros:
+  name:
+    en: Sodros
+    sr: Шодрош
+  latitude: 45.231321
+  longitude: 19.826154
+
+strand:
+  name:
+    en: Strand
+  latitude: 45.236368
+  longitude: 19.848297
+
+bus_station_popovica:
+  name:
+    en: Bus station Popovica
+  latitude: 45.184819
+  longitude: 19.822618
+
+munich:
+  name:
+    en: Munich
+  latitude: 48.135124
+  longitude: 11.581981
+
+vrsac:
+  name:
+    en: Vrsac Milenium
+  latitude: 45.122169
+  longitude: 21.296740
+
+stara_planina:
+  name:
+    en: Stara planina
+  latitude: 42.490211
+  longitude: 26.508160

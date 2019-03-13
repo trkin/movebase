@@ -1,0 +1,35 @@
+sprint_kayak__sprint_kayak:
+  discipline: sprint_kayak
+  requirement: sprint_kayak
+
+sprint_kayak__club_registration:
+  discipline: sprint_kayak
+  requirement: club_registration
+
+sprint_kayak_for_2__sprint_kayak_for_2:
+  discipline: sprint_kayak_for_2
+  requirement: sprint_kayak_for_2
+
+sprint_kayak_for_2__club_registration:
+  discipline: sprint_kayak_for_2
+  requirement: club_registration
+
+sprint_kayak_or_recreational_kayak_1:
+  discipline: sprint_kayak_or_recreational_kayak
+  requirement: sprint_kayak
+
+sprint_kayak_or_recreational_kayak_2:
+  discipline: sprint_kayak_or_recreational_kayak
+  requirement: recreational_kayak
+
+triathlon:
+  discipline: triathlon
+  requirement: bicycle
+
+kayak_4_5_m_triathlon__recreational_kayak_4_5_m:
+  discipline: kayak_4_5_m_triathlon
+  requirement: recreational_kayak_4_5_m
+
+kayak_4_5_m_triathlon__bicycle:
+  discipline: kayak_4_5_m_triathlon
+  requirement: bicycle

@@ -1,21 +1,12 @@
-<%= I18n.t('sent_messages', count: 1) %><br>
-<%= I18n.t('sent_messages', count: 2) %><br>
-<%= I18n.t('sent_messages', count: 5) %><br>
-<%= t_crud 'edit', User %><br>
-<%= t_crud 'are_you_sure_to_remove_item_name', User %><br>
-<%= t_notice 'successfully_created', User %><br>
-<%= l Date.today, format: :long %><br>
-<%=
-  user = User.new password: 'a'
-  user.valid?
-  user.errors.full_messages.to_sentence
-%><br>
-<%=
-  User.find_or_create_by!(email: 'already@taken.email') do |user|
-    user.password = 'asdfasdf'
-  end
-  user = User.new email: 'already@taken.email'
-  user.valid?
-  user.errors
-  user.errors.full_messages.to_sentence
-%><br>
+<%
+  login_layout t('where_are_you_going_on_the_weekend')
+%>
+<div class='container'>
+  <p><%= t('choose_place_and_activity') %></p>
+
+  <%= bootstrap_form_for @search_happenings, url: root_path do |f| %>
+    <%= f.select :city_name, "<option #{ "selected='selected'".html_safe unless f.object.activity_id } disabled='disabled'>#{t('please_select')}</option>".html_safe + options_for_select(f.object.all_cities), hide_label: true %>
+    <%= f.select :activity_id, "<option #{ "selected='selected'".html_safe unless f.object.activity_id } disabled='disabled'>#{t('please_select')}</option>".html_safe + options_from_collection_for_select(f.object.all_activities, :id, :name), hide_label: true %>
+    <%= f.submit t('search'), class: 'btn btn-success btn-block' %>
+  <% end %>
+</div>
