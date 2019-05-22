@@ -1,4 +1,6 @@
 sr-latin:
+  site_title: Moja aplikacija
+  home: Početak
   language: jezik
   language_name:
     en: English
@@ -18,6 +20,7 @@ sr-latin:
   edit: Uredi
   update: Ažuriranje
   delete: Izbriši
+  are_you_sure: Da li ste sigurni ?
   are_you_sure_to_remove_item_name: Da li ste sigurni da želite da obrišete %{item_name} ?
   data_item_name_successfully_created: 'Podatak %{item_name} je uspešno napravljen'
   data_item_name_successfully_updated: 'Podatak %{item_name} je uspešno ažuriran'
@@ -27,3 +30,14 @@ sr-latin:
   where_are_you_going_on_the_weekend: 'Gde ćeš ići za vikend ?'
   search: Pronađi
   please_select: Molim izaberite
+  last_message: Poslednja poruka
+  contact: Kontakt
+  contact_description: Zahvalni smo za sve dobre i loše stvari na sajtu koje nam prijavljujete.
+  contact_thanks: Hvala za poruku
+  admin_pages: Admin strane
+  only_for_superadmin: Samo za super administratora
+  send: Pošalji
+  log_in_as: Uloguj se kao
+  dashboard: Kontrolna tabla
+  my_account: Moj nalog
+  change_item_name: 'Promeni %{item_name}'

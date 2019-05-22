@@ -53,11 +53,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-# pick icons
-gem 'fontello_rails_converter'
-
 # user authentication
 gem 'devise'
+
+# pick icons by: fontello open; {select icons}; fontello convert
+gem 'fontello_rails_converter'
 
 # bootstrap form
 gem 'bootstrap_form'
@@ -70,3 +70,15 @@ gem 'money-rails', '~> 1.12'
 
 # list of cities per state
 gem 'city-state'
+
+# recaptcha for contact form
+gem 'recaptcha'
+
+# error notification to EXCEPTION_RECIPIENTS emails
+gem 'exception_notification'
+
+# open emails in browser
+gem 'letter_opener'
+
+# background job proccessing
+gem 'sidekiq'

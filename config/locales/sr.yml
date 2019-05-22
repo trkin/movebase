@@ -1,4 +1,6 @@
 sr:
+  site_title: My app
+  home: Почетак
   language: језик
   language_name:
     en: English
@@ -18,6 +20,7 @@ sr:
   edit: Уреди
   update: Ажурирање
   delete: Избриши
+  are_you_sure: Да ли сте сигурни ?
   are_you_sure_to_remove_item_name: Да ли сте сигурни да желите да обришете %{item_name} ?
   data_item_name_successfully_created: 'Податак %{item_name} је успешно направљен'
   data_item_name_successfully_updated: 'Податак %{item_name} је успешно ажуриран'
@@ -27,3 +30,14 @@ sr:
   where_are_you_going_on_the_weekend: 'Где ћеш ићи за викенд ?'
   search: Пронађи
   please_select: Молим изаберите
+  last_message: Последња порука
+  contact: Контакт
+  contact_description: Захвални смо за све добре и лоше ствари на сајту које нам пријављујете.
+  contact_thanks: Хвала за поруку
+  admin_pages: Админ стране
+  only_for_superadmin: Само за супер администратора
+  send: Пошаљи
+  log_in_as: Улогуј се као
+  dashboard: Контролна табла
+  my_account: Мој налог
+  change_item_name: 'Промени %{item_name}'

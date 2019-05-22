@@ -70,6 +70,66 @@
       "search": [
         "kayak"
       ]
+    },
+    {
+      "uid": "jh3jpcb1t1bcm80gidkadilh080aq79h",
+      "css": "menu",
+      "code": 59399,
+      "src": "typicons"
+    },
+    {
+      "uid": "9dd9e835aebe1060ba7190ad2b2ed951",
+      "css": "search",
+      "code": 59401,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "316d3c537e21cb6b56c466bb615b32e6",
+      "css": "window-close-o",
+      "code": 62164,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "bc71f4c6e53394d5ba46b063040014f1",
+      "css": "cw",
+      "code": 59400,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "9c9f0a69d4abbeb5ff9d779df7679356",
+      "css": "question-circle-o",
+      "code": 62108,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "ecf8edb95c3f45eb433b4cce7ba9f740",
+      "css": "users",
+      "code": 59402,
+      "src": "entypo"
+    },
+    {
+      "uid": "44e04715aecbca7f266a17d5a7863c68",
+      "css": "plus",
+      "code": 59403,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "667b873c8422e4cab006df8422cb51c5",
+      "css": "pencil",
+      "code": 59405,
+      "src": "iconic"
+    },
+    {
+      "uid": "f48ae54adfb27d8ada53d0fd9e34ee10",
+      "css": "trash-empty",
+      "code": 59404,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "5bb103cd29de77e0e06a52638527b575",
+      "css": "wrench",
+      "code": 59406,
+      "src": "fontawesome"
     }
   ]
 }
