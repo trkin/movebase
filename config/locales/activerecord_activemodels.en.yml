@@ -1,3 +1,4 @@
+---
 en:
   activerecord:
     models:
@@ -6,6 +7,36 @@ en:
         few: Users
         other: Users
         accusative: user
+      activity:
+        one: Activity
+        few: Activities
+        other: Activities
+        accusative: activity
+      club:
+        one: Club
+        few: Club
+        other: Clubs
+        accusative: club
+      venue:
+        one: Venue
+        few: Venues
+        other: Venues
+        accusative: venue
+      happening:
+        one: Happening
+        few: Happenings
+        other: Happenings
+        accusative: happening
+      discipline:
+        one: Discipline
+        few: Disciplines
+        other: Disciplines
+        accusative: discipline
+      discipline_happening:
+        one: Discipline
+        few: Disciplines
+        other: Disciplines
+        accusative: discipline
     attributes:
       user:
         name: Name
@@ -15,6 +46,52 @@ en:
         password_confirmation: Password confirmation
         current_password: Current password
         remember_me: Remember me
+      activity:
+        name: Name
+        description: Description
+      club:
+        name: Name
+        website: Website
+        email: Email
+        phone: Phone
+      venue:
+        name: Name
+        latitude: Latitude
+        longitude: Longitude
+        address: Address
+        city: City
+        state: State
+        country: Country
+        zip: Zip
+      happening:
+        name: Name
+        start_date: Start date
+        end_date: End date
+        website: Website
+        repeating: Repeating
+        repeatings:
+          no_repeating: No repeating
+          daily_repeating: Daily repeating
+          weekly_repeating: Weekly repeating
+          yearly_repeating: Yearly repeating
+      discipline:
+        name: Name
+        number_of_crew: Number of crew
+        number_of_relays: Number of relays
+      discipline_happening:
+        name: Name
+        gender: Gender
+        distance_m: Distance m
+        elevation_m: Elevation m
+        max_time_s: Max time s
+        age_min: Age min
+        age_max: Age max
+        price_without_discount_cents: Price without discount cents
+        start_time: Start time
+        genders:
+          man_and_women: Man and women
+          man: Man
+          women: Women
   activemodel:
     attributes:
       contact:

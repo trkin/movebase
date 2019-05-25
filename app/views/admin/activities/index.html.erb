@@ -1,0 +1,13 @@
+<%
+  breadcrumb Activity.model_name.human(count: 2) => nil
+%>
+
+<%= button_tag_open_modal new_admin_activity_path do %>
+  <i class="demo-icon icon-plus" aria-hidden="true"></i>
+  <%= t_crud('add_new', Activity) %>
+<% end %>
+<br>
+<% @activities.each do |activity| %>
+  <%= link_to activity.name, admin_activity_path(activity) %>
+  <br>
+<% end %>

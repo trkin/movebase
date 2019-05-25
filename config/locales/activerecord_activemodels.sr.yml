@@ -6,6 +6,41 @@ sr:
         few: Корисника
         other: Корисници
         accusative: корисника
+      activity:
+        one: Активност
+        few: Активности
+        other: Активности
+        accusative: активност
+      club:
+        one: Клуб
+        few: Клуба
+        other: Клубови
+        accusative: клуб
+      venue:
+        one: Место
+        few: Места
+        other: Места
+        accusative: место
+      happening:
+        one: Догађај
+        few: Догађаја
+        other: Догађаји
+        accusative: догађај
+      discipline:
+        one: Дисциплина
+        few: Дисциплине
+        other: Дисциплина
+        accusative: дисциплина
+      happening:
+        one: Догађај
+        few: Догађаја
+        other: Догађаји
+        accusative: догађај
+      discipline_happening:
+        one: Дисциплина
+        few: Дисциплине
+        other: Дисциплина
+        accusative: дисциплина
     attributes:
       user:
         name: Назив
@@ -15,6 +50,52 @@ sr:
         password_confirmation: Потврда лозинке
         current_password: Тренутна лозинка
         remember_me: Запамти ме
+      activity:
+        name: Назив
+        description: Опис
+      club:
+        name: Назив
+        website: Интернет страница
+        email: Имејл
+        phone: Телефон
+      venue:
+        name: Назив
+        latitude: Латитуда
+        longitude: Лонгитуда
+        address: Адреса
+        city: Град
+        state: Покрајна
+        country: Држава
+        zip: Поштански код
+      happening:
+        name: Назив
+        start_date: Датум почетка
+        end_date: Датум завршетка
+        website: Интернет страница
+        repeating: Понавља се
+        repeatings:
+          no_repeating: Не понавља се
+          daily_repeating: Свакодневно
+          weekly_repeating: Недељно
+          yearly_repeating: Годишње
+      discipline:
+        name: Назив
+        number_of_crew: Број чланова
+        number_of_relays: Број измена
+      discipline_happening:
+        name: Назив
+        gender: Пол
+        distance_m: Дужина
+        elevation_m: Елевација
+        max_time_s: Макс време
+        age_min: Годиште од
+        age_max: Годиште до
+        price_without_discount_cents: Цена без попуста
+        start_time: Почетак
+        genders:
+          man_and_women: Мушки и женски
+          man: Мушки
+          women: Женски
   activemodel:
     attributes:
       contact:

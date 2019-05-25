@@ -41,4 +41,5 @@ en:
   log_in_as: Login as
   dashboard: Dashboard
   my_account: My account
+  my_clubs: My clubs
   change_item_name: 'Change %{item_name}'

@@ -1,0 +1,21 @@
+<%
+  breadcrumb Happening.model_name.human(count: 2) => admin_happenings_path, @happening.name => nil
+%>
+<div class='card'>
+  <div class='card-body'>
+    <%= button_tag_open_modal edit_admin_happening_path(@happening), title: t_crud('edit', Happening), pull_right: true %>
+    <%= detail_view_list @happening, *Happening::FIELDS %>
+  </div>
+</div>
+<%= button_tag_open_modal new_admin_discipline_happening_path do %>
+  <i class="demo-icon icon-plus" aria-hidden="true"></i>
+  <%= t_crud('add_new', DisciplineHappening) %>
+<% end %>
+<% @happening.discipline_happenings.each do |discipline_happening| %>
+  <div class='card'>
+    <div class='card-body'>
+      <%= button_tag_open_modal edit_admin_discipline_happening_path(discipline_happening), title: t_crud('edit', DisciplineHappening), pull_right: true %>
+      <%= detail_view_list discipline_happening, *DisciplineHappening::FIELDS %>
+    </div>
+  </div>
+<% end %>

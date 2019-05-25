@@ -1,0 +1,26 @@
+<div id='remote-form'>
+  <%= bootstrap_form_for @discipline_happening, url: @discipline_happening.new_record? ? admin_discipline_happenings_path : admin_discipline_happening_path(@discipline_happening), remote: true, layout: :horizontal do |f| %>
+    <div class='d-flex flex-column flex-md-row'>
+      <div>
+        <%= f.text_field :name %>
+        <%= f.select :gender, DisciplineHappening.genders.keys.map { |k| [DisciplineHappening.human_enum_name(:gender, k),k] } %>
+        <%= f.number_field :distance_m %>
+        <%= f.number_field :elevation_m %>
+      </div>
+      <div>
+        <%= f.number_field :max_time_s %>
+        <%= f.number_field :age_min %>
+        <%= f.number_field :age_max %>
+        <%= f.datetime_select :start_time %>
+      </div>
+    </div>
+    <div class='remote-form__actions'>
+      <% unless @discipline_happening.new_record? %>
+        <%= link_to admin_discipline_happening_path(@discipline_happening), method: :delete, 'data-confirm': t_are_you_sure_to_remove_item_name(@discipline_happening.name), title: t_crud('delete', DisciplineHappening) do %>
+          <i class="demo-icon icon-trash-empty text-danger" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+      <%= f.submit class: 'btn btn-primary'%>
+    </div>
+  <% end %>
+</div>

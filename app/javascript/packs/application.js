@@ -21,3 +21,4 @@ import 'controllers'
 
 // our js stuff
 import '../turbolinks.load'
+import '../window_functions'

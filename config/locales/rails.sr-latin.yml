@@ -1,5 +1,4 @@
-# https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/sr.yml
-# https://github.com/rails/rails/blob/master/activemodel/lib/active_model/locale/en.yml#L8
+---
 sr-latin:
   activerecord:
     errors:
@@ -18,7 +17,7 @@ sr-latin:
     - Pet
     - Sub
     abbr_month_names:
-    -
+    - 
     - Jan
     - Feb
     - Mar
@@ -44,7 +43,7 @@ sr-latin:
       long: "%B %e, %Y"
       short: "%e %b"
     month_names:
-    -
+    - 
     - Januar
     - Fabruar
     - Mart
@@ -58,101 +57,120 @@ sr-latin:
     - Novembar
     - Decembar
     order:
-    - :day
-    - :month
-    - :year
+    - day
+    - month
+    - year
   datetime:
     distance_in_words:
       about_x_hours:
         one: oko %{count} sat
         few: oko %{count} sata
+        many: oko %{count} sati
         other: oko %{count} sati
       about_x_months:
         one: oko %{count} mesec
         few: oko %{count} meseca
+        many: oko %{count} meseci
         other: oko %{count} meseci
       about_x_years:
         one: oko %{count} godine
         few: oko %{count} godine
+        many: oko %{count} godina
         other: oko %{count} godina
       almost_x_years:
         one: skoro %{count} godina
         few: skoro %{count} godine
+        many: skoro %{count} godina
         other: skoro %{count} godina
       half_a_minute: pola minute
+      less_than_x_seconds:
+        one: manje od %{count} sekund
+        few: manje od %{count} sekunde
+        many: manje od %{count} sekundi
+        other: manje od %{count} sekundi
       less_than_x_minutes:
         one: manje od %{count} minut
         few: manje od %{count} minuta
+        many: manje od %{count} minuta
         other: manje od %{count} minuta
-      less_than_x_seconds:
-        few: manje od %{count} sekunde
-        one: manje od %{count} sekund
-        other: manje od %{count} sekundi
       over_x_years:
         one: preko %{count} godine
         few: preko %{count} godine
+        many: preko %{count} godina
         other: preko %{count} godina
-      x_days:
-        one: "%{count} dan"
-        few: "%{count} dana"
-        other: "%{count} dana"
-      x_minutes:
-        one: "%{count} minut"
-        few: "%{count} minuta"
-        other: "%{count} minuta"
-      x_months:
-        one: "%{count} mesec"
-        few: "%{count} meseca"
-        other: "%{count} meseci"
       x_seconds:
         one: "%{count} sekunda"
         few: "%{count} sekunde"
+        many: "%{count} sekundi"
         other: "%{count} sekundi"
+      x_minutes:
+        one: "%{count} minut"
+        few: "%{count} minuta"
+        many: "%{count} minuta"
+        other: "%{count} minuta"
+      x_days:
+        one: "%{count} dan"
+        few: "%{count} dana"
+        many: "%{count} dana"
+        other: "%{count} dana"
+      x_months:
+        one: "%{count} mesec"
+        few: "%{count} meseca"
+        many: "%{count} meseci"
+        other: "%{count} meseci"
     prompts:
-      day: Dan
-      hour: Sat
-      minute: Minut
-      month: Mesec
       second: Sekund
+      minute: Minut
+      hour: Sat
+      day: Dan
+      month: Mesec
       year: Godina
   errors:
     format: Polje %{attribute} %{message}
-
-    # The values :model, :attribute and :value are always available for interpolation
-    # The value :count is available when applicable. Can be used for pluralization.
     messages:
-      # model_invalid: validacija nije uspela: %{errors}
-      inclusion: ne pripada listi
-      exclusion: je rezervisano
-      invalid: nije ispravno
-      confirmation: se ne poklapa sa %{attribute}
       accepted: mora biti prihvaćeno
-      empty: ne sme biti prazno
-      blank: ne sme biti prazno
+      blank: ne sme biti prazano
+      confirmation: se ne slaže sa potvrdom
+      empty: ne sme biti prazano
+      equal_to: mora biti jednako %{count}
+      even: mora biti parno
+      exclusion: je rezervisano
+      greater_than: mora biti veće od %{count}
+      greater_than_or_equal_to: mora biti veće ili jednako %{count}
+      inclusion: nije u listi
+      invalid: nije ispravno
+      less_than: mora biti manje od %{count}
+      less_than_or_equal_to: mora biti manje ili jednako %{count}
+      model_invalid: 'Validacija nije uspela: %{errors}'
+      not_a_number: nije broj
+      not_an_integer: nije ceo broj
+      odd: mora biti neparno
+      other_than: mora biti različito od %{count}
       present: mora biti prazno
+      required: mora postojati
+      taken: je već zauzeto
       too_long:
-        one: je predugačko (najviše dozvoljeno je 1 znak)
-        few: je predugačko (najviše dozvoljeno je %{count} znaka)
-        other: je predugačko (najviše dozvoljeno je %{count} znakova)
+        one: je predugačko (maksimum je %{count} znak)
+        few: je predugačko (maksimum je %{count} znaka)
+        many: je predugačko (maksimum je %{count} znakova)
+        other: je predugačko (maksimum je %{count} znakova)
       too_short:
-        one: je previše kratko (najmanje dozvoljeno je 1 znak)
-        few: je previše kratko (najmanje dozvoljeno je %{count} znaka)
-        other: je previše kratko (najmanje dozvoljeno je %{count} znakova)
+        one: je prekratko (minimum je %{count} znak)
+        few: je prekratko (minimum je %{count} znaka)
+        many: je prekratko (minimum je %{count} znakova)
+        other: je prekratko (minimum je %{count} znakova)
       wrong_length:
-        one: je pogrešne dužine (treba da je dužine 1)
-        few: je pogrešne dužine (treba da je dužine %{count})
-        other: je pogrešne dužine (treba da je dužine %{count})
-      not_a_number: mora biti broj
-      not_an_integer: mora biti ceo broj
-      greater_than: mora biti veći od %{count}
-      greater_than_or_equal_to: mora biti veći ili jednak sa %{count}
-      equal_to: mora biti jednak sa %{count}
-      less_than: mora biti manji od %{count}
-      less_than_or_equal_to: mora biti manji ili jednak sa %{count}
-      other_than: mora biti različit od %{count}
-      odd: mora biti neparan
-      even: mora biti paran
-      taken: je već zauzet
+        one: nije odgovarajuće dužine (treba biti %{count} znak)
+        few: nije odgovarajuće dužine (treba biti %{count} znaka)
+        many: nije odgovarajuće dužine (treba biti %{count} znakova)
+        other: nije odgovarajuće dužine (treba biti %{count} znakova)
+    template:
+      body: 'Molim Vas da proverite sledeća polja:'
+      header:
+        one: 'Nisam uspeo sačuvati %{model}: %{count} greška.'
+        few: 'Nisam uspeo sačuvati %{model}: %{count} greške.'
+        many: 'Nisam uspeo sačuvati %{model}: %{count} greški.'
+        other: 'Nisam uspeo sačuvati %{model}: %{count} greški.'
   helpers:
     select:
       prompt: Izaberite
@@ -180,11 +198,11 @@ sr-latin:
       decimal_units:
         format: "%n %u"
         units:
-          thousand: Hiljadu
-          million: Milion
           billion: Milijarda
-          trillion: Trilion
+          million: Milion
           quadrillion: Kvadrilion
+          thousand: Hiljadu
+          trillion: Trilion
           unit: ''
       format:
         delimiter: ''
@@ -197,6 +215,7 @@ sr-latin:
           byte:
             one: bajt
             few: bajta
+            many: bajtova
             other: bajtova
           gb: GB
           kb: KB

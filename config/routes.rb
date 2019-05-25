@@ -26,8 +26,17 @@ Rails.application.routes.draw do
     patch :update
   end
 
+  resource :my_clubs do
+  end
+
   namespace :admin do
     get 'dashboard', to: 'dashboard#index'
     resources :users
+    resources :activities
+    resources :clubs
+    resources :venues
+    resources :happenings
+    resources :disciplines
+    resources :discipline_happenings
   end
 end

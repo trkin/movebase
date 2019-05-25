@@ -1,4 +1,9 @@
 class Happening < ApplicationRecord
+  extend Mobility
+  translates :name
+
+  FIELDS = %i[name start_date end_date website repeating].freeze
+
   belongs_to :venue
   belongs_to :club, optional: true
 

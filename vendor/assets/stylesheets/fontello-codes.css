@@ -14,6 +14,11 @@
 .icon-trash-empty:before { content: '\e80c'; } /* '' */
 .icon-pencil:before { content: '\e80d'; } /* '' */
 .icon-wrench:before { content: '\e80e'; } /* '' */
+.icon-updown-circle:before { content: '\e80f'; } /* '' */
+.icon-home-outline:before { content: '\e810'; } /* '' */
+.icon-location-outline:before { content: '\e811'; } /* '' */
+.icon-megaphone:before { content: '\e812'; } /* '' */
+.icon-road:before { content: '\e813'; } /* '' */
 .icon-building:before { content: '\f0f7'; } /* '' */
 .icon-question-circle-o:before { content: '\f29c'; } /* '' */
 .icon-window-close-o:before { content: '\f2d4'; } /* '' */

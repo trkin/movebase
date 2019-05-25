@@ -1,4 +1,4 @@
 :concurrency:  3
 :queues:
-  - myapp_default
-  - myapp_mailers
+  - moveindex_default
+  - moveindex_mailers

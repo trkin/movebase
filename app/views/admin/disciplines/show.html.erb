@@ -1,0 +1,9 @@
+<%
+  breadcrumb Discipline.model_name.human(count: 2) => admin_disciplines_path, @discipline.name => nil
+%>
+<div class='card'>
+  <div class='card-body'>
+    <%= button_tag_open_modal edit_admin_discipline_path(@discipline), title: t_crud('edit', Discipline), pull_right: true %>
+    <%= detail_view_list @discipline, *Discipline::FIELDS %>
+  </div>
+</div>

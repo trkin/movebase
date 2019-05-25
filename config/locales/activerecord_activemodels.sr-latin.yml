@@ -1,3 +1,4 @@
+---
 sr-latin:
   activerecord:
     models:
@@ -6,6 +7,36 @@ sr-latin:
         few: Korisnika
         other: Korisnici
         accusative: korisnika
+      activity:
+        one: Aktivnost
+        few: Aktivnosti
+        other: Aktivnosti
+        accusative: aktivnost
+      club:
+        one: Klub
+        few: Kluba
+        other: Klubovi
+        accusative: klub
+      venue:
+        one: Mesto
+        few: Mesta
+        other: Mesta
+        accusative: mesto
+      happening:
+        one: Događaj
+        few: Događaja
+        other: Događaji
+        accusative: događaj
+      discipline:
+        one: Disciplina
+        few: Discipline
+        other: Disciplina
+        accusative: disciplina
+      discipline_happening:
+        one: Disciplina
+        few: Discipline
+        other: Disciplina
+        accusative: disciplina
     attributes:
       user:
         name: Naziv
@@ -15,9 +46,54 @@ sr-latin:
         password_confirmation: Potvrda lozinke
         current_password: Trenutna lozinka
         remember_me: Zapamti me
+      activity:
+        name: Naziv
+        description: Opis
+      club:
+        name: Naziv
+        website: Internet stranica
+        email: Imejl
+        phone: Telefon
+      venue:
+        name: Naziv
+        latitude: Latituda
+        longitude: Longituda
+        address: Adresa
+        city: Grad
+        state: Pokrajna
+        country: Država
+        zip: Poštanski kod
+      happening:
+        name: Naziv
+        start_date: Datum početka
+        end_date: Datum završetka
+        website: Internet stranica
+        repeating: Ponavlja se
+        repeatings:
+          no_repeating: Ne ponavlja se
+          daily_repeating: Svakodnevno
+          weekly_repeating: Nedeljno
+          yearly_repeating: Godišnje
+      discipline:
+        name: Naziv
+        number_of_crew: Broj članova
+        number_of_relays: Broj izmena
+      discipline_happening:
+        name: Naziv
+        gender: Pol
+        distance_m: Dužina
+        elevation_m: Elevacija
+        max_time_s: Maks vreme
+        age_min: Godište od
+        age_max: Godište do
+        price_without_discount_cents: Cena bez popusta
+        start_time: Početak
+        genders:
+          man_and_women: Muški i ženski
+          man: Muški
+          women: Ženski
   activemodel:
     attributes:
       contact:
         email: Imejl
         text: Poruka
-

@@ -40,4 +40,5 @@ sr:
   log_in_as: Улогуј се као
   dashboard: Контролна табла
   my_account: Мој налог
+  my_clubs: Моји клубови
   change_item_name: 'Промени %{item_name}'

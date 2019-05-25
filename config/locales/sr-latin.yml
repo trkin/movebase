@@ -40,4 +40,5 @@ sr-latin:
   log_in_as: Uloguj se kao
   dashboard: Kontrolna tabla
   my_account: Moj nalog
+  my_clubs: Moji klubovi
   change_item_name: 'Promeni %{item_name}'

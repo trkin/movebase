@@ -1,0 +1,9 @@
+<%
+  breadcrumb Club.model_name.human(count: 2) => admin_clubs_path, @club.name => nil
+%>
+<div class='card'>
+  <div class='card-body'>
+    <%= button_tag_open_modal edit_admin_club_path(@club), title: t_crud('edit', Club), pull_right: true %>
+    <%= detail_view_list @club, *Club::FIELDS %>
+  </div>
+</div>

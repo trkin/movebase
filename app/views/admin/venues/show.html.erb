@@ -1,0 +1,23 @@
+<%
+  breadcrumb Venue.model_name.human(count: 2) => admin_venues_path, @venue.name => nil
+%>
+<div class='card'>
+  <div class='card-body'>
+    <%= button_tag_open_modal edit_admin_venue_path(@venue), title: t_crud('edit', Venue), pull_right: true %>
+    <div class='d-flex flex-column flex-md-row'>
+      <div>
+        <%= detail_view_list @venue, :name, :address, :city %>
+      </div>
+      <div>
+        <%= detail_view_list @venue, :latitude, :longitude %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='map map--300px'
+     data-controller='google-map'
+     data-google-map-latitude='<%= @venue.latitude %>'
+     data-google-map-longitude='<%= @venue.longitude %>'
+     data-action='google-map-callback@window->google-map#initMap'
+     >
+</div>

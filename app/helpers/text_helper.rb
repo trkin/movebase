@@ -38,17 +38,17 @@ module TextHelper
     "<span title='#{time.to_s :long}'>#{time.to_s :short}</span>".html_safe
   end
 
-  def detail_view_list(item, *fields, label_col: 'col-sm-2 dt__long--min-width')
+  def detail_view_list(item, *fields, label_class: 'col-sm-2 dt__long--min-width')
     content_tag 'dl', class: 'row' do
-      detail_view item, *fields, label_col: label_col
+      detail_view item, *fields, label_class: label_class
     end
   end
 
-  # if you use two detail views than label_col: 'col-sm-4'
-  def detail_view(item, *fields, label_col: 'col-sm-2')
+  # if you use two detail views than label_class: 'col-sm-4'
+  def detail_view(item, *fields, label_class: 'col-sm-2')
     res = fields.map do |field|
       <<~HTML
-        <dt class='#{label_col}'>#{item.class.send :human_attribute_name, field}</dt>
+        <dt class='#{label_class}'>#{item.class.send :human_attribute_name, field}</dt>
         <dd class='col'>#{item.send field}</dd>
         <dt class='w-100'></dt>
       HTML
@@ -57,10 +57,10 @@ module TextHelper
     safe_join res
   end
 
-  def detail_view_one(title, text, label_col: 'col-sm-2')
+  def detail_view_one(title, text, label_class: 'col-sm-2', text_class: 'col')
     <<~HTML
-      <dt class='#{label_col}'>#{title}</dt>
-      <dd class='col'>#{text}</dd>
+      <dt class='#{label_class}'>#{title}</dt>
+      <dd class='#{text_class}'>#{text}</dd>
       <dt class='w-100'></dt>
     HTML
       .html_safe

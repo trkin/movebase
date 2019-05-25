@@ -1,14 +1,14 @@
 class Const
   def self.common
     hash_or_error_if_key_does_not_exists(
-      name: 'My App',
+      name: 'Move Index',
       # short_name is also use in config/sidekiq.yml and config/application.rb
-      short_name: 'myapp',
-      domain: 'myapp.com',
+      short_name: 'moveindex',
+      domain: 'move-index.org',
       # default_url is required for links in email body or in links in controller
       # when url host is not available (for example rails console)
       default_url: {
-        host: (Rails.env.production? ? 'myapp.com' : 'myapp.localhost'),
+        host: (Rails.env.production? ? 'move-index.org' : 'localhost'),
         port: (Rails.env.development? ? Rack::Server.new.options[:Port] : nil),
       },
     )

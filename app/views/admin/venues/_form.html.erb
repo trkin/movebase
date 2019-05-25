@@ -1,0 +1,32 @@
+<div id='remote-form'>
+  <%= bootstrap_form_for @venue, url: @venue.new_record? ? admin_venues_path : admin_venue_path(@venue), remote: true, layout: :horizontal do |f| %>
+    <div data-controller='google-map-address'
+         data-action='
+           google-map-address-callback@window->google-map-address#initMap
+           google-map-address-dragend@window->google-map-address#dragEnd
+           google-map-address-place-changed@window->google-map-address#placeChanged
+         '
+         >
+      <div class='d-flex flex-column flex-md-row'>
+        <div>
+          <%= f.text_field :name %>
+          <%= f.text_field :address, 'data-target': 'google-map-address.address' %>
+          <%= f.text_field :city %>
+        </div>
+        <div>
+          <%= f.text_field :latitude, 'data-target': 'google-map-address.latitude' %>
+          <%= f.text_field :longitude, 'data-target': 'google-map-address.longitude' %>
+        </div>
+      </div>
+      <div class='map map--300px' data-target='google-map-address.map'></div>
+    </div>
+    <div class='remote-form__actions'>
+      <% unless @venue.new_record? %>
+        <%= link_to admin_venue_path(@venue), method: :delete, 'data-confirm': t_are_you_sure_to_remove_item_name(@venue.name), title: t_crud('delete', Venue) do %>
+          <i class="demo-icon icon-trash-empty text-danger" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+      <%= f.submit class: 'btn btn-primary'%>
+    </div>
+  <% end %>
+</div>

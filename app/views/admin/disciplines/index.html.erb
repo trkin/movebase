@@ -1,0 +1,13 @@
+<%
+  breadcrumb Discipline.model_name.human(count: 2) => nil
+%>
+
+<%= button_tag_open_modal new_admin_discipline_path do %>
+  <i class="demo-icon icon-plus" aria-hidden="true"></i>
+  <%= t_crud('add_new', Discipline) %>
+<% end %>
+<br>
+<% @disciplines.each do |discipline| %>
+  <%= link_to discipline.name, admin_discipline_path(discipline) %>
+  <br>
+<% end %>

@@ -1,6 +1,8 @@
 class Activity < ApplicationRecord
   extend Mobility
-  translates :name
+  translates :name, :description
+
+  FIELDS = %i[name description].freeze
 
   has_many :disciplines, dependent: :destroy
   has_many :activity_associations, dependent: :destroy
