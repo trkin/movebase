@@ -14,3 +14,17 @@
     </div>
   </div>
 </div>
+<%= button_tag_open_modal new_admin_discipline_discipline_requirement_path(@discipline) do %>
+  <i class="demo-icon icon-plus" aria-hidden="true"></i>
+  <%= t_crud('add_new', DisciplineRequirement) %>
+<% end %>
+<div class='card-deck'>
+  <% @discipline.discipline_requirements.each do |discipline_requirement| %>
+    <div class='card card--text mb-4'>
+      <div class='card-body'>
+        <%= button_to 'X', admin_discipline_requirement_path(discipline_requirement), class: 'btn btn-sm btn-outline-danger btn--no-padding px-1 edit-button', title: t_crud('delete', DisciplineRequirement), method: :delete, 'data-confirm': t('are_you_sure') %>
+        <%= link_to discipline_requirement.requirement.name, admin_discipline_requirement_path(discipline_requirement.requirement) %>
+      </div>
+    </div>
+  <% end %>
+</div>

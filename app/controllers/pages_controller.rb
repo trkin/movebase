@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def sign_in_development
-    return unless Rails.env.development? || Rails.application.secrets.is_staging || current_user&.superadmin?
+    return unless Rails.env.development? || Rails.application.credentials.is_staging || current_user&.superadmin?
 
     user = User.find params[:id]
     sign_in :user, user, byepass: true
@@ -66,7 +66,7 @@ class PagesController < ApplicationController
   end
 
   def notify_javascript_error
-    js_receivers = Rails.application.secrets.javascript_error_recipients
+    js_receivers = Rails.application.credentials.javascript_error_recipients
     if js_receivers.present?
       ExceptionNotifier.notify_exception(
         Exception.new(params[:errorMsg]),

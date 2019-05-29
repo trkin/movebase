@@ -8,6 +8,7 @@ class Discipline < ApplicationRecord
 
   has_many :discipline_happenings, dependent: :destroy
   has_many :discipline_requirements, dependent: :destroy
+  has_many :requirements, through: :discipline_requirements
 
   enum kind: %i[basic]
 

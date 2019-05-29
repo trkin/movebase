@@ -42,6 +42,11 @@ sr-latin:
         few: Discipline
         other: Disciplina
         accusative: disciplina
+      discipline_requirement:
+        one: Uslov
+        few: Uslovi
+        other: Uslovi
+        accusative: uslov
     attributes:
       user:
         name: Naziv

@@ -19,4 +19,8 @@ class DisciplineHappening < ApplicationRecord
 
     "#{discipline.name} #{age_min} #{age_max} #{distance_m} #{gender}"
   end
+
+  def full_name
+    "#{name} #{age_min} #{age_max} #{distance_m} #{gender}"
+  end
 end

@@ -1,0 +1,48 @@
+<%
+  breadcrumb Happening.model_name.human(count: 2) => nil
+%>
+
+<table>
+  <thead>
+    <th><%= Club.model_name.human %></th>
+    <th><%= Venue.model_name.human %></th>
+    <th><%= Happening.human_attribute_name(:name) %></th>
+    <th><%= Happening.human_attribute_name(:start_date) %></th>
+    <th><%= Happening.human_attribute_name(:repeating) %></th>
+    <th><%= Discipline.model_name.human(count: 2) %></th>
+  </thead>
+  <tbody>
+    <% @happenings.each do |happening| %>
+      <tr>
+        <td>
+          <% if happening.club.present? %>
+            <%= link_to happening.club.name, admin_clubs_path(happening.club) %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to happening.venue.name, admin_venue_path(happening.venue)  %>
+        </td>
+        <td>
+          <%= link_to happening.name, admin_happening_path(happening) %>
+        </td>
+        <td>
+          <%= happening.start_date %>
+        </td>
+        <td>
+          <%= Happening.human_enum_name :repeating, happening.repeating %>
+        </td>
+        <td>
+          <% happening.discipline_happenings.each do |discipline_happening| %>
+            <%= discipline_happening.full_name %>
+            <% discipline_happening.discipline.discipline_requirements.each do |discipline_requirement| %>
+              <span class='badge badge-success'><%= discipline_requirement.requirement.name %></span>
+            <% end %>
+            <% discipline_happening.discipline_happening_tags.each do |discipline_happening_tag| %>
+              <span class='badge badge-primary'><%= discipline_happening_tag.tag.name %></span>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

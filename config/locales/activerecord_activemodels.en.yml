@@ -42,6 +42,11 @@ en:
         few: Disciplines
         other: Disciplines
         accusative: discipline
+      discipline_requirement:
+        one: Requirement
+        few: Requirements
+        other: Requirements
+        accusative: requirement
     attributes:
       user:
         name: Name

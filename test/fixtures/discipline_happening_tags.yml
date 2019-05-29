@@ -1,9 +1,7 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+stairs_run_vrsac__men__stairs:
+  discipline_happening: stairs_run_vrsac__men
+  tag: stairs
 
-one:
-  discipline_happening: one
-  tag: one
-
-two:
-  discipline_happening: two
-  tag: two
+stairs_run_vrsac__women:
+  discipline_happening: stairs_run_vrsac__women
+  tag: stairs

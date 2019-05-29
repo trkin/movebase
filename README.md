@@ -36,7 +36,8 @@ Some happenings are repeating (every day, week, month, year).
 Non olimpic disciplines like dog walking, waste removal(street cleaning),
 pokemon hunting, yoga, lunch hiking, kayaking with a dog.
 
-Happening can be organized without club (gathering).
+TODO, each happening have a club which can be personal (personal gathering)... it is easier than to
+check if club exists in a lot of places.
 Similar
 https://www.britishcanoeing.org.uk/competition/whatson/eventcalendars
 http://canoeracing.org.uk/marathon/index.php/category/international-racing/intl_masters/

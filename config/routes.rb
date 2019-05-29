@@ -17,6 +17,12 @@ Rails.application.routes.draw do
   post 'notify-javascript-error', to: 'pages#notify_javascript_error'
   get 'sample-error-in-sidekiq', to: 'pages#sample_error_in_sidekiq'
 
+  resources :happenings do
+    collection do
+      post :search
+    end
+  end
+
   resource :my_account do
     get :change_email
     get :change_password
@@ -40,6 +46,8 @@ Rails.application.routes.draw do
     resources :happenings do
       resources :discipline_happenings, shallow: true
     end
-    resources :disciplines
+    resources :disciplines do
+      resources :discipline_requirements, shallow: true
+    end
   end
 end

@@ -34,8 +34,8 @@ sr:
       discipline:
         one: Дисциплина
         few: Дисциплине
-        other: Дисциплина
-        accusative: дисциплина
+        other: Дисциплине
+        accusative: дисциплину
       happening:
         one: Догађај
         few: Догађаја
@@ -46,6 +46,11 @@ sr:
         few: Дисциплине
         other: Дисциплина
         accusative: дисциплина
+      discipline_requirement:
+        one: Услов
+        few: Услови
+        other: Услови
+        accusative: услов
     attributes:
       user:
         name: Назив

@@ -15,7 +15,7 @@
 
   <body class='
     <%= 'body__sticky-footer--wrapper' unless login_layout? %>
-    <%= 'bg-success' if Rails.application.secrets.is_staging %>
+    <%# <%= 'bg-success' if Rails.application.credentials.is_staging %1> %>
     '>
     <% if login_layout? %>
       <%= render 'layouts/login_layout' %>
