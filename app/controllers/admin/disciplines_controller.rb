@@ -29,7 +29,7 @@ class Admin::DisciplinesController < Admin::BaseController
 
   def destroy
     @discipline.destroy!
-    redirect_to admin_disciplines_path, notice: helpers.t_notice('notice_successfully_deleted', Discipline)
+    redirect_to admin_disciplines_path, notice: helpers.t_notice('successfully_deleted', Discipline)
   end
 
   def _set_discipline

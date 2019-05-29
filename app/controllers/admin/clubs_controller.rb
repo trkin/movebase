@@ -29,7 +29,7 @@ class Admin::ClubsController < Admin::BaseController
 
   def destroy
     @club.destroy!
-    redirect_to admin_clubs_path, notice: helpers.t_notice('notice_successfully_deleted', Club)
+    redirect_to admin_clubs_path, notice: helpers.t_notice('successfully_deleted', Club)
   end
 
   def _set_club
@@ -38,7 +38,8 @@ class Admin::ClubsController < Admin::BaseController
 
   def _club_params
     params.require(:club).permit(
-      *Club::FIELDS
+      *Club::FIELDS, :existing_or_new, :venue_id,
+      venue_attributes: Venue::FIELDS,
     )
   end
 end

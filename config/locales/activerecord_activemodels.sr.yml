@@ -11,6 +11,11 @@ sr:
         few: Активности
         other: Активности
         accusative: активност
+      activity_club:
+        one: Активност
+        few: Активности
+        other: Активности
+        accusative: активност
       club:
         one: Клуб
         few: Клуба

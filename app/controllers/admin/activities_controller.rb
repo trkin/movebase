@@ -29,7 +29,7 @@ class Admin::ActivitiesController < Admin::BaseController
 
   def destroy
     @activity.destroy!
-    redirect_to admin_activities_path, notice: helpers.t_notice('notice_successfully_deleted', Activity)
+    redirect_to admin_activities_path, notice: helpers.t_notice('successfully_deleted', Activity)
   end
 
   def _set_activity

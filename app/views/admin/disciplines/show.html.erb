@@ -4,6 +4,13 @@
 <div class='card'>
   <div class='card-body'>
     <%= button_tag_open_modal edit_admin_discipline_path(@discipline), title: t_crud('edit', Discipline), pull_right: true %>
-    <%= detail_view_list @discipline, *Discipline::FIELDS %>
+    <div class='row'>
+      <div class='col'>
+        <%= detail_view_list @discipline, *(Discipline::FIELDS - %i[activity_id]) %>
+      </div>
+      <div class='col'>
+        <%= link_to @discipline.activity.name, admin_activity_path(@discipline.activity) %>
+      </div>
+    </div>
   </div>
 </div>

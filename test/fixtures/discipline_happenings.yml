@@ -1,6 +1,6 @@
 kayak_regata__sprint_kayak__senior_500_m:
   name:
-    en: kayak_regata__sprint_kayak__senior_500_m
+    en: K1 Senior 500m men
   discipline: sprint_kayak
   happening: kayak_regata
   age_min: 16
@@ -9,7 +9,7 @@ kayak_regata__sprint_kayak__senior_500_m:
 
 kayak_regata__sprint_kayak_for_2__senior_500_m:
   name:
-    en: kayak_regata__sprint_kayak_for_2__senior_500_m
+    en: K2 senior 500m men
   discipline: sprint_kayak_for_2
   happening: kayak_regata
   age_min: 16
@@ -18,7 +18,7 @@ kayak_regata__sprint_kayak_for_2__senior_500_m:
 
 kayak_regata__sprint_kayak__junior_500_m:
   name:
-    en: kayak_regata__sprint_kayak__junior_500_m
+    en: K1 Junior 500m
   discipline: sprint_kayak
   happening: kayak_regata
   age_min: 15
@@ -28,7 +28,7 @@ kayak_regata__sprint_kayak__junior_500_m:
 
 kayak_regata__sprint_kayak__junior_200_w:
   name:
-    en: kayak_regata__sprint_kayak__junior_200_w
+    en: K1 Junior 200m women
   discipline: sprint_kayak
   happening: kayak_regata
   age_min: 15
@@ -38,13 +38,13 @@ kayak_regata__sprint_kayak__junior_200_w:
 
 kayak_regata__sprint_kayak_without_registration:
   name:
-    en: kayak_regata__sprint_kayak_without_registration
+    en: Without registration
   discipline: sprint_kayak
   happening: kayak_regata
 
 personal_long_kayaking:
   name:
-    en: personal_long_kayaking
+    en: Personal long kayaking
   discipline: sprint_kayak_or_recreational_kayak
   happening: personal_long_kayaking
   distance_m: 80_000

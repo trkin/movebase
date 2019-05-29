@@ -1,6 +1,9 @@
 <div id='remote-form'>
-  <%= bootstrap_form_for @discipline_happening, url: @discipline_happening.new_record? ? admin_discipline_happenings_path : admin_discipline_happening_path(@discipline_happening), remote: true, layout: :horizontal do |f| %>
+  <%= bootstrap_form_for @discipline_happening, url: @discipline_happening.new_record? ? admin_happening_discipline_happenings_path(@discipline_happening.happening) : admin_discipline_happening_path(@discipline_happening), remote: true, layout: :horizontal do |f| %>
     <div class='d-flex flex-column flex-md-row'>
+      <div>
+        <%= render 'admin/disciplines/existing_or_new', f: f %>
+      </div>
       <div>
         <%= f.text_field :name %>
         <%= f.select :gender, DisciplineHappening.genders.keys.map { |k| [DisciplineHappening.human_enum_name(:gender, k),k] } %>

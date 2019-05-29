@@ -4,18 +4,34 @@
 <div class='card'>
   <div class='card-body'>
     <%= button_tag_open_modal edit_admin_happening_path(@happening), title: t_crud('edit', Happening), pull_right: true %>
-    <%= detail_view_list @happening, *Happening::FIELDS %>
+    <div class='row'>
+      <div class='col'>
+        <%= detail_view_list @happening, *Happening::FIELDS %>
+      </div>
+      <div class='col'>
+        <%= link_to @happening.venue.name, admin_venue_path(@happening.venue) %>
+        <div class='map map--50percent'
+             data-controller='google-map'
+             data-google-map-latitude='<%= @happening.venue.latitude %>'
+             data-google-map-longitude='<%= @happening.venue.longitude %>'
+             data-action='google-map-callback@window->google-map#initMap'
+             >
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<%= button_tag_open_modal new_admin_discipline_happening_path do %>
+<%= button_tag_open_modal new_admin_happening_discipline_happening_path(@happening) do %>
   <i class="demo-icon icon-plus" aria-hidden="true"></i>
   <%= t_crud('add_new', DisciplineHappening) %>
 <% end %>
-<% @happening.discipline_happenings.each do |discipline_happening| %>
-  <div class='card'>
-    <div class='card-body'>
-      <%= button_tag_open_modal edit_admin_discipline_happening_path(discipline_happening), title: t_crud('edit', DisciplineHappening), pull_right: true %>
-      <%= detail_view_list discipline_happening, *DisciplineHappening::FIELDS %>
+<div class='card-deck'>
+  <% @happening.discipline_happenings.each do |discipline_happening| %>
+    <div class='card card--text mb-4'>
+      <div class='card-body'>
+        <%= button_tag_open_modal edit_admin_discipline_happening_path(discipline_happening), title: t_crud('edit', DisciplineHappening), pull_right: true %>
+        <%= detail_view_list discipline_happening, *(DisciplineHappening::FIELDS - [:price_without_discount_cents]), skip_blank: :all %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

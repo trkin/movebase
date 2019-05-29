@@ -72,7 +72,10 @@ class ApplicationController < ActionController::Base
       flash.now[:alert] = item.errors.full_messages.to_sentence
       render js: %(
         var form = document.getElementById('remote-form');
-        form.innerHTML = '#{helpers.j helpers.render(partial) + helpers.render('layouts/flash_notice_alert_jbox')}';
+        var parent = form.parentNode;
+        var new_form = document.createElement('div');
+        new_form.innerHTML = '#{helpers.j helpers.render(partial) + helpers.render('layouts/flash_notice_alert_jbox')}';
+        parent.replaceChild(new_form, form);
       )
     end
   end

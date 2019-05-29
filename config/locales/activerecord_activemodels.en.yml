@@ -12,6 +12,11 @@ en:
         few: Activities
         other: Activities
         accusative: activity
+      activity_club:
+        one: Activity
+        few: Activities
+        other: Activities
+        accusative: activity
       club:
         one: Club
         few: Club

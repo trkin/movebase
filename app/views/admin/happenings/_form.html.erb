@@ -1,10 +1,18 @@
 <div id='remote-form'>
   <%= bootstrap_form_for @happening, url: @happening.new_record? ? admin_happenings_path : admin_happening_path(@happening), remote: true, layout: :horizontal do |f| %>
-    <%= f.text_field :name %>
-    <%= f.date_field :start_date %>
-    <%= f.date_field :end_date %>
-    <%= f.text_field :website %>
-    <%= f.select :repeating, Happening.repeatings.keys.map { |k| [Happening.human_enum_name(:repeating, k), k] } %>
+    <div class='d-flex flex-column flex-md-row'>
+      <div>
+        <%= f.text_field :name %>
+        <%= f.date_field :start_date, help: !f.object.multi_day? && add_alternative_helper(Happening.human_attribute_name(:end_date), '#end_date') %>
+        <div id='end_date' class='<%= 'd-none-display' unless f.object.multi_day? %>'>
+          <%= f.date_field :end_date %>
+        </div>
+        <%= f.text_field :website %>
+        <%= f.select :repeating, Happening.repeatings.keys.map { |k| [Happening.human_enum_name(:repeating, k), k] } %>
+        <%= f.select :club_id, options_from_collection_for_select(Club.all, :id, :name, f.object.club_id) %>
+      </div>
+      <%= render 'admin/venues/existing_or_new', f: f %>
+    </div>
     <div class='remote-form__actions'>
       <% unless @happening.new_record? %>
         <%= link_to admin_happening_path(@happening), method: :delete, 'data-confirm': t_are_you_sure_to_remove_item_name(@happening.name), title: t_crud('delete', Happening) do %>

@@ -1,0 +1,6 @@
+$card_width: map-get($grid-breakpoints, 'md') / 2 - to-px(2 * map-get($spacers, 2))
+$card_width: 198px
+.card--text
+  @include media-breakpoint-up(md)
+    max-width: $card_width
+    min-width: $card_width

@@ -1,8 +1,6 @@
 <div id='remote-form'>
   <%= bootstrap_form_for @discipline, url: @discipline.new_record? ? admin_disciplines_path : admin_discipline_path(@discipline), remote: true, layout: :horizontal do |f| %>
-    <%= f.text_field :name %>
-    <%= f.number_field :number_of_crew %>
-    <%= f.number_field :number_of_relays %>
+    <%= render 'form_fields', f: f %>
     <div class='remote-form__actions'>
       <% unless @discipline.new_record? %>
         <%= link_to admin_discipline_path(@discipline), method: :delete, 'data-confirm': t_are_you_sure_to_remove_item_name(@discipline.name), title: t_crud('delete', Discipline) do %>

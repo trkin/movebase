@@ -29,7 +29,7 @@ class Admin::HappeningsController < Admin::BaseController
 
   def destroy
     @happening.destroy!
-    redirect_to admin_happenings_path, notice: helpers.t_notice('notice_successfully_deleted', Happening)
+    redirect_to admin_happenings_path, notice: helpers.t_notice('successfully_deleted', Happening)
   end
 
   def _set_happening
@@ -38,7 +38,8 @@ class Admin::HappeningsController < Admin::BaseController
 
   def _happening_params
     params.require(:happening).permit(
-      *Happening::FIELDS
+      *Happening::FIELDS, :existing_or_new, :venue_id, :club_id,
+      venue_attributes: Venue::FIELDS,
     )
   end
 end

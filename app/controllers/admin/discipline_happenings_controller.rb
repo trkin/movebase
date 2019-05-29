@@ -1,14 +1,10 @@
 class Admin::DisciplineHappeningsController < Admin::BaseController
-  before_action :_set_discipline_happening, except: %i[index new create]
-
-  def index
-    @discipline_happenings = DisciplineHappening.all
-  end
-
-  def show; end
+  before_action :_set_happening, only: %i[new create]
+  before_action :_set_discipline_happening, except: %i[new create]
 
   def new
-    @discipline_happening = DisciplineHappening.new
+    @discipline_happening = @happening.discipline_happenings.new
+    @discipline_happening.build_discipline
     render partial: 'form', layout: false
   end
 
@@ -18,9 +14,9 @@ class Admin::DisciplineHappeningsController < Admin::BaseController
 
   # JS
   def create
-    @discipline_happening = DisciplineHappening.new
+    @discipline_happening = @happening.discipline_happenings.new
     update_and_render_or_redirect_in_js \
-      @discipline_happening, _discipline_happening_params, ->(id) { admin_happening_path(id) }
+      @discipline_happening, _discipline_happening_params, ->(_id) { admin_happening_path(@happening) }
   end
 
   # JS
@@ -32,7 +28,12 @@ class Admin::DisciplineHappeningsController < Admin::BaseController
   def destroy
     @discipline_happening.destroy!
     redirect_to \
-      admin_discipline_happenings_path, notice: helpers.t_notice('notice_successfully_deleted', DisciplineHappening)
+      admin_happening_path(@discipline_happening.happening),
+      notice: helpers.t_notice('successfully_deleted', DisciplineHappening)
+  end
+
+  def _set_happening
+    @happening = Happening.find params[:happening_id]
   end
 
   def _set_discipline_happening
@@ -41,7 +42,8 @@ class Admin::DisciplineHappeningsController < Admin::BaseController
 
   def _discipline_happening_params
     params.require(:discipline_happening).permit(
-      *DisciplineHappening::FIELDS
+      *DisciplineHappening::FIELDS, :existing_or_new, :discipline_id,
+      discipline_attributes: Discipline::FIELDS,
     )
   end
 end

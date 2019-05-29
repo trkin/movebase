@@ -29,7 +29,7 @@ class Admin::VenuesController < Admin::BaseController
 
   def destroy
     @venue.destroy!
-    redirect_to admin_venues_path, notice: helpers.t_notice('notice_successfully_deleted', Venue)
+    redirect_to admin_venues_path, notice: helpers.t_notice('successfully_deleted', Venue)
   end
 
   def _set_venue

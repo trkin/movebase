@@ -15,6 +15,10 @@ class Activity < ApplicationRecord
   has_many :used_in_activities,
            -> { where(activity_associations: { kind: ActivityAssociation.kinds[:consists_of] }) },
            through: :inversed_activity_associations, source: :activity
+  has_many :activity_clubs, dependent: :destroy
+  has_many :clubs, through: :activity_clubs
+
+  validates :name, presence: true, uniqueness: true
 
   def self_and_used_in_activities
     [self] + used_in_activities

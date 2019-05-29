@@ -33,10 +33,13 @@ Rails.application.routes.draw do
     get 'dashboard', to: 'dashboard#index'
     resources :users
     resources :activities
-    resources :clubs
+    resources :clubs do
+      resources :activity_clubs, shallow: true
+    end
     resources :venues
-    resources :happenings
+    resources :happenings do
+      resources :discipline_happenings, shallow: true
+    end
     resources :disciplines
-    resources :discipline_happenings
   end
 end

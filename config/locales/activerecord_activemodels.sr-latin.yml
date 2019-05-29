@@ -12,6 +12,11 @@ sr-latin:
         few: Aktivnosti
         other: Aktivnosti
         accusative: aktivnost
+      activity_club:
+        one: Aktivnost
+        few: Aktivnosti
+        other: Aktivnosti
+        accusative: aktivnost
       club:
         one: Klub
         few: Kluba

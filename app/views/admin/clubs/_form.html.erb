@@ -1,9 +1,14 @@
 <div id='remote-form'>
   <%= bootstrap_form_for @club, url: @club.new_record? ? admin_clubs_path : admin_club_path(@club), remote: true, layout: :horizontal do |f| %>
-    <%= f.text_field :name %>
-    <%= f.text_field :email %>
-    <%= f.text_field :phone %>
-    <%= f.text_field :national_id %>
+    <div class='d-flex flex-column flex-md-row'>
+      <div>
+        <%= f.text_field :name %>
+        <%= f.text_field :email %>
+        <%= f.text_field :phone %>
+        <%= f.text_field :national_id %>
+      </div>
+      <%= render 'admin/venues/existing_or_new', f: f %>
+    </div>
     <div class='remote-form__actions'>
       <% unless @club.new_record? %>
         <%= link_to admin_club_path(@club), method: :delete, 'data-confirm': t_are_you_sure_to_remove_item_name(@club.name), title: t_crud('delete', Club) do %>

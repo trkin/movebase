@@ -4,6 +4,8 @@ kayak_regata:
     sr-latin: Majski kajakaški kup Novog Sada
   club: kayak_club
   venue: sodros
+  start_date: 2019-05-01
+  end_date: 2019-05-01
   repeating: <%= Happening.repeatings[:yearly_repeating] %>
 
 personal_long_kayaking:
@@ -11,6 +13,7 @@ personal_long_kayaking:
     en: Personal long kayaking from NS to BG
   venue: strand
   start_date: 2019-02-23
+  end_date: 2019-02-23
   website: http://blog.trk.in.rs
 
 triathlon:
@@ -18,11 +21,14 @@ triathlon:
     en: Triathlon
   venue: strand
   start_date: 2019-06-23
+  end_date: 2019-06-23
 
 quadrathlon_munich:
   name:
     en: Quadrathlon Munich
   venue: munich
+  start_date: 2019-07-23
+  end_date: 2019-07-23
 
 wednesday_walking_23:
   name:
@@ -30,6 +36,7 @@ wednesday_walking_23:
   club: hiking_club
   venue: bus_station_popovica
   start_date: 2019-02-20
+  end_date: 2019-02-20
   repeating: <%= Happening.repeatings[:weekly_repeating] %>
 
 wednesday_walking_24:
@@ -38,6 +45,7 @@ wednesday_walking_24:
   club: hiking_club
   venue: bus_station_popovica
   start_date: 2019-02-27
+  end_date: 2019-02-27
   repeating: <%= Happening.repeatings[:weekly_repeating] %>
 
 walking_with_children_to_the_tower:
@@ -46,6 +54,7 @@ walking_with_children_to_the_tower:
   club: personal_running
   venue: bus_station_popovica
   start_date: 2019-03-17
+  end_date: 2019-03-17
 
 walk_or_run_tracking:
   name:
@@ -53,6 +62,7 @@ walk_or_run_tracking:
   club: hiking_club
   venue: bus_station_popovica
   start_date: 2019-03-17
+  end_date: 2019-03-17
 
 half_marathon:
   name:
@@ -60,6 +70,7 @@ half_marathon:
   club: personal_running
   venue: strand
   start_date: 2019-05-17
+  end_date: 2019-05-17
   repeating: <%= Happening.repeatings[:yearly_repeating] %>
 
 sky_running:
@@ -67,6 +78,7 @@ sky_running:
     en: Sky running Stara planina
   venue: stara_planina
   start_date: 2019-05-17
+  end_date: 2019-05-17
   repeating: <%= Happening.repeatings[:yearly_repeating] %>
 
 stairs_run_vrsac:
@@ -74,4 +86,5 @@ stairs_run_vrsac:
     en: Stairs run in Vrsac
   venue: vrsac
   start_date: 2019-05-26
+  end_date: 2019-05-26
   repeating: <%= Happening.repeatings[:yearly_repeating] %>

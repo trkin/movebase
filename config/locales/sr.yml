@@ -42,3 +42,6 @@ sr:
   my_account: Мој налог
   my_clubs: Моји клубови
   change_item_name: 'Промени %{item_name}'
+  this_value_is_added_to_url_for_better_seo: Ова вредност се додаје на URL за бољи SEO
+  pick_existing: Изабери постојећи
+  create_new: Креирај нови
