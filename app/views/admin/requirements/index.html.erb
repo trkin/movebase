@@ -1,0 +1,13 @@
+<%
+  breadcrumb Requirement.model_name.human(count: 2) => nil
+%>
+
+<%= button_tag_open_modal new_admin_requirement_path do %>
+  <i class="demo-icon icon-plus" aria-hidden="true"></i>
+  <%= t_crud('add_new', Requirement) %>
+<% end %>
+<br>
+<% @requirements.each do |requirement| %>
+  <%= link_to requirement.name, admin_requirement_path(requirement) %>
+  <br>
+<% end %>

@@ -1,0 +1,13 @@
+<%#
+  f - form builder
+  disabled - default if false, used for existing_or_new partial
+%>
+<%
+  disabled ||= false
+%>
+<div class='row'>
+  <div class='col-sm'>
+    <%= f.text_field :name, disabled: disabled %>
+    <%= f.text_area :description, disabled: disabled %>
+  </div>
+</div>

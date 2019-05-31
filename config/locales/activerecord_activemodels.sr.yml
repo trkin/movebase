@@ -51,6 +51,11 @@ sr:
         few: Услови
         other: Услови
         accusative: услов
+      requirement:
+        one: Услов
+        few: Услови
+        other: Услови
+        accusative: услов
     attributes:
       user:
         name: Назив
@@ -106,6 +111,9 @@ sr:
           man_and_women: Мушки и женски
           man: Мушки
           women: Женски
+      requirement:
+        name: Назив
+        description: Опис
   activemodel:
     attributes:
       contact:

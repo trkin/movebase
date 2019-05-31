@@ -49,5 +49,6 @@ Rails.application.routes.draw do
     resources :disciplines do
       resources :discipline_requirements, shallow: true
     end
+    resources :requirements
   end
 end

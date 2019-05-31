@@ -37,14 +37,18 @@ module TextHelper
     "<span title='#{time.to_s :long}'>#{time.to_s :short}</span>".html_safe
   end
 
-  def detail_view_list(item, *fields, label_class: 'col-sm-2 dt__long--min-width', skip_blank: [])
+  def detail_view_list(item = nil, *fields, label_class: 'col-sm-2 dt__long--min-width', skip_blank: [])
     content_tag 'dl', class: 'row' do
-      detail_view item, *fields, label_class: label_class, skip_blank: skip_blank
+      if block_given?
+        yield
+      else
+        detail_view item, *fields, label_class: label_class, skip_blank: skip_blank
+      end
     end
   end
 
   # if you use two detail views than label_class: 'col-sm-4'
-  def detail_view(item, *fields, label_class: 'col-sm-2', skip_blank: [])
+  def detail_view(item, *fields, label_class: 'col-sm-2 dt__long--min-width', skip_blank: [])
     res = fields.map do |field|
       if (skip_blank == :all || skip_blank.include?(field)) && item.send(field).blank?
         ''.html_safe
@@ -60,7 +64,7 @@ module TextHelper
     safe_join res
   end
 
-  def detail_view_one(title, text, label_class: 'col-sm-2', text_class: 'col')
+  def detail_view_one(title, text, label_class: 'col-sm-2 dt__long--min-width', text_class: 'col')
     <<~HTML
       <dt class='#{label_class}'>#{title}</dt>
       <dd class='#{text_class}'>#{text}</dd>
@@ -143,5 +147,7 @@ module TextHelper
     HTML
       .html_safe
   end
+ 
+  # For enums you can use User.human_enum_name :status, user.status
 end
 # rubocop:enable Metrics/ModuleLength, Rails/OutputSafety

@@ -23,7 +23,7 @@
     <div class='card card--text mb-4'>
       <div class='card-body'>
         <%= button_to 'X', admin_discipline_requirement_path(discipline_requirement), class: 'btn btn-sm btn-outline-danger btn--no-padding px-1 edit-button', title: t_crud('delete', DisciplineRequirement), method: :delete, 'data-confirm': t('are_you_sure') %>
-        <%= link_to discipline_requirement.requirement.name, admin_discipline_requirement_path(discipline_requirement.requirement) %>
+        <%= link_to discipline_requirement.requirement.name, admin_requirement_path(discipline_requirement.requirement) %>
       </div>
     </div>
   <% end %>

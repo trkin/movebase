@@ -47,6 +47,11 @@ en:
         few: Requirements
         other: Requirements
         accusative: requirement
+      requirement:
+        one: Requirement
+        few: Requirements
+        other: Requirements
+        accusative: requirement
     attributes:
       user:
         name: Name
@@ -102,6 +107,9 @@ en:
           man_and_women: Man and women
           man: Man
           women: Women
+      requirement:
+        name: Name
+        description: Description
   activemodel:
     attributes:
       contact:

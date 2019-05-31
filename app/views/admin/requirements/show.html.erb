@@ -1,0 +1,13 @@
+<%
+  breadcrumb Requirement.model_name.human(count: 2) => admin_requirements_path, @requirement.name => nil
+%>
+<div class='card'>
+  <div class='card-body'>
+    <%= button_tag_open_modal edit_admin_requirement_path(@requirement), title: t_crud('edit', Requirement), pull_right: true %>
+    <div class='row'>
+      <div class='col-sm'>
+        <%= detail_view_list @requirement, :name, :description %>
+      </div>
+    </div>
+  </div>
+</div>

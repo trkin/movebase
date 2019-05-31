@@ -47,6 +47,11 @@ sr-latin:
         few: Uslovi
         other: Uslovi
         accusative: uslov
+      requirement:
+        one: Uslov
+        few: Uslovi
+        other: Uslovi
+        accusative: uslov
     attributes:
       user:
         name: Naziv
@@ -102,6 +107,9 @@ sr-latin:
           man_and_women: Muški i ženski
           man: Muški
           women: Ženski
+      requirement:
+        name: Naziv
+        description: Opis
   activemodel:
     attributes:
       contact:

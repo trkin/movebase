@@ -2,6 +2,8 @@ class Requirement < ApplicationRecord
   extend Mobility
   translates :name, :description
 
+  FIELDS = %i[name description]
+
   enum kind: %i[equipment sped registration]
 
   # if there is no requirement, than discipline is allowed

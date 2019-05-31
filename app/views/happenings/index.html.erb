@@ -10,6 +10,7 @@
     <th><%= Happening.human_attribute_name(:start_date) %></th>
     <th><%= Happening.human_attribute_name(:repeating) %></th>
     <th><%= Discipline.model_name.human(count: 2) %></th>
+    <th><%= Happening.human_attribute_name(:website) %></th>
   </thead>
   <tbody>
     <% @happenings.each do |happening| %>
@@ -40,6 +41,11 @@
             <% discipline_happening.discipline_happening_tags.each do |discipline_happening_tag| %>
               <span class='badge badge-primary'><%= discipline_happening_tag.tag.name %></span>
             <% end %>
+          <% end %>
+        </td>
+        <td>
+          <% if happening.website.present? %>
+            <%= link_to happening.website, happening.website %>
           <% end %>
         </td>
       </tr>

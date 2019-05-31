@@ -1,7 +1,7 @@
 <div id='remote-form'>
   <%= bootstrap_form_for @happening, url: @happening.new_record? ? admin_happenings_path : admin_happening_path(@happening), remote: true, layout: :horizontal do |f| %>
-    <div class='d-flex flex-column flex-md-row'>
-      <div>
+    <div class='row'>
+      <div class='col-sm'>
         <%= f.text_field :name %>
         <%= f.date_field :start_date, help: !f.object.multi_day? && add_alternative_helper(Happening.human_attribute_name(:end_date), '#end_date') %>
         <div id='end_date' class='<%= 'd-none-display' unless f.object.multi_day? %>'>
@@ -11,7 +11,9 @@
         <%= f.select :repeating, Happening.repeatings.keys.map { |k| [Happening.human_enum_name(:repeating, k), k] } %>
         <%= f.select :club_id, options_from_collection_for_select(Club.all, :id, :name, f.object.club_id) %>
       </div>
-      <%= render 'admin/venues/existing_or_new', f: f %>
+      <div class='col-sm'>
+        <%= render 'admin/venues/existing_or_new', f: f %>
+      </div>
     </div>
     <div class='remote-form__actions'>
       <% unless @happening.new_record? %>
