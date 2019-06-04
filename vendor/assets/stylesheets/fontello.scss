@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'fontello';
-  src: font-url('fontello.eot?63594883');
-  src: font-url('fontello.eot?63594883#iefix') format('embedded-opentype'),
-       font-url('fontello.woff2?63594883') format('woff2'),
-       font-url('fontello.woff?63594883') format('woff'),
-       font-url('fontello.ttf?63594883') format('truetype'),
-       font-url('fontello.svg?63594883#fontello') format('svg');
+  src: font-url('fontello.eot?52221151');
+  src: font-url('fontello.eot?52221151#iefix') format('embedded-opentype'),
+       font-url('fontello.woff2?52221151') format('woff2'),
+       font-url('fontello.woff?52221151') format('woff'),
+       font-url('fontello.ttf?52221151') format('truetype'),
+       font-url('fontello.svg?52221151#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: font-url('fontello.svg?63594883#fontello') format('svg');
+    src: font-url('fontello.svg?52221151#fontello') format('svg');
   }
 }
 */
@@ -76,7 +76,10 @@
 %icon-megaphone:before { @extend %icon-base; content: '\e812'; } /* '' */
 %icon-road:before { @extend %icon-base; content: '\e813'; } /* '' */
 %icon-bicycle:before { @extend %icon-base; content: '\e814'; } /* '' */
+%icon-twitter:before { @extend %icon-base; content: '\f099'; } /* '' */
 %icon-building:before { @extend %icon-base; content: '\f0f7'; } /* '' */
+%icon-google:before { @extend %icon-base; content: '\f1a0'; } /* '' */
+%icon-facebook-official:before { @extend %icon-base; content: '\f230'; } /* '' */
 %icon-question-circle-o:before { @extend %icon-base; content: '\f29c'; } /* '' */
 %icon-window-close-o:before { @extend %icon-base; content: '\f2d4'; } /* '' */
 
@@ -101,6 +104,9 @@
 .icon-megaphone { @extend %icon-megaphone; }
 .icon-road { @extend %icon-road; }
 .icon-bicycle { @extend %icon-bicycle; }
+.icon-twitter { @extend %icon-twitter; }
 .icon-building { @extend %icon-building; }
+.icon-google { @extend %icon-google; }
+.icon-facebook-official { @extend %icon-facebook-official; }
 .icon-question-circle-o { @extend %icon-question-circle-o; }
 .icon-window-close-o { @extend %icon-window-close-o; }

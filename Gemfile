@@ -55,6 +55,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # user authentication
 gem 'devise'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 # pick icons by: fontello open; {select icons}; fontello convert
 gem 'fontello_rails_converter'

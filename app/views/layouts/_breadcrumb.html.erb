@@ -47,6 +47,12 @@
           <%= link_to t('contact'), contact_path, class: '' %>
           <%= link_to t('my_devise.register'), new_user_registration_path, class: 'btn btn-info btn--no-padding px-2' %>
           <%= link_to t('my_devise.sign_in'), new_user_session_path, class: 'btn btn-primary btn--no-padding px-2' %>
+          <%= link_to user_facebook_omniauth_authorize_url(host: Rails.env.development? ? 'localhost' : Const.common[:default_url][:host]) do %>
+            <i class="demo-icon icon-facebook-official" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to user_google_oauth2_omniauth_authorize_url(host: Rails.env.development? ? 'localhost' : Const.common[:default_url][:host]) do %>
+            <i class="demo-icon icon-google" aria-hidden="true"></i>
+          <% end %>
         </div>
       <% end %>
     </li>

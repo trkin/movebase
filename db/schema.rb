@@ -149,6 +149,10 @@ ActiveRecord::Schema.define(version: 2019_05_29_094410) do
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "locale", default: "", null: false
+    t.string "initial_referer"
+    t.string "provider"
+    t.string "uid"
+    t.string "picture_url"
     t.boolean "superadmin", default: false, null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
