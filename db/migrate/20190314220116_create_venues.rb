@@ -9,8 +9,11 @@ class CreateVenues < ActiveRecord::Migration[6.0]
       t.string :state
       t.string :country
       t.string :zip
+      t.boolean :is_a_city
 
       t.timestamps
     end
+
+    add_index :venues, %i[latitude longitude]
   end
 end

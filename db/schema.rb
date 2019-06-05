@@ -188,8 +188,10 @@ ActiveRecord::Schema.define(version: 2019_05_29_094410) do
     t.string "state"
     t.string "country"
     t.string "zip"
+    t.boolean "is_a_city"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["latitude", "longitude"], name: "index_venues_on_latitude_and_longitude"
   end
 
   add_foreign_key "activity_associations", "activities"

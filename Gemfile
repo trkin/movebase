@@ -70,9 +70,6 @@ gem 'mobility', '~> 0.8.6'
 # money
 gem 'money-rails', '~> 1.12'
 
-# list of cities per state
-gem 'city-state'
-
 # recaptcha for contact form
 gem 'recaptcha'
 
@@ -84,3 +81,6 @@ gem 'letter_opener'
 
 # background job proccessing
 gem 'sidekiq'
+
+# geocoding
+gem 'geocoder'

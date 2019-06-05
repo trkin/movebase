@@ -29,6 +29,7 @@ sr-latin:
   where_are_you_going_on_the_weekend: Gde ćeš ići za vikend ?
   search: Pronađi
   please_select: Molim izaberite
+  please_select_item_name: Molim izaberite %{item_name}
   last_message: Poslednja poruka
   contact: Kontakt
   contact_description: Zahvalni smo za sve dobre i loše stvari na sajtu koje nam prijavljujete.

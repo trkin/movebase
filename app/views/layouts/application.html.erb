@@ -5,6 +5,9 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <% if no_cache? %>
+      <meta name="turbolinks-cache-control" content="no-cache">
+    <% end %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -26,10 +29,10 @@
       <%= render 'layouts/breadcrumb' %>
 
       <div class='d-flex align-items-stretch body__content'>
-        <%= render 'layouts/navigation', left_navigation: true %>
         <div class='pt-2 container'>
           <%= yield %>
         </div>
+        <%= render 'layouts/navigation', on_the_side: true %>
       </div>
 
       <%= render 'layouts/navigation' %>

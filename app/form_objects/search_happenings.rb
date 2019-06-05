@@ -1,8 +1,8 @@
 class SearchHappenings
   include ActiveModel::Model
-  attr_accessor :city_name, :activity_id
+  attr_accessor :venue_id, :activity_id
 
-  validates :city_name, :activity_id, presence: true
+  validates :venue_id, :activity_id, presence: true
 
   # all results are grouped by happening
 
@@ -19,15 +19,23 @@ class SearchHappenings
   end
 
   def activity
-    Activity.find activity_id
+    @activity ||= Activity.find activity_id
+  end
+
+  def venue
+    @venue ||= Venue.find venue_id
   end
 
   def all_cities
-    # TODO: Determine country based on IP address
-    # TODO: promote cities which are already in db
-    already = ['Beograd', 'Novi Sad']
-    already +
-      CS.states(:rs).keys.map { |state| CS.cities state }.flatten
+    Venue.cities.select(
+      <<~SQL
+        venues.*,
+        (
+          SELECT COUNT(happenings.id) FROM happenings
+          WHERE venue_id = venues.id
+        ) AS happening_count
+      SQL
+    ).order(happening_count: :desc)
   end
 
   def all_activities

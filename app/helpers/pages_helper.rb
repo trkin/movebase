@@ -27,4 +27,12 @@ module PagesHelper
   def fetch_breadcrumb_list
     @breadcrumb || {}
   end
+
+  def no_cache?
+    @no_cache
+  end
+
+  def no_cache
+    @no_cache = true
+  end
 end

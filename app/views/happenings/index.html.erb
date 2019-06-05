@@ -1,4 +1,5 @@
 <%
+  no_cache
   breadcrumb Happening.model_name.human(count: 2) => nil
 %>
 
@@ -13,7 +14,7 @@
     <th><%= Happening.human_attribute_name(:website) %></th>
   </thead>
   <tbody>
-    <% @happenings.each do |happening| %>
+    <% @search_happenings.results.each do |happening| %>
       <tr>
         <td>
           <% if happening.club.present? %>

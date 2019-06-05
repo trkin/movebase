@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: move_index_production
-  username: move_index
-  password: <%= ENV['MOVE_INDEX_DATABASE_PASSWORD'] %>

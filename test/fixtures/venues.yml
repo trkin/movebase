@@ -1,4 +1,18 @@
 # https://www.latlong.net/
+novi_sad:
+  name:
+    en: Novi Sad
+  latitude: 45.267136
+  longitude: 19.833549
+  is_a_city: true
+
+beograd:
+  name:
+    en: Beograd
+  latitude: 44.786568
+  longitude: 20.448921
+  is_a_city: true
+
 sodros:
   name:
     en: Sodros

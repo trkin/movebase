@@ -29,6 +29,7 @@ en:
   where_are_you_going_on_the_weekend: Where are you going on the weekend ?
   search: Search
   please_select: Please select
+  please_select_item_name: Please select %{item_name}
   last_message: Last message
   contact: Contact
   contact_description: We are grateful for all the good and bad things on the site

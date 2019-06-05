@@ -1,9 +1,14 @@
 require 'test_helper'
 
 class SearchHappeningsTest < ActiveSupport::TestCase
+  test '#all_cities' do
+    search_happenings = SearchHappenings.new
+
+    assert search_happenings.all_cities.index(venues(:novi_sad)) < search_happenings.all_cities.index(venues(:beograd))
+  end
+
   test 'find kayaking happenings: regata, personal, quadrathlon' do
-    kayaking = activities(:kayaking)
-    results = SearchHappenings.new(activity_id: kayaking.id).results
+    results = SearchHappenings.new(activity_id: activities(:kayaking).id).results
 
     assert_includes results, happenings(:kayak_regata)
     assert_includes results, happenings(:personal_long_kayaking)
@@ -11,6 +16,10 @@ class SearchHappeningsTest < ActiveSupport::TestCase
   end
 
   test 'find happening in 10km' do
+    novi_sad = venues(:novi_sad)
+    results = SearchHappenings.new(venue_id: novi_sad, activity_id: activities(:kayaking).id).results
+
+    assert_includes results, happenings(:kayak_regata)
   end
 
   test 'find happening this month' do

@@ -68,7 +68,7 @@ half_marathon:
   name:
     en: Half marthon
   club: personal_running
-  venue: strand
+  venue: novi_sad
   start_date: 2019-05-17
   end_date: 2019-05-17
   repeating: <%= Happening.repeatings[:yearly_repeating] %>

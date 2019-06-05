@@ -7,7 +7,7 @@ const INITIAL_ZOOM = 12
 
 // https://discourse.stimulusjs.org/t/call-stimulus-function-from-google-maps-callback/191
 window.dispatchMapAddressEvent = function(...detail) {
-  const event = new CustomEvent('google-map-address-callback', { detail: detail })
+  const event = new CustomEvent('googleMapAddressInitMap', { detail: detail })
   window.dispatchEvent(event)
 }
 
@@ -18,17 +18,17 @@ export default class extends Controller {
     // http://stackoverflow.com/questions/9228958/how-to-check-if-google-maps-api-is-loaded
     if (typeof google === 'object' && typeof google.maps === 'object') {
       console.log('connect google is loaded but we need to bind on newly created object')
-      this.initMap();
+      this.googleMapAddressInitMap();
     } else {
       console.log('connect loadScript')
       this.loadScript();
     }
   }
 
-  initMap(event) {
+  googleMapAddressInitMap(event) {
     let latitude = parseFloat(this.latitudeTarget.value) || INITIAL_LATITUDE
     let longitude = parseFloat(this.longitudeTarget.value) || INITIAL_LONGITUDE
-    console.log(`initMap ${latitude} ${longitude}`)
+    console.log(`googleMapAddressInitMap ${latitude} ${longitude}`)
     let zoom_level = INITIAL_ZOOM
     this.map = new google.maps.Map(this.mapTarget, {
       center: { lat: latitude, lng: longitude },
@@ -52,22 +52,22 @@ export default class extends Controller {
     autocomplete.bindTo('bounds', this.map);
     autocomplete.addListener('place_changed', function() {
       let place = autocomplete.getPlace();
-      window.dispatchWindowEvent('google-map-address-place-changed', marker, place)
+      window.dispatchWindowEvent('googleMapAddressPlaceChanged', marker, place)
       console.log('place_changed');
     });
 
     google.maps.event.addListener(marker, "dragend", function(e) {
-      window.dispatchWindowEvent('google-map-address-dragend', marker)
+      window.dispatchWindowEvent('googleMapAddressDragend', marker)
       console.log('dragend');
     });
   }
 
-  dragEnd(event) {
+  googleMapAddressDragEnd(event) {
     let [marker] = event.detail
     this.updateFields(marker.getPosition())
   }
 
-  placeChanged(event) {
+  googleMapAddressPlaceChanged(event) {
     let [marker, place] = event.detail
     if (!place.geometry) {
       window.alert("#{I18n.t('autocomplete_contains_no_geometry')}");

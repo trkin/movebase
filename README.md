@@ -1,8 +1,9 @@
 # Move Index
 
-This project aims to make it easier for people search for a group which they can
-join and move their body together. It index all activities like hiking, running,
-kayaking, and can perform filtering to specific disciplines like split boarding.
+This project aims to make it easier for people search for an event which they
+can join for any king of sport or recreational activity. It is an index of all
+activities like hiking, running, kayaking, and can perform filtering to specific
+discipline requirements like split boarding.
 
 # Model
 
@@ -44,10 +45,6 @@ http://canoeracing.org.uk/marathon/index.php/category/international-racing/intl_
 https://gopaddlingweek.info/go-paddling-week-event-finder/
 https://gopaddling.info/category/explore/
 
-TODO
-
-finish search happening test
-
 # What is your move index ?
 
 # Installation
@@ -64,51 +61,3 @@ Run tests with `rake`
 # Slides
 
 Navigate to `/slides`
-
-
-
-
-
-
-
-
-Mnoge stvari se odvijaju oko nas a da mi o tome nismo obavesteni. Na primer u 4.
-maja u Novom Sadu su se odigrala dva dogadjaja.
-Prvi je planinarski maraton na fruskoj gori
-
-
-i kajakaska regata na sodrosu.
-
-
-Nasa inovacija je sajt za prikaz svih sportskih dogadjaja, na kojima se moze
-ucestvovati samostalno ili preko kluba.
-Svaka disciplina ima odredjene uslove kao sto je neophodna oprema, vremenski
-limit, duzina staze i uzrast ucesnika.
-
-Nas sajt omogucava korisnicima da na laksi nacin pronadju dogadjaje koji njima
-odgovaraju
-
-Takodje se zainteresovani mogu dogovarati oko zajednickog prevoza.
-
-Na nasem sajtu mogu da se postave linkovi ka svim stranicama koje se objave
-nakon desavanja (rezultati, fotografije i video snimci)
-
-
-, a da ne moraju da listaju po fejsbuku i da prate odredjenu stranicu
-da bi nasli informacije o dogadjaju
-Pored pronalazenja dogadjaja, nas sajt omogucava da se povezu rezultati i
-objave nakon dogadjaja. Na primer, posle tradicionalnog godisnjeg maratona u
-Sidu, pojedinci i planinarske organizacije sirom Srbije mogu da naprave
-izvestaje na svojim sajtovima, da okace fotografije na svojim FB profilima,
-objave snimke na Youtube... 
-
-
-
-Da li ste znali da je na strandu u nedelju u 12h Triatlon i da na njemu mogu
-ucestvovati deca od 6 godina ?
-
-
-
-
-
-

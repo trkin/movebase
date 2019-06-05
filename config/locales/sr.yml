@@ -30,6 +30,7 @@ sr:
   where_are_you_going_on_the_weekend: 'Где ћеш ићи за викенд ?'
   search: Пронађи
   please_select: Молим изаберите
+  please_select_item_name: Молим изаберите %{item_name}
   last_message: Последња порука
   contact: Контакт
   contact_description: Захвални смо за све добре и лоше ствари на сајту које нам пријављујете.
