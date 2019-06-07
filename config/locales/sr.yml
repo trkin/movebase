@@ -1,11 +1,9 @@
 sr:
   site_title: My app
+  emoji: 🇷🇸
   home: Почетак
   language: језик
-  language_name:
-    en: English
-    sr: Српски
-    sr-latin: Srpski latinica
+  language_name: Српски
   sent_messages:
     # 1, 21, 31 ...
     one: '%{count} порука је послата'

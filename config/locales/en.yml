@@ -1,12 +1,10 @@
 ---
 en:
   site_title: Моја апликација
+  emoji: 🇲🇾
   home: Home
   language: language
-  language_name:
-    en: English
-    sr: Српски
-    sr-latin: Srpski latinica
+  language_name: English
   sent_messages:
     one: "%{count} message is sent"
     few: "%{count} messages are sent"

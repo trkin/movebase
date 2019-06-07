@@ -1,12 +1,10 @@
 ---
 sr-latin:
   site_title: Moja aplikacija
+  emoji: 🇷🇸
   home: Početak
   language: jezik
-  language_name:
-    en: English
-    sr: Српски
-    sr-latin: Srpski latinica
+  language_name: Srpski latinica
   sent_messages:
     one: "%{count} poruka je poslata"
     few: "%{count} poruke su poslate"

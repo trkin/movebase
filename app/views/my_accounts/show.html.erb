@@ -15,7 +15,7 @@
           <%= detail_view_one '', t('my_devise.currently_waiting_confirmation_for', item: current_user.unconfirmed_email) %>
         <% end %>
         <%= detail_view_one User.human_attribute_name(:password), button_tag_open_modal(change_password_my_account_path, text: t('change_item_name', item_name: User.human_attribute_name(:password))), label_class: 'col-sm-4' %>
-        <%= detail_view_one User.human_attribute_name(:locale), t("language_name.#{current_user.locale}") + ' ' + button_tag_open_modal(change_language_my_account_path, text: t('change_item_name', item_name: User.human_attribute_name(:locale))), label_class: 'col-sm-4' %>
+        <%= detail_view_one User.human_attribute_name(:locale), t('language_name', locale: current_user.locale) + ' ' + button_tag_open_modal(change_language_my_account_path, text: t('change_item_name', item_name: User.human_attribute_name(:locale))), label_class: 'col-sm-4' %>
       </dl>
       <hr>
       <dl class='row'>
