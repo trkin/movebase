@@ -1,11 +1,12 @@
 <% login_layout %>
 
 <% if devise_mapping.omniauthable? %>
-  <%= link_to user_google_oauth2_omniauth_authorize_path, class: 'btn btn-block button-google text-white d-flex justify-content-start align-items-center' do %>
-    <i class="fab fa-google" aria-hidden="true"></i>
-    <div class='text-center flex-grow-1'>
-      <%= t('sign_up_with_google') %>
-    </div>
+  <%= t('sign_up_with') %>
+  <%= link_to user_google_oauth2_omniauth_authorize_path, class: 'btn' do %>
+    <i class="demo-icon icon-google" aria-hidden="true"></i>
+  <% end %>
+  <%= link_to user_facebook_omniauth_authorize_path, class: 'btn' do %>
+    <i class="demo-icon icon-facebook-official" aria-hidden="true"></i>
   <% end %>
 
   <div class='text-center'>
