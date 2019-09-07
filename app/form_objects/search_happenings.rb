@@ -19,11 +19,11 @@ class SearchHappenings
   end
 
   def activity
-    @activity ||= Activity.find activity_id
+    @activity ||= Activity.find_by(id: activity_id) || Activity.first
   end
 
   def venue
-    @venue ||= Venue.find venue_id
+    @venue ||= Venue.find_by(id: venue_id) || Venue.first
   end
 
   def all_cities

@@ -2,6 +2,7 @@ class HappeningsController < ApplicationController
   before_action :_set_happening, except: %i[index search]
 
   def index
+    redirect_to happenings_path(search_happenings: { activity_id: '' }) and return if params[:search_happenings].blank?
     @search_happenings = SearchHappenings.new _search_happenings_params
   end
 

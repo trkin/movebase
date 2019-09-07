@@ -22,6 +22,7 @@
         </div>
       <% end %>
     </li>
+    
     <% if current_user&.superadmin? %>
       <li class='nav-item d-none d-sm-block'>
         <span class='text-success'>
@@ -40,4 +41,15 @@
       </li>
     <% end %>
   </ul>
+
+  <%# <div class='cad bg-light vertical-text'> %>
+  <%#   <div class='card-body'> %>
+  <%#     <h2><%= t('ad_on_side') %1></h2> %>
+  <%#     <p> %>
+  <%#       <%= t('ad_on_side_description') %1> %>
+  <%#       <%= link_to t('get_in_touch'), contact_path %1> %>
+  <%#     </p> %>
+  <%#   </div> %>
+  <%# </div> %>
+
 </div>

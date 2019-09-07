@@ -30,6 +30,7 @@ en:
   please_select_item_name: Please select %{item_name}
   last_message: Last message
   contact: Contact
+  get_in_touch: Get in touch
   contact_description: We are grateful for all the good and bad things on the site
     that you report to us.
   contact_thanks: Thank you for the message
@@ -47,3 +48,9 @@ en:
   create_new: Create new
   sign_up_with: Sign up with
   or: or
+  ad_on_top: Your ad on TOP of a page
+  ad_on_top_description: Check our pre-release discounts for ad placement
+  ad_on_bottom: Do you provide hosting or travel for this happening ?
+  ad_on_bottom_description: Your offer can be here for only 3cents per view
+  ad_on_side: Ad on side
+  ad_on_side_description: You small banner for only 2 cents per view
