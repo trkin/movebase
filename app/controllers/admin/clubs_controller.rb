@@ -2,7 +2,11 @@ class Admin::ClubsController < Admin::BaseController
   before_action :_set_club, except: %i[index new create]
 
   def index
-    @clubs = Club.all
+    @datatable = ClubsDatatable.new view_context
+  end
+
+  def search
+    render json: ClubsDatatable.new(view_context)
   end
 
   def show; end

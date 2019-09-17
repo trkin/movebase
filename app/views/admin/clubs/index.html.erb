@@ -7,7 +7,4 @@
   <%= t_crud('add_new', Club) %>
 <% end %>
 <br>
-<% @clubs.each do |club| %>
-  <%= link_to club.name, admin_club_path(club) %>
-  <br>
-<% end %>
+<%= @datatable.render_html search_admin_clubs_path(format: :json) %>

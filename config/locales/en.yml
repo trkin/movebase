@@ -1,7 +1,7 @@
 ---
 en:
   site_title: Моја апликација
-  emoji: 🇲🇾
+  emoji: "\U0001F1F2\U0001F1FE"
   home: Home
   language: language
   language_name: English
@@ -12,6 +12,7 @@ en:
   add: Add
   add_new: Add new
   add_more: Add more
+  show: See
   create: Create
   edit: Edit
   update: Update
@@ -54,3 +55,4 @@ en:
   ad_on_bottom_description: Your offer can be here for only 3cents per view
   ad_on_side: Ad on side
   ad_on_side_description: You small banner for only 2 cents per view
+  actions: Actions

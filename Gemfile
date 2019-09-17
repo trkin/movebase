@@ -84,3 +84,7 @@ gem 'sidekiq'
 
 # geocoding
 gem 'geocoder'
+
+# datatables
+gem 'trk_datatables', '~>0.1'
+# gem 'trk_datatables', path: '~/gems/trk_datatables'

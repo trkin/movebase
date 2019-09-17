@@ -12,6 +12,7 @@ sr:
   add: Додај
   add_new: Додај нови
   add_more: Додаj jош
+  show: Види
   create: Направи
   edit: Уреди
   update: Ажурирање
@@ -54,5 +55,5 @@ sr:
   ad_on_bottom_description: Ваша понуда може да се нађе на овом месту за само 3 динара
     по приказу.
   ad_on_side: Реклама са стране
-  ad_on_side_description: Ваш банер за само 2 динара
-    по приказу.
+  ad_on_side_description: Ваш банер за само 2 динара по приказу.
+  actions: Акције

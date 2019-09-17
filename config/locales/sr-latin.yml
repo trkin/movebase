@@ -12,6 +12,7 @@ sr-latin:
   add: Dodaj
   add_new: Dodaj novi
   add_more: Dodaj još
+  show: Vidi
   create: Napravi
   edit: Uredi
   update: Ažuriranje
@@ -53,3 +54,4 @@ sr-latin:
   ad_on_bottom_description: Vaša ponuda može da se nađe na ovom mestu za samo 3 dinara po prikazu.
   ad_on_side: Reklama sa strane
   ad_on_side_description: Vaš baner za samo 2 dinara po prikazu.
+  actions: Akcije

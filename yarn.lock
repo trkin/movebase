@@ -1891,6 +1891,7 @@ dashdash@^1.12.0:
 datatables.net-bs4@^1.10.19:
   version "1.10.19"
   resolved "https://registry.yarnpkg.com/datatables.net-bs4/-/datatables.net-bs4-1.10.19.tgz#0608dff22008cf3c7b8a68b1bc702ed255b404fb"
+  integrity sha512-pgeP17w4aPR7HIxIwuJghfqXULjdg1K6xMUUKDyCERJRSNNK4MRToFfELtIsluLNN555YBK4Kx8nihX5/ZT1Fw==
   dependencies:
     datatables.net "1.10.19"
     jquery ">=1.7"
@@ -1898,6 +1899,7 @@ datatables.net-bs4@^1.10.19:
 datatables.net@1.10.19, datatables.net@^1.10.19:
   version "1.10.19"
   resolved "https://registry.yarnpkg.com/datatables.net/-/datatables.net-1.10.19.tgz#97a1ed41c85e62d61040603481b59790a172dd1f"
+  integrity sha512-+ljXcI6Pj3PTGy5pesp3E5Dr3x3AV45EZe0o1r0gKENN2gafBKXodVnk2ypKwl2tTmivjxbkiqoWnipTefyBTA==
   dependencies:
     jquery ">=1.7"
 
@@ -5718,6 +5720,14 @@ trim-newlines@^1.0.0:
 trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
+
+trk_datatables@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/trk_datatables/-/trk_datatables-1.0.1.tgz#c8dcbb23a6b367b5eaeda4ebbcf8fa18a629c101"
+  integrity sha512-jwRGGkwb7Ef/eJdvwZ+OEpXEMMoGOp1oOivQGtxuLXNuibV/+SFm7RT1aundotl+LG7wn8hc6t198l7OkG/D5w==
+  dependencies:
+    datatables.net "^1.10.19"
+    datatables.net-bs4 "^1.10.19"
 
 "true-case-path@^1.0.2":
   version "1.0.3"

@@ -47,6 +47,9 @@ Rails.application.routes.draw do
     resources :activities
     resources :clubs do
       resources :activity_clubs, shallow: true
+      collection do
+        post :search
+      end
     end
     resources :venues
     resources :happenings do
