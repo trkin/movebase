@@ -1,0 +1,5 @@
+<%
+  breadcrumb Club.model_name.human(count: 2) => nil
+%>
+
+<%= @datatable.render_html search_clubs_path(format: :json) %>

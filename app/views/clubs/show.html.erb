@@ -1,0 +1,30 @@
+<%
+  breadcrumb Club.model_name.human(count: 2) => clubs_path, @club.name => nil
+%>
+<div class='card'>
+  <div class='card-body'>
+    <div class='row'>
+      <div class='col'>
+        <%= detail_view_list @club, *Club::FIELDS %>
+      </div>
+      <div class='col'>
+        <div class='map map--300px'
+             data-controller='google-map'
+             data-google-map-latitude='<%= @club.venue.latitude %>'
+             data-google-map-longitude='<%= @club.venue.longitude %>'
+             data-action='google-map-callback@window->google-map#initMap'
+             >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='card-deck'>
+  <% @club.activity_clubs.each do |activity_club| %>
+    <div class='card card--text'>
+      <div class='card-body'>
+        <%= activity_club.activity.name %>
+      </div>
+    </div>
+  <% end %>
+</div>

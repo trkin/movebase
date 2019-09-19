@@ -38,6 +38,12 @@ Rails.application.routes.draw do
     patch :update
   end
 
+  resources :clubs do
+    collection do
+      post :search
+    end
+  end
+
   resource :my_clubs do
   end
 

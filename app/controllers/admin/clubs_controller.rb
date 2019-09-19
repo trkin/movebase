@@ -1,5 +1,5 @@
 class Admin::ClubsController < Admin::BaseController
-  before_action :_set_club, except: %i[index new create]
+  before_action :_set_club, except: %i[index search new create]
 
   def index
     @datatable = ClubsDatatable.new view_context
