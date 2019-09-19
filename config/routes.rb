@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'sample-error-in-javascript-ajax', to: 'pages#sample_error_in_javascript_ajax'
   post 'notify-javascript-error', to: 'pages#notify_javascript_error'
   get 'sample-error-in-sidekiq', to: 'pages#sample_error_in_sidekiq'
+  get '/test', to: 'pages#test'
 
   resource :contact
 

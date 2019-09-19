@@ -1,4 +1,3 @@
-<%= link_to 'landing', landing_path %>
 <%= I18n.t('sent_messages', count: 1) %><br>
 <%= I18n.t('sent_messages', count: 2) %><br>
 <%= I18n.t('sent_messages', count: 5) %><br>
@@ -20,3 +19,29 @@
   user.errors
   user.errors.full_messages.to_sentence
 %><br>
+<% c = Club.new
+Mobility.with_locale(:sr) { c.name = 'Шодр' }
+Mobility.with_locale(:'sr-latin') { c.name = 'Šodr' }
+%>
+sr and sr-latin to:
+<% I18n.available_locales.each do |locale| %>
+  <b><%= locale %></b> <%= Mobility.with_locale(locale) { c.name } %>
+<% end %>
+<br>
+
+<% c = Club.new
+Mobility.with_locale(:sr) { c.name = 'Шодр' }
+%>
+sr to:
+<% I18n.available_locales.each do |locale| %>
+  <b><%= locale %></b> <%= Mobility.with_locale(locale) { c.name } %>
+<% end %>
+<br>
+
+<% c = Club.new
+Mobility.with_locale(:en) { c.name = 'Engles' }
+%>
+en to:
+<% I18n.available_locales.each do |locale| %>
+  <b><%= locale %></b> <%= Mobility.with_locale(locale) { c.name } %>
+<% end %>
