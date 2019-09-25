@@ -2,7 +2,7 @@ class Requirement < ApplicationRecord
   extend Mobility
   translates :name, :description
 
-  FIELDS = %i[name description]
+  FIELDS = %i[name description].freeze
 
   enum kind: %i[equipment sped registration]
 

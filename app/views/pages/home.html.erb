@@ -11,9 +11,21 @@
     <div class='login--max-width mx-auto bg-white shadow p-4'>
       <p><%= t('choose_place_and_activity') %></p>
 
-      <%= bootstrap_form_for @search_happenings, url: happenings_path, method: :get do |f| %>
-        <%= f.select :venue_id, "<option #{ "selected='selected'".html_safe unless f.object.activity_id } disabled='disabled'>#{t('please_select_item_name', item_name: Venue.human_attribute_name(:city))}</option>".html_safe + options_from_collection_for_select(f.object.all_cities, :id, :name), { hide_label: true }, required: true %>
-        <%= f.select :activity_id, "<option #{ "selected='selected'".html_safe unless f.object.activity_id } disabled='disabled'>#{t('please_select_item_name', item_name: Activity.model_name.human)}</option>".html_safe + options_from_collection_for_select(f.object.all_activities, :id, :name), { hide_label: true }, required: true %>
+      <%= bootstrap_form_with url: index_for_location_and_activities_happenings_path, method: :get, local: true do |f| %>
+        <%
+          all_cities = Venue.cities.select(
+            <<~SQL
+              venues.*,
+              (
+                SELECT COUNT(happenings.id) FROM happenings
+                WHERE venue_id = venues.id
+              ) AS happening_count
+            SQL
+          ).order(happening_count: :desc)
+        %>
+        <%= f.select :venue_id, "<option disabled='disabled'>#{t('please_select_item_name', item_name: Venue.human_attribute_name(:city))}</option>".html_safe + options_from_collection_for_select(all_cities, :id, :name), { hide_label: true }, required: true %>
+        <%= f.select 'activity_names[]', "<option disabled='disabled'>#{t('please_select_item_name', item_name: Activity.model_name.human)}</option>".html_safe + options_from_collection_for_select(Activity.all, :name, :name), { hide_label: true }, required: true %>
+        <%= f.hidden_field HappeningsForActivityNamesDatatable.form_field_name('happenings.start_date'), value: HappeningsForActivityNamesDatatable.range_string(Time.zone.today..(Time.zone.today + 1.year)) %>
         <%= f.submit t('search'), class: 'btn btn-success btn-block' %>
       <% end %>
     </div>

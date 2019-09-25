@@ -17,6 +17,7 @@ sr:
   edit: Уреди
   update: Ажурирање
   delete: Избриши
+  drop: Избаци
   are_you_sure: Да ли сте сигурни ?
   are_you_sure_to_remove_item_name: Да ли сте сигурни да желите да обришете %{item_name}
     ?

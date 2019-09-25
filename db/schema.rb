@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_29_094410) do
+ActiveRecord::Schema.define(version: 2019_09_24_063943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -56,15 +56,15 @@ ActiveRecord::Schema.define(version: 2019_05_29_094410) do
   end
 
   create_table "clubs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "venue_id", null: false
+    t.uuid "venue_id"
     t.jsonb "name", default: {}
     t.string "website"
     t.string "email"
     t.string "phone"
-    t.boolean "personal", default: false, null: false
     t.string "national_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "kind", default: 0, null: false
     t.index ["venue_id"], name: "index_clubs_on_venue_id"
   end
 
@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 2019_05_29_094410) do
 
   create_table "happenings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "venue_id", null: false
-    t.uuid "club_id"
+    t.uuid "club_id", null: false
     t.jsonb "name", default: {}
     t.date "start_date", null: false
     t.date "end_date", null: false
@@ -149,6 +149,10 @@ ActiveRecord::Schema.define(version: 2019_05_29_094410) do
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "locale", default: "", null: false
+    t.string "initial_referer"
+    t.string "provider"
+    t.string "uid"
+    t.string "picture_url"
     t.boolean "superadmin", default: false, null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

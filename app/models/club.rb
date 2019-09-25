@@ -4,6 +4,8 @@ class Club < ApplicationRecord
 
   FIELDS = %i[name website email phone national_id].freeze
 
+  enum kind: %i[sport_organization personal]
+
   attr_accessor :existing_or_new
 
   belongs_to :venue

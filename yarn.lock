@@ -1907,6 +1907,14 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
+daterangepicker@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/daterangepicker/-/daterangepicker-3.0.5.tgz#97180f233cf9c222cd0767b9c37c2926976d633a"
+  integrity sha512-BoVV+OjVARWNE15iF+3Y2QIMioAD2UODHvJwIq+NtG0vxh61dXRmOMXlw2dsvxS8KY4n5uvIcBfIPiEiiGJcBg==
+  dependencies:
+    jquery ">=1.10"
+    moment "^2.9.0"
+
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -3167,7 +3175,7 @@ jbox@^1.0.2:
   dependencies:
     jquery "^3.4.1"
 
-jquery@>=1.7, jquery@^3.4.1:
+jquery@>=1.10, jquery@>=1.7, jquery@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
 
@@ -3595,6 +3603,11 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdir
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+moment@^2.9.0:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -5721,13 +5734,14 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-trk_datatables@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/trk_datatables/-/trk_datatables-1.0.2.tgz#cb78697598df17e7b8dc959e5cf941be94412371"
-  integrity sha512-H56JJZSKWi4Jhb32TxsrdjkX62+19yUzbz57SfzUyHco0xvngUy3k2QacoqBaIy5GBNWbf8eZrihlD+8papxMA==
+trk_datatables@^1.0.2:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/trk_datatables/-/trk_datatables-1.0.4.tgz#c3635ec83129a6cb175a60207d8952725ff1dc3e"
+  integrity sha512-MiNacZTw0QIAWhezI6PQlp2ZtuBz7l5iWdXgLJXClgCpHf8y/Pl44fa2lfPnqWz2X9I2DShg1HzthPWFPHKSfw==
   dependencies:
     datatables.net "^1.10.19"
     datatables.net-bs4 "^1.10.19"
+    daterangepicker "^3.0.5"
 
 "true-case-path@^1.0.2":
   version "1.0.3"

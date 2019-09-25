@@ -3,7 +3,23 @@ kayak_club:
     en: Kayak club
   venue: sodros
 
+munich_kayak_club:
+  name:
+    en: Munich Kayak club
+  venue: munich
+
 hiking_club:
   name:
     en: Hiking club
   venue: sodros
+
+personal_club:
+  name:
+    en: Personal club
+  kind: <%= Club.kinds[:personal] %>
+  venue: novi_sad
+
+triathlon_club:
+  name:
+    en: Triathlon club
+  venue: novi_sad

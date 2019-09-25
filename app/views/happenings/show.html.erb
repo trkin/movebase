@@ -29,7 +29,7 @@
       </div>
       <div class='col'>
         <%= link_to @happening.venue.name, admin_venue_path(@happening.venue) %>
-        <div class='map map--50percent'
+        <div class='map map--300px'
              data-controller='google-map'
              data-google-map-latitude='<%= @happening.venue.latitude %>'
              data-google-map-longitude='<%= @happening.venue.longitude %>'

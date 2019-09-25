@@ -11,3 +11,4 @@ document.addEventListener('turbolinks:load', () => {
 
   trkDatatables.initialise()
 })
+

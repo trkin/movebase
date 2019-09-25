@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   resources :happenings do
     collection do
       post :search
+      get :index_for_location_and_activities
+      post :search_for_location_and_activities
     end
   end
 

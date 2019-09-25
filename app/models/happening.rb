@@ -8,7 +8,7 @@ class Happening < ApplicationRecord
 
   belongs_to :venue
   accepts_nested_attributes_for :venue
-  belongs_to :club, optional: true
+  belongs_to :club
 
   has_many :discipline_happenings, dependent: :destroy
 

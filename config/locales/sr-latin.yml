@@ -17,6 +17,7 @@ sr-latin:
   edit: Uredi
   update: Ažuriranje
   delete: Izbriši
+  drop: Izbaci
   are_you_sure: Da li ste sigurni ?
   are_you_sure_to_remove_item_name: Da li ste sigurni da želite da obrišete %{item_name}
     ?

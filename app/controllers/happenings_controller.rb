@@ -1,12 +1,17 @@
 class HappeningsController < ApplicationController
-  before_action :_set_happening, except: %i[index search]
+  before_action :_set_happening, except: %i[index index_for_location_and_activities search_for_location_and_activities]
 
   def index
-    redirect_to happenings_path(search_happenings: { activity_id: '' }) and return if params[:search_happenings].blank?
-    @search_happenings = SearchHappenings.new _search_happenings_params
+    redirect_to root_path
   end
 
-  def search; end
+  def index_for_location_and_activities
+    @datatable = HappeningsForActivityNamesDatatable.new view_context
+  end
+
+  def search_for_location_and_activities
+    render json: HappeningsForActivityNamesDatatable.new(view_context)
+  end
 
   def show; end
 

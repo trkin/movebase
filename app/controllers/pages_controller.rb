@@ -3,9 +3,7 @@ class PagesController < ApplicationController
     notify_javascript_error
   ]
 
-  def home
-    @search_happenings = SearchHappenings.new
-  end
+  def home; end
 
   def sign_in_development
     return unless Rails.env.development? || Rails.application.credentials.is_staging || current_user&.superadmin?
@@ -19,6 +17,7 @@ class PagesController < ApplicationController
     raise 'This is sample_error on server'
   end
 
+  # rubocop:disable Rails/OutputSafety
   def sample_error_in_javascript
     render layout: true, html: %(
       Calling manual_js_error_now
@@ -35,6 +34,7 @@ class PagesController < ApplicationController
       <a href="/sample-error-in-javascript-ajax" data-remote="true" id="l">Trigger error in ajax</a>
     ).html_safe
   end
+  # rubocop:enable Rails/OutputSafety
 
   def sample_error_in_javascript_ajax
     render js: %(
