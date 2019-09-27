@@ -5734,7 +5734,7 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-trk_datatables@^1.0.2:
+trk_datatables@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/trk_datatables/-/trk_datatables-1.0.4.tgz#c3635ec83129a6cb175a60207d8952725ff1dc3e"
   integrity sha512-MiNacZTw0QIAWhezI6PQlp2ZtuBz7l5iWdXgLJXClgCpHf8y/Pl44fa2lfPnqWz2X9I2DShg1HzthPWFPHKSfw==
