@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
   around_action :_set_locale_from_session
+  # before_action :sleep_some_time
+
+  def sleep_some_time
+    sleep 2
+  end
 
   def _set_locale_from_session
     locale = current_user&.locale ||

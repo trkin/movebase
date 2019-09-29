@@ -8,21 +8,15 @@ class HappeningsForActivityNamesDatatable < BaseDatatable
     }
   end
 
-  # use activities as params since I do not want to write sql for
-  # activity.self_and_used_in_activities
-  # and we should extract this info for marketing usage
+  # use activities as params since we need to marketing usage
   def activities
     Activity.i18n.where name: @view.params[:activity_names]
-  end
-
-  def self_and_used_in_activities
-    activities.map(&:self_and_used_in_activities).flatten
   end
 
   def all_items
     Happening
       .left_outer_joins(discipline_happenings: { discipline: :activity })
-      .where(discipline_happenings: { disciplines: { activity: self_and_used_in_activities } })
+      .where(discipline_happenings: { disciplines: { activity: activities } })
       .joins(:club, :venue)
   end
 

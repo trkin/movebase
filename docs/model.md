@@ -6,9 +6,9 @@ activities in activity_associations table.
 Discipline (K2 number_of_crew=2) belongs to activity and has it's specific
 discipline_requirements (K2 boat) but also discipline_happening conditions (age
 interval, distance, max time).
-Properties which are not required (like fresh water, terain road, cros_country)
-or hard to measure (like walking speed)
-are defined in discipline_happening_tags.
+Properties which are not required (for example: fresh water, terain road,
+cros_country) or hard to measure (for example: walking speed) are defined in
+discipline_happening_tags.
 * skyrunning vertical 1KM TERAIN=cross_country
 * stairs run TERAIN=stairs
 * cross duathlon 2-6y is modeled with AGE_MIN, AGE_MAX, LENGTH(total 2km),

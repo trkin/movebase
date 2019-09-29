@@ -7,7 +7,7 @@
   <span class='show-on-hover'>
     <span class='badge badge-secondary pl-4'>
       <%= activity.name %>
-      <% remove_path = index_for_location_and_activities_happenings_path(params.merge(activity_names: params[:activity_names] - [activity.name])) %>
+      <% remove_path = index_for_location_and_activities_happenings_path(params.merge(activity_names: (params[:activity_names] || []) - [activity.name])) %>
       <%= link_to remove_path do %>
         <i class='demo-icon icon-cancel show-on-hover-target btn-danger' title='<%= t_crud('drop', Activity) %>'></i>
       <% end %>
@@ -21,7 +21,15 @@
   <div class='dropdown-menu' aria-labelledby='dropdownAddActivity'>
     <% Activity.i18n.where.not(name: params[:activity_names]).each do |activity| %>
       <% add_path = index_for_location_and_activities_happenings_path(params.merge(activity_names: (params[:activity_names] || []) + [activity.name])) %>
-      <%= link_to activity.name, add_path, class:'dropdown-item' %>
+      <% add_related_path = index_for_location_and_activities_happenings_path(params.merge(activity_names: (params[:activity_names] || []) + activity.self_and_used_in_activities.map(&:name))) %>
+      <% if activity.self_and_used_in_activities.length > 1 %>
+        <div class='dropdown-item'>
+          <%= link_to activity.name, add_path, class: 'dropdown-item--inline' %>
+          <%= link_to '∈', add_related_path, class: 'btn btn-small btn-info dropdown-item--inline', title: t('activity_name_and_used_in_activities_name', activity_name: activity.name, activities_name: activity.self_and_used_in_activities.map(&:name).to_sentence) %>
+        </div>
+      <% else %>
+        <%= link_to activity.name, add_path, class:'dropdown-item' %>
+      <% end %>
     <% end %>
   </div>
 </div>

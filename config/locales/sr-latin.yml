@@ -56,3 +56,4 @@ sr-latin:
   ad_on_side: Reklama sa strane
   ad_on_side_description: Vaš baner za samo 2 dinara po prikazu.
   actions: Akcije
+  activity_name_and_used_in_activities_name: "%{activity_name} i povezane aktivnosti: %{activities_name}"

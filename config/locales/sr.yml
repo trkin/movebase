@@ -58,3 +58,4 @@ sr:
   ad_on_side: Реклама са стране
   ad_on_side_description: Ваш банер за само 2 динара по приказу.
   actions: Акције
+  activity_name_and_used_in_activities_name: "%{activity_name} и повезане активности: %{activities_name}"

@@ -11,7 +11,7 @@
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
     "stimulus": "^1.1.1",
-    "trk_datatables": "^1.0.4",
+    "trk_datatables": "^1.0.5",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
