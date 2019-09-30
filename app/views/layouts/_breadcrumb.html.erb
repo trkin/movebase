@@ -49,10 +49,10 @@
           </div>
           <%= link_to t('my_devise.sign_in'), new_user_session_path, class: 'btn btn-primary btn--no-padding px-2' %>
           <div class='d-none d-sm-inline'>
-            <%= link_to user_facebook_omniauth_authorize_url(host: Rails.env.development? ? 'localhost' : Const.common[:default_url][:host]) do %>
+            <%= link_to user_facebook_omniauth_authorize_url(host: Const.common[:default_url][:host]) do %>
               <i class="demo-icon icon-facebook-official" aria-hidden="true"></i>
             <% end %>
-            <%= link_to user_google_oauth2_omniauth_authorize_url(host: Rails.env.development? ? 'localhost' : Const.common[:default_url][:host]) do %>
+            <%= link_to user_google_oauth2_omniauth_authorize_url(host: Const.common[:default_url][:host]) do %>
               <i class="demo-icon icon-google" aria-hidden="true"></i>
             <% end %>
           </div>

@@ -261,10 +261,10 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook,
-                  Rails.application.credentials.facebook_key,
-                  Rails.application.credentials.facebook_secret,
-                  scope: "public_profile,email",
-                  info_fields: "email,name"
+                  Rails.application.credentials.facebook_app_id,
+                  Rails.application.credentials.facebook_app_secret,
+                  scope: 'public_profile,email',
+                  info_fields: 'email,name'
   config.omniauth :google_oauth2,
                   Rails.application.credentials.google_client_id,
                   Rails.application.credentials.google_client_secret
