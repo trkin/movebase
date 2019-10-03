@@ -35,6 +35,14 @@ fontello open
 bundle exec fontello convert
 ```
 
+I18n uses following locale files
+
+```
+config/locales/*
+app/javascript/locales/*
+app/javascript/const.js
+```
+
 # Tests
 
 Run tests with `rake`

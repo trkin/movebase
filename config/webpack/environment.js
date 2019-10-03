@@ -7,5 +7,5 @@ environment.plugins.append('Provide', new webpack.ProvidePlugin({
 }));
 
 // disable amd since datatables will load it
-environment.config.set('amd', false)
+// environment.config.set('amd', false)
 module.exports = environment
