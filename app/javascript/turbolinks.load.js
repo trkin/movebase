@@ -1,7 +1,6 @@
 // https://stephanwagner.me/jBox/get_started#tooltips
 const jBox = require('jbox')
-const $ = require('jquery')
-// const trkDatatables = require('trk_datatables')(window, $)
+const trkDatatables = require('trk_datatables')
 import { I18N } from 'const'
 
 document.addEventListener('turbolinks:load', () => {
@@ -10,9 +9,9 @@ document.addEventListener('turbolinks:load', () => {
     attach: '[title]'
   })
 
-  // trkDatatables.initialise({
-  //   language: I18N.datatables[document.documentElement.lang],
-  // })
+  trkDatatables.initialise({
+    language: I18N.datatables[document.documentElement.lang],
+  })
 
 
   $('[data-select2-initialize]').each(function() {

@@ -1889,17 +1889,17 @@ dashdash@^1.12.0:
     assert-plus "^1.0.0"
 
 datatables.net-bs4@^1.10.19:
-  version "1.10.19"
-  resolved "https://registry.yarnpkg.com/datatables.net-bs4/-/datatables.net-bs4-1.10.19.tgz#0608dff22008cf3c7b8a68b1bc702ed255b404fb"
-  integrity sha512-pgeP17w4aPR7HIxIwuJghfqXULjdg1K6xMUUKDyCERJRSNNK4MRToFfELtIsluLNN555YBK4Kx8nihX5/ZT1Fw==
+  version "1.10.20"
+  resolved "https://registry.yarnpkg.com/datatables.net-bs4/-/datatables.net-bs4-1.10.20.tgz#beff1c8d3510826c0678eaa055270607c0e53882"
+  integrity sha512-kQmMUMsHMOlAW96ztdoFqjSbLnlGZQ63iIM82kHbmldsfYdzuyhbb4hTx6YNBi481WCO3iPSvI6YodNec46ZAw==
   dependencies:
-    datatables.net "1.10.19"
+    datatables.net "1.10.20"
     jquery ">=1.7"
 
-datatables.net@1.10.19, datatables.net@^1.10.19:
-  version "1.10.19"
-  resolved "https://registry.yarnpkg.com/datatables.net/-/datatables.net-1.10.19.tgz#97a1ed41c85e62d61040603481b59790a172dd1f"
-  integrity sha512-+ljXcI6Pj3PTGy5pesp3E5Dr3x3AV45EZe0o1r0gKENN2gafBKXodVnk2ypKwl2tTmivjxbkiqoWnipTefyBTA==
+datatables.net@1.10.20, datatables.net@^1.10.19:
+  version "1.10.20"
+  resolved "https://registry.yarnpkg.com/datatables.net/-/datatables.net-1.10.20.tgz#9d65ecc3c83cbe7baa4fa5a053405c8fe42c1350"
+  integrity sha512-4E4S7tTU607N3h0fZPkGmAtr9mwy462u+VJ6gxYZ8MxcRIjZqHy3Dv1GNry7i3zQCktTdWbULVKBbkAJkuHEnQ==
   dependencies:
     jquery ">=1.7"
 
@@ -2867,6 +2867,14 @@ import-local@^2.0.0:
   dependencies:
     pkg-dir "^3.0.0"
     resolve-cwd "^2.0.0"
+
+imports-loader@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/imports-loader/-/imports-loader-0.8.0.tgz#030ea51b8ca05977c40a3abfd9b4088fe0be9a69"
+  integrity sha512-kXWL7Scp8KQ4552ZcdVTeaQCZSLW+e6nJfp3cwUMB673T7Hr98Xjx5JK+ql7ADlJUvj1JS5O01RLbKoutN5QDQ==
+  dependencies:
+    loader-utils "^1.0.2"
+    source-map "^0.6.1"
 
 imurmurhash@^0.1.4:
   version "0.1.4"
@@ -5739,14 +5747,15 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-trk_datatables@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/trk_datatables/-/trk_datatables-1.0.5.tgz#df9e082d205196752509d3671ce9c52882dce49e"
-  integrity sha512-MlIErynzGwv68jCLP/mq/r5fL5kAM/rtDaVzySloHWXugF3EB8MPPheS+rDxQnqs8QXBI98AIv9bFeZ9/1zEzA==
+trk_datatables@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/trk_datatables/-/trk_datatables-1.0.6.tgz#852ff0a9f40e468fca493417bb7b15ee03cba370"
+  integrity sha512-CWpYxV8T4vbDThHd0EYlaeAxRl8Gz0+mekLxB/hieo1TWKSXxgEWjwmDV/EC1fkfHKTHequJr4RqtDwqJ3+YnQ==
   dependencies:
     datatables.net "^1.10.19"
     datatables.net-bs4 "^1.10.19"
     daterangepicker "^3.0.5"
+    imports-loader "^0.8.0"
 
 "true-case-path@^1.0.2":
   version "1.0.3"

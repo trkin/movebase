@@ -6,6 +6,4 @@ environment.plugins.append('Provide', new webpack.ProvidePlugin({
   Popper: ['popper.js', 'default']
 }));
 
-// disable amd since datatables will load it
-// environment.config.set('amd', false)
 module.exports = environment
