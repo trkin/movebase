@@ -54,7 +54,8 @@ en:
   ad_on_top_description: Check our pre-release discounts for ad placement
   ad_on_bottom: Do you provide hosting or travel for this happening ?
   ad_on_bottom_description: Your offer can be here for only 3cents per view
-  ad_on_side: Ad on side
-  ad_on_side_description: Your small banner for only 2 cents per view
+  ad_on_side: Commercials
+  ad_on_side_description: Banner for sports club, event or equipment
   actions: Actions
-  activity_name_and_used_in_activities_name: "%{activity_name} and related activities: %{activities_name}"
+  activity_name_and_used_in_activities_name: "%{activity_name} and related activities:
+    %{activities_name}"

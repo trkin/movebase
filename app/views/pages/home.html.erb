@@ -23,8 +23,8 @@
             SQL
           ).order(happening_count: :desc)
         %>
-        <%= f.select :venue_id, "<option disabled='disabled'>#{t('please_select_item_name', item_name: Venue.human_attribute_name(:city))}</option>".html_safe + options_from_collection_for_select(all_cities, :id, :name), { hide_label: true }, required: true, 'data-select2-initialize': true %>
-        <%= f.select 'activity_names[]', "<option disabled='disabled'>#{t('please_select_item_name', item_name: Activity.model_name.human)}</option>".html_safe + options_from_collection_for_select(Activity.all, :name, :name), { hide_label: true }, required: true, 'data-select2-initialize': true %>
+        <%= f.select :venue_id, "<option disabled='disabled'>#{t('please_select_item_name', item_name: Venue.human_attribute_name(:city))}</option>".html_safe + options_from_collection_for_select(all_cities, :id, :name), { hide_label: true }, required: true, 'data-select2-initialize': true, placeholder: t('please_select_item_name', item_name: Venue.human_attribute_name(:city)) %>
+        <%= f.select 'activity_names[]', "<option disabled='disabled'>#{t('please_select_item_name', item_name: Activity.model_name.human)}</option>".html_safe + options_from_collection_for_select(Activity.all, :name, :name), { hide_label: true }, required: true, 'data-select2-initialize': true, placeholder: t('please_select_item_name', item_name: Activity.model_name.human) %>
         <%= f.hidden_field HappeningsForActivityNamesDatatable.form_field_name('happenings.start_date'), value: HappeningsForActivityNamesDatatable.range_string(Time.zone.today..(Time.zone.today + 1.year)) %>
         <%= f.submit t('search'), class: 'btn btn-success btn-block' %>
       <% end %>

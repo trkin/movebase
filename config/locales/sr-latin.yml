@@ -39,7 +39,7 @@ sr-latin:
   only_for_superadmin: Samo za super administratora
   send: Pošalji
   log_in_as: Uloguj se kao
-  dashboard: Kontrolna tabla
+  dashboard: Početak
   my_account: Moj nalog
   my_clubs: Moji klubovi
   change_item_name: Promeni %{item_name}
@@ -53,7 +53,7 @@ sr-latin:
   ad_on_top_description: Proverite naše akcijske cene baner prostora. Naredne godine se cene menjaju i zato požurite.
   ad_on_bottom: Da li pružate smeštaj ili prevoz za ovaj događaj ?
   ad_on_bottom_description: Vaša ponuda može da se nađe na ovom mestu za samo 3 dinara po prikazu.
-  ad_on_side: Reklama sa strane
-  ad_on_side_description: Vaš baner za samo 2 dinara po prikazu.
+  ad_on_side: Reklama
+  ad_on_side_description: Baner za sportski klub, događaj ili opremu
   actions: Akcije
   activity_name_and_used_in_activities_name: "%{activity_name} i povezane aktivnosti: %{activities_name}"

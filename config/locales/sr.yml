@@ -39,7 +39,7 @@ sr:
   only_for_superadmin: Само за супер администратора
   send: Пошаљи
   log_in_as: Улогуј се као
-  dashboard: Контролна табла
+  dashboard: Почетак
   my_account: Мој налог
   my_clubs: Моји клубови
   change_item_name: Промени %{item_name}
@@ -55,7 +55,8 @@ sr:
   ad_on_bottom: Да ли пружате смештај или превоз за овај догађај ?
   ad_on_bottom_description: Ваша понуда може да се нађе на овом месту за само 3 динара
     по приказу.
-  ad_on_side: Реклама са стране
-  ad_on_side_description: Ваш банер за само 2 динара по приказу.
+  ad_on_side: Реклама
+  ad_on_side_description: Банер за спортски клуб, догађај или опрему
   actions: Акције
-  activity_name_and_used_in_activities_name: "%{activity_name} и повезане активности: %{activities_name}"
+  activity_name_and_used_in_activities_name: "%{activity_name} и повезане активности:
+    %{activities_name}"

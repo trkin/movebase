@@ -58,14 +58,11 @@
     <% end %>
   </ul>
 
-  <div class='cad bg-light navigation-on-the-side--max-width'>
-    <div class='card-body'>
-      <h2><%= t('ad_on_side') %></h2>
-      <p>
-        <%= t('ad_on_side_description') %>
-        <%= link_to t('get_in_touch'), contact_path %>
-      </p>
-    </div>
+  <div class='card p-1 text-center d-none d-sm-block navigation-on-the-side--max-width'>
+    <h2><%= t('ad_on_side') %></h2>
+    <p>
+      <%= t('ad_on_side_description') %>
+      <%= link_to t('get_in_touch'), contact_path %>
+    </p>
   </div>
-
 </div>
