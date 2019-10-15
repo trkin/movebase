@@ -63,6 +63,7 @@ sr:
   activity_name_and_used_in_activities_name: "%{activity_name} и повезане активности:
     %{activities_name}"
   recurrences_every:
+    onetime: Не понавља се
     day: Сваког дана
     week: Недељно
     month: Месечно

@@ -11,12 +11,17 @@ class ClubsDatatable < BaseDatatable
 
   def rows(filtered)
     filtered.map do |club|
+      link = if @view.request.controller_class.parent_name == 'Admin'
+               @view.link_to(club.name, @view.admin_club_path(club))
+             else
+               @view.link_to(club.name, @view.club_path(club))
+             end
       [
         club.id,
         club.venue.name,
         club.website,
         club.activities.map(&:name).to_sentence,
-        @view.link_to(club.name, @view.club_path(club)),
+        link,
       ]
     end
   end

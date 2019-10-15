@@ -61,6 +61,7 @@ sr-latin:
   actions: Akcije
   activity_name_and_used_in_activities_name: "%{activity_name} i povezane aktivnosti: %{activities_name}"
   recurrences_every:
+    onetime: Ne ponavlja se
     day: Svakog dana
     week: Nedeljno
     month: Mesečno

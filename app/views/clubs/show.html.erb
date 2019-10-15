@@ -5,7 +5,7 @@
   <div class='card-body'>
     <div class='row'>
       <div class='col-md'>
-        <%= detail_view_list @club, *Club::FIELDS %>
+        <%= detail_view_list @club, *Club::FIELDS.reject {|f| f.to_s.starts_with?'visible_' }, skip_blank: :all %>
       </div>
       <div class='col-md'>
         <div class='map map--300px'

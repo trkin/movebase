@@ -9,24 +9,32 @@ class RecurrenceForm
     super
     @valid = true
     month = nil if month.blank?
-    r = Montrose::Recurrence.new(
-      every: every,
-      day: day,
-      month: month,
-      at: "#{hour.to_i}:#{min.to_i}",
-    )
+    r = if every.to_s == 'onetime'
+          nil
+        else
+          Montrose::Recurrence.new(
+            every: every,
+            day: day,
+            month: month,
+            at: "#{hour.to_i}:#{min.to_i}",
+          )
+        end
     @happening.recurrence = r
   end
 
   def preview
+    return [] unless @happening.recurrence
+
     @happening.recurrence.take total.to_i
   end
 
   def save
     # TODO: warning for existing
     #       old occurences should be removed
+    @happening.save!
     preview.each do |new_date|
       clone = happening.dup
+      clone.recurrence = @happening.recurrence
       duration = clone.end_date - clone.start_date
       clone.start_date = new_date
       clone.end_date = clone.start_date + duration

@@ -63,6 +63,7 @@ en:
   activity_name_and_used_in_activities_name: "%{activity_name} and related activities:
     %{activities_name}"
   recurrences_every:
+    onetime: One time event
     day: Every day
     week: Weekly
     month: Monthly
