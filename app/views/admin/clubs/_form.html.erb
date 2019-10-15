@@ -2,6 +2,8 @@
   <%= bootstrap_form_for @club, url: @club.new_record? ? admin_clubs_path : admin_club_path(@club), remote: true, layout: :horizontal do |f| %>
     <div class='row'>
       <div class='col-sm'>
+        <%= f.radio_button :kind, :sport_organization, label: Club.human_enum_name(:kind, :sport_organization) %>
+        <%= f.radio_button :kind, :personal, label: Club.human_enum_name(:kind, :personal) %>
         <%= f.text_field :name %>
         <%= f.text_field :long_name %>
         <%= f.text_field :website %>

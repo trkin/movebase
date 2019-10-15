@@ -25,6 +25,12 @@ Gems:
 
 # Development
 
+Pull production data with
+```
+rails db:drop
+heroku pg:pull postgresql-curly-88828 move_index_development
+```
+
 Icons
 
 ```

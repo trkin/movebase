@@ -70,6 +70,9 @@ sr-latin:
         website: Internet stranica
         email: Imejl
         phone: Telefon
+        kinds:
+          sport_organization: Klub
+          personal: Lično
       venue:
         name: Naziv
         latitude: Latituda
