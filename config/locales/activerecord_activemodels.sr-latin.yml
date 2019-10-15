@@ -66,6 +66,7 @@ sr-latin:
         description: Opis
       club:
         name: Naziv
+        long_name: Pun naziv
         website: Internet stranica
         email: Imejl
         phone: Telefon
@@ -80,25 +81,22 @@ sr-latin:
         zip: Poštanski kod
       happening:
         name: Naziv
+        description: Opis
         start_date: Datum početka
         end_date: Datum završetka
         website: Internet stranica
-        repeating: Ponavlja se
-        repeatings:
-          no_repeating: Ne ponavlja se
-          daily_repeating: Svakodnevno
-          weekly_repeating: Nedeljno
-          yearly_repeating: Godišnje
+        recurrence: Ponavlja se
       discipline:
         name: Naziv
         number_of_crew: Broj članova
         number_of_relays: Broj izmena
       discipline_happening:
         name: Naziv
+        description: Opis
         gender: Pol
-        distance_m: Dužina
-        elevation_m: Elevacija
-        max_time_s: Maks vreme
+        distance_m: Dužina (m)
+        elevation_m: Elevacija (m)
+        max_time_s: Maks vreme (s)
         age_min: Godište od
         age_max: Godište do
         price_without_discount_cents: Cena bez popusta
@@ -115,3 +113,9 @@ sr-latin:
       contact:
         email: Imejl
         text: Poruka
+    attributes:
+      recurrence_form:
+        every: Ponavlja se
+        day: Dan
+        week: Nedelja
+        month: Mesec

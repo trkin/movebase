@@ -88,6 +88,9 @@ gem 'geocoder'
 # enable cors for development
 gem 'rack-cors'
 
+# recurring events
+gem 'montrose'
+
 # datatables
 gem 'trk_datatables', '~>0.1'
 # gem 'trk_datatables', path: '~/gems/trk_datatables'

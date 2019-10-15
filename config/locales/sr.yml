@@ -15,6 +15,7 @@ sr:
   show: Види
   create: Направи
   edit: Уреди
+  edit_item_name: Уреди поље %{item_name}
   update: Ажурирање
   delete: Избриши
   drop: Избаци
@@ -25,11 +26,13 @@ sr:
   data_item_name_successfully_updated: Податак %{item_name} је успешно ажуриран
   data_item_name_successfully_changed: Податак %{item_name} је успешно промењен
   data_item_name_successfully_deleted: Податак %{item_name} је успешно обрисан
+  successfully_created_item_count: Успешно је направљен %{item_count}
   choose_place_and_activity: Изабери место и активност, а ми ћемо ти предложити догађаје...
   where_are_you_going_on_the_weekend: Где ћеш ићи за викенд ?
   search: Пронађи
   please_select: Молим изаберите
   please_select_item_name: Молим изаберите %{item_name}
+  select_item_name: Изаберите %{item_name}
   last_message: Последња порука
   contact: Контакт
   get_in_touch: Јавите се
@@ -53,10 +56,15 @@ sr:
   ad_on_top_description: Проверите наше акцијске цене банер простора. Наредне године
     се цене мењају и зато пожурите.
   ad_on_bottom: Да ли пружате смештај или превоз за овај догађај ?
-  ad_on_bottom_description: Ваша понуда може да се нађе на овом месту за само 3 динара
-    по приказу.
+  ad_on_bottom_description: Ваша понуда може да се нађе на овом месту
   ad_on_side: Реклама
   ad_on_side_description: Банер за спортски клуб, догађај или опрему
   actions: Акције
   activity_name_and_used_in_activities_name: "%{activity_name} и повезане активности:
     %{activities_name}"
+  recurrences_every:
+    day: Сваког дана
+    week: Недељно
+    month: Месечно
+    year: Годишње
+  can_not_be_less_than_item_name: Не може бити мањи од %{item_name}

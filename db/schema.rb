@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_063943) do
+ActiveRecord::Schema.define(version: 2019_10_04_101719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2019_09_24_063943) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "kind", default: 0, null: false
+    t.jsonb "long_name", default: {}
     t.index ["venue_id"], name: "index_clubs_on_venue_id"
   end
 
@@ -92,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_09_24_063943) do
     t.datetime "start_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.jsonb "description", default: {}
     t.index ["discipline_id"], name: "index_discipline_happenings_on_discipline_id"
     t.index ["happening_id"], name: "index_discipline_happenings_on_happening_id"
   end
@@ -123,9 +125,10 @@ ActiveRecord::Schema.define(version: 2019_09_24_063943) do
     t.date "start_date", null: false
     t.date "end_date", null: false
     t.string "website"
-    t.integer "repeating", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.jsonb "description", default: {}
+    t.string "recurrence"
     t.index ["club_id"], name: "index_happenings_on_club_id"
     t.index ["venue_id"], name: "index_happenings_on_venue_id"
   end

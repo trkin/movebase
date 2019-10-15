@@ -4,10 +4,10 @@
 <div class='card'>
   <div class='card-body'>
     <div class='row'>
-      <div class='col'>
+      <div class='col-md'>
         <%= detail_view_list @club, *Club::FIELDS %>
       </div>
-      <div class='col'>
+      <div class='col-md'>
         <div class='map map--300px'
              data-controller='google-map'
              data-google-map-latitude='<%= @club.venue.latitude %>'

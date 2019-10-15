@@ -6,7 +6,7 @@ kayak_regata:
   venue: sodros
   start_date: 2019-05-01
   end_date: 2019-05-01
-  repeating: <%= Happening.repeatings[:yearly_repeating] %>
+  recurrence: <%= Montrose.every(:year, month: :may, day: { saturday: [1] }).to_yaml.inspect %>
 
 personal_long_kayaking:
   name:
@@ -40,7 +40,7 @@ wednesday_walking_23:
   venue: bus_station_popovica
   start_date: 2019-02-20
   end_date: 2019-02-20
-  repeating: <%= Happening.repeatings[:weekly_repeating] %>
+  recurrence: <%= Montrose.every(:week, day: :wednesday).to_yaml.inspect %>
 
 wednesday_walking_24:
   name:
@@ -49,7 +49,7 @@ wednesday_walking_24:
   venue: bus_station_popovica
   start_date: 2019-02-27
   end_date: 2019-02-27
-  repeating: <%= Happening.repeatings[:weekly_repeating] %>
+  recurrence: <%= Montrose.every(:week, day: :wednesday).to_yaml.inspect %>
 
 walking_with_children_to_the_tower:
   name:
@@ -74,7 +74,7 @@ half_marathon:
   venue: novi_sad
   start_date: 2020-05-17
   end_date: 2020-05-17
-  repeating: <%= Happening.repeatings[:yearly_repeating] %>
+  recurrence: <%= Montrose.every(:year, month: :october, day: { sunday: [2]}).to_yaml.inspect %>
 
 sky_running:
   name:
@@ -83,7 +83,7 @@ sky_running:
   club: hiking_club
   start_date: 2019-12-17
   end_date: 2019-12-17
-  repeating: <%= Happening.repeatings[:yearly_repeating] %>
+  recurrence: <%= Montrose.every(:year, on: { december: 1 }).to_yaml.inspect %>
 
 stairs_run_vrsac:
   name:
@@ -92,4 +92,4 @@ stairs_run_vrsac:
   club: hiking_club
   start_date: 2019-05-26
   end_date: 2019-05-26
-  repeating: <%= Happening.repeatings[:yearly_repeating] %>
+  recurrence: <%= Montrose.every(:year, on: { june: 1 }).to_yaml.inspect %>

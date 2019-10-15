@@ -1,0 +1,22 @@
+<div id='remote-form'>
+  <%= bootstrap_form_for @recurrence_form, url: update_recurrence_admin_happening_path(@happening), remote: true, layout: :horizontal, method: :patch do |f| %>
+    <div class='row'>
+      <div class='col-sm'>
+        <%= f.select :every, t('recurrences_every').invert %>
+        <%= f.select :day, t('date.day_names').map.with_index.map { |d, i| [d, i] } %>
+        <%= f.select :month, t('date.month_names') %>
+      </div>
+      <div class='col-sm'>
+        <%= f.select :hour, 0..23 %>
+        <%= f.select :min, 0..59 %>
+        <%= f.number_field :total %>
+      </div>
+    </div>
+    <hr>
+    <%= render 'recurrence_preview' %>
+    <div class='remote-form__actions'>
+      <%= f.button t('show'), value: 'preview', class: 'btn btn-success'%>
+      <%= f.submit t('create'), class: 'btn btn-primary'%>
+    </div>
+  <% end %>
+</div>

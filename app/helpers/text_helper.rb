@@ -64,10 +64,10 @@ module TextHelper
     safe_join res
   end
 
-  def detail_view_one(title, text, label_class: 'col-sm-2 dt__long--min-width', text_class: 'col')
+  def detail_view_one(title, text = nil, label_class: 'col-sm-2 dt__long--min-width', text_class: 'col', &block)
     <<~HTML
       <dt class='#{label_class}'>#{title}</dt>
-      <dd class='#{text_class}'>#{text}</dd>
+      <dd class='#{text_class}'>#{block_given? ? capture(&block) : text}</dd>
       <dt class='w-100'></dt>
     HTML
       .html_safe

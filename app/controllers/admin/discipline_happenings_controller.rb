@@ -3,8 +3,11 @@ class Admin::DisciplineHappeningsController < Admin::BaseController
   before_action :_set_discipline_happening, except: %i[new create]
 
   def new
-    @discipline_happening = @happening.discipline_happenings.new
-    @discipline_happening.build_discipline
+    @discipline_happening = @happening.discipline_happenings.new(
+      discipline: @happening.discipline_happenings.last&.discipline,
+      start_time: @happening.discipline_happenings.last&.start_time || @happening.start_date
+    )
+    @discipline_happening.build_discipline if @discipline_happening.discipline.blank?
     render partial: 'form', layout: false
   end
 

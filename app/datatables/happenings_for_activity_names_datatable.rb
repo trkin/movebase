@@ -1,10 +1,12 @@
 class HappeningsForActivityNamesDatatable < BaseDatatable
   def columns
     {
-      'clubs.name': { title: Club.model_name.human },
-      'venues.name': { title: Venue.model_name.human },
-      'happenings.name': {},
+      'happenings.id': { hide: true },
       'happenings.start_date': {},
+      'venues.name': { title: Venue.model_name.human },
+      'clubs.name': { title: Club.model_name.human },
+      'clubs.id': { hide: true },
+      'happenings.name': {},
     }
   end
 
@@ -14,10 +16,11 @@ class HappeningsForActivityNamesDatatable < BaseDatatable
   end
 
   def all_items
-    Happening
-      .left_outer_joins(discipline_happenings: { discipline: :activity })
-      .where(discipline_happenings: { disciplines: { activity: activities } })
-      .joins(:club, :venue)
+    all = Happening.left_outer_joins(discipline_happenings: { discipline: :activity })
+    all = all.where(discipline_happenings: { disciplines: { activity: activities } }) if activities.present?
+    all = all.joins(:club, :venue)
+    all = all.distinct
+    all
   end
 
   # def as_json(_ = nil)
@@ -33,10 +36,12 @@ class HappeningsForActivityNamesDatatable < BaseDatatable
                        happening.club.name
                      end
       [
-        link_to_club,
+        happening.id,
+        happening.start_date,
         happening.venue.name,
+        link_to_club,
+        happening.club.id,
         @view.link_to(happening.name, @view.happening_path(happening)),
-        happening.start_date
       ]
     end
   end

@@ -1,8 +1,8 @@
 class DisciplineHappening < ApplicationRecord
   extend Mobility
-  translates :name
+  translates :name, :description
 
-  FIELDS = %i[name gender distance_m elevation_m max_time_s age_min age_max price_without_discount_cents start_time].freeze
+  FIELDS = %i[name description gender distance_m elevation_m max_time_s age_min age_max price_without_discount_cents start_time].freeze
 
   attr_accessor :existing_or_new
 

@@ -15,6 +15,7 @@ sr-latin:
   show: Vidi
   create: Napravi
   edit: Uredi
+  edit_item_name: Uredi polje %{item_name}
   update: Ažuriranje
   delete: Izbriši
   drop: Izbaci
@@ -25,11 +26,13 @@ sr-latin:
   data_item_name_successfully_updated: Podatak %{item_name} je uspešno ažuriran
   data_item_name_successfully_changed: Podatak %{item_name} je uspešno promenjen
   data_item_name_successfully_deleted: Podatak %{item_name} je uspešno obrisan
+  successfully_created_item_count: Uspešno je napravljen %{item_count}
   choose_place_and_activity: Izaberi mesto i aktivnost, a mi ćemo ti predložiti događaje...
   where_are_you_going_on_the_weekend: Gde ćeš ići za vikend ?
   search: Pronađi
   please_select: Molim izaberite
   please_select_item_name: Molim izaberite %{item_name}
+  select_item_name: Izaberite %{item_name}
   last_message: Poslednja poruka
   contact: Kontakt
   get_in_touch: Javite se
@@ -52,8 +55,14 @@ sr-latin:
   ad_on_top: Vaša reklama na vrhu stranice
   ad_on_top_description: Proverite naše akcijske cene baner prostora. Naredne godine se cene menjaju i zato požurite.
   ad_on_bottom: Da li pružate smeštaj ili prevoz za ovaj događaj ?
-  ad_on_bottom_description: Vaša ponuda može da se nađe na ovom mestu za samo 3 dinara po prikazu.
+  ad_on_bottom_description: Vaša ponuda može da se nađe na ovom mestu.
   ad_on_side: Reklama
   ad_on_side_description: Baner za sportski klub, događaj ili opremu
   actions: Akcije
   activity_name_and_used_in_activities_name: "%{activity_name} i povezane aktivnosti: %{activities_name}"
+  recurrences_every:
+    day: Svakog dana
+    week: Nedeljno
+    month: Mesečno
+    year: Godišnje
+  can_not_be_less_than_item_name: Ne može biti manji od %{item_name}

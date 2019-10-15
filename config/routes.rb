@@ -62,6 +62,10 @@ Rails.application.routes.draw do
     end
     resources :venues
     resources :happenings do
+      member do
+        get :edit_recurrence
+        patch :update_recurrence
+      end
       resources :discipline_happenings, shallow: true
     end
     resources :disciplines do

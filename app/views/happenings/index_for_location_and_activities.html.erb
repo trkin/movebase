@@ -16,12 +16,12 @@
 <% end %>
 <div class='dropdown d-inline'>
   <a class='btn btn-se dropdown-toggle' href='#' role='button' id='dropdownAddActivity' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-    <%= t_crud('add', Activity) %>
+    <%= t('select_item_name', item_name: Activity.model_name.human(count: 2)) %>
   </a>
   <div class='dropdown-menu' aria-labelledby='dropdownAddActivity'>
     <% Activity.i18n.where.not(name: params[:activity_names]).each do |activity| %>
-      <% add_path = index_for_location_and_activities_happenings_path(params.merge(activity_names: (params[:activity_names] || []) + [activity.name])) %>
-      <% add_related_path = index_for_location_and_activities_happenings_path(params.merge(activity_names: (params[:activity_names] || []) + activity.self_and_used_in_activities.map(&:name))) %>
+      <% add_path = index_for_location_and_activities_happenings_path(params.except(:controller, :action, :commit).merge(activity_names: (params[:activity_names] || []) + [activity.name])) %>
+      <% add_related_path = index_for_location_and_activities_happenings_path(params.except(:controller, :action, :commit).merge(activity_names: (params[:activity_names] || []) + activity.self_and_used_in_activities.map(&:name))) %>
       <% if activity.self_and_used_in_activities.length > 1 %>
         <div class='dropdown-item'>
           <%= link_to activity.name, add_path, class: 'dropdown-item--inline' %>

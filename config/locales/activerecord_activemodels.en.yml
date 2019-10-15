@@ -66,6 +66,7 @@ en:
         description: Description
       club:
         name: Name
+        long_name: Long name
         website: Website
         email: Email
         phone: Phone
@@ -80,25 +81,22 @@ en:
         zip: Zip
       happening:
         name: Name
+        description: Description
         start_date: Start date
         end_date: End date
         website: Website
-        repeating: Repeating
-        repeatings:
-          no_repeating: No repeating
-          daily_repeating: Daily repeating
-          weekly_repeating: Weekly repeating
-          yearly_repeating: Yearly repeating
+        recurrence: Recurrence
       discipline:
         name: Name
         number_of_crew: Number of crew
         number_of_relays: Number of relays
       discipline_happening:
         name: Name
+        description: Description
         gender: Gender
-        distance_m: Distance m
-        elevation_m: Elevation m
-        max_time_s: Max time s
+        distance_m: Distance (m)
+        elevation_m: Elevation (m)
+        max_time_s: Max time (s)
         age_min: Age min
         age_max: Age max
         price_without_discount_cents: Price without discount cents
@@ -112,6 +110,8 @@ en:
         description: Description
   activemodel:
     attributes:
-      contact:
-        email: Email
-        text: Message
+      recurrence_form:
+        every: Repeated
+        day: Day
+        week: Sunday
+        month: Month

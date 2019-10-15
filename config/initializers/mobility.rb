@@ -50,7 +50,9 @@ Mobility.configure do |config|
   # fallback to your +I18n.default_locale+.
   #
   # config.default_options[:fallbacks] = [:en, :sr, :'sr-latin']
-  config.default_options[:fallbacks] = { sr: :en, en: :sr }
+  config.default_options[:fallbacks] = I18n.available_locales.each_with_object({}) do |locale, memo|
+    memo[locale] = I18n.available_locales - [locale]
+  end
 
   # The Presence plugin converts empty strings to nil when fetching and setting
   # translations. By default it is on, uncomment this line to turn it off.

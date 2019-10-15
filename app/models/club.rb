@@ -1,8 +1,8 @@
 class Club < ApplicationRecord
   extend Mobility
-  translates :name
+  translates :name, :long_name
 
-  FIELDS = %i[name website email phone national_id].freeze
+  FIELDS = %i[name long_name website email phone national_id].freeze
 
   enum kind: %i[sport_organization personal]
 

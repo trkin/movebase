@@ -5,15 +5,19 @@
   <div class='card-body'>
     <%= button_tag_open_modal edit_admin_happening_path(@happening), title: t_crud('edit', Happening), pull_right: true %>
     <div class='row'>
-      <div class='col'>
-        <%= detail_view_list @happening, *(Happening::FIELDS - [:repeating]) %>
+      <div class='col-md'>
+        <%= detail_view_list @happening, *(Happening::FIELDS - [:recurrence]) %>
         <%= detail_view_list do %>
-          <%= detail_view_one Happening.human_attribute_name(:repeating), Happening.human_enum_name(:repeating, @happening.repeating) %>
+          <%= detail_view_one Happening.human_attribute_name(:recurrence) do %>
+            <%= @happening.recurrence.to_json %>
+            <%= button_tag_open_modal edit_recurrence_admin_happening_path(@happening), title: t('edit_item_name', item_name: Happening.human_attribute_name(:recurrence)) %>
+          <% end %>
         <% end %>
+        <%= link_to @happening.club.name, admin_club_path(@happening.club) %>
       </div>
-      <div class='col'>
+      <div class='col-md'>
         <%= link_to @happening.venue.name, admin_venue_path(@happening.venue) %>
-        <div class='map map--50percent'
+        <div class='map map--300px'
              data-controller='google-map'
              data-google-map-latitude='<%= @happening.venue.latitude %>'
              data-google-map-longitude='<%= @happening.venue.longitude %>'

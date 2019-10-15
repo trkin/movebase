@@ -14,4 +14,10 @@ module TranslateHelper
   def t_notice(notice, model_class)
     t("data_item_name_#{notice}", item_name: model_class.model_name.human.titleize)
   end
+
+  # t_notice_count(notice, model_class, count)
+  def t_notice_count(notice, model_class, count)
+    t("#{notice}_item_count",
+      item_count: pluralize(count, model_class.model_name.human(count: count)))
+  end
 end

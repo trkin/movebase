@@ -1,0 +1,5 @@
+var form = document.getElementById('preview');
+var parent = form.parentNode;
+var new_form = document.createElement('div');
+new_form.innerHTML = '<%=j render 'recurrence_preview' %>';
+parent.replaceChild(new_form, form);

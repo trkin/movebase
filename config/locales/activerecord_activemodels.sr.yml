@@ -1,3 +1,4 @@
+---
 sr:
   activerecord:
     models:
@@ -36,11 +37,6 @@ sr:
         few: Дисциплине
         other: Дисциплине
         accusative: дисциплину
-      happening:
-        one: Догађај
-        few: Догађаја
-        other: Догађаји
-        accusative: догађај
       discipline_happening:
         one: Дисциплина
         few: Дисциплине
@@ -70,6 +66,7 @@ sr:
         description: Опис
       club:
         name: Назив
+        long_name: Пун назив
         website: Интернет страница
         email: Имејл
         phone: Телефон
@@ -84,25 +81,22 @@ sr:
         zip: Поштански код
       happening:
         name: Назив
+        description: Опис
         start_date: Датум почетка
         end_date: Датум завршетка
         website: Интернет страница
-        repeating: Понавља се
-        repeatings:
-          no_repeating: Не понавља се
-          daily_repeating: Свакодневно
-          weekly_repeating: Недељно
-          yearly_repeating: Годишње
+        recurrence: Понавља се
       discipline:
         name: Назив
         number_of_crew: Број чланова
         number_of_relays: Број измена
       discipline_happening:
         name: Назив
+        description: Опис
         gender: Пол
-        distance_m: Дужина
-        elevation_m: Елевација
-        max_time_s: Макс време
+        distance_m: Дужина (м)
+        elevation_m: Елевација (м)
+        max_time_s: Макс време (с)
         age_min: Годиште од
         age_max: Годиште до
         price_without_discount_cents: Цена без попуста
@@ -116,6 +110,8 @@ sr:
         description: Опис
   activemodel:
     attributes:
-      contact:
-        email: Имејл
-        text: Порука
+      recurrence_form:
+        every: Понавља се
+        day: Дан
+        week: Недеља
+        month: Месец

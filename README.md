@@ -43,6 +43,11 @@ app/javascript/locales/*
 app/javascript/const.js
 ```
 
+Use helpers to translate
+```
+yml_google_translate_api.rb config/locales/sr-latin.yml sr_to_cyr en
+```
+
 # Tests
 
 Run tests with `rake`

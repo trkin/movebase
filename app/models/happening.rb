@@ -1,9 +1,10 @@
 class Happening < ApplicationRecord
   extend Mobility
-  translates :name
+  translates :name, :description
 
-  FIELDS = %i[name start_date end_date website repeating].freeze
+  FIELDS = %i[name description start_date end_date website recurrence].freeze
 
+  serialize :recurrence
   attr_accessor :existing_or_new
 
   belongs_to :venue
@@ -11,8 +12,6 @@ class Happening < ApplicationRecord
   belongs_to :club
 
   has_many :discipline_happenings, dependent: :destroy
-
-  enum repeating: %i[no_repeating daily_repeating weekly_repeating yearly_repeating]
 
   validates :name, :start_date, :end_date, presence: true
   validate :_end_date_greater_or_equal_start_date
@@ -23,7 +22,7 @@ class Happening < ApplicationRecord
     return if end_date.blank? || start_date.blank?
     return if end_date >= start_date
 
-    errors.add :end_date, t('can_not_be_greater_than_item_name', item_name: Happening.human_attribute_name(:start_date))
+    errors.add :end_date, t('can_not_be_less_than_item_name', item_name: Happening.human_attribute_name(:start_date))
   end
 
   def multi_day?

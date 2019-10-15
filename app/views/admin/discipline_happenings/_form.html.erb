@@ -6,6 +6,7 @@
       </div>
       <div class='col-md'>
         <%= f.text_field :name %>
+        <%= f.text_area :description %>
         <%= f.select :gender, DisciplineHappening.genders.keys.map { |k| [DisciplineHappening.human_enum_name(:gender, k),k] } %>
         <%= f.number_field :distance_m %>
         <%= f.number_field :elevation_m %>
