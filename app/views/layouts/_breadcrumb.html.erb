@@ -6,7 +6,8 @@
     <li class='px-1'>
       <%= link_to root_path do %>
         <%# both png and svg have flickering effect with turbolinks %>
-        <%= image_tag 'logo.svg', class: 'breadcrumb__image--max-height', title: t('home') %>
+        <%= image_tag 'logo_only_running.svg', class: 'breadcrumb__image--max-height d-sm-none', title: t('home') %>
+        <%= image_tag 'logo_all_sports.svg', class: 'breadcrumb__image--max-height d-none d-sm-block', title: t('home') %>
       <% end %>
     </li>
     <li class='breadcrumb-item d-none d-sm-block'>

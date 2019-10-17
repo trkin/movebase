@@ -19,7 +19,7 @@ document.addEventListener('turbolinks:load', () => {
     }
     if ($(this).attr('placeholder')) options['placeholder'] = $(this).attr('placeholder')
     // else
-    // options['placeholder'] = 'Plese select'
+    // options['placeholder'] = 'Please select'
     options['language'] = I18N.select2[document.documentElement.lang]
     $(this).select2(options)
   })

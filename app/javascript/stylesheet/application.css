@@ -1,2 +1,0 @@
-/* here we include other packages so postcss-import plugin will load css file from style attribute from package.json */
-@import 'select2'

@@ -6,6 +6,14 @@
     <div class='row'>
       <div class='col-md'>
         <%= detail_view_list @club, *Club::FIELDS.reject {|f| f.to_s.starts_with?'visible_' }, skip_blank: :all %>
+        <div class=''>
+          <h2><%= Activity.model_name.human(count: 2) %></h2>
+          <% @club.activity_clubs.each do |activity_club| %>
+            <span class='badge badge-secondary'>
+              <%= activity_club.activity.name %>
+            </span>
+          <% end %>
+        </div>
       </div>
       <div class='col-md'>
         <div class='map map--300px'
@@ -19,12 +27,8 @@
     </div>
   </div>
 </div>
-<div class='card-deck'>
-  <% @club.activity_clubs.each do |activity_club| %>
-    <div class='card card--text'>
-      <div class='card-body'>
-        <%= activity_club.activity.name %>
-      </div>
-    </div>
-  <% end %>
+<div class='card'>
+  <div class='card-body'>
+    <%= @datatable.render_html search_for_location_and_activities_happenings_path(format: :json) %>
+  </div>
 </div>
