@@ -90,6 +90,8 @@ gem 'rack-cors'
 
 # recurring events
 gem 'montrose'
+# use custom start_number
+gem 'mustache'
 
 # datatables
 gem 'trk_datatables', '~>0.1'

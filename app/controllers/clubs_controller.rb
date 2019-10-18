@@ -11,7 +11,12 @@ class ClubsController < ApplicationController
   end
 
   def show
-    @datatable = HappeningsForClubDatatableDatatable.new(view_context)
+    view_context.params.merge! HappeningsForClubDatatable.param_set 'happenings.start_date', Time.zone.today..(Time.zone.today + 1.year)
+    @datatable = HappeningsForClubDatatable.new view_context
+  end
+
+  def search_happenings
+    render json: HappeningsForClubDatatable.new(view_context)
   end
 
   def _set_club

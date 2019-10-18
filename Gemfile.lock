@@ -153,6 +153,7 @@ GEM
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
+    mustache (1.1.0)
     netrc (0.11.0)
     nio4r (2.4.0)
     nokogiri (1.10.4)
@@ -265,7 +266,7 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
-    trk_datatables (0.1.17)
+    trk_datatables (0.1.18)
       activesupport
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
@@ -315,6 +316,7 @@ DEPENDENCIES
   mobility (~> 0.8.6)
   money-rails (~> 1.12)
   montrose
+  mustache
   omniauth-facebook
   omniauth-google-oauth2
   pg (>= 0.18, < 2.0)

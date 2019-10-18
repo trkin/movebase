@@ -4,6 +4,7 @@ class Const
       name: 'Move Index',
       # short_name is also use in config/sidekiq.yml and config/application.rb
       short_name: 'moveindex',
+      show_ads: false,
       # default_url is required for links in email body or in links in controller
       # when url host is not available (for example rails console)
       default_url: {

@@ -32,13 +32,15 @@
       <div class='d-flex align-items-stretch body__content'>
         <div class='pt-2 container'>
           <%= yield %>
-          <div class='card p-1 mt-3 mb-1 text-center d-sm-none navigation-on-the-side--max-width mx-auto'>
-            <h2><%= t('ad_on_side') %></h2>
-            <p>
-              <%= t('ad_on_side_description') %>
-              <%= link_to t('get_in_touch'), contact_path %>
-            </p>
-          </div>
+          <% if Const.common[:show_ads] %>
+            <div class='card p-1 mt-3 mb-1 text-center d-sm-none navigation-on-the-side--max-width mx-auto'>
+              <h2><%= t('ad_on_side') %></h2>
+              <p>
+                <%= t('ad_on_side_description') %>
+                <%= link_to t('get_in_touch'), contact_path %>
+              </p>
+            </div>
+          <% end %>
         </div>
         <%= render 'layouts/navigation', on_the_side: true %>
       </div>

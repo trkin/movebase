@@ -45,6 +45,9 @@ Rails.application.routes.draw do
     collection do
       post :search
     end
+    member do
+      post :search_happenings
+    end
   end
 
   resource :my_clubs do
@@ -58,6 +61,9 @@ Rails.application.routes.draw do
       resources :activity_clubs, shallow: true
       collection do
         post :search
+      end
+      member do
+        post :search_happenings
       end
     end
     resources :venues

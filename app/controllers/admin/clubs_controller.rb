@@ -9,7 +9,13 @@ class Admin::ClubsController < Admin::BaseController
     render json: ClubsDatatable.new(view_context)
   end
 
-  def show; end
+  def show
+    @datatable = HappeningsForClubDatatable.new view_context
+  end
+
+  def search_happenings
+    render json: HappeningsForClubDatatable.new(view_context)
+  end
 
   def new
     @club = Club.new

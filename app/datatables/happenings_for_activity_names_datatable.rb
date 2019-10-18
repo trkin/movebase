@@ -12,6 +12,8 @@ class HappeningsForActivityNamesDatatable < BaseDatatable
 
   # use activities as params since we need to marketing usage
   def activities
+    return [] if @view.params[:activity_names].blank?
+
     Activity.i18n.where name: @view.params[:activity_names]
   end
 
@@ -19,6 +21,7 @@ class HappeningsForActivityNamesDatatable < BaseDatatable
     all = Happening.left_outer_joins(discipline_happenings: { discipline: :activity })
     all = all.where(discipline_happenings: { disciplines: { activity: activities } }) if activities.present?
     all = all.joins(:club, :venue)
+    all = all.order(:start_date)
     all = all.distinct
     all
   end

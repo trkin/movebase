@@ -27,8 +27,6 @@
     </div>
   </div>
 </div>
-<div class='card'>
-  <div class='card-body'>
-    <%= @datatable.render_html search_for_location_and_activities_happenings_path(format: :json) %>
-  </div>
+<div class=''>
+  <%= @datatable.render_html search_happenings_club_path(@club, format: :json) %>
 </div>

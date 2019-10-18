@@ -1091,6 +1091,7 @@ bcrypt-pbkdf@^1.0.0:
 big.js@^5.2.2:
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
+  integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
 
 binary-extensions@^1.0.0:
   version "1.13.1"
@@ -2120,6 +2121,7 @@ elliptic@^6.0.0:
 emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
+  integrity sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
 
 encodeurl@~1.0.2:
   version "1.0.2"
@@ -3241,6 +3243,7 @@ json3@^3.3.2:
 json5@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-1.0.1.tgz#779fb0018604fa854eacbf6252180d83543e3dbe"
+  integrity sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==
   dependencies:
     minimist "^1.2.0"
 
@@ -5748,9 +5751,9 @@ trim-right@^1.0.1:
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
 trk_datatables@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/trk_datatables/-/trk_datatables-1.0.6.tgz#852ff0a9f40e468fca493417bb7b15ee03cba370"
-  integrity sha512-CWpYxV8T4vbDThHd0EYlaeAxRl8Gz0+mekLxB/hieo1TWKSXxgEWjwmDV/EC1fkfHKTHequJr4RqtDwqJ3+YnQ==
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/trk_datatables/-/trk_datatables-1.0.8.tgz#aa673d2d782daf427f72f7dbd75527c6532be012"
+  integrity sha512-08ILTuw/G7G5IVAd4GDM9Ry5xqs1Z64ZRJWM2CaEFUW/5cUa6RjbpFL9Kx9YZEc8me5KN7cX3AIPrWiL7SjC0g==
   dependencies:
     datatables.net "^1.10.19"
     datatables.net-bs4 "^1.10.19"

@@ -19,19 +19,22 @@
         </div>
       </div>
     </div>
+    <%= button_tag_open_modal new_admin_club_activity_club_path(@club) do %>
+      <i class="demo-icon icon-plus" aria-hidden="true"></i>
+      <%= t_crud('add_new', ActivityClub) %>
+    <% end %>
+    <div class='card-deck'>
+      <% @club.activity_clubs.each do |activity_club| %>
+        <div class='card card--text'>
+          <div class='card-body'>
+            <%= button_to 'X', admin_activity_club_path(activity_club), class: 'btn btn-sm btn-outline-danger btn--no-padding px-1 edit-button', title: t_crud('delete', ActivityClub), method: :delete, 'data-confirm': t('are_you_sure') %>
+            <%= link_to activity_club.activity.name, admin_activity_path(activity_club.activity) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
-<%= button_tag_open_modal new_admin_club_activity_club_path(@club) do %>
-  <i class="demo-icon icon-plus" aria-hidden="true"></i>
-  <%= t_crud('add_new', ActivityClub) %>
-<% end %>
-<div class='card-deck'>
-  <% @club.activity_clubs.each do |activity_club| %>
-    <div class='card card--text'>
-      <div class='card-body'>
-        <%= button_to 'X', admin_activity_club_path(activity_club), class: 'btn btn-sm btn-outline-danger btn--no-padding px-1 edit-button', title: t_crud('delete', ActivityClub), method: :delete, 'data-confirm': t('are_you_sure') %>
-        <%= link_to activity_club.activity.name, admin_activity_path(activity_club.activity) %>
-      </div>
-    </div>
-  <% end %>
+<div class='box'>
+  <%= @datatable.render_html search_happenings_admin_club_path(@club, format: :json) %>
 </div>

@@ -122,3 +122,8 @@ sr-latin:
         day: Dan
         week: Nedelja
         month: Mesec
+        hour: Sat
+        min: Minut
+        total: Ukupno
+        custom_name: Prilagođeno ime
+        start_number: Početni number

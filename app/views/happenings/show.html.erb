@@ -1,15 +1,17 @@
 <%
   breadcrumb Happening.model_name.human(count: 2) => happenings_path(search_happenings: { activity_id: '' }), @happening.name => nil
 %>
-<div class='card bg-light mb-2'>
-  <div class='card-body'>
-    <h2><%= t('ad_on_top') %></h2>
-    <p>
-      <%= t('ad_on_top_description') %>
-      <%= link_to t('get_in_touch'), contact_path %>
-    </p>
+<% if Const.common[:show_ads] %>
+  <div class='card bg-light mb-2'>
+    <div class='card-body'>
+      <h2><%= t('ad_on_top') %></h2>
+      <p>
+        <%= t('ad_on_top_description') %>
+        <%= link_to t('get_in_touch'), contact_path %>
+      </p>
+    </div>
   </div>
-</div>
+<% end %>
 <div class='card'>
   <div class='card-body'>
     <div class='row'>
@@ -23,6 +25,7 @@
         <% end %>
         <h4><%= Discipline.model_name.human(count: @happening.discipline_happenings.size) %></h4>
         <% @happening.discipline_happenings.each do |discipline_happening| %>
+          <%= discipline_happening.start_time.to_s :short %>
           <%= discipline_happening.full_name %>
           <br>
           <% discipline_happening.discipline_happening_tags.each do |discipline_happening_tag| %>
@@ -44,12 +47,14 @@
     </div>
   </div>
 </div>
-<div class='card bg-light mt-2'>
-  <div class='card-body'>
-    <h2><%= t('ad_on_bottom') %></h2>
-    <p>
-      <%= t('ad_on_bottom_description') %>
-      <%= link_to t('get_in_touch'), contact_path %>
-    </p>
+<% if Const.common[:show_ads] %>
+  <div class='card bg-light mt-2'>
+    <div class='card-body'>
+      <h2><%= t('ad_on_bottom') %></h2>
+      <p>
+        <%= t('ad_on_bottom_description') %>
+        <%= link_to t('get_in_touch'), contact_path %>
+      </p>
+    </div>
   </div>
-</div>
+<% end %>

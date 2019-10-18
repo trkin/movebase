@@ -58,11 +58,13 @@
     <% end %>
   </ul>
 
-  <div class='card p-1 text-center d-none d-sm-block navigation-on-the-side--max-width'>
-    <h2><%= t('ad_on_side') %></h2>
-    <p>
-      <%= t('ad_on_side_description') %>
-      <%= link_to t('get_in_touch'), contact_path %>
-    </p>
-  </div>
+  <% if Const.common[:show_ads] %>
+    <div class='card p-1 text-center d-none d-sm-block navigation-on-the-side--max-width'>
+      <h2><%= t('ad_on_side') %></h2>
+      <p>
+        <%= t('ad_on_side_description') %>
+        <%= link_to t('get_in_touch'), contact_path %>
+      </p>
+    </div>
+  <% end %>
 </div>
