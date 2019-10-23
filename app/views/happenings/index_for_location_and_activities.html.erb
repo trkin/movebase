@@ -1,13 +1,16 @@
 <%
   no_cache
   breadcrumb Happening.model_name.human(count: 2) => nil
+
+  names_array = params[:activity_names]
+  names_array = names_array.values if names_array.respond_to? :values
 %>
 
 <% @datatable.activities.each do |activity| %>
   <span class='show-on-hover'>
     <span class='badge badge-secondary pl-4'>
       <%= activity.name %>
-      <% remove_path = index_for_location_and_activities_happenings_path(params.merge(activity_names: (params[:activity_names] || []) - [activity.name])) %>
+      <% remove_path = index_for_location_and_activities_happenings_path(params.merge(activity_names: (names_array || []) - [activity.name])) %>
       <%= link_to remove_path do %>
         <i class='demo-icon icon-cancel show-on-hover-target btn-danger' title='<%= t_crud('drop', Activity) %>'></i>
       <% end %>
@@ -19,9 +22,9 @@
     <%= t('select_item_name', item_name: Activity.model_name.human(count: 2)) %>
   </a>
   <div class='dropdown-menu' aria-labelledby='dropdownAddActivity'>
-    <% Activity.i18n.where.not(name: params[:activity_names]).each do |activity| %>
-      <% add_path = index_for_location_and_activities_happenings_path(params.except(:controller, :action, :commit).merge(activity_names: (params[:activity_names] || []) + [activity.name])) %>
-      <% add_related_path = index_for_location_and_activities_happenings_path(params.except(:controller, :action, :commit).merge(activity_names: (params[:activity_names] || []) + activity.self_and_used_in_activities.map(&:name))) %>
+    <% Activity.i18n.where.not(name: names_array).each do |activity| %>
+      <% add_path = index_for_location_and_activities_happenings_path(params.except(:controller, :action, :commit).merge(activity_names: (names_array || []) + [activity.name])) %>
+      <% add_related_path = index_for_location_and_activities_happenings_path(params.except(:controller, :action, :commit).merge(activity_names: (names_array || []) + activity.self_and_used_in_activities.map(&:name))) %>
       <% if activity.self_and_used_in_activities.length > 1 %>
         <div class='dropdown-item'>
           <%= link_to activity.name, add_path, class: 'dropdown-item--inline' %>
@@ -34,4 +37,4 @@
   </div>
 </div>
 
-<%= @datatable.render_html search_for_location_and_activities_happenings_path(activity_names: params[:activity_names], format: :json) %>
+<%= @datatable.render_html search_for_location_and_activities_happenings_path(activity_names: names_array, format: :json) %>

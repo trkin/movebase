@@ -14,7 +14,9 @@ class HappeningsForActivityNamesDatatable < BaseDatatable
   def activities
     return [] if @view.params[:activity_names].blank?
 
-    Activity.i18n.where name: @view.params[:activity_names]
+    names_array = @view.params[:activity_names]
+    names_array = names_array.values if names_array.respond_to? :values
+    Activity.i18n.where name: names_array
   end
 
   def all_items
