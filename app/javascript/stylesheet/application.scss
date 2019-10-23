@@ -4,11 +4,12 @@
 @import 'jbox/src/scss/plugins/jBox.Notice';
 @import 'jbox/src/scss/themes/jBox.TooltipDark';
 
+@import 'common/functions';
+
 @import 'common/body';
 @import 'common/bootstrap_overrides';
 @import 'common/colors';
 @import 'common/display_visibility';
-@import 'common/functions';
 @import 'common/max_width_sizes';
 
 @import 'elements/card';

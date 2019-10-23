@@ -1,5 +1,10 @@
 <div id='remote-form'>
-  <%= bootstrap_form_for @happening, url: @happening.new_record? ? admin_happenings_path : admin_happening_path(@happening), remote: true, layout: :horizontal do |f| %>
+  <% if @happening.new_record? %>
+    <%= bootstrap_form_with url: parse_url_admin_happenings_path, layout: :horizontal, html: { 'data-controller': 'form'} do |f| %>
+      <%= f.text_field :url, label: "Url <span class='d-none-opacity' data-target='form.processing'><i class='demo-icon icon-spin4 animate-spin'></i> fetching data...</span>".html_safe, placeholder: 'https://www.facebook.com/events/...', 'data-target': 'form.parameter', 'data-action': 'blur->form#submit_ajax_and_update change>form#submit_ajax_and_update keyup->form#submit_ajax_and_update' %>
+    <% end %>
+  <% end %>
+  <%= bootstrap_form_for @happening, url: @happening.new_record? ? admin_club_happenings_path(@happening.club) : admin_happening_path(@happening), remote: true, layout: :horizontal do |f| %>
     <div class='row'>
       <div class='col-sm'>
         <%= f.text_field :name %>
@@ -8,7 +13,6 @@
           <%= f.date_field :end_date %>
         </div>
         <%= f.text_field :website %>
-        <%= f.select :club_id, options_from_collection_for_select(Club.all, :id, :name, f.object.club_id) %>
         <%= f.text_area :description %>
       </div>
       <div class='col-sm'>

@@ -2,11 +2,6 @@
   breadcrumb Happening.model_name.human(count: 2) => nil
 %>
 
-<%= button_tag_open_modal new_admin_happening_path do %>
-  <i class="demo-icon icon-plus" aria-hidden="true"></i>
-  <%= t_crud('add_new', Happening) %>
-<% end %>
-<br>
 <% @happenings.each do |happening| %>
   <%= link_to happening.name, admin_happening_path(happening) %>
   <br>

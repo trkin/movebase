@@ -1,5 +1,5 @@
 class Admin::HappeningsController < Admin::BaseController
-  before_action :_set_happening, except: %i[index new create]
+  before_action :_set_happening, except: %i[index new create parse_url]
 
   def index
     @happenings = Happening.all
@@ -8,7 +8,9 @@ class Admin::HappeningsController < Admin::BaseController
   def show; end
 
   def new
-    @happening = Happening.new
+    @happening = Happening.new(
+      club_id: params[:club_id]
+    )
     render partial: 'form', layout: false
   end
 
@@ -46,7 +48,9 @@ class Admin::HappeningsController < Admin::BaseController
 
   # JS
   def create
-    @happening = Happening.new
+    @happening = Happening.new(
+      club_id: params[:club_id]
+    )
     update_and_render_or_redirect_in_js @happening, _happening_params, ->(id) { admin_happening_path(id) }
   end
 
@@ -58,6 +62,15 @@ class Admin::HappeningsController < Admin::BaseController
   def destroy
     @happening.destroy!
     redirect_to admin_happenings_path, notice: helpers.t_notice('successfully_deleted', Happening)
+  end
+
+  def parse_url
+    result = ParseUrl.new(params[:url]).perform
+    if result.success?
+      render json: result.data[:json]
+    else
+      render json: { error: result.message }
+    end
   end
 
   def _set_happening

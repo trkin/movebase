@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='<%= I18n.locale %>' android-app='<%= android_app? %>'>
   <head>
-    <title>MoveResults</title>
+    <title><%= Const.common[:name] %>: <%= fetch_title %></title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
