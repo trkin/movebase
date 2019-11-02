@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.3'
+ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0.rc1'
@@ -34,6 +34,11 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '~> 3.11'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rails', '~> 1.4'
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -62,7 +67,7 @@ gem 'omniauth-google-oauth2'
 gem 'fontello_rails_converter'
 
 # bootstrap form
-gem 'bootstrap_form'
+gem 'bootstrap_form', github: 'duleorlovic/bootstrap_form', branch: 'add_default_layout_method'
 
 # translation
 gem 'mobility', '~> 0.8.6'

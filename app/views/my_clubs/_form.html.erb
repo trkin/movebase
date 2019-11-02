@@ -1,0 +1,31 @@
+<div id='remote-form'>
+  <%= bootstrap_form_with model: @club, url: my_club_path do |f| %>
+    <div class='row'>
+      <div class='col-sm'>
+        <%= f.radio_button :kind, :sport_organization, label: Club.human_enum_name(:kind, :sport_organization) %>
+        <%= f.radio_button :kind, :personal, label: Club.human_enum_name(:kind, :personal) %>
+        <%= f.text_field :name %>
+        <%= f.text_field :long_name %>
+        <%= f.text_field :website %>
+        <%= f.text_field :email %>
+        <%= f.check_box :visible_email %>
+        <%= f.text_field :phone %>
+        <%= f.check_box :visible_phone %>
+        <%= f.text_field :national_id %>
+        <%= f.check_box :visible_national_id %>
+        <%= f.file_field_:logo_url %>
+      </div>
+      <div class='col-sm'>
+        <%= render 'admin/venues/existing_or_new', f: f %>
+      </div>
+    </div>
+    <div class='remote-form__actions'>
+      <% unless @club.new_record? %>
+        <%= link_to admin_club_path(@club), method: :delete, 'data-confirm': t_are_you_sure_to_remove_item_name(@club.name), title: t_crud('delete', Club) do %>
+          <i class="demo-icon icon-trash-empty text-danger" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+      <%= f.submit class: 'btn btn-primary'%>
+    </div>
+  <% end %>
+</div>

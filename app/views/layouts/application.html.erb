@@ -30,7 +30,7 @@
       <%= render 'layouts/breadcrumb' %>
 
       <div class='d-flex align-items-stretch body__content'>
-        <div class='pt-2 container'>
+        <div class='pt-2 px-3 body__content_without_left-navigation'>
           <%= yield %>
           <% if Const.common[:show_ads] %>
             <div class='card p-1 mt-3 mb-1 text-center d-sm-none navigation-on-the-side--max-width mx-auto'>

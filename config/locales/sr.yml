@@ -45,6 +45,7 @@ sr:
   dashboard: Почетак
   my_account: Мој налог
   my_clubs: Моји клубови
+  my_club: Мој клуб
   change_item_name: Промени %{item_name}
   this_value_is_added_to_url_for_better_seo: Ова вредност се додаје на URL за бољи
     SEO

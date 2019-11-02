@@ -52,6 +52,11 @@ sr-latin:
         few: Uslovi
         other: Uslovi
         accusative: uslov
+      club_user:
+        one: Član
+        few: člana
+        other: članova
+        accusative: člana
     attributes:
       user:
         name: Naziv

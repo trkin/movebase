@@ -1,5 +1,9 @@
 module BootstrapForm
   class FormBuilder
+    def default_layout
+      :horizontal
+    end
+
     def default_label_col
       'col-sm-4'
     end

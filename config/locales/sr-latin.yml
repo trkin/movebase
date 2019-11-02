@@ -45,6 +45,7 @@ sr-latin:
   dashboard: Početak
   my_account: Moj nalog
   my_clubs: Moji klubovi
+  my_club: Moj klub
   change_item_name: Promeni %{item_name}
   this_value_is_added_to_url_for_better_seo: Ova vrednost se dodaje na URL za bolji
     SEO

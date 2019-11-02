@@ -1,15 +1,15 @@
 kayak_club__kayak_club_admin:
   club: kayak_club
   user: kayak_club_admin
-  status: <%= ClubUser.statuses[:active] %>
+  position: <%= ClubUser.positions[:admin] %>
   admin: true
 
 kayak_club__kayak_club_not_admin:
   club: kayak_club
   user: kayak_club_not_admin
-  status: <%= ClubUser.statuses[:active] %>
+  position: <%= ClubUser.positions[:operator] %>
 
 kayak_club__personal_kayak_and_running:
   club: kayak_club
   user: personal_kayak_and_running
-  status: <%= ClubUser.statuses[:unconfirmed] %>
+  position: <%= ClubUser.positions[:invited] %>

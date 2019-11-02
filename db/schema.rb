@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_150816) do
+ActiveRecord::Schema.define(version: 2019_10_27_223757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(version: 2019_10_15_150816) do
   create_table "club_users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "club_id", null: false
     t.uuid "user_id", null: false
-    t.integer "status", default: 0, null: false
     t.boolean "admin", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "position"
     t.index ["club_id", "user_id"], name: "index_club_users_on_club_id_and_user_id", unique: true
     t.index ["club_id"], name: "index_club_users_on_club_id"
     t.index ["user_id"], name: "index_club_users_on_user_id"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2019_10_15_150816) do
     t.boolean "visible_email"
     t.boolean "visible_phone"
     t.boolean "visible_national_id"
+    t.string "logo_url"
     t.index ["venue_id"], name: "index_clubs_on_venue_id"
   end
 
@@ -179,6 +180,8 @@ ActiveRecord::Schema.define(version: 2019_10_15_150816) do
     t.datetime "locked_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.uuid "club_id"
+    t.index ["club_id"], name: "index_users_on_club_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -216,4 +219,5 @@ ActiveRecord::Schema.define(version: 2019_10_15_150816) do
   add_foreign_key "disciplines", "activities"
   add_foreign_key "happenings", "clubs"
   add_foreign_key "happenings", "venues"
+  add_foreign_key "users", "clubs"
 end

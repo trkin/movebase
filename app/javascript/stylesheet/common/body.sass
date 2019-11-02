@@ -2,6 +2,7 @@
 // 1px below and padding top and bootom 1.5rem * 16px = 24px in total is 50px
 $header-height: 50px
 $footer-height: 64px
+$navigation_on_side: 10.5rem
 
 body
   font-family: serif
@@ -12,6 +13,17 @@ html, body
 .body__content
   // we need navigation to span all 100% vertical heigh
   height: calc(100% - #{$header-height})
+
+.navigation-on-the-side--min-width
+  min-width: $navigation_on_side
+
+.navigation-on-the-side--max-width
+  max-width: $navigation_on_side
+
+.body__content_without_left-navigation
+  width: calc(100% - #{$navigation_on_side})
+  @include media-breakpoint-only(xs)
+    width: 100%
 
 .body__sticky-footer
   position: fixed

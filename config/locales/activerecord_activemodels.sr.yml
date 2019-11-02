@@ -52,6 +52,11 @@ sr:
         few: Услови
         other: Услови
         accusative: услов
+      club_user:
+        one: Члан
+        few: члана
+        other: чланова
+        accusative: члана
     attributes:
       user:
         name: Назив
@@ -118,3 +123,8 @@ sr:
         day: Дан
         week: Недеља
         month: Месец
+        hour: Сат
+        min: Минут
+        total: Укупно
+        custom_name: Прилагођено име
+        start_number: Почетни нумбер

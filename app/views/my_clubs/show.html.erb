@@ -1,11 +1,31 @@
 <%
   breadcrumb t('my_clubs') => nil
 %>
-<div class='d-flex flex-column flex-md-row'>
+Join some club to start posting happenings for it.
+<div class='row'>
+  <div class='col'>
   <div class='card m-2'>
     <div class='card-body'>
-      Join some club to keep informed for new happenings.
-      You can create your own club.
+        <% if current_user.admin_of_a_current_club? %>
+          <%= button_tag_open_modal edit_my_club_path %>
+        <% end %>
+      <% if current_user.club.present? %>
+        <%= detail_view current_user.club, *Club::FIELDS, label_class: 'col-sm-6' %>
+      <% else %>
+        You can create your own club.
+        <%= button_tag_open_modal new_my_club_path, text: t('create') %>
+      <% end %>
+    </div>
+  </div>
+  </div>
+  <div class='col'>
+    <div class='card'>
+      <div class='card-header'>
+        <h5 class='card-title'><i class='demo-icon icon-users mx-1'></i>Users</h5>
+      </div>
+      <div class='card-body'>
+        <%= @datatable.render_html search_club_users_path(format: :json) %>
+      </div>
     </div>
   </div>
 </div>

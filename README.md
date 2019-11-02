@@ -58,6 +58,12 @@ yml_google_translate_api.rb config/locales/sr-latin.yml sr_to_cyr en
 
 Run tests with `rake`
 
+# Production
+
+```
+ssh root@$PRODUCTION_IP
+```
+
 # Slides
 
 Navigate to `/slides`

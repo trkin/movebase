@@ -52,6 +52,11 @@ en:
         few: Requirements
         other: Requirements
         accusative: requirement
+      club_user:
+        one: Member
+        few: member
+        other: members
+        accusative: member
     attributes:
       user:
         name: Name
@@ -118,3 +123,8 @@ en:
         day: Day
         week: Sunday
         month: Month
+        hour: A clock
+        min: Minute
+        total: In total
+        custom_name: Custom name
+        start_number: Initial number

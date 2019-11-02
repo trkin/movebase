@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
     devise_for :users, controllers: {
       omniauth_callbacks: 'devise/my_omniauth_callbacks',
-      confirmations: 'devise/my_confirmations',
       registrations: 'devise/my_registrations',
     }
 
@@ -51,7 +50,14 @@ Rails.application.routes.draw do
       end
     end
 
-    resource :my_clubs do
+    resource :my_club do
+      patch :submit_choose
+      delete :remove_me_from
+    end
+    resources :club_users do
+      collection do
+        post :search
+      end
     end
 
     namespace :admin do

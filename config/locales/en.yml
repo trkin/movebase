@@ -46,6 +46,7 @@ en:
   dashboard: Dashboard
   my_account: My account
   my_clubs: My clubs
+  my_club: My club
   change_item_name: Change %{item_name}
   this_value_is_added_to_url_for_better_seo: This value is added to url for better
     seo

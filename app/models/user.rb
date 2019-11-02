@@ -8,11 +8,13 @@ class User < ApplicationRecord
   FIELDS = %i[name email password password_confirmation].freeze
 
   has_many :club_users, dependent: :destroy
+  has_many :clubs, through: :club_users, dependent: :destroy
+  belongs_to :club
 
   validates :email, presence: true
 
   # rubocop:disable Metrics/MethodLength
-  def self.from_omniauth(auth, params)
+  def self.from_omniauth(auth, _params)
     user = find_by(uid: auth.uid)
     return user if user
 
@@ -39,5 +41,24 @@ class User < ApplicationRecord
 
   def destroy_my_data!
     # TODO: remove all dependencies
+  end
+
+  def admin_of_a_current_club?
+    club_users.admin.where(club: club).present?
+    true
+  end
+
+  def remove_me_from_company(target_company)
+    if companies.size == 1
+      # we will remove the account
+      destroy_my_data!
+      destroy!
+    elsif target_company == company
+      company_users.find_by(company: company).destroy!
+      self.company = company_users.first.company
+      save!
+    else
+      company_users.find_by(company: company).destroy!
+    end
   end
 end
