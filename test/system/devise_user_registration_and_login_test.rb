@@ -109,29 +109,29 @@ class DeviseUserRegistrationAndLoginTest < ApplicationSystemTestCase
     assert_text t('devise.unlocks.send_instructions')
   end
 
-#   test 'signup with facebook which does not have email should allow instant login' do
-#     OmniAuth.config.test_mode = true
-#     email = 'my@email.com'
-#     password = 'password'
-#     facebook_uid = SecureRandom.hex
-#     OmniAuth.config.add_mock :facebook, uid: facebook_uid
-#     visit '/'
-#     find("a[title='#{t('my_devise.sign_in_with', provider: t('provider.facebook'))}']").click
-#     # we could directly visit user_facebook_omniauth_authorize_path
-#     fill_in User.human_attribute_name(:email), with: email
-#     fill_in User.human_attribute_name(:password), with: password
-#     fill_in User.human_attribute_name(:password_confirmation), with: password
-#     click_on t('register')
+  #   test 'signup with facebook which does not have email should allow instant login' do
+  #     OmniAuth.config.test_mode = true
+  #     email = 'my@email.com'
+  #     password = 'password'
+  #     facebook_uid = SecureRandom.hex
+  #     OmniAuth.config.add_mock :facebook, uid: facebook_uid
+  #     visit '/'
+  #     find("a[title='#{t('my_devise.sign_in_with', provider: t('provider.facebook'))}']").click
+  #     # we could directly visit user_facebook_omniauth_authorize_path
+  #     fill_in User.human_attribute_name(:email), with: email
+  #     fill_in User.human_attribute_name(:password), with: password
+  #     fill_in User.human_attribute_name(:password_confirmation), with: password
+  #     click_on t('register')
 
-#     assert_user_logged_in_with_email email
+  #     assert_user_logged_in_with_email email
 
-#     click_on email
-#     click_on t('sign_out')
-#     find("a[title='#{t('my_devise.sign_in_with', provider: t('provider.facebook'))}']").click
-#     assert_user_logged_in_with_email email
-#     user = User.last
-#     assert_equal facebook_uid, user.facebook_uid
+  #     click_on email
+  #     click_on t('sign_out')
+  #     find("a[title='#{t('my_devise.sign_in_with', provider: t('provider.facebook'))}']").click
+  #     assert_user_logged_in_with_email email
+  #     user = User.last
+  #     assert_equal facebook_uid, user.facebook_uid
 
-#     OmniAuth.config.test_mode = false
-#   end
+  #     OmniAuth.config.test_mode = false
+  #   end
 end

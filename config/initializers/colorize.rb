@@ -9,19 +9,14 @@ class String
     last_index = 0
     res = ''
     while (new_index = self[last_index..-1].index(string))
-      if last_index + new_index - 1 > -1
-        res += self[last_index..last_index + new_index - 1]
-      end
+      res += self[last_index..last_index + new_index - 1] if last_index + new_index - 1 > -1
       res += string.red
       last_index = last_index + new_index + string.length
     end
     res += self[last_index..-1]
-    if only_matched_lines
-      res = res.split("\n").select { |l| l.index string }.join("\n")
-    end
-    # rubocop:disable Rails/Output
+    res = res.split("\n").select { |l| l.index string }.join("\n") if only_matched_lines
     puts res
-    # rubocop:enable Rails/Output
+
     return_nil ? nil : res
   end
 end

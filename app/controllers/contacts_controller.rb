@@ -20,5 +20,4 @@ class ContactsController < ApplicationController
       render :show
     end
   end
-
 end

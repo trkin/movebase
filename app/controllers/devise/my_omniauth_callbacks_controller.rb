@@ -2,7 +2,7 @@ module Devise
   class MyOmniauthCallbacksController < OmniauthCallbacksController
     # https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview
     # data is in request.env["omniauth.auth"]
-    [:facebook, :google_oauth2, :twitter].each do |provider| # yaho_oauth2
+    %i[facebook google_oauth2 twitter].each do |provider| # yaho_oauth2
       define_method provider do
         # use request.env["omniauth.params"]["my_param"]
         user = User.from_omniauth(request.env['omniauth.auth'], request.env['omniauth.params'])

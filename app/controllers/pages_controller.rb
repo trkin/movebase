@@ -17,7 +17,6 @@ class PagesController < ApplicationController
     raise 'This is sample_error on server'
   end
 
-  # rubocop:disable Rails/OutputSafety
   def sample_error_in_javascript
     render layout: true, html: %(
       Calling manual_js_error_now
@@ -34,7 +33,6 @@ class PagesController < ApplicationController
       <a href="/sample-error-in-javascript-ajax" data-remote="true" id="l">Trigger error in ajax</a>
     ).html_safe
   end
-  # rubocop:enable Rails/OutputSafety
 
   def sample_error_in_javascript_ajax
     render js: %(

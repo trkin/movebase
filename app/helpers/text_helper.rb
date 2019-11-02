@@ -1,4 +1,4 @@
-# rubocop:disable Metrics/ModuleLength, Rails/OutputSafety
+# rubocop:disable Metrics/ModuleLength
 module TextHelper
   def text_with_help_icon(main_text, help_text)
     <<~HTML
@@ -148,7 +148,7 @@ module TextHelper
     HTML
       .html_safe
   end
- 
+
   # For enums you can use User.human_enum_name :status, user.status
 end
-# rubocop:enable Metrics/ModuleLength, Rails/OutputSafety
+# rubocop:enable Metrics/ModuleLength
