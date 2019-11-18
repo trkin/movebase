@@ -1,0 +1,21 @@
+# https://github.community/t5/GitHub-Actions/Github-Actions-CI-CD-pipeline-branch-gt-master-gt-release-tag/m-p/29996#M118
+name: Production deploy
+on:
+  release:
+    types: [published]
+jobs:
+  prod-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: webfactory/ssh-agent@v0.1.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+      - run: |
+          sudo apt -yqq install libpq-dev
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+          cap production deploy

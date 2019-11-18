@@ -5,6 +5,8 @@ can join for any king of sport or recreational activity. It is an index of all
 activities like hiking, running, kayaking, and can perform filtering to specific
 discipline requirements like split boarding.
 
+Source is located on https://github.com/trkin/move-index
+
 # Docs
 
 You can find additional documentation in
@@ -15,13 +17,15 @@ You can find additional documentation in
 
 This project uses:
 
-* Ruby on Rails https://rubyonrails.org
+* Ruby on Rails
 * Postresql
+* Github Actions CI/CD to deploy to Digital Ocean
 
 Gems:
 
 * mobility for translations https://github.com/shioyama/mobility
-* Trk datatables for index https://github.com/trkin/trk_datatables
+* Trk datatables for basic listing and searching
+  https://github.com/trkin/trk_datatables
 
 # Development
 
@@ -62,6 +66,11 @@ Run tests with `rake`
 
 ```
 ssh root@$PRODUCTION_IP
+ssh deploy@$PRODUCTION_IP
+```
+
+```
+cap production deploy
 ```
 
 # Slides

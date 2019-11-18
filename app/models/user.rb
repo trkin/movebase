@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   has_many :club_users, dependent: :destroy
   has_many :clubs, through: :club_users, dependent: :destroy
-  belongs_to :club
+  belongs_to :club, optional: true
 
   validates :email, presence: true
 
