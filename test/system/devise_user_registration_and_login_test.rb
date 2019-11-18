@@ -31,43 +31,43 @@ class DeviseUserRegistrationAndLoginTest < ApplicationSystemTestCase
   end
 
   test 'register user already exists' do
-    email = users(:kayak_club_admin).email
+    email = users(:kayak_admin).email
     manual_register email
     assert_field_error t('errors.messages.taken')
   end
 
   test 'register already exists, email upercased' do
-    email = users(:kayak_club_admin).email
+    email = users(:kayak_admin).email
     manual_register email.upcase
     assert_field_error t('errors.messages.taken')
   end
 
   test 'register already exists, email not striped' do
-    email = users(:kayak_club_admin).email
+    email = users(:kayak_admin).email
     manual_register " #{email} "
     assert_field_error t('errors.messages.taken')
   end
 
   test 'login' do
-    email = users(:kayak_club_admin).email
+    email = users(:kayak_admin).email
     manual_login email
     assert_user_logged_in_with_email email
   end
 
   test 'login, email upercased' do
-    email = users(:kayak_club_admin).email
+    email = users(:kayak_admin).email
     manual_login email.upcase
     assert_user_logged_in_with_email email
   end
 
   test 'login, email not striped' do
-    email = users(:kayak_club_admin).email
+    email = users(:kayak_admin).email
     manual_login " #{email} "
     assert_user_logged_in_with_email email
   end
 
   test 'forgot password' do
-    user = users(:kayak_club_admin)
+    user = users(:kayak_admin)
     visit new_user_password_path
     fill_in User.human_attribute_name(:email), with: user.email
     perform_enqueued_jobs only: ActionMailer::DeliveryJob do
@@ -86,7 +86,7 @@ class DeviseUserRegistrationAndLoginTest < ApplicationSystemTestCase
   end
 
   test 'resend confirmation instructions' do
-    user = users(:kayak_club_admin)
+    user = users(:kayak_admin)
     user.confirmed_at = nil
     user.save!
     visit new_user_confirmation_path
@@ -99,7 +99,7 @@ class DeviseUserRegistrationAndLoginTest < ApplicationSystemTestCase
   test 'resend unlock instructions' do
     return unless User.devise_modules.include?(:lockable) && User.unlock_strategy_enabled?(:email)
 
-    user = users(:kayak_club_admin)
+    user = users(:kayak_admin)
     user.locked_at = Time.zone.now
     user.save!
     visit new_user_unlock_path

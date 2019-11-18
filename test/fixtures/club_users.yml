@@ -1,15 +1,15 @@
-kayak_club__kayak_club_admin:
-  club: kayak_club
-  user: kayak_club_admin
+kayak__kayak_admin:
+  club: kayak
+  user: kayak_admin
   position: <%= ClubUser.positions[:admin] %>
   admin: true
 
-kayak_club__kayak_club_not_admin:
-  club: kayak_club
-  user: kayak_club_not_admin
+kayak__kayak_not_admin:
+  club: kayak
+  user: kayak_not_admin
   position: <%= ClubUser.positions[:operator] %>
 
-kayak_club__personal_kayak_and_running:
-  club: kayak_club
+kayak__personal_kayak_and_running:
+  club: kayak
   user: personal_kayak_and_running
   position: <%= ClubUser.positions[:invited] %>

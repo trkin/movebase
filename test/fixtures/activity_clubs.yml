@@ -1,7 +1,7 @@
-kayaking__kayak_club:
+kayaking__kayak:
   activity: kayaking
-  club: kayak_club
+  club: kayak
 
-walking_and_running__hiking_club:
+walking_and_running__hiking:
   activity: walking_and_running
-  club: hiking_club
+  club: hiking

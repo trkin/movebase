@@ -1,0 +1,17 @@
+# https://github.community/t5/GitHub-Actions/Github-Actions-CI-CD-pipeline-branch-gt-master-gt-release-tag/m-p/29996#M118
+name: Production deploy
+on:
+  release:
+    tags:
+      - v*
+jobs:
+  prod-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      if: github.event.action == 'published'
+    - uses: miloserdow/capistrano-deploy@v1.2
+      if: github.event.action == 'published'
+      with:
+        target: 'production'
+        deploy_key: ${{ secrets.DEPLOY_ID_RSA_ENC_PASSWORD }}
