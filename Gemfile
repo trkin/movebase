@@ -99,6 +99,8 @@ gem 'montrose'
 # use custom start_number
 gem 'mustache'
 
+gem 'rubyzip', '>=1.3.0'
+
 # datatables
 gem 'trk_datatables', '~>0.1'
 # gem 'trk_datatables', path: '~/gems/trk_datatables'
