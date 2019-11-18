@@ -1,0 +1,55 @@
+name: Ruby
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:11
+        env:
+          POSTGRES_USER: move_index
+          POSTGRES_DB: move_index_test
+          POSTGRES_PASSWORD: ""
+        ports: ["5432:5432"]
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
+    - name: Set up Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.13.0
+    - name: Install dependecies
+      run: |
+        sudo apt-get -yqq install libpq-dev
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+        yarn install
+    - name: Setup test database
+      env:
+        RAILS_ENV: test
+        PGHOST: localhost
+        PGUSER: move_index
+      run: |
+        bin/rails db:create
+        bin/rails db:migrate
+    - name: Run tests
+      env:
+        RAILS_ENV: test
+        PGHOST: localhost
+        PGUSER: move_index
+      run: bundle exec rake
+    - name: Run system tests
+      env:
+        RAILS_ENV: test
+        PGHOST: localhost
+        PGUSER: move_index
+      run: bundle exec rails test:system

@@ -9,12 +9,16 @@ DEFAULTS: &DEFAULTS
 superadmin:
   <<: *DEFAULTS
   superadmin: true
+  club: kayak
 
 personal_kayak_and_running:
   <<: *DEFAULTS
+  club: personal
 
-kayak_club_admin:
+kayak_admin:
   <<: *DEFAULTS
+  club: kayak
 
-kayak_club_not_admin:
+kayak_not_admin:
   <<: *DEFAULTS
+  club: kayak

@@ -2,7 +2,7 @@ kayak_regata:
   name:
     en: May's First kayak regatta
     sr-latin: Majski kajakaški kup Novog Sada
-  club: kayak_club
+  club: kayak
   venue: sodros
   start_date: 2019-05-01
   end_date: 2019-05-01
@@ -12,7 +12,7 @@ personal_long_kayaking:
   name:
     en: Personal long kayaking from NS to BG
   venue: strand
-  club: personal_club
+  club: personal
   start_date: 2019-02-23
   end_date: 2019-02-23
   website: http://blog.trk.in.rs
@@ -21,7 +21,7 @@ triathlon:
   name:
     en: Triathlon
   venue: strand
-  club: triathlon_club
+  club: triathlon
   start_date: 2019-06-23
   end_date: 2019-06-23
 
@@ -29,14 +29,14 @@ quadrathlon_munich:
   name:
     en: Quadrathlon Munich
   venue: munich
-  club: munich_kayak_club
+  club: munich_kayak
   start_date: 2019-07-23
   end_date: 2019-07-23
 
 wednesday_walking_23:
   name:
     en: Wednesday walking 23
-  club: hiking_club
+  club: hiking
   venue: bus_station_popovica
   start_date: 2019-02-20
   end_date: 2019-02-20
@@ -45,7 +45,7 @@ wednesday_walking_23:
 wednesday_walking_24:
   name:
     en: Wednesday walking 24
-  club: hiking_club
+  club: hiking
   venue: bus_station_popovica
   start_date: 2019-02-27
   end_date: 2019-02-27
@@ -54,7 +54,7 @@ wednesday_walking_24:
 walking_with_children_to_the_tower:
   name:
     en: Walking with children to the tower
-  club: personal_club
+  club: personal
   venue: bus_station_popovica
   start_date: 2019-03-17
   end_date: 2019-03-17
@@ -62,7 +62,7 @@ walking_with_children_to_the_tower:
 walk_or_run_tracking:
   name:
     en: Walk or run tracking
-  club: hiking_club
+  club: hiking
   venue: bus_station_popovica
   start_date: 2019-03-17
   end_date: 2019-03-17
@@ -70,7 +70,7 @@ walk_or_run_tracking:
 half_marathon:
   name:
     en: Half marthon
-  club: personal_club
+  club: personal
   venue: novi_sad
   start_date: 2020-05-17
   end_date: 2020-05-17
@@ -80,7 +80,7 @@ sky_running:
   name:
     en: Sky running Stara planina
   venue: stara_planina
-  club: hiking_club
+  club: hiking
   start_date: 2019-12-17
   end_date: 2019-12-17
   recurrence: <%= Montrose.every(:year, on: { december: 1 }).to_yaml.inspect %>
@@ -89,7 +89,7 @@ stairs_run_vrsac:
   name:
     en: Stairs run in Vrsac
   venue: vrsac
-  club: hiking_club
+  club: hiking
   start_date: 2019-05-26
   end_date: 2019-05-26
   recurrence: <%= Montrose.every(:year, on: { june: 1 }).to_yaml.inspect %>

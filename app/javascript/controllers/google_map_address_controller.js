@@ -42,7 +42,7 @@ export default class extends Controller {
 
     let autocomplete = new google.maps.places.Autocomplete(
       this.addressTarget,
-      { componentRestrictions: { country: GOOGLE_MAPS_PLACES_COUNTRY } }
+      // { componentRestrictions: { country: GOOGLE_MAPS_PLACES_COUNTRY } }
     )
     let marker = new google.maps.Marker({
       map: this.map,
