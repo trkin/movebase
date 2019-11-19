@@ -70,10 +70,8 @@ class DeviseUserRegistrationAndLoginTest < ApplicationSystemTestCase
     user = users(:kayak_admin)
     visit new_user_password_path
     fill_in User.human_attribute_name(:email), with: user.email
-    perform_enqueued_jobs only: ActionMailer::DeliveryJob do
-      click_on t('my_devise.send_me_reset_password_instructions')
-      assert_notice t('devise.passwords.send_instructions')
-    end
+    click_on t('my_devise.send_me_reset_password_instructions')
+    assert_notice t('devise.passwords.send_instructions')
     mail = give_me_last_mail_and_clear_mails
     link = mail.body.match("(http://.*)\">#{t('my_devise_mailer.change_password')}")[1]
     visit link
