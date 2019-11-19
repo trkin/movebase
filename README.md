@@ -64,10 +64,14 @@ Run tests with `rake`
 
 # Production
 
+Make sure you can access production server
 ```
 ssh root@$PRODUCTION_IP
 ssh deploy@$PRODUCTION_IP
 ```
+
+Creating new Release (with tag like `v0.123`) will trigger production deploy,
+but you can manually deploy using:
 
 ```
 cap production deploy
