@@ -23,7 +23,6 @@ class Admin::ClubsController < Admin::BaseController
   end
 
   def edit
-    @club = current_user.club
     render partial: 'form', layout: false
   end
 

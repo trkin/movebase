@@ -13,7 +13,6 @@ document.addEventListener('turbolinks:load', () => {
     language: I18N.datatables[document.documentElement.lang],
   })
 
-
   $('[data-select2-initialize]').each(function() {
     let options = {
     }

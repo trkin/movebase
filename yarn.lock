@@ -7038,9 +7038,9 @@ trim-newlines@^1.0.0:
   integrity sha1-WIeWa7WCpFA6QetST301ARgVphM=
 
 trk_datatables@^1.0.6:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/trk_datatables/-/trk_datatables-1.0.8.tgz#aa673d2d782daf427f72f7dbd75527c6532be012"
-  integrity sha512-08ILTuw/G7G5IVAd4GDM9Ry5xqs1Z64ZRJWM2CaEFUW/5cUa6RjbpFL9Kx9YZEc8me5KN7cX3AIPrWiL7SjC0g==
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/trk_datatables/-/trk_datatables-1.0.9.tgz#3b8257183fa3bcb05965a952055e38402653760c"
+  integrity sha512-hJ0Bn295VnwcaSfEnfc28tdPzqkCGcM+WH1qrazypnDsDWlVF9nLXKWh9FUnI7gdXIQpxpmtl2fYFEQ3v8sV+A==
   dependencies:
     datatables.net "^1.10.19"
     datatables.net-bs4 "^1.10.19"

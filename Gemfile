@@ -35,9 +35,12 @@ end
 
 group :development do
   gem 'capistrano', '~> 3.11'
-  gem 'capistrano-passenger', '~> 0.2.0'
   gem 'capistrano-rails', '~> 1.4'
+
+  gem 'capistrano-passenger', '~> 0.2.0'
   gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+
+  gem 'capistrano-rails-console', require: false
 
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop'
@@ -68,7 +71,8 @@ gem 'omniauth-google-oauth2'
 gem 'fontello_rails_converter'
 
 # bootstrap form
-gem 'bootstrap_form', github: 'duleorlovic/bootstrap_form', branch: 'add_default_layout_method'
+# use master untill new release includes https://github.com/bootstrap-ruby/bootstrap_form/pull/550
+gem 'bootstrap_form', git: 'https://github.com/bootstrap-ruby/bootstrap_form.git'
 
 # translation
 gem 'mobility', '~> 0.8.6'
