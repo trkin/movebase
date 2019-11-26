@@ -61,7 +61,8 @@ jobs:
           bin/rails db:create
           bin/rails db:migrate
       - name: Run tests
-        run: bundle exec rake
+        run: |
+          bundle exec rake
       - name: Run system tests
         run: |
           bundle exec rails test:system
