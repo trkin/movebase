@@ -9,6 +9,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+      PGHOST: localhost
+      PGUSER: move_index
     services:
       postgres:
         image: postgres:11
@@ -53,24 +57,12 @@ jobs:
           bundle install --jobs 4 --retry 3
           yarn install
       - name: Setup test database
-        env:
-          RAILS_ENV: test
-          PGHOST: localhost
-          PGUSER: move_index
         run: |
           bin/rails db:create
           bin/rails db:migrate
       - name: Run tests
-        env:
-          RAILS_ENV: test
-          PGHOST: localhost
-          PGUSER: move_index
         run: bundle exec rake
       - name: Run system tests
-        env:
-          RAILS_ENV: test
-          PGHOST: localhost
-          PGUSER: move_index
         run: |
           bundle exec rails test:system
   staging:
