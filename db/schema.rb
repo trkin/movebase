@@ -217,7 +217,6 @@ ActiveRecord::Schema.define(version: 2019_10_27_223757) do
   add_foreign_key "discipline_requirements", "disciplines"
   add_foreign_key "discipline_requirements", "requirements"
   add_foreign_key "disciplines", "activities"
-  add_foreign_key "happenings", "clubs"
   add_foreign_key "happenings", "venues"
   add_foreign_key "users", "clubs"
 end
