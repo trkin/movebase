@@ -35,6 +35,13 @@ rails db:drop
 heroku pg:pull postgresql-curly-88828 move_index_development
 ```
 
+Secrets are stored in `config/credentials/development.yml.erb` and you can edit
+with
+
+```
+rails credentials:edit -e development
+```
+
 Icons
 
 ```
