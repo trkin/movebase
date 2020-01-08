@@ -45,7 +45,7 @@ rails credentials:edit -e development
 Icons
 
 ```
-gnome-open https://localhost:3000/fontello-demo.html
+gnome-open http://localhost:3001/fontello-demo.html
 # when you want to update you can
 fontello open
 # select new icons

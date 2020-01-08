@@ -24,12 +24,18 @@ Rails.application.routes.draw do
 
     resource :contact
 
+    resources :links do
+      collection do
+        post :search
+      end
+    end
     resources :happenings do
       collection do
         post :search
         get :index_for_location_and_activities
         post :search_for_location_and_activities
       end
+      resources :links
     end
 
     resource :my_account do
@@ -42,6 +48,7 @@ Rails.application.routes.draw do
     end
 
     resources :clubs do
+      resources :links
       collection do
         post :search
       end
@@ -49,6 +56,7 @@ Rails.application.routes.draw do
         post :search_happenings
       end
     end
+    resources :venues
 
     resource :my_club do
       patch :submit_choose

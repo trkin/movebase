@@ -18,6 +18,7 @@ class Club < ApplicationRecord
   has_many :active_users, -> { where club_users: { position: ClubUser::ACTIVE_POSITIONS } }, through: :club_users, source: :user
   has_many :activity_clubs, dependent: :destroy
   has_many :activities, through: :activity_clubs
+  has_many :links, as: :linkable
 
   validates :name, :venue, presence: true
 end

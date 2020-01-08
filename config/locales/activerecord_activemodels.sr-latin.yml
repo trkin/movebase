@@ -54,9 +54,14 @@ sr-latin:
         accusative: uslov
       club_user:
         one: Član
-        few: člana
-        other: članova
+        few: Člana
+        other: Članova
         accusative: člana
+      link:
+        one: Veza
+        few: Veze
+        other: Veza
+        accusative: vezu
     attributes:
       user:
         name: Naziv
@@ -89,6 +94,8 @@ sr-latin:
         zip: Poštanski kod
       happening:
         name: Naziv
+        club: Klub
+        venue: Mesto
         description: Opis
         start_date: Datum početka
         end_date: Datum završetka
@@ -116,6 +123,15 @@ sr-latin:
       requirement:
         name: Naziv
         description: Opis
+      link:
+        kind: Tip
+        url: Adresa
+        kinds:
+          club_website: Klupska stranica
+          club_facebook_page: Klupska fejsbuk stranica
+          happening_website: Stranica događaja
+          happening_results: Rezultati sa događaja
+          happening_photos: Fotografije sa događaja
   activemodel:
     attributes:
       contact:

@@ -57,6 +57,11 @@ sr:
         few: члана
         other: чланова
         accusative: члана
+      link:
+        one: Веза
+        few: Везе
+        other: Веза
+        accusative: везу
     attributes:
       user:
         name: Назив
@@ -89,6 +94,8 @@ sr:
         zip: Поштански код
       happening:
         name: Назив
+        club: Клуб
+        venue: Место
         description: Опис
         start_date: Датум почетка
         end_date: Датум завршетка
@@ -116,6 +123,15 @@ sr:
       requirement:
         name: Назив
         description: Опис
+      link:
+        kind: Тип
+        url: Адреса
+        kinds:
+          club_website: Клупска страница
+          club_facebook_page: Клупска фејсбук страница
+          happening_website: Страница догађаја
+          happening_results: Резултати са догађаја
+          happening_photos: Фотографије са догађаја
   activemodel:
     attributes:
       recurrence_form:

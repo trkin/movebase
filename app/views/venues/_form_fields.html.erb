@@ -1,0 +1,28 @@
+<%#
+  f - form builder
+  disabled - default if false
+%>
+<%
+  disabled ||= false
+%>
+<div
+  data-controller='google-map-address'
+  data-action='
+  googleMapAddressInitMap@window->google-map-address#googleMapAddressInitMap
+  googleMapAddressDragend@window->google-map-address#googleMapAddressDragEnd
+  googleMapAddressPlaceChanged@window->google-map-address#googleMapAddressPlaceChanged
+  '
+  >
+  <div class='row'>
+    <div class='col'>
+      <%= f.text_field :name, disabled: disabled %>
+      <%= f.text_field :address, 'data-target': 'google-map-address.address', disabled: disabled %>
+      <%= f.text_field :city, help: t('this_value_is_added_to_url_for_better_seo'), disabled: disabled %>
+    </div>
+    <div class='col'>
+      <%= f.text_field :latitude, 'data-target': 'google-map-address.latitude', disabled: disabled %>
+      <%= f.text_field :longitude, 'data-target': 'google-map-address.longitude', disabled: disabled %>
+    </div>
+  </div>
+  <div class='map map--300px' data-target='google-map-address.map'></div>
+</div>

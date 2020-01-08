@@ -1,0 +1,13 @@
+<div id='remote-form'>
+  <%= bootstrap_form_for @venue, url: @venue.new_record? ? venues_path : venue_path(@venue), remote: true, layout: :horizontal do |f| %>
+    <%= render 'form_fields', f: f %>
+    <div class='remote-form__actions'>
+      <% unless @venue.new_record? %>
+        <%= link_to venue_path(@venue), method: :delete, 'data-confirm': t_are_you_sure_to_remove_item_name(@venue.name), title: t_crud('delete', Venue) do %>
+          <i class="demo-icon icon-trash-empty text-danger" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+      <%= f.submit class: 'btn btn-primary'%>
+    </div>
+  <% end %>
+</div>

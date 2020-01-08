@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_223757) do
+ActiveRecord::Schema.define(version: 2019_12_02_210828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -126,15 +126,26 @@ ActiveRecord::Schema.define(version: 2019_10_27_223757) do
     t.uuid "venue_id", null: false
     t.uuid "club_id", null: false
     t.jsonb "name", default: {}
+    t.string "website"
     t.date "start_date", null: false
     t.date "end_date", null: false
-    t.string "website"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.jsonb "description", default: {}
     t.string "recurrence"
     t.index ["club_id"], name: "index_happenings_on_club_id"
     t.index ["venue_id"], name: "index_happenings_on_venue_id"
+  end
+
+  create_table "links", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "linkable_type", null: false
+    t.uuid "linkable_id", null: false
+    t.string "kind", null: false
+    t.string "text"
+    t.string "url", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["linkable_type", "linkable_id"], name: "index_links_on_linkable_type_and_linkable_id"
   end
 
   create_table "requirements", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -217,6 +228,7 @@ ActiveRecord::Schema.define(version: 2019_10_27_223757) do
   add_foreign_key "discipline_requirements", "disciplines"
   add_foreign_key "discipline_requirements", "requirements"
   add_foreign_key "disciplines", "activities"
+  add_foreign_key "happenings", "clubs"
   add_foreign_key "happenings", "venues"
   add_foreign_key "users", "clubs"
 end

@@ -28,7 +28,7 @@
       <% if activity.self_and_used_in_activities.length > 1 %>
         <div class='dropdown-item'>
           <%= link_to activity.name, add_path, class: 'dropdown-item--inline' %>
-          <%= link_to '∈', add_related_path, class: 'btn btn-small btn-info dropdown-item--inline', title: t('activity_name_and_used_in_activities_name', activity_name: activity.name, activities_name: activity.self_and_used_in_activities.map(&:name).to_sentence) %>
+          <%= link_to t('and_related'), add_related_path, class: 'btn btn-small btn-primary dropdown-item--inline', title: t('activity_name_and_used_in_activities_name', activity_name: activity.name, activities_name: activity.self_and_used_in_activities.map(&:name).to_sentence) %>
         </div>
       <% else %>
         <%= link_to activity.name, add_path, class:'dropdown-item' %>

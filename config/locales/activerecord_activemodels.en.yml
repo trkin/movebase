@@ -55,8 +55,13 @@ en:
       club_user:
         one: Member
         few: member
-        other: members
+        other: Members
         accusative: member
+      link:
+        one: Link
+        few: Links
+        other: Links
+        accusative: link
     attributes:
       user:
         name: Name
@@ -89,6 +94,8 @@ en:
         zip: Zip
       happening:
         name: Name
+        club: Club
+        venue: Venue
         description: Description
         start_date: Start date
         end_date: End date
@@ -116,6 +123,15 @@ en:
       requirement:
         name: Name
         description: Description
+      link:
+        kind: Kind
+        url: Url
+        kinds:
+          club_website: Club website
+          club_facebook_page: Club facebook page
+          happening_website: Happening website
+          happening_results: Happening results
+          happening_photos: Happening photos
   activemodel:
     attributes:
       recurrence_form:

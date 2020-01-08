@@ -68,3 +68,4 @@ sr-latin:
     month: Mesečno
     year: Godišnje
   can_not_be_less_than_item_name: Ne može biti manji od %{item_name}
+  and_related: i slični

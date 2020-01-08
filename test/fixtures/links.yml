@@ -1,0 +1,4 @@
+kayak_link:
+  linkable: kayak (Club)
+  kind: <%= Link.kinds[:club_website] %>
+  url: http://kayak,com

@@ -25,26 +25,43 @@
         <% end %>
         <h4><%= Discipline.model_name.human(count: @happening.discipline_happenings.size) %></h4>
         <% @happening.discipline_happenings.each do |discipline_happening| %>
-          <%= discipline_happening.start_time.to_s :short %>
+          <%= discipline_happening.start_time.to_s %>
           <%= discipline_happening.full_name %>
           <br>
           <% discipline_happening.discipline_happening_tags.each do |discipline_happening_tag| %>
             <span class='badge badge-primary'><%= discipline_happening_tag.tag.name %></span>
           <% end %>
         <% end %>
-        <%= link_to @happening.club.name, club_path(@happening.club) %>
       </div>
       <div class='col'>
-        <%= link_to @happening.venue.name, admin_venue_path(@happening.venue) %>
-        <div class='map map--300px'
-             data-controller='google-map'
-             data-google-map-latitude='<%= @happening.venue.latitude %>'
-             data-google-map-longitude='<%= @happening.venue.longitude %>'
-             data-action='google-map-callback@window->google-map#initMap'
-             >
-        </div>
+        <% if @happening.club.venue == @happening.venue %>
+          <%= detail_view_list do %>
+            <%= detail_view_one Happening.human_attribute_name(:club) + ' & ' + Happening.human_attribute_name(:venue), link_to(@happening.club.name, club_path(@happening.club)) %>
+          <% end %>
+        <% else %>
+          <%= detail_view_list do %>
+            <%= detail_view_one Happening.human_attribute_name(:club), link_to(@happening.club.name, club_path(@happening.club)) %>
+            <%= detail_view_one Happening.human_attribute_name(:venue), link_to(@happening.venue.name, venue_path(@happening.venue)) %>
+          <% end %>
+        <% end %>
       </div>
     </div>
+  </div>
+</div>
+<div class='card mt-2'>
+  <div class='card-body'>
+    <% if current_user&.superadmin? %>
+      <div class='float-left'>
+        <%= button_tag_open_modal new_happening_link_path(@happening)  do %>
+          <i class="demo-icon icon-plus" aria-hidden="true"></i>
+          <%= t_crud('add_new', Link) %>
+        <% end %>
+      </div>
+    <% end %>
+    <% @happening.links.each do |link| %>
+      <%= link.kind %>
+      <%= link_to link.url, link.url %>
+    <% end %>
   </div>
 </div>
 <% if Const.common[:show_ads] %>

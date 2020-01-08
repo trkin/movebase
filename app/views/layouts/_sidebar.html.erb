@@ -19,7 +19,7 @@
           <%= t('admin_pages') %>
         </span>
         <%= link_to "<i class='demo-icon icon-gauge mx-1'></i>#{t('dashboard')}".html_safe, admin_dashboard_path, class: "list-group-item list-group-item-action text-primary #{'active' if params[:controller] == 'admin/dashboard'}" %>
-        <%= link_to "<i class='demo-icon icon-users mx-1'></i>#{User.model_name.human(count: 2)}".html_safe, admin_users_path, class: "list-group-item list-group-item-action text-primary #{'active' if params[:controller] == 'admin/users'}" %>
+        <%= link_to "<i class='demo-icon icon-user-o mx-1'></i>#{User.model_name.human(count: 2)}".html_safe, admin_users_path, class: "list-group-item list-group-item-action text-primary #{'active' if params[:controller] == 'admin/users'}" %>
       <% end %>
     </div>
     <%= link_to "<i class='icon-logout mx-1'></i>#{t('my_devise.sign_out')}".html_safe, destroy_user_session_path, method: :delete, class: 'list-group-item list-group-item-action text-primary' %>

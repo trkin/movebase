@@ -12,6 +12,7 @@ class Happening < ApplicationRecord
   belongs_to :club
 
   has_many :discipline_happenings, dependent: :destroy
+  has_many :links, as: :linkable
 
   validates :name, :start_date, :end_date, presence: true
   validate :_end_date_greater_or_equal_start_date

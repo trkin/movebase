@@ -70,9 +70,15 @@ class ApplicationController < ActionController::Base
                       else
                         redirect_path_or_proc
                       end
-      render js: %(
-        window.location.assign('#{redirect_path}');
-      )
+      if redirect_path.present?
+        render js: %(
+          window.location.assign('#{redirect_path}');
+        )
+      else
+        render js: %(
+          window.location.reload();
+        )
+      end
     else
       flash.now[:alert] = item.errors.full_messages.to_sentence
       render js: %(

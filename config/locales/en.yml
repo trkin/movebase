@@ -70,3 +70,4 @@ en:
     month: Monthly
     year: Yearly
   can_not_be_less_than_item_name: It cannot be less than %{item_name}
+  and_related: and related

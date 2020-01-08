@@ -1,0 +1,9 @@
+<%
+  breadcrumb Link.model_name.human(count: 2) => links_path, @link.linkable_id => nil
+%>
+<div class='card'>
+  <div class='card-body'>
+    <%= button_tag_open_modal edit_link_path(@link), title: t_crud('edit', Link), pull_right: true %>
+    <%= detail_view_list @link, *Link::FIELDS %>
+  </div>
+</div>

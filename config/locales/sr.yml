@@ -70,3 +70,4 @@ sr:
     month: Месечно
     year: Годишње
   can_not_be_less_than_item_name: Не може бити мањи од %{item_name}
+  and_related: и слични

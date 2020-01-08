@@ -13,17 +13,14 @@
             <%= button_tag_open_modal edit_recurrence_admin_happening_path(@happening), title: t('edit_item_name', item_name: Happening.human_attribute_name(:recurrence)) %>
           <% end %>
         <% end %>
-        <%= link_to @happening.club.name, admin_club_path(@happening.club) %>
       </div>
       <div class='col-md'>
-        <%= link_to @happening.venue.name, admin_venue_path(@happening.venue) %>
-        <div class='map map--300px'
-             data-controller='google-map'
-             data-google-map-latitude='<%= @happening.venue.latitude %>'
-             data-google-map-longitude='<%= @happening.venue.longitude %>'
-             data-action='google-map-callback@window->google-map#initMap'
-             >
-        </div>
+        <%= detail_view_list do %>
+          <%= detail_view_one Happening.human_attribute_name(:club), link_to(@happening.club.name, admin_club_path(@happening.club)) %>
+          <%= detail_view_one Happening.human_attribute_name(:venue), link_to(@happening.venue.name, admin_venue_path(@happening.venue)) %>
+        <% end %>
+        <% @happening.links.each do |link| %>
+        <% end %>
       </div>
     </div>
   </div>

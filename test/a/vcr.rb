@@ -4,5 +4,5 @@ VCR.configure do |config|
   config.ignore_localhost = true
   driver_hosts = Webdrivers::Common.subclasses.map { |driver| URI(driver.base_url).host }
   driver_hosts += ['googleapis.com']
-  config.ignore_hosts driver_hosts
+  config.ignore_hosts(*driver_hosts)
 end

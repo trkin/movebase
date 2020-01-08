@@ -8,7 +8,7 @@ class Const
       # default_url is required for links in email body or in links in controller
       # when url host is not available (for example rails console)
       default_url: {
-        host: (Rails.env.production? ? 'www.move-index.org' : 'localhost'),
+        host: (Rails.env.production? ? 'move-index.org' : 'localhost'),
         port: (Rails.env.development? ? Rack::Server.new.options[:Port] : nil),
       },
     )

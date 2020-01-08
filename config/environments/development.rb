@@ -60,6 +60,9 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.delivery_method = :letter_opener
+  config.generators.assets = false
+  config.generators.helper = false
+  config.generators.jbuilder = false
 
   # we enable cors so we can test on https://github.com/trkin/trk_datatables_js/blob/master/dist/server_side.html
   config.middleware.insert_before 0, Rack::Cors do
