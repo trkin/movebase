@@ -1,4 +1,4 @@
-class VenuesController < ApplicationUserController
+class VenuesController < ApplicationController
   before_action :_set_venue, except: %i[index new create]
 
   def index
@@ -8,8 +8,10 @@ class VenuesController < ApplicationUserController
   def show; end
 
   def new
-    @venue = Venue.new
-    render partial: 'form', layout: false
+    run Venue::Operation::Create::Present
+    render cell(Venue::Cell::New, @form), layout: false
+    # @venue = Venue.new
+    # render partial: 'form', layout: false
   end
 
   def edit
@@ -18,8 +20,12 @@ class VenuesController < ApplicationUserController
 
   # JS
   def create
-    @venue = Venue.new
-    update_and_render_or_redirect_in_js @venue, _venue_params, ->(id) { venue_path(id) }
+    run Venue::Operation::Create do |result|
+      return redirect_to venue_path(result[:model])
+    end
+    render cell(Venue::Cell::New, @form), layout: false
+    # @venue = Venue.new
+    # update_and_render_or_redirect_in_js @venue, _venue_params, ->(id) { venue_path(id) }
   end
 
   # JS

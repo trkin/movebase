@@ -10,7 +10,7 @@ class Venue < ApplicationRecord
   has_many :happenings, dependent: :destroy
   has_many :clubs, dependent: :destroy
 
-  validates :name, presence: true
+  # validates :name, presence: true
 
   scope :cities, -> { where(is_a_city: true) }
 end

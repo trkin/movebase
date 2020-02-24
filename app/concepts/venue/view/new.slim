@@ -1,0 +1,24 @@
+#remote-form
+  = bootstrap_form_for model, url: venues_path, remote: true do |f|
+    div[
+      data-controller="google-map-address"
+      data-action="
+        googleMapAddressInitMap@window->google-map-address#googleMapAddressInitMap
+        googleMapAddressDragend@window->google-map-address#googleMapAddressDragEnd
+        googleMapAddressPlaceChanged@window->google-map-address#googleMapAddressPlaceChanged
+      "]
+      .row
+        .col
+          = f.text_field :name
+          = f.text_field :address, 'data-target': 'google-map-address.address'
+          = f.text_field :city, help: t('this_value_is_added_to_url_for_better_seo')
+        .col
+          = f.text_field :latitude, 'data-target': 'google-map-address.latitude'
+          = f.text_field :longitude, 'data-target': 'google-map-address.longitude'
+      .map.map--300px[data-target="google-map-address.map"]
+    .remote-form__actions
+      / - unless model.new_record?
+      /   = link_to admin_venue_path(model), method: :delete, 'data-confirm': t_are_you_sure_to_remove_item_name(model.name), title: t_crud('delete', Venue) do
+      /     i.demo-icon.icon-trash-empty.text-danger aria-hidden="true"
+      = f.submit class: 'btn btn-primary'
+

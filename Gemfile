@@ -70,6 +70,9 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+# authorization
+gem 'pundit'
+
 # pick icons by: fontello open; {select icons}; fontello convert
 gem 'fontello_rails_converter'
 
@@ -111,3 +114,18 @@ gem 'rubyzip', '>=1.3.0'
 # datatables
 gem 'trk_datatables', '~>0.1'
 # gem 'trk_datatables', path: '~/gems/trk_datatables'
+
+# https://github.com/trailblazer/reform/issues/500
+# reform is not ready for dry-validation ver 1 so fix to 0
+gem 'dry-types', '~> 0.10.2'
+gem 'dry-validation', '~> 0.10.6'
+gem 'reform'
+gem 'reform-rails'
+
+gem 'trailblazer'
+gem 'trailblazer-cells'
+gem 'trailblazer-generator', require: false
+gem 'trailblazer-rails'
+
+gem 'cells-rails'
+gem 'cells-slim', '0.0.6'

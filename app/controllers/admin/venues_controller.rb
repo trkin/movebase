@@ -8,8 +8,10 @@ class Admin::VenuesController < Admin::BaseController
   def show; end
 
   def new
-    @venue = Venue.new
-    render partial: 'form', layout: false
+    run Venue::Operation::Create
+    render cell(Venue::Cell::New, @form), layout: false
+    # @venue = Venue.new
+    # render partial: 'form', layout: false
   end
 
   def edit

@@ -8,6 +8,8 @@
 <% end %>
 <br>
 <% @venues.each do |venue| %>
-  <%= link_to venue.name, venue_path(venue) %>
+  <div>
+    <%= link_to venue.name, venue_path(venue) %>
+  </div>
   <br>
 <% end %>
