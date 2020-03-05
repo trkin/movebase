@@ -21,7 +21,7 @@ class RecurrenceForm
   def preview
     return [] unless @recurrence
 
-    @recurrence.take total.to_i
+    @recurrence.take(total.to_i).each_with_index.map { |date, i| "#{date.to_date}. #{_get_name(i)}" }
   end
 
   def _get_name(index)

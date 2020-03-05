@@ -3,9 +3,9 @@
     <div class='row'>
       <div class='col-sm'>
         <%= f.select :every, t('recurrences_every').invert %>
-        <%= f.select :day, t('date.day_names').map.with_index.map { |d, i| [d, i] } %>
+        <%= f.select :day, t('date.day_names').zip((1..7).map {|i| Date.new(2006,1,i).strftime('%A')}) %>
         <%= f.select :month, t('date.month_names') %>
-        <%= f.text_field :custom_name, placeholder: "{{number}} name" %>
+        <%= f.text_field :custom_name, placeholder: "{{number}} some_name" %>
       </div>
       <div class='col-sm'>
         <%= f.select :hour, 0..23 %>
