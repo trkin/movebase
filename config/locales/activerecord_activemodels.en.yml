@@ -134,6 +134,9 @@ en:
           happening_photos: Happening photos
   activemodel:
     attributes:
+      contact:
+        email: Email
+        text: Text
       recurrence_form:
         every: Repeated
         day: Day
@@ -144,3 +147,6 @@ en:
         total: In total
         custom_name: Custom name
         start_number: Initial number
+        existing_update: Existing update
+        future: Future
+        all: All

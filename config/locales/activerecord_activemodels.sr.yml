@@ -134,6 +134,9 @@ sr:
           happening_photos: Фотографије са догађаја
   activemodel:
     attributes:
+      contact:
+        email: Имејл
+        text: Порука
       recurrence_form:
         every: Понавља се
         day: Дан
@@ -144,3 +147,6 @@ sr:
         total: Укупно
         custom_name: Прилагођено име
         start_number: Почетни нумбер
+        existing_update: Ажурирај постојеће
+        future: Будуће
+        all: Све

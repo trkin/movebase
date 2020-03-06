@@ -319,6 +319,7 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    timecop (0.9.1)
     trk_datatables (0.1.19)
       activesupport
     turbolinks (5.2.1)
@@ -395,6 +396,7 @@ DEPENDENCIES
   sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)
+  timecop
   trk_datatables (~> 0.1)
   turbolinks (~> 5)
   tzinfo-data

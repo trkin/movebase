@@ -21,11 +21,6 @@ class Admin::HappeningsController < Admin::BaseController
   def edit_recurrence
     @recurrence_form = RecurrenceForm.new(
       happening: @happening,
-      day: @happening.start_date.wday,
-      every: t('recurrences_every').first.first,
-      total: 1,
-      hour: @happening.discipline_happenings.order(start_time: :asc).first&.start_time&.hour,
-      min: @happening.discipline_happenings.order(start_time: :asc).first&.start_time&.min,
     )
     render partial: 'recurrence_form', layout: false
   end
@@ -42,7 +37,7 @@ class Admin::HappeningsController < Admin::BaseController
       @recurrence_form,
       _recurrence_form_params, admin_happening_path(@happening),
       'recurrence_form',
-      helpers.t_notice_count('successfully_created', Happening, @recurrence_form.preview.size),
+      helpers.t_notice_count('successfully_created', Happening, @recurrence_form.take_dates.size),
     )
   end
 

@@ -137,7 +137,6 @@ sr-latin:
       contact:
         email: Imejl
         text: Poruka
-    attributes:
       recurrence_form:
         every: Ponavlja se
         day: Dan
@@ -148,3 +147,6 @@ sr-latin:
         total: Ukupno
         custom_name: Prilagođeno ime
         start_number: Početni number
+        existing_update: Ažuriraj postojeće
+        future: Buduće
+        all: Sve

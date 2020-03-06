@@ -1,3 +1,4 @@
 <div id='preview'>
-  <%=j @recurrence_form.preview.join('<br>').html_safe %>
+  <h3><%= @recurrence_form.every %></h3>
+  <%=j @recurrence_form.take_dates.each_with_index.map { |date, i| "#{date}. #{@recurrence_form.get_name(i)}" }.join('<br>').html_safe %>
 </div>
