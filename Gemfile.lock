@@ -127,7 +127,7 @@ GEM
       launchy
       rest-client
       rubyzip (~> 1.0)
-    geocoder (1.5.2)
+    geocoder (1.6.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashdiff (1.0.0)
