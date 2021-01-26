@@ -1,7 +1,7 @@
 # What is your Move Index ?
 
 This project aims to make it easier for people search for an event which they
-can join for any king of sport or recreational activity. It is an index of all
+can join for any kind of sport or recreational activity. It is an index of all
 activities like hiking, running, kayaking, and can perform filtering to specific
 discipline requirements like split boarding.
 

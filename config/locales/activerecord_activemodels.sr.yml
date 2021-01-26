@@ -97,7 +97,7 @@ sr:
         club: Клуб
         venue: Место
         description: Опис
-        start_date: Датум почетка
+        start_date: Датум
         end_date: Датум завршетка
         website: Интернет страница
         recurrence: Понавља се

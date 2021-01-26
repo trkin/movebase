@@ -97,7 +97,7 @@ en:
         club: Club
         venue: Venue
         description: Description
-        start_date: Start date
+        start_date: Date
         end_date: End date
         website: Website
         recurrence: Recurrence
