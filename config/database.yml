@@ -80,4 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: move_index_production
+  url: <%= Rails.application.credentials.database_url %>
