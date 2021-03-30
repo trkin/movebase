@@ -1,7 +1,5 @@
 # sudo ln -s /home/ubuntu/movebase/current/config/etc/nginx/sites-enabled/nginx_passenger /etc/nginx/sites-enabled
 server {
-  listen 80;
-  listen [::]:80;
 
   server_name _;
   root /home/ubuntu/movebase/current/public;
@@ -21,4 +19,27 @@ server {
     expires max;
     gzip_static on;
   }
+
+    listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/movebase.link/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/movebase.link/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    if ($host ~ ^[^.]+\.movebase\.link$) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+  listen 80;
+  listen [::]:80;
+
+  server_name _;
+    return 404; # managed by Certbot
+
+
 }
