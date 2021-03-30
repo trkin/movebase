@@ -1,4 +1,9 @@
-server '167.172.189.128', user: 'deploy', roles: %w[app db web]
+server 'movebase.link',
+       user: 'ubuntu',
+       roles: %w[app web db worker],
+       ssh_options: {
+         keys: '~/.ec2/test-trk-in-rs-us-east-1.pem'
+       }
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.

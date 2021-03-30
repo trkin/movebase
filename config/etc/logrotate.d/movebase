@@ -1,0 +1,10 @@
+# sudo ln -s /home/ubuntu/movebase/current/config/etc/logrotate.d/movebase /etc/logrotate.d/
+/home/ubuntu/xceednet/current/log/*.log {
+  daily
+  missingok
+  rotate 7
+  compress
+  delaycompress
+  notifempty
+  copytruncate
+}
