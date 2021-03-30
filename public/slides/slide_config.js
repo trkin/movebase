@@ -26,7 +26,7 @@ var SLIDE_CONFIG = {
     company: 'Web dev<br>TRK INNOVATIONS LLC',
     // gplus: 'http://plus.google.com/1234567890',
     // twitter: '@yourhandle',
-    www: 'https://move-index.org',
+    www: 'https://movebase.link',
     github: 'https://github.com/trkin/move-index'
   }/*, {
     name: 'Second Name',

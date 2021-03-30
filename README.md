@@ -1,4 +1,4 @@
-# What is your Move Index ?
+# What is your Move ?
 
 This project aims to make it easier for people search for an event which they
 can join for any kind of sport or recreational activity. It is an index of all

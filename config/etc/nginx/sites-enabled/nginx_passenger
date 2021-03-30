@@ -30,7 +30,7 @@ server {
 }
 
 server {
-    if ($host ~ ^[^.]+\.movebase\.link$) {
+    if ($host ~ movebase\.link$) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
