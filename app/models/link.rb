@@ -9,6 +9,7 @@ class Link < ApplicationRecord
     photos
     facebook_page
     facebook_event
+    facebook_group
     instagram_page
     twitter_page
     viber_group

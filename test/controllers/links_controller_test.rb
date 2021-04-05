@@ -43,6 +43,6 @@ class LinksControllerTest < ActionDispatch::IntegrationTest
       delete link_url(@link)
     end
 
-    assert_redirected_to links_path
+    assert_redirected_to club_path(@link.linkable)
   end
 end

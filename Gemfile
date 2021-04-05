@@ -66,12 +66,13 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # user authentication
-gem 'devise'
+# https://stackoverflow.com/a/65732099
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
 # pick icons by: fontello open; {select icons}; fontello convert
-gem 'fontello_rails_converter'
+gem 'fontello_rails_converter', '~> 0.4.6'
 
 # bootstrap form
 # use master untill new release includes https://github.com/bootstrap-ruby/bootstrap_form/pull/550
@@ -81,7 +82,7 @@ gem 'bootstrap_form', git: 'https://github.com/bootstrap-ruby/bootstrap_form.git
 gem 'mobility', '~> 0.8.6'
 
 # money
-gem 'money-rails', '~> 1.12'
+gem 'money-rails', '~> 1.14'
 
 # recaptcha for contact form
 gem 'recaptcha'
@@ -109,5 +110,5 @@ gem 'mustache'
 gem 'rubyzip', '>=1.3.0'
 
 # datatables
-gem 'trk_datatables', '~>0.1'
+gem 'trk_datatables', '~>0.2.11'
 # gem 'trk_datatables', path: '~/gems/trk_datatables'
