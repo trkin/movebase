@@ -151,3 +151,21 @@ in repository, so no need to run this command)
 # To install to nginx configuration
 certbot --nginx -d movebase.link -d *.movebase.link
 ```
+
+There is a crontab for renewal (still server needs to be reloaded to pick up new
+certs)
+```
+sudo vi /etc/cron.d/certbot
+# https://techmonger.github.io/49/certbot-auto-renew/#:~:text=Certbot%20Auto%20Renew%20Cron%20Job,found%20at%20%2Fetc%2Fcron.
+# /etc/cron.d/certbot: crontab entries for the certbot package
+#
+# Upstream recommends attempting renewal twice a day
+#
+# Eventually, this will be an opportunity to validate certificates
+# haven't been revoked, etc.  Renewal will only occur if expiration
+# is within 30 days.
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+0 */12 * * * AWS_CONFIG_FILE=/home/ubuntu/movebase/.elbas_keys certbot -q renew
+```

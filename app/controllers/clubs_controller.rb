@@ -11,7 +11,6 @@ class ClubsController < ApplicationController
   end
 
   def show
-    view_context.params.merge! HappeningsForClubDatatable.param_set 'happenings.start_date', Time.zone.today..(Time.zone.today + 1.year)
     @datatable = HappeningsForClubDatatable.new view_context
   end
 

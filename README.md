@@ -63,6 +63,7 @@ app/javascript/const.js
 Use helpers to translate
 ```
 yml_google_translate_api.rb config/locales/sr-latin.yml sr_to_cyr en
+yml_google_translate_api.rb config/locales/activerecord_activemodels.sr-latin.yml sr_to_cyr en
 ```
 
 # Tests

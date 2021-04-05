@@ -2,8 +2,9 @@
   <%= bootstrap_form_with model: @link, layout: :horizontal do |f| %>
     <%= f.hidden_field :linkable_id %>
     <%= f.hidden_field :linkable_type %>
-    <%= f.select :kind, Link.kinds.keys.select { |k| k.start_with? @link.linkable_type.downcase }.map { |k| [Link.human_enum_name(:kind, k),k] } %>
-    <%= f.text_field :url, placeholder: 'http://...' %>
+    <%= f.select :kind, Link.kinds.keys.map { |k| [Link.human_enum_name(:kind, k),k] } %>
+    <%= f.text_field :url, placeholder: 'https://...' %>
+    <%= f.check_box :visible %>
     <div class='remote-form__actions'>
       <% unless @link.new_record? %>
         <%= link_to link_path(@link), method: :delete, 'data-confirm': t_are_you_sure_to_remove_item_name(@link.linkable_id), title: t_crud('delete', Link), class: 'btn btn-outline-danger' do %>

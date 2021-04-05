@@ -1,11 +1,10 @@
 class ClubsDatatable < BaseDatatable
   def columns
     {
-      'clubs.id': { hide: true },
+      'clubs.id': {hide: true},
       'clubs.name': {},
-      'venues.name': { title: Venue.model_name.human },
-      'clubs.website': {},
-      'activities.name': { title: Activity.model_name.human(count: 2), search: false, order: false },
+      'venues.name': {title: Venue.model_name.human},
+      'activities.name': {title: Activity.model_name.human(count: 2), search: false, order: false},
     }
   end
 
@@ -20,7 +19,6 @@ class ClubsDatatable < BaseDatatable
         club.id,
         link,
         club.venue.name,
-        club.website,
         club.activities.map(&:name).to_sentence,
       ]
     end

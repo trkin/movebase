@@ -127,11 +127,19 @@ en:
         kind: Kind
         url: Url
         kinds:
-          club_website: Club website
-          club_facebook_page: Club facebook page
-          happening_website: Happening website
-          happening_results: Happening results
-          happening_photos: Happening photos
+          website: Web page
+          email: Email
+          phone: Phone
+          long_name: Full name
+          results: The results
+          photos: Photos
+          facebook_page: Facebook page
+          facebook_event: Facebook event
+          instagram_page: Instagram
+          twitter_page: Twitter
+          viber_group: Viber group
+          wikipedia: Wikipedia
+          youtube: YouTube
   activemodel:
     attributes:
       contact:

@@ -7,9 +7,10 @@
     <div class='row'>
       <div class='col'>
         <%= detail_view_list @discipline, *(Discipline::FIELDS - %i[activity_id]) %>
+        <%= link_to @discipline.activity.name, admin_activity_path(@discipline.activity) %>
       </div>
       <div class='col'>
-        <%= link_to @discipline.activity.name, admin_activity_path(@discipline.activity) %>
+        <%= render 'links/list', item: @discipline %>
       </div>
     </div>
   </div>

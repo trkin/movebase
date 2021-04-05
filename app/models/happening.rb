@@ -2,7 +2,7 @@ class Happening < ApplicationRecord
   extend Mobility
   translates :name, :description
 
-  FIELDS = %i[name description website recurrence start_date end_date].freeze
+  FIELDS = %i[name description recurrence start_date end_date].freeze
 
   serialize :recurrence
   attr_accessor :existing_or_new

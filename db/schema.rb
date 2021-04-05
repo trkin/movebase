@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_210828) do
+ActiveRecord::Schema.define(version: 2021_04_05_192732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -58,18 +58,9 @@ ActiveRecord::Schema.define(version: 2019_12_02_210828) do
   create_table "clubs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "venue_id"
     t.jsonb "name", default: {}
-    t.string "website"
-    t.string "email"
-    t.string "phone"
-    t.string "national_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "kind", default: 0, null: false
-    t.jsonb "long_name", default: {}
-    t.boolean "visible_email"
-    t.boolean "visible_phone"
-    t.boolean "visible_national_id"
-    t.string "logo_url"
     t.index ["venue_id"], name: "index_clubs_on_venue_id"
   end
 
@@ -126,7 +117,6 @@ ActiveRecord::Schema.define(version: 2019_12_02_210828) do
     t.uuid "venue_id", null: false
     t.uuid "club_id", null: false
     t.jsonb "name", default: {}
-    t.string "website"
     t.date "start_date", null: false
     t.date "end_date", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -145,6 +135,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_210828) do
     t.string "url", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "visible", default: true, null: false
     t.index ["linkable_type", "linkable_id"], name: "index_links_on_linkable_type_and_linkable_id"
   end
 

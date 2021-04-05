@@ -5,14 +5,6 @@
         <%= f.radio_button :kind, :sport_organization, label: Club.human_enum_name(:kind, :sport_organization) %>
         <%= f.radio_button :kind, :personal, label: Club.human_enum_name(:kind, :personal) %>
         <%= f.text_field :name %>
-        <%= f.text_field :long_name %>
-        <%= f.text_field :website %>
-        <%= f.text_field :email %>
-        <%= f.check_box :visible_email %>
-        <%= f.text_field :phone %>
-        <%= f.check_box :visible_phone %>
-        <%= f.text_field :national_id %>
-        <%= f.check_box :visible_national_id %>
       </div>
       <div class='col-sm'>
         <%= render 'admin/venues/existing_or_new', f: f %>

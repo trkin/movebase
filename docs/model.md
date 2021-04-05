@@ -1,14 +1,20 @@
 # Model
 
-User starts by defining what basic activity it wants (like kayaking or
-swimming). Multi-activity (triathlon) is activity that BELONGS_TO multiple basic
+Activity vs Discipline
+
+User starts by defining what basic **activity** it wants (like kayaking or
+swimming).
+Multi-activity (triathlon) is activity that BELONGS_TO multiple basic
 activities in activity_associations table.
-Discipline (K2 number_of_crew=2) belongs to activity and has it's specific
-discipline_requirements (K2 boat) but also discipline_happening conditions (age
-interval, distance, max time).
-Properties which are not required (for example: fresh water, terain road,
-cros_country) or hard to measure (for example: walking speed) are defined in
-discipline_happening_tags.
+
+**Discipline** (K2 number_of_crew=2) belongs to activity and has it's common
+discipline_requirements (K2 boat). When we organize **happening** than we also
+define **discipline_happening** conditions (gender, age min/max, distance, max
+time).
+Properties which are optional for that happening (for example: fresh water,
+terain road, cros_country) or hard to measure (for example: walking speed) are
+defined in
+**discipline_happening_tags** like:
 * skyrunning vertical 1KM TERAIN=cross_country
 * stairs run TERAIN=stairs
 * cross duathlon 2-6y is modeled with AGE_MIN, AGE_MAX, LENGTH(total 2km),
@@ -30,8 +36,7 @@ Some happenings are repeating (every day, week, month, year).
 Non olimpic disciplines like dog walking, waste removal(street cleaning),
 pokemon hunting, yoga, lunch hiking, kayaking with a dog.
 
-Each happening have a club which can be personal (personal gathering). it is
-easier than to check if club exists for each call to `happening.club`. Club also
+Each happening have a club which can be personal (personal gathering) which
 have a venue, but it could be just a city (for personal and organizational clubs
 that do not have an office)
 

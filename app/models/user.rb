@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :clubs, through: :club_users, dependent: :destroy
   belongs_to :club, optional: true
 
-  validates :email, presence: true
+  validates :email, :locale, presence: true
 
   # rubocop:disable Metrics/MethodLength
   def self.from_omniauth(auth, _params)

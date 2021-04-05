@@ -18,6 +18,9 @@ class LinksController < ApplicationUserController
     elsif params[:club_id].present?
       linkable_id = params[:club_id]
       linkable_type = 'Club'
+    elsif params[:discipline_id]
+      linkable_id = params[:discipline_id]
+      linkable_type = 'Discipline'
     else
       raise "do_not_know_linkable_type params=#{params}"
     end
@@ -43,7 +46,7 @@ class LinksController < ApplicationUserController
 
   def destroy
     @link.destroy!
-    redirect_to links_path, notice: helpers.t_notice('successfully_deleted', Link)
+    redirect_to @link.linkable, notice: helpers.t_notice('successfully_deleted', Link)
   end
 
   def _set_link

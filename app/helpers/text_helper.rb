@@ -50,8 +50,7 @@ module TextHelper
   # if you use two detail views than label_class: 'col-sm-4'
   def detail_view(item, *fields, label_class: 'col-sm-2 dt__long--min-width', skip_blank: [])
     res = fields.map do |field|
-      if (skip_blank == :all || skip_blank.include?(field)) && item.send(field).blank? ||
-         (item.respond_to?("visible_#{field}") && item.send("visible_#{field}") != true)
+      if (skip_blank == :all || skip_blank.include?(field)) && item.send(field).blank?
         ''.html_safe
       else
         <<~HTML

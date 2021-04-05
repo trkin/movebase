@@ -2,7 +2,7 @@ class Club < ApplicationRecord
   extend Mobility
   translates :name, :long_name
 
-  FIELDS = %i[kind name long_name website email visible_email phone visible_phone national_id visible_national_id].freeze
+  FIELDS = %i[kind name].freeze
 
   enum kind: %i[sport_organization personal]
 
@@ -15,7 +15,7 @@ class Club < ApplicationRecord
   has_many :club_users, dependent: :destroy
   # has_many :users, through: :club_users # do not use this since club
   # users can be disabled, so better is to use active_users
-  has_many :active_users, -> { where club_users: { position: ClubUser::ACTIVE_POSITIONS } }, through: :club_users, source: :user
+  has_many :active_users, -> { where club_users: {position: ClubUser::ACTIVE_POSITIONS} }, through: :club_users, source: :user
   has_many :activity_clubs, dependent: :destroy
   has_many :activities, through: :activity_clubs
   has_many :links, as: :linkable
