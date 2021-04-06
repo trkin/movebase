@@ -41,3 +41,5 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 
 set :rbenv_ruby, '2.6.3'
 set :rbenv_type, :user
+
+set :assets_dependencies, %w[app/javascript app/assets vendor/assets Gemfile.lock yarn.lock]
