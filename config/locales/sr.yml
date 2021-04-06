@@ -22,6 +22,7 @@ sr:
   are_you_sure: Да ли сте сигурни ?
   are_you_sure_to_remove_item_name: Да ли сте сигурни да желите да обришете %{item_name}
     ?
+  read_more: Прочитај више
   data_item_name_successfully_created: Податак %{item_name} је успешно направљен
   data_item_name_successfully_updated: Податак %{item_name} је успешно ажуриран
   data_item_name_successfully_changed: Податак %{item_name} је успешно промењен
@@ -71,3 +72,5 @@ sr:
     year: Годишње
   can_not_be_less_than_item_name: Не може бити мањи од %{item_name}
   and_related: и слични
+  latest_added_happenings: Недавно додати догађаји
+  latest_added_disciplines: Недавно додате дисциплине

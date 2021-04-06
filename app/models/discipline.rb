@@ -7,6 +7,7 @@ class Discipline < ApplicationRecord
   belongs_to :activity
 
   has_many :discipline_happenings, dependent: :destroy
+  has_many :happenings, through: :discipline_happenings
   has_many :discipline_requirements, dependent: :destroy
   has_many :requirements, through: :discipline_requirements
   has_many :links, as: :linkable

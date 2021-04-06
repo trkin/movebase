@@ -21,6 +21,7 @@ en:
   drop: Drop
   are_you_sure: Are you sure ?
   are_you_sure_to_remove_item_name: Are you sure to remove %{item_name} ?
+  read_more: Read more
   data_item_name_successfully_created: "%{item_name} successfully created"
   data_item_name_successfully_updated: "%{item_name} successfully updated"
   data_item_name_successfully_changed: "%{item_name} successfully changed"
@@ -71,3 +72,5 @@ en:
     year: Yearly
   can_not_be_less_than_item_name: It cannot be less than %{item_name}
   and_related: and related
+  latest_added_happenings: Recently added events
+  latest_added_disciplines: Recently added disciplines

@@ -15,7 +15,7 @@ class HappeningsForClubDatatable < TrkDatatables::ActiveRecord
 
   def rows(filtered)
     filtered.map do |happening|
-      link = if @view.request.controller_class.parent_name == 'Admin'
+      link = if @view.request.controller_class.module_parent_name == 'Admin'
                @view.link_to(happening.name, @view.admin_happening_path(happening))
              else
                @view.link_to(happening.name, @view.happening_path(happening))
