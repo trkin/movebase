@@ -16,12 +16,10 @@
   <div class='card-body'>
     <div class='row'>
       <div class='col'>
-        <%= detail_view_list @happening, *(Happening::FIELDS - %i[end_date recurrence]), skip_blank: :all %>
-        <%= detail_view_list do %>
-          <% if @happening.end_date != @happening.start_date %>
-            <%= detail_view_one Happening.human_attribute_name(:end_date), @happening.end_date %>
+        <%= detail_view_list @happening, *(Happening::FIELDS - %i[start_date end_date recurrence]), skip_blank: :all %>
+          <%= detail_view_list do %>
+            <%= detail_view_one Happening.human_attribute_name(:start_date), @happening.start_date_and_end_date_string %>
           <% end %>
-        <% end %>
         <% if @happening.club.venue == @happening.venue %>
           <%= detail_view_list do %>
             <%= detail_view_one Happening.human_attribute_name(:club) + ' & ' + Happening.human_attribute_name(:venue), link_to(@happening.club.name, club_path(@happening.club)) %>
@@ -32,11 +30,11 @@
             <%= detail_view_one Happening.human_attribute_name(:venue), link_to(@happening.venue.name, venue_path(@happening.venue)) %>
           <% end %>
         <% end %>
-        <%= detail_view_list do %>
-          <% if @happening.recurrence.present? %>
-            <%= detail_view_one Happening.human_attribute_name(:recurrence), @happening.recurrence.to_s %>
-          <% end %>
-        <% end %>
+        <%# <%= detail_view_list do %1> %>
+        <%#   <% if @happening.recurrence.present? %1> %>
+        <%#     <%= detail_view_one Happening.human_attribute_name(:recurrence), @happening.recurrence.to_s %1> %>
+        <%#   <% end %1> %>
+        <%# <% end %1> %>
       </div>
       <div class='col'>
         <%= render 'links/list', item: @happening %>
@@ -50,7 +48,13 @@
 <div class='card mt-2'>
   <div class='card-body'>
     <% @happening.discipline_happenings.each do |discipline_happening| %>
-      <%= discipline_happening.start_time.to_s %>
+      <% if discipline_happening.start_time != @happening.start_date.to_datetime %>
+        <% if discipline_happening.start_time.to_date != @happening.start_date %>
+          <%= I18n.l discipline_happening.start_time, format: :only_time %>
+        <% else %>
+          <%= I18n.l discipline_happening.start_time, format: :day_month_and_time %>
+        <% end %>
+      <% end %>
       <%= discipline_happening.full_name %>
       <br>
       <% discipline_happening.discipline_happening_tags.each do |discipline_happening_tag| %>

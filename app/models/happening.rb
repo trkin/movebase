@@ -33,4 +33,12 @@ class Happening < ApplicationRecord
   def _default_values_on_create
     self.end_date ||= start_date
   end
+
+  def start_date_and_end_date_string
+    if multi_day?
+      "#{I18n.l start_date, format: :long} - #{I18n.l end_date, format: :long}"
+    else
+      I18n.l start_date, format: :long_with_week
+    end
+  end
 end

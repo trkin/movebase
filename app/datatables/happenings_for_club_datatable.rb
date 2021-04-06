@@ -22,7 +22,7 @@ class HappeningsForClubDatatable < TrkDatatables::ActiveRecord
              end
       [
         happening.id,
-        happening.start_date,
+        I18n.l(happening.start_date, format: :long_with_week),
         happening.venue.name,
         link,
       ]

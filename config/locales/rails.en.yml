@@ -42,6 +42,7 @@ en:
     formats:
       default: "%Y-%m-%d"
       long: "%B %d, %Y"
+      long_with_week: "%A %e %B, %Y"
       short: "%b %d"
     month_names:
     - 
@@ -213,4 +214,6 @@ en:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
+      only_time: "%I:%M%p"
+      day_month_and_time: "%B %e @ %I:%M%p"
     pm: pm

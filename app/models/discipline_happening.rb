@@ -12,7 +12,7 @@ class DisciplineHappening < ApplicationRecord
 
   has_many :discipline_happening_tags, dependent: :destroy
 
-  enum gender: %i[man_and_women man women]
+  enum gender: %i[any man women]
 
   def default_name
     return if discipline.blank?
@@ -21,6 +21,10 @@ class DisciplineHappening < ApplicationRecord
   end
 
   def full_name
-    "#{name} #{age_min} #{age_max} #{distance_m} #{gender}"
+    if gender == 'any'
+      "#{name} #{age_min} #{age_max}"
+    else
+      "#{name} #{age_min} #{age_max} #{distance_m} #{gender}"
+    end
   end
 end

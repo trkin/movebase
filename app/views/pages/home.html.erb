@@ -40,7 +40,7 @@
     <% Happening.order(created_at: :asc).last(5).each do |happening| %>
       <div class='card mt-2'>
         <div class='card-body'>
-          <div class='float-right'><%= happening.venue.name %>, <%= happening.start_date %></div>
+          <div class='float-right'><%= happening.venue.name %>, <%= I18n.l happening.start_date, format: :long_with_week %></div>
           <h5 class='card-title'><%= happening.name %></h5>
           <%= link_to t('read_more'), happening, class: 'card-link float-right' %>
           <p class='card-text'>

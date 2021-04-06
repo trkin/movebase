@@ -1,12 +1,12 @@
 class HappeningsForActivityNamesDatatable < BaseDatatable
   def columns
     {
-      'happenings.id': { hide: true },
+      'happenings.id': {hide: true},
       'happenings.name': {},
       'happenings.start_date': {},
-      'venues.name': { title: Venue.model_name.human },
-      'clubs.name': { title: Club.model_name.human },
-      'clubs.id': { hide: true },
+      'venues.name': {title: Venue.model_name.human},
+      'clubs.name': {title: Club.model_name.human},
+      'clubs.id': {hide: true},
     }
   end
 
@@ -43,7 +43,7 @@ class HappeningsForActivityNamesDatatable < BaseDatatable
       [
         happening.id,
         @view.link_to(happening.name, @view.happening_path(happening)),
-        happening.start_date,
+        I18n.l(happening.start_date, format: :long_with_week),
         happening.venue.name,
         link_to_club,
         happening.club.id,

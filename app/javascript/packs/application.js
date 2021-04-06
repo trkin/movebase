@@ -29,4 +29,3 @@ import 'turbolinks.load'
 // our stylesheet
 import 'stylesheet/post_css'
 import 'stylesheet/application'
-

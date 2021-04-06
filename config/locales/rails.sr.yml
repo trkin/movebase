@@ -42,6 +42,7 @@ sr:
     formats:
       default: "%d/%m/%Y"
       long: "%B %e, %Y"
+      long_with_week: "%A %e %B, %Y"
       short: "%e %b"
     month_names:
     - 
@@ -240,4 +241,6 @@ sr:
       default: "%a %b %d %H:%M:%S %Z %Y"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
-    pm: ПМ
+      only_time: "%I:%M%p"
+      day_month_and_time: "%e %B @ %I:%M%p"
+    pm: PM

@@ -15,7 +15,7 @@ jobs:
       PGUSER: move_index
     services:
       postgres:
-        image: postgres:11
+        image: postgres
         env:
           POSTGRES_USER: move_index
           POSTGRES_DB: move_index_test
