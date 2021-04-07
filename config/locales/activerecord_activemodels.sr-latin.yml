@@ -35,7 +35,7 @@ sr-latin:
       discipline:
         one: Disciplina
         few: Discipline
-        other: Disciplina
+        other: Discipline
         accusative: disciplina
       discipline_happening:
         one: Disciplina

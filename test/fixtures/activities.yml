@@ -1,9 +1,15 @@
-walking_and_running:
+walking:
   name:
-    en: Walking and running
-    sr: Ходање и трчање
-    sr-latin: Hodanje i trčanje
-  description:
+    en: Walking
+    sr: Ходање
+    sr-latin: Hodanje
+  icon_name: walking_and_running
+
+running:
+  name:
+    en: Running
+    sr: Трчање
+    sr-latin: Trčanje
   icon_name: walking_and_running
 
 swimming:
@@ -35,30 +41,3 @@ climbing:
     en: Climbing
     sr: Пењање
     sr-latin: Penjanje
-
-duathlon:
-  name:
-    en: Duathlon
-    sr: Duatlon
-
-kayak_duathlon:
-  name:
-    en: Kayak duathlon
-  description:
-    en: Kayaking and running
-
-triathlon:
-  name:
-    en: Triathlon
-    sr: Triatlon
-
-kayak_triathlon:
-  name:
-    en: Kayak triathlon
-  description:
-    en: Run bike kayak
-
-quadrathlon:
-  name:
-    en: Quadrathlon
-    sr: Kvadratlon

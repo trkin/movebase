@@ -2,15 +2,15 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# This file is the source Rails uses to define your schema when running `rails
-# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# This file is the source Rails uses to define your schema when running `bin/rails
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
 # be faster and is potentially less error prone than running all of your
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_05_192732) do
+ActiveRecord::Schema.define(version: 2021_04_07_080545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -24,14 +24,11 @@ ActiveRecord::Schema.define(version: 2021_04_05_192732) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "activity_associations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "activities_disciplines", id: false, force: :cascade do |t|
     t.uuid "activity_id", null: false
-    t.uuid "associated_id", null: false
-    t.integer "kind", default: 0, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["activity_id"], name: "index_activity_associations_on_activity_id"
-    t.index ["associated_id"], name: "index_activity_associations_on_associated_id"
+    t.uuid "discipline_id", null: false
+    t.index ["activity_id"], name: "index_activities_disciplines_on_activity_id"
+    t.index ["discipline_id"], name: "index_activities_disciplines_on_discipline_id"
   end
 
   create_table "activity_clubs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -62,6 +59,16 @@ ActiveRecord::Schema.define(version: 2021_04_05_192732) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "kind", default: 0, null: false
     t.index ["venue_id"], name: "index_clubs_on_venue_id"
+  end
+
+  create_table "discipline_associations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "discipline_id", null: false
+    t.uuid "associated_id", null: false
+    t.integer "kind", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["associated_id"], name: "index_discipline_associations_on_associated_id"
+    t.index ["discipline_id"], name: "index_discipline_associations_on_discipline_id"
   end
 
   create_table "discipline_happening_tags", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -103,13 +110,11 @@ ActiveRecord::Schema.define(version: 2021_04_05_192732) do
   end
 
   create_table "disciplines", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "activity_id", null: false
     t.jsonb "name", default: {}
     t.integer "number_of_crew", default: 1, null: false
     t.integer "number_of_relays", default: 1, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["activity_id"], name: "index_disciplines_on_activity_id"
     t.index ["name"], name: "index_disciplines_on_name", unique: true
   end
 
@@ -131,7 +136,6 @@ ActiveRecord::Schema.define(version: 2021_04_05_192732) do
     t.string "linkable_type", null: false
     t.uuid "linkable_id", null: false
     t.string "kind", null: false
-    t.string "text"
     t.string "url", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -205,20 +209,21 @@ ActiveRecord::Schema.define(version: 2021_04_05_192732) do
     t.index ["latitude", "longitude"], name: "index_venues_on_latitude_and_longitude"
   end
 
-  add_foreign_key "activity_associations", "activities"
-  add_foreign_key "activity_associations", "activities", column: "associated_id"
+  add_foreign_key "activities_disciplines", "activities"
+  add_foreign_key "activities_disciplines", "disciplines"
   add_foreign_key "activity_clubs", "activities"
   add_foreign_key "activity_clubs", "clubs"
   add_foreign_key "club_users", "clubs"
   add_foreign_key "club_users", "users"
   add_foreign_key "clubs", "venues"
+  add_foreign_key "discipline_associations", "disciplines"
+  add_foreign_key "discipline_associations", "disciplines", column: "associated_id"
   add_foreign_key "discipline_happening_tags", "discipline_happenings"
   add_foreign_key "discipline_happening_tags", "tags"
   add_foreign_key "discipline_happenings", "disciplines"
   add_foreign_key "discipline_happenings", "happenings"
   add_foreign_key "discipline_requirements", "disciplines"
   add_foreign_key "discipline_requirements", "requirements"
-  add_foreign_key "disciplines", "activities"
   add_foreign_key "happenings", "clubs"
   add_foreign_key "happenings", "venues"
   add_foreign_key "users", "clubs"

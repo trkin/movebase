@@ -12,6 +12,7 @@ class Happening < ApplicationRecord
   belongs_to :club
 
   has_many :discipline_happenings, dependent: :destroy
+  has_many :disciplines, through: :discipline_happenings
   has_many :links, as: :linkable
 
   validates :name, :start_date, :end_date, presence: true
@@ -40,5 +41,9 @@ class Happening < ApplicationRecord
     else
       I18n.l start_date, format: :long_with_week
     end
+  end
+
+  def multi_discipline?
+    disciplines.uniq.size > 1
   end
 end

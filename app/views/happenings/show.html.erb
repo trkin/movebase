@@ -43,12 +43,17 @@
   </div>
 </div>
 <div class='mt-2'>
-  <h3 class=''><%= Discipline.model_name.human(count: @happening.discipline_happenings.size) %></h3>
+  <% unless @happening.multi_discipline? %>
+    <span class='badge badge-primary float-right'><%= @happening.disciplines.last.name %></span>
+  <% end %>
+  <h3 class=''>
+    <%= Discipline.model_name.human(count: @happening.discipline_happenings.size) %>
+  </h3>
 </div>
 <div class='card mt-2'>
   <div class='card-body'>
     <% @happening.discipline_happenings.each do |discipline_happening| %>
-      <% if discipline_happening.start_time != @happening.start_date.to_datetime %>
+      <% if discipline_happening.start_time.present? && discipline_happening.start_time != @happening.start_date.to_datetime %>
         <% if discipline_happening.start_time.to_date != @happening.start_date %>
           <%= I18n.l discipline_happening.start_time, format: :only_time %>
         <% else %>
@@ -56,10 +61,13 @@
         <% end %>
       <% end %>
       <%= discipline_happening.full_name %>
-      <br>
+      <% if @happening.multi_discipline? %>
+        <span class='badge badge-primary'><%= discipline_happening.discipline.name %></span>
+      <% end %>
       <% discipline_happening.discipline_happening_tags.each do |discipline_happening_tag| %>
         <span class='badge badge-primary'><%= discipline_happening_tag.tag.name %></span>
       <% end %>
+      <br>
     <% end %>
   </div>
 </div>

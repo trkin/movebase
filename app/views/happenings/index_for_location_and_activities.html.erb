@@ -24,15 +24,8 @@
   <div class='dropdown-menu' aria-labelledby='dropdownAddActivity'>
     <% Activity.i18n.where.not(name: names_array).each do |activity| %>
       <% add_path = index_for_location_and_activities_happenings_path(params.except(:controller, :action, :commit).merge(activity_names: (names_array || []) + [activity.name])) %>
-      <% add_related_path = index_for_location_and_activities_happenings_path(params.except(:controller, :action, :commit).merge(activity_names: (names_array || []) + activity.self_and_used_in_activities.map(&:name))) %>
-      <% if activity.self_and_used_in_activities.length > 1 %>
-        <div class='dropdown-item'>
-          <%= link_to activity.name, add_path, class: 'dropdown-item--inline' %>
-          <%= link_to t('and_related'), add_related_path, class: 'btn btn-small btn-outline-secondary dropdown-item--inline', title: t('activity_name_and_used_in_activities_name', activity_name: activity.name, activities_name: activity.self_and_used_in_activities.map(&:name).to_sentence) %>
-        </div>
-      <% else %>
-        <%= link_to activity.name, add_path, class:'dropdown-item' %>
-      <% end %>
+      <% add_related_path = index_for_location_and_activities_happenings_path(params.except(:controller, :action, :commit).merge(activity_names: (names_array || []))) %>
+      <%= link_to activity.name, add_path, class:'dropdown-item' %>
     <% end %>
   </div>
 </div>

@@ -1,0 +1,60 @@
+duathlon__running:
+  discipline: duathlon
+  associated: running
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+duathlon__cycling:
+  discipline: duathlon
+  associated: cycling
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+
+kayak_duathlon__running:
+  discipline: kayak_duathlon
+  associated: running
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+kayak_duathlon__sprint_kayak:
+  discipline: kayak_duathlon
+  associated: sprint_kayak
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+
+triathlon__running:
+  discipline: triathlon
+  associated: running
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+triathlon__cycling:
+  discipline: triathlon
+  associated: cycling
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+triathlon__swimming:
+  discipline: triathlon
+  associated: swimming
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+
+kayak_triathlon__running:
+  discipline: kayak_4_5_m_triathlon
+  associated: running
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+kayak_triathlon__cycling:
+  discipline: kayak_4_5_m_triathlon
+  associated: cycling
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+kayak_triathlon__sprint_kayak:
+  discipline: kayak_4_5_m_triathlon
+  associated: sprint_kayak
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+
+quadrathlon__running:
+  discipline: quadrathlon
+  associated: running
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+quadrathlon__cycling:
+  discipline: quadrathlon
+  associated: cycling
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+quadrathlon__swimming:
+  discipline: quadrathlon
+  associated: swimming
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+quadrathlon__sprint_kayak:
+  discipline: quadrathlon
+  associated: sprint_kayak
+  kind: <%= DisciplineAssociation.kinds[:consists_of] %>

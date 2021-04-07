@@ -61,7 +61,11 @@
       <div class='card mt-2'>
         <div class='card-body'>
           <h5 class='card-title'><%= discipline.name %></h5>
-          <h6><%= discipline.activity.name %></h6>
+          <h6>
+            <% discipline.activities.each do |activity| %>
+              <%= activity.name %>
+            <% end %>
+          </h6>
           <p class='card-text'>
             <% discipline.happenings.uniq.each do |happening| %>
               <%= link_to happening.name, happening, class: 'card-link' %>

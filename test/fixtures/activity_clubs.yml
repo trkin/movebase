@@ -2,6 +2,6 @@ kayaking__kayak:
   activity: kayaking
   club: kayak
 
-walking_and_running__hiking:
-  activity: walking_and_running
+walking__hiking:
+  activity: walking
   club: hiking

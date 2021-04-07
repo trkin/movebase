@@ -20,12 +20,11 @@ class HappeningsForActivityNamesDatatable < BaseDatatable
   end
 
   def all_items
-    all = Happening.left_outer_joins(discipline_happenings: { discipline: :activity })
-    all = all.where(discipline_happenings: { disciplines: { activity: activities } }) if activities.present?
+    all = Happening.left_outer_joins(discipline_happenings: {discipline: {activities_disciplines: :activity}})
+    all = all.where(discipline_happenings: {disciplines: {activities_disciplines: {activity: activities}}}) if activities.present?
     all = all.joins(:club, :venue)
     all = all.order(:start_date)
-    all = all.distinct
-    all
+    all.distinct
   end
 
   # def as_json(_ = nil)

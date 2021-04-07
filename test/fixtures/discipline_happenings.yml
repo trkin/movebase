@@ -83,26 +83,20 @@ quadrathlon_munich:
 wednesday_walking_23:
   name:
     en: wednesday_walking_23
-  discipline: walking_only
+  discipline: hiking
   happening: wednesday_walking_23
 
 wednesday_walking_24:
   name:
     en: wednesday_walking_24
-  discipline: walking_only
+  discipline: hiking
   happening: wednesday_walking_24
 
 walking_with_children_to_the_tower:
   name:
     en: walking_with_children_to_the_tower
-  discipline: walking_only
+  discipline: hiking
   happening: walking_with_children_to_the_tower
-
-walk_or_run_tracking:
-  name:
-    en: walk_or_run_tracking
-  discipline: walking_or_running
-  happening: walk_or_run_tracking
 
 half_marathon:
   name:
@@ -114,7 +108,7 @@ half_marathon:
 sky_running_babin_zub:
   name:
     en: Trail Babin zub
-  discipline: walking_or_running
+  discipline: trail_running
   happening: sky_running
   distance_m: 36_000
   elevation_m: 2_400
@@ -123,7 +117,7 @@ sky_running_babin_zub:
 sky_running_ultra_kopren:
   name:
     en: Ultra trail Kopren
-  discipline: walking_or_running
+  discipline: trail_running
   happening: sky_running
   distance_m: 94_000
   elevation_m: 4_000
@@ -133,7 +127,7 @@ stairs_run_vrsac__men:
   name:
     en: Man
   gender: <%= DisciplineHappening.genders[:man] %>
-  discipline: walking_or_running
+  discipline: stairs_running
   happening: stairs_run_vrsac
   distance_m: 750
   elevation_m: 107
@@ -143,7 +137,7 @@ stairs_run_vrsac__women:
   name:
     en: Women
   gender: <%= DisciplineHappening.genders[:women] %>
-  discipline: walking_or_running
+  discipline: stairs_running
   happening: stairs_run_vrsac
   distance_m: 750
   elevation_m: 107

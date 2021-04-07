@@ -6,8 +6,10 @@
     <%= button_tag_open_modal edit_admin_discipline_path(@discipline), title: t_crud('edit', Discipline), pull_right: true %>
     <div class='row'>
       <div class='col'>
-        <%= detail_view_list @discipline, *(Discipline::FIELDS - %i[activity_id]) %>
-        <%= link_to @discipline.activity.name, admin_activity_path(@discipline.activity) %>
+        <%= detail_view_list @discipline, *(Discipline::FIELDS.select {|k| k.is_a? Symbol}) %>
+        <% @discipline.activities.each do |activity| %>
+          <%= link_to activity.name, admin_activity_path(activity) %>
+        <% end %>
       </div>
       <div class='col'>
         <%= render 'links/list', item: @discipline %>

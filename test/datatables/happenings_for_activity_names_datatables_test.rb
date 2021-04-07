@@ -12,7 +12,7 @@ class HappeningsForActivityNamesDatatableTest < ActiveSupport::TestCase
 
     assert_includes results, happenings(:kayak_regata)
     assert_includes results, happenings(:personal_long_kayaking)
-    refute_includes results, happenings(:quadrathlon_munich)
+    assert_includes results, happenings(:quadrathlon_munich)
     refute_includes results, happenings(:half_marathon)
   end
 
