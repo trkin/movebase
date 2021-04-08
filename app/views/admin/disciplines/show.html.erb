@@ -31,3 +31,29 @@
     </div>
   <% end %>
 </div>
+
+<%= button_tag_open_modal new_admin_discipline_discipline_association_path(@discipline) do %>
+  <i class="demo-icon icon-plus" aria-hidden="true"></i>
+  <%= t_crud('add_new', DisciplineAssociation) %>
+<% end %>
+<div class='card-deck'>
+  <% @discipline.discipline_associations.each do |discipline_association| %>
+    <div class='card card--text mb-4'>
+      <div class='card-body'>
+        <%= button_to 'X', admin_discipline_association_path(discipline_association), class: 'btn btn-sm btn-outline-danger btn--no-padding px-1 edit-button', title: t_crud('delete', DisciplineAssociation), method: :delete, 'data-confirm': t('are_you_sure') %>
+        <%= Discipline.human_enum_name :kind, discipline_association.kind %>
+        <%= link_to discipline_association.associated.name, admin_discipline_path(discipline_association.associated) %>
+      </div>
+    </div>
+  <% end %>
+  |
+  <% @discipline.inversed_discipline_associations.each do |discipline_association| %>
+    <div class='card card--text mb-4'>
+      <div class='card-body'>
+        <%= button_to 'X', admin_discipline_association_path(discipline_association), class: 'btn btn-sm btn-outline-danger btn--no-padding px-1 edit-button', title: t_crud('delete', DisciplineAssociation), method: :delete, 'data-confirm': t('are_you_sure') %>
+        <%= Discipline.human_enum_name :kind, discipline_association.kind %>
+        <%= link_to discipline_association.discipline.name, admin_discipline_path(discipline_association.discipline) %>
+      </div>
+    </div>
+  <% end %>
+</div>

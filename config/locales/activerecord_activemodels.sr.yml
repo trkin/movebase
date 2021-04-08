@@ -47,6 +47,11 @@ sr:
         few: Услови
         other: Услови
         accusative: услов
+      discipline_association:
+        one: Асоциација
+        few: Асоциације
+        other: Асоциације
+        accusative: асоциацију
       requirement:
         one: Услов
         few: Услови
@@ -105,6 +110,9 @@ sr:
         name: Назив
         number_of_crew: Број чланова
         number_of_relays: Број измена
+        kinds:
+          similar: Слично
+          consists_of: Састоји се од
       discipline_happening:
         name: Назив
         description: Опис
@@ -117,6 +125,7 @@ sr:
         price_without_discount_cents: Цена без попуста
         start_time: Почетак
         genders:
+          any: Било који
           man: Мушки
           women: Женски
       requirement:

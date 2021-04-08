@@ -28,6 +28,9 @@ class Discipline < ApplicationRecord
   has_many :used_in_disciplines,
            -> { where(discipline_associations: {kind: DisciplineAssociation.kinds[:consists_of]}) },
            through: :inversed_discipline_associations, source: :discipline
+  has_many :similar_disciplines,
+           -> { where(discipline_associations: {kind: DisciplineAssociation.kinds[:similar]}) },
+           through: :discipline_associations, source: :associated
 
   enum kind: %i[basic]
 

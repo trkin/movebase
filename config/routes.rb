@@ -34,6 +34,8 @@ Rails.application.routes.draw do
         post :search
         get :index_for_location_and_activities
         post :search_for_location_and_activities
+        get :index_for_disciplines
+        post :search_for_disciplines
       end
       resources :links
     end
@@ -95,6 +97,7 @@ Rails.application.routes.draw do
       end
       resources :disciplines do
         resources :discipline_requirements
+        resources :discipline_associations
       end
       resources :requirements
     end

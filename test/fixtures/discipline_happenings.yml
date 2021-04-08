@@ -7,10 +7,10 @@ kayak_regata__sprint_kayak__senior_500_m:
   distance_m: 500
   gender: <%= DisciplineHappening.genders[:man] %>
 
-kayak_regata__sprint_kayak_for_2__senior_500_m:
+kayak_regata__sprint_kayak_for2__senior_500_m:
   name:
     en: K2 senior 500m men
-  discipline: sprint_kayak_for_2
+  discipline: sprint_kayak_for2
   happening: kayak_regata
   age_min: 16
   distance_m: 500

@@ -1,0 +1,9 @@
+<div id='remote-form'>
+  <%= bootstrap_form_for @discipline_association, url: admin_discipline_discipline_associations_path(@discipline_association.discipline), remote: true, layout: :horizontal do |f| %>
+    <%= f.select :kind, options_for_select(DisciplineAssociation.kinds.keys) %>
+    <%= f.select :associated_id, options_from_collection_for_select(Discipline.all.where.not(id: @discipline_association.discipline.discipline_associations), :id, :name, f.object.associated_id) %>
+    <div class='remote-form__actions'>
+      <%= f.submit class: 'btn btn-primary'%>
+    </div>
+  <% end %>
+</div>

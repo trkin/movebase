@@ -148,6 +148,10 @@ module TextHelper
       .html_safe
   end
 
-  # For enums you can use User.human_enum_name :status, user.status
+  def index_for_disciplines_badge_link(discipline, **attrs)
+    link_to index_for_disciplines_happenings_path(discipline_ids: [discipline.id]), class: attrs[:class] do
+      "<span class='badge badge-primary'>#{discipline.name}</span>".html_safe
+    end
+  end
 end
 # rubocop:enable Metrics/ModuleLength

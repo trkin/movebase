@@ -58,3 +58,23 @@ quadrathlon__sprint_kayak:
   discipline: quadrathlon
   associated: sprint_kayak
   kind: <%= DisciplineAssociation.kinds[:consists_of] %>
+
+sprint_kayak_for2__sprint_kayak:
+  discipline: sprint_kayak_for2
+  associated: sprint_kayak
+  kind: <%= DisciplineAssociation.kinds[:similar] %>
+
+sprint_kayak__sprint_kayak_for2:
+  discipline: sprint_kayak
+  associated: sprint_kayak_for2
+  kind: <%= DisciplineAssociation.kinds[:similar] %>
+
+running__hiking:
+  discipline: running
+  associated: hiking
+  kind: <%= DisciplineAssociation.kinds[:similar] %>
+
+hiking__running:
+  discipline: hiking
+  associated: running
+  kind: <%= DisciplineAssociation.kinds[:similar] %>

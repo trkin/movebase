@@ -44,7 +44,7 @@
 </div>
 <div class='mt-2'>
   <% unless @happening.multi_discipline? %>
-    <span class='badge badge-primary float-right'><%= @happening.disciplines.last.name %></span>
+    <%= index_for_disciplines_badge_link @happening.disciplines.last, class: 'float-right' %>
   <% end %>
   <h3 class=''>
     <%= Discipline.model_name.human(count: @happening.discipline_happenings.size) %>
@@ -62,10 +62,10 @@
       <% end %>
       <%= discipline_happening.full_name %>
       <% if @happening.multi_discipline? %>
-        <span class='badge badge-primary'><%= discipline_happening.discipline.name %></span>
+        <%= index_for_disciplines_badge_link discipline_happening.discipline, class: 'float-right' %>
       <% end %>
       <% discipline_happening.discipline_happening_tags.each do |discipline_happening_tag| %>
-        <span class='badge badge-primary'><%= discipline_happening_tag.tag.name %></span>
+        <span class='badge badge-success'><%= discipline_happening_tag.tag.name %></span>
       <% end %>
       <br>
     <% end %>

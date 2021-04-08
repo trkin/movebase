@@ -3,7 +3,7 @@ sprint_kayak:
     en: Sprint kayak
   activities: kayaking
 
-sprint_kayak_for_2:
+sprint_kayak_for2:
   name:
     en: Sprint kayak for two K-2
   number_of_crew: 2

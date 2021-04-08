@@ -6,6 +6,7 @@
   names_array = names_array.values if names_array.respond_to? :values
 %>
 
+<h4 class='d-inline pr-2'><%= t('happenings_for_activities') %></h4>
 <% @datatable.activities.each do |activity| %>
   <span class='show-on-hover'>
     <span class='badge badge-secondary pl-4'>

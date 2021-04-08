@@ -8,7 +8,7 @@ sprint_kayak:
   name:
     en: Sprint kayak (old or new)
 
-sprint_kayak_for_2:
+sprint_kayak_for2:
   kind: <%= Requirement.kinds[:equipment] %>
   name:
     en: Sprint kayak for 2

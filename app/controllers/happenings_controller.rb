@@ -1,5 +1,5 @@
 class HappeningsController < ApplicationController
-  before_action :_set_happening, except: %i[index index_for_location_and_activities search_for_location_and_activities]
+  before_action :_set_happening, only: %i[show]
 
   def index
     redirect_to root_path
@@ -11,6 +11,14 @@ class HappeningsController < ApplicationController
 
   def search_for_location_and_activities
     render json: HappeningsForActivityNamesDatatable.new(view_context)
+  end
+
+  def index_for_disciplines
+    @datatable = HappeningsForDisciplinesDatatable.new view_context
+  end
+
+  def search_for_disciplines
+    render json: HappeningsForDisciplinesDatatable.new(view_context)
   end
 
   def show; end

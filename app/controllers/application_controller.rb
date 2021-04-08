@@ -53,7 +53,7 @@ class ApplicationController < ActionController::Base
   #  end
   #  def create
   #    @subscriber = current_user.company.subscribers.new
-  #    update_and_render_or_redirect_in_js @subscriber, _subscriber_params, ->(id) { subscriber_path(id) }
+  #    update_and_render_or_redirect_in_js @subscriber, _subscriber_params, ->(subscriber) { subscriber_path(subscriber) }
   #  end
   def update_and_render_or_redirect_in_js(item, item_params, redirect_path_or_proc, partial = 'form', notice = nil)
     notice ||= if item.new_record?
@@ -65,8 +65,8 @@ class ApplicationController < ActionController::Base
     # if you need some custom checks you can add errors before calling this proc
     if item.errors.blank? && item.save
       flash[:notice] = flash.now[:notice] = notice
-      redirect_path = if redirect_path_or_proc.class == Proc
-                        redirect_path_or_proc.call item.id
+      redirect_path = if redirect_path_or_proc.instance_of? Proc
+                        redirect_path_or_proc.call item
                       else
                         redirect_path_or_proc
                       end

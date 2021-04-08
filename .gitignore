@@ -32,3 +32,4 @@ yarn-debug.log*
 /config/credentials/development.key
 
 /config/credentials/test.key
+.rake_tasks~

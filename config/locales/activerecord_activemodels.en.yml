@@ -47,6 +47,11 @@ en:
         few: Requirements
         other: Requirements
         accusative: requirement
+      discipline_association:
+        one: Association
+        few: Associations
+        other: Associations
+        accusative: association
       requirement:
         one: Requirement
         few: Requirements
@@ -105,6 +110,9 @@ en:
         name: Name
         number_of_crew: Number of crew
         number_of_relays: Number of relays
+        kinds:
+          similar: Similarly
+          consists_of: Consists of
       discipline_happening:
         name: Name
         description: Description
@@ -117,6 +125,7 @@ en:
         price_without_discount_cents: Price without discount cents
         start_time: Start time
         genders:
+          any: Any
           man: Man
           women: Women
       requirement:

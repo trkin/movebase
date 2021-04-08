@@ -47,6 +47,11 @@ sr-latin:
         few: Uslovi
         other: Uslovi
         accusative: uslov
+      discipline_association:
+        one: Asociacija
+        few: Asociacije
+        other: Asociacije
+        accusative: asociaciju
       requirement:
         one: Uslov
         few: Uslovi
@@ -105,6 +110,9 @@ sr-latin:
         name: Naziv
         number_of_crew: Broj članova
         number_of_relays: Broj izmena
+        kinds:
+          similar: Slično
+          consists_of: Sastoji se od
       discipline_happening:
         name: Naziv
         description: Opis
