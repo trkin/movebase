@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
   around_action :_set_locale_from_session
-  # before_action :sleep_some_time
+  before_action :_redirect_to_root_domain
+  # before_action :_sleep_some_time
 
-  def sleep_some_time
+  def _sleep_some_time
     sleep 2
   end
 
@@ -11,7 +12,7 @@ class ApplicationController < ActionController::Base
              _get_locale_from_session ||
              _get_locale_from_http_accept_language_and_set_to_session
     if locale.present?
-      I18n.with_locale locale.to_sym do
+      I18n.with_locale locale.to_sym do # rubocop:todo Style/ExplicitBlockArgument
         yield
       end
     else
@@ -26,6 +27,13 @@ class ApplicationController < ActionController::Base
   def _get_locale_from_http_accept_language_and_set_to_session
     locale = request.env['HTTP_ACCEPT_LANGUAGE'].to_s.scan(/^[a-z]{2}/).first
     session[:locale] = locale if locale.present? && I18n.available_locales.include?(locale.to_sym)
+  end
+
+  def _redirect_to_root_domain
+    # request.host is www.movebase.link, request.domain is movebase.link
+    return if request.host == request.domain
+
+    redirect_to root_url(host: request.domain)
   end
 
   # rubocop:disable Metrics/AbcSize
