@@ -66,6 +66,14 @@ yml_google_translate_api.rb config/locales/sr-latin.yml sr_to_cyr en
 yml_google_translate_api.rb config/locales/activerecord_activemodels.sr-latin.yml sr_to_cyr en
 ```
 
+# Capistrano
+
+Here are some example tasks:
+
+```
+cap production rails:logs
+```
+
 # Tests
 
 Run tests with `rake`

@@ -149,6 +149,8 @@ sr-latin:
           viber_group: Viber grupa
           wikipedia: Vikipedija
           youtube: Jutjub
+          registration: Registracija
+          route_track: Mapa staze
   activemodel:
     attributes:
       contact:

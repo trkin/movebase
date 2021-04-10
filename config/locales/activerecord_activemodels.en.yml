@@ -149,6 +149,8 @@ en:
           viber_group: Viber group
           wikipedia: Wikipedia
           youtube: YouTube
+          registration: Registration
+          route_track: Trail map
   activemodel:
     attributes:
       contact:

@@ -42,6 +42,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 
   gem 'capistrano-rails-console', require: false
+  gem 'capistrano-rails-logs-tail'
 
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop'

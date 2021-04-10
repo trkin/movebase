@@ -15,6 +15,8 @@ class Link < ApplicationRecord
     viber_group
     wikipedia
     youtube
+    registration
+    route_track
   ].each_with_object({}) { |k, o| o[k] = k.to_s }
   enum kind: KINDS
 
