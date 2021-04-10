@@ -5,11 +5,11 @@ class HappeningsController < ApplicationController
     redirect_to root_path
   end
 
-  def index_for_location_and_activities
+  def index_for_activities
     @datatable = HappeningsForActivityNamesDatatable.new view_context
   end
 
-  def search_for_location_and_activities
+  def search_for_activities
     render json: HappeningsForActivityNamesDatatable.new(view_context)
   end
 

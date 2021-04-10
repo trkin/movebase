@@ -43,7 +43,7 @@
   </div>
 </div>
 <div class='mt-2'>
-  <% unless @happening.multi_discipline? %>
+  <% unless @happening.multi_discipline? || @happening.disciplines.blank? %>
     <%= index_for_disciplines_badge_link @happening.disciplines.last, class: 'float-right' %>
   <% end %>
   <h3 class=''>

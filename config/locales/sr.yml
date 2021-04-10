@@ -30,10 +30,10 @@ sr:
   data_item_name_successfully_changed: Податак %{item_name} је успешно промењен
   data_item_name_successfully_deleted: Податак %{item_name} је успешно обрисан
   successfully_created_item_count: Успешно је направљен %{item_count}
-  choose_place_and_activity: Изабери место и активност, а ми ћемо ти предложити догађаје...
+  choose_activity: Изабери активност, а ми ћемо ти предложити догађаје...
   we_are_informative_portal: Ово је информативни сервис где можеш наћи везе ка спортским
     дешавањима, дакле,
-  where_are_you_going_on_the_weekend: Где ћеш ићи за викенд ?
+  what_will_you_do_on_the_weekend: Шта ћеш радити за викенд ?
   search: Пронађи
   please_select: Молим изаберите
   please_select_item_name: Молим изаберите %{item_name}
@@ -80,3 +80,4 @@ sr:
   latest_added_disciplines: Недавно додате дисциплине
   future_happenings_for_activities: Будући догађаји за активности
   happenings_for_disciplines: Догађаји за дисциплине
+  years: година

@@ -4,8 +4,8 @@ kayak_regata:
     sr-latin: Majski kajakaški kup Novog Sada
   club: kayak
   venue: sodros
-  start_date: 2019-05-01
-  end_date: 2019-05-01
+  start_date: <%= Time.zone.today + 1.day %>
+  end_date: <%= Time.zone.today + 2.day %>
   recurrence: <%= Montrose.every(:year, month: :may, day: { saturday: [1] }).to_yaml.inspect %>
 
 personal_long_kayaking:
@@ -13,32 +13,32 @@ personal_long_kayaking:
     en: Personal long kayaking from NS to BG
   venue: strand
   club: personal
-  start_date: 2019-02-23
-  end_date: 2019-02-23
+  start_date: <%= Time.zone.today + 1.week %>
+  end_date: <%= Time.zone.today + 1.week %>
 
 triathlon:
   name:
     en: Triathlon
   venue: strand
   club: triathlon
-  start_date: 2019-06-23
-  end_date: 2019-06-23
+  start_date: <%= Time.zone.today + 1.week %>
+  end_date: <%= Time.zone.today + 1.week %>
 
 quadrathlon_munich:
   name:
     en: Quadrathlon Munich
   venue: munich
   club: munich_kayak
-  start_date: 2019-07-23
-  end_date: 2019-07-23
+  start_date: <%= Time.zone.today + 1.week %>
+  end_date: <%= Time.zone.today + 1.week %>
 
 wednesday_walking_23:
   name:
     en: Wednesday walking 23
   club: hiking
   venue: bus_station_popovica
-  start_date: 2019-02-20
-  end_date: 2019-02-20
+  start_date: 2021-02-20
+  end_date: 2021-02-20
   recurrence: <%= Montrose.every(:week, day: :wednesday).to_yaml.inspect %>
 
 wednesday_walking_24:
@@ -46,8 +46,8 @@ wednesday_walking_24:
     en: Wednesday walking 24
   club: hiking
   venue: bus_station_popovica
-  start_date: 2019-02-27
-  end_date: 2019-02-27
+  start_date: 2021-02-27
+  end_date: 2021-02-27
   recurrence: <%= Montrose.every(:week, day: :wednesday).to_yaml.inspect %>
 
 walking_with_children_to_the_tower:
@@ -55,20 +55,20 @@ walking_with_children_to_the_tower:
     en: Walking with children to the tower
   club: personal
   venue: bus_station_popovica
-  start_date: 2019-03-17
-  end_date: 2019-03-17
+  start_date: 2021-03-17
+  end_date: 2021-03-17
 
 walk_or_run_tracking:
   name:
     en: Walk or run tracking
   club: hiking
   venue: bus_station_popovica
-  start_date: 2019-03-17
-  end_date: 2019-03-17
+  start_date: 2021-03-17
+  end_date: 2021-03-17
 
 half_marathon:
   name:
-    en: Half marthon
+    en: Half marathon
   club: personal
   venue: novi_sad
   start_date: 2020-05-17
@@ -80,8 +80,8 @@ sky_running:
     en: Sky running Stara planina
   venue: stara_planina
   club: hiking
-  start_date: 2019-12-17
-  end_date: 2019-12-17
+  start_date: 2021-12-17
+  end_date: 2021-12-17
   recurrence: <%= Montrose.every(:year, on: { december: 1 }).to_yaml.inspect %>
 
 stairs_run_vrsac:
@@ -89,6 +89,14 @@ stairs_run_vrsac:
     en: Stairs run in Vrsac
   venue: vrsac
   club: hiking
-  start_date: 2019-05-26
-  end_date: 2019-05-26
+  start_date: 2021-05-26
+  end_date: 2021-05-26
   recurrence: <%= Montrose.every(:year, on: { june: 1 }).to_yaml.inspect %>
+
+kayaking_no_discipline:
+  name:
+    en: Kayaking no discipline
+  venue: strand
+  club: personal
+  start_date: 2021-02-23
+  end_date: 2021-02-23

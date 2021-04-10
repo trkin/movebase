@@ -21,10 +21,25 @@ class DisciplineHappening < ApplicationRecord
   end
 
   def full_name
-    if gender == 'any'
-      "#{name} #{age_min} #{age_max}"
-    else
-      "#{name} #{age_min} #{age_max} #{distance_m} #{gender}"
-    end
+    gender_string = gender != 'any' ? gender : ''
+    age_string = if age_min.present? && age_max.present?
+                   "#{age_min} - #{age_max} #{I18n.t('years')}"
+                 elsif age_min.present?
+                   "#{age_min}+ #{I18n.t('years')}"
+                 elsif age_max.present?
+                   "- #{age_max} #{I18n.t('years')}"
+                 else
+                   ''
+                 end
+    distance_string = if distance_m.present?
+                        if distance_m > 1000
+                          "#{distance_m / 1000.0}km"
+                        else
+                          "#{distance_m}m"
+                        end
+                      else
+                        ''
+                      end
+    "#{name} #{age_string} #{distance_string} #{gender_string}"
   end
 end

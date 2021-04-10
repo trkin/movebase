@@ -7,28 +7,15 @@
       <%= t('we_are_informative_portal') %>
     </h4>
     <h2>
-      <%= t('where_are_you_going_on_the_weekend') %>
+      <%= t('what_will_you_do_on_the_weekend') %>
     </h2>
   </div>
   <div class='login-wrapper--max-width mx-auto'>
     <div class='login--max-width mx-auto bg-white shadow p-4'>
-      <p class='text-center'><%= t('choose_place_and_activity') %></p>
+      <p class='text-center'><%= t('choose_activity') %></p>
 
-      <%= bootstrap_form_with url: index_for_location_and_activities_happenings_path, method: :get, local: true do |f| %>
-        <%
-          all_cities = Venue.cities.select(
-            <<~SQL
-              venues.*,
-              (
-                SELECT COUNT(happenings.id) FROM happenings
-                WHERE venue_id = venues.id
-              ) AS happening_count
-            SQL
-          ).order(happening_count: :desc)
-          all_activities = Activity.all
-        %>
-        <%= f.select :venue_id, options_from_collection_for_select(all_cities, :id, :name, all_cities.first&.id), { label: Venue.human_attribute_name(:city) }, required: true, 'data-select2-initialize': true %>
-        <%= f.select 'activity_names[]', options_from_collection_for_select(all_activities, :name, :name, all_activities.first&.name), { label: Activity.model_name.human }, required: true, 'data-select2-initializ': true %>
+      <%= bootstrap_form_with url: index_for_activities_happenings_path, method: :get, local: true do |f| %>
+        <%= f.select 'activity_names[]', options_from_collection_for_select(Activity.all, :name, :name, Activity.find_by('name @> ?', {'sr-latin': 'Trčanje'}.to_json)&.name), { label: Activity.model_name.human }, required: true, 'data-select2-initializ': true %>
         <%= f.submit t('search'), class: 'btn btn-success btn-block' %>
       <% end %>
     </div>

@@ -51,7 +51,7 @@ personal_long_kayaking:
 
 triathlon_mini_till_12:
   name:
-    en: triathlon mini till 12
+    en: triathlon mini
   discipline: triathlon
   happening: triathlon
   age_max: 12
@@ -59,7 +59,7 @@ triathlon_mini_till_12:
 
 triathlon_kids_13_14:
   name:
-    en: triathlon 13 14
+    en: triathlon jun
   discipline: triathlon
   happening: triathlon
   age_min: 13
@@ -68,7 +68,7 @@ triathlon_kids_13_14:
 
 triathlon_elit_18p:
   name:
-    en: triathlon 18+
+    en: triathlon
   discipline: triathlon
   happening: triathlon
   age_min: 18

@@ -11,7 +11,7 @@
   <span class='show-on-hover'>
     <span class='badge badge-secondary pl-4'>
       <%= activity.name %>
-      <% remove_path = index_for_location_and_activities_happenings_path(params.merge(activity_names: (names_array || []) - [activity.name])) %>
+      <% remove_path = index_for_activities_happenings_path(params.merge(activity_names: (names_array || []) - [activity.name])) %>
       <%= link_to remove_path do %>
         <i class='demo-icon icon-cancel show-on-hover-target btn-danger' title='<%= t_crud('drop', Activity) %>'></i>
       <% end %>
@@ -24,11 +24,11 @@
   </a>
   <div class='dropdown-menu' aria-labelledby='dropdownAddActivity'>
     <% Activity.i18n.where.not(name: names_array).each do |activity| %>
-      <% add_path = index_for_location_and_activities_happenings_path(params.except(:controller, :action, :commit).merge(activity_names: (names_array || []) + [activity.name])) %>
-      <% add_related_path = index_for_location_and_activities_happenings_path(params.except(:controller, :action, :commit).merge(activity_names: (names_array || []))) %>
+      <% add_path = index_for_activities_happenings_path(params.except(:controller, :action, :commit).merge(activity_names: (names_array || []) + [activity.name])) %>
+      <% add_related_path = index_for_activities_happenings_path(params.except(:controller, :action, :commit).merge(activity_names: (names_array || []))) %>
       <%= link_to activity.name, add_path, class:'dropdown-item' %>
     <% end %>
   </div>
 </div>
 
-<%= @datatable.render_html search_for_location_and_activities_happenings_path(activity_names: names_array, format: :json) %>
+<%= @datatable.render_html search_for_activities_happenings_path(activity_names: names_array, format: :json) %>

@@ -149,7 +149,7 @@ sr:
           viber_group: Вибер група
           wikipedia: Википедија
           youtube: Јутјуб
-          registration: Регистрација
+          registration: Пријаве
           route_track: Мапа стазе
   activemodel:
     attributes:

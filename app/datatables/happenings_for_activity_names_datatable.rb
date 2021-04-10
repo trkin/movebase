@@ -6,6 +6,7 @@ class HappeningsForActivityNamesDatatable < BaseDatatable
       'happenings.start_date': {},
       'venues.name': {title: Venue.model_name.human},
       'clubs.name': {title: Club.model_name.human},
+      'disciplines.name': {title: Discipline.model_name.human(count: 2)},
       'clubs.id': {hide: true},
     }
   end
@@ -31,17 +32,15 @@ class HappeningsForActivityNamesDatatable < BaseDatatable
 
   def rows(filtered)
     filtered.map do |happening|
-      link_to_club = if happening.club.sport_organization?
-                       @view.link_to(happening.club.name, @view.club_path(happening.club))
-                     else
-                       happening.club.name
-                     end
+      disciplines = happening.discipline_happenings.limit(3).map(&:full_name)
+                             .to_sentence
       [
         happening.id,
         @view.link_to(happening.name, @view.happening_path(happening)),
         I18n.l(happening.start_date, format: :long_with_week),
         happening.venue.name,
-        link_to_club,
+        happening.club.name,
+        disciplines,
         happening.club.id,
       ]
     end

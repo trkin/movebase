@@ -7,7 +7,7 @@ swimming).
 
 **Discipline** (K2 number_of_crew=2) has_many activities and has
 **discipline_requirements** (K2 boat). In case of multi-activity discipline
-triathlon it has running, swimming and cycling activity. In case of trail
+like triathlon, we have running, swimming and cycling activity. In case of trail
 running, discipline has two activities: walking and running.
 When we organize **happening** than we also
 define **discipline_happening** conditions (gender, age min/max, distance, max
