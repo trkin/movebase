@@ -5,6 +5,8 @@ sr:
   home: Почетак
   language: језик
   language_name: Српски
+  google: Гугл
+  facebook: Фејсбук
   sent_messages:
     one: "%{count} порука је послата"
     few: "%{count} поруке су послате"
@@ -29,6 +31,8 @@ sr:
   data_item_name_successfully_deleted: Податак %{item_name} је успешно обрисан
   successfully_created_item_count: Успешно је направљен %{item_count}
   choose_place_and_activity: Изабери место и активност, а ми ћемо ти предложити догађаје...
+  we_are_informative_portal: Ово је информативни сервис где можеш наћи везе ка спортским
+    дешавањима, дакле,
   where_are_you_going_on_the_weekend: Где ћеш ићи за викенд ?
   search: Пронађи
   please_select: Молим изаберите
@@ -45,8 +49,8 @@ sr:
   log_in_as: Улогуј се као
   dashboard: Почетак
   my_account: Мој налог
-  my_clubs: Моји клубови
-  my_club: Мој клуб
+  my_clubs: Моје организације
+  my_club: Моја организација
   change_item_name: Промени %{item_name}
   this_value_is_added_to_url_for_better_seo: Ова вредност се додаје на URL за бољи
     SEO
@@ -74,5 +78,5 @@ sr:
   and_related: и слични
   latest_added_happenings: Недавно додати догађаји
   latest_added_disciplines: Недавно додате дисциплине
-  happenings_for_activities: Догађаји за активности
+  future_happenings_for_activities: Будући догађаји за активности
   happenings_for_disciplines: Догађаји за дисциплине

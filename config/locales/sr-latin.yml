@@ -5,6 +5,8 @@ sr-latin:
   home: Početak
   language: jezik
   language_name: Srpski latinica
+  google: Gugl
+  facebook: Fejsbuk
   sent_messages:
     one: "%{count} poruka je poslata"
     few: "%{count} poruke su poslate"
@@ -29,6 +31,7 @@ sr-latin:
   data_item_name_successfully_deleted: Podatak %{item_name} je uspešno obrisan
   successfully_created_item_count: Uspešno je napravljen %{item_count}
   choose_place_and_activity: Izaberi mesto i aktivnost, a mi ćemo ti predložiti događaje...
+  we_are_informative_portal: Ovo je informativni servis gde možeš naći veze ka sportskim dešavanjima, dakle,
   where_are_you_going_on_the_weekend: Gde ćeš ići za vikend ?
   search: Pronađi
   please_select: Molim izaberite
@@ -45,8 +48,8 @@ sr-latin:
   log_in_as: Uloguj se kao
   dashboard: Početak
   my_account: Moj nalog
-  my_clubs: Moji klubovi
-  my_club: Moj klub
+  my_clubs: Moje organizacije
+  my_club: Moja organizacija
   change_item_name: Promeni %{item_name}
   this_value_is_added_to_url_for_better_seo: Ova vrednost se dodaje na URL za bolji
     SEO
@@ -72,5 +75,5 @@ sr-latin:
   and_related: i slični
   latest_added_happenings: Nedavno dodati događaji
   latest_added_disciplines: Nedavno dodate discipline
-  happenings_for_activities: Događaji za aktivnosti
+  future_happenings_for_activities: Budući događaji za aktivnosti
   happenings_for_disciplines: Događaji za discipline

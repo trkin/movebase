@@ -18,10 +18,10 @@ en:
         other: Activities
         accusative: activity
       club:
-        one: Club
-        few: Club
-        other: Clubs
-        accusative: club
+        one: Organization
+        few: Organization
+        other: Organizations
+        accusative: organization
       venue:
         one: Venue
         few: Venues
@@ -99,7 +99,7 @@ en:
         zip: Zip
       happening:
         name: Name
-        club: Club
+        club: Organization
         venue: Venue
         description: Description
         start_date: Date

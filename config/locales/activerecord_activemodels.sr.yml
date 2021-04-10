@@ -18,10 +18,10 @@ sr:
         other: Активности
         accusative: активност
       club:
-        one: Клуб
-        few: Клуба
-        other: Клубови
-        accusative: клуб
+        one: Организација
+        few: Организација
+        other: Организације
+        accusative: организација
       venue:
         one: Место
         few: Места
@@ -99,7 +99,7 @@ sr:
         zip: Поштански код
       happening:
         name: Назив
-        club: Клуб
+        club: Организација
         venue: Место
         description: Опис
         start_date: Датум

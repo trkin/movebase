@@ -28,6 +28,7 @@ class User < ApplicationRecord
 
     # create new user with some password
     user = User.new(
+      locale: I18n.locale,
       email: auth.info.email,
       uid: auth.uid,
       password: Devise.friendly_token[0, 20],

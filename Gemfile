@@ -71,6 +71,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+# https://stackoverflow.com/a/66155946/287166
+gem 'omniauth-rails_csrf_protection'
 
 # pick icons by: fontello open; {select icons}; fontello convert
 gem 'fontello_rails_converter', '~> 0.4.6'

@@ -18,10 +18,10 @@ sr-latin:
         other: Aktivnosti
         accusative: aktivnost
       club:
-        one: Klub
-        few: Kluba
-        other: Klubovi
-        accusative: klub
+        one: Organizacija
+        few: Organizacija
+        other: Organizacije
+        accusative: organizacija
       venue:
         one: Mesto
         few: Mesta
@@ -99,7 +99,7 @@ sr-latin:
         zip: Poštanski kod
       happening:
         name: Naziv
-        club: Klub
+        club: Organizacija
         venue: Mesto
         description: Opis
         start_date: Datum

@@ -224,6 +224,9 @@ GEM
     omniauth-oauth2 (1.7.1)
       oauth2 (~> 1.4)
       omniauth (>= 1.9, < 3)
+    omniauth-rails_csrf_protection (1.0.0)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     orm_adapter (0.5.0)
     parallel (1.20.1)
     parser (3.0.0.0)
@@ -339,7 +342,7 @@ GEM
     thor (1.1.0)
     tilt (2.0.10)
     timecop (0.9.4)
-    trk_datatables (0.2.11)
+    trk_datatables (0.2.12)
       activesupport
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
@@ -404,6 +407,7 @@ DEPENDENCIES
   mustache
   omniauth-facebook
   omniauth-google-oauth2
+  omniauth-rails_csrf_protection
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rack-cors

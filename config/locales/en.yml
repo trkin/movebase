@@ -5,6 +5,8 @@ en:
   home: Home
   language: language
   language_name: English
+  google: Google
+  facebook: Facebook
   sent_messages:
     one: "%{count} message is sent"
     few: "%{count} messages are sent"
@@ -29,6 +31,8 @@ en:
   successfully_created_item_count: Successfully made %{item_count}
   choose_place_and_activity: Choose place and activity and we will suggest you some
     happenings...
+  we_are_informative_portal: This is an information service where you can find links
+    to sporting events, so
   where_are_you_going_on_the_weekend: Where are you going on the weekend ?
   search: Search
   please_select: Please select
@@ -46,8 +50,8 @@ en:
   log_in_as: Login as
   dashboard: Dashboard
   my_account: My account
-  my_clubs: My clubs
-  my_club: My club
+  my_clubs: My organizations
+  my_club: My organization
   change_item_name: Change %{item_name}
   this_value_is_added_to_url_for_better_seo: This value is added to url for better
     seo
@@ -74,5 +78,5 @@ en:
   and_related: and related
   latest_added_happenings: Recently added events
   latest_added_disciplines: Recently added disciplines
-  happenings_for_activities: Events for activities
+  future_happenings_for_activities: Future events for activities
   happenings_for_disciplines: Events for disciplines

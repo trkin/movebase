@@ -22,14 +22,18 @@
 
 <% if devise_mapping.omniauthable? %>
   <%= t('sign_up_with') %>
-  <%= link_to user_google_oauth2_omniauth_authorize_path, class: 'btn' do %>
-    <i class="demo-icon icon-google" aria-hidden="true"></i>
-  <% end %>
-  <%= link_to user_facebook_omniauth_authorize_path, class: 'btn' do %>
-    <i class="demo-icon icon-facebook-official" aria-hidden="true"></i>
-  <% end %>
-
   <div class='text-center'>
+    <%= button_to user_google_oauth2_omniauth_authorize_path, class: 'btn', form_class: 'd-iline' do %>
+      <i class="demo-icon icon-google" aria-hidden="true"></i>
+      <%= t('google') %>
+    <% end %>
+    <%= button_to user_facebook_omniauth_authorize_path, class: 'btn btn-default' do %>
+      <i class="demo-icon icon-facebook-official" aria-hidden="true"></i>
+      <%= t('facebook') %>
+    <% end %>
+
+  </div>
+  <div>
   - <%= t('or') %> - 
   </div>
 <% end %>

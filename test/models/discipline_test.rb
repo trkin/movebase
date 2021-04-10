@@ -22,12 +22,6 @@ class DisciplineTest < ActiveSupport::TestCase
     assert_not_includes results, disciplines(:sprint_kayak)
   end
 
-  test 'self_and_used_in_disciplines' do
-    results = disciplines(:sprint_kayak).self_and_used_in_disciplines
-
-    assert_includes results, disciplines(:sprint_kayak)
-  end
-
   test 'similar_disciplines' do
     results = disciplines(:sprint_kayak).similar_disciplines
 

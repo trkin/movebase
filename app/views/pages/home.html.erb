@@ -3,6 +3,9 @@
 %>
 <div class=''>
   <div class='text-center mt-2'>
+    <h4>
+      <%= t('we_are_informative_portal') %>
+    </h4>
     <h2>
       <%= t('where_are_you_going_on_the_weekend') %>
     </h2>
@@ -26,7 +29,6 @@
         %>
         <%= f.select :venue_id, options_from_collection_for_select(all_cities, :id, :name, all_cities.first&.id), { label: Venue.human_attribute_name(:city) }, required: true, 'data-select2-initialize': true %>
         <%= f.select 'activity_names[]', options_from_collection_for_select(all_activities, :name, :name, all_activities.first&.name), { label: Activity.model_name.human }, required: true, 'data-select2-initializ': true %>
-        <%= f.hidden_field HappeningsForActivityNamesDatatable.form_field_name('happenings.start_date'), value: HappeningsForActivityNamesDatatable.range_string(Time.zone.today..(Time.zone.today + 1.year)) %>
         <%= f.submit t('search'), class: 'btn btn-success btn-block' %>
       <% end %>
     </div>

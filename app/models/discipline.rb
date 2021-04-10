@@ -35,8 +35,4 @@ class Discipline < ApplicationRecord
   enum kind: %i[basic]
 
   validates :name, presence: true, uniqueness: true
-
-  def self_and_used_in_disciplines
-    [self] + used_in_disciplines
-  end
 end
