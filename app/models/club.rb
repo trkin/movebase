@@ -4,7 +4,7 @@ class Club < ApplicationRecord
 
   FIELDS = %i[kind name].freeze
 
-  enum kind: %i[sport_organization personal]
+  enum kind: %i[sport_organization personal federation]
 
   attr_accessor :existing_or_new
 

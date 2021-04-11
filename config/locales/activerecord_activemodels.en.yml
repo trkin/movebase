@@ -88,6 +88,7 @@ en:
         kinds:
           sport_organization: Club
           personal: Personal
+          federation: Alliance
       venue:
         name: Name
         latitude: Latitude

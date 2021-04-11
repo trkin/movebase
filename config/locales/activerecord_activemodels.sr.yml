@@ -88,6 +88,7 @@ sr:
         kinds:
           sport_organization: Клуб
           personal: Лично
+          federation: Савез
       venue:
         name: Назив
         latitude: Латитуда

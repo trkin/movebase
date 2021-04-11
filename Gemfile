@@ -116,3 +116,6 @@ gem 'rubyzip', '>=1.3.0'
 # datatables
 gem 'trk_datatables', '~>0.2.11'
 # gem 'trk_datatables', path: '~/gems/trk_datatables'
+
+# sortable
+gem 'acts_as_list'

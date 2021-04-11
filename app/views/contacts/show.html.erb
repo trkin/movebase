@@ -12,7 +12,7 @@
     <div class='login--max-width mx-auto bg-white shadow p-4'>
       <%= bootstrap_form_for @contact, url: contact_path do |f| %>
         <%= f.email_field :email, required: true, disabled: current_user.present? %>
-        <%= f.text_area :text, required: true %>
+        <%= f.text_area :text, required: true, 'data-controller': 'textarea-autogrow' %>
         <div class='mb-5'>
           <% if current_user&.confirmed? %>
             <%= f.submit t('send'), class: 'btn btn-lg btn-primary float-right' %>

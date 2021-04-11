@@ -2,7 +2,10 @@ class DisciplineHappening < ApplicationRecord
   extend Mobility
   translates :name, :description
 
-  FIELDS = %i[name description gender distance_m elevation_m max_time_s age_min age_max price_without_discount_cents start_time].freeze
+  acts_as_list
+
+  FIELDS = %i[name description gender distance_m elevation_m max_time_s age_min
+              age_max price_without_discount_cents start_time position].freeze
 
   attr_accessor :existing_or_new
 
@@ -20,7 +23,7 @@ class DisciplineHappening < ApplicationRecord
     "#{discipline.name} #{age_min} #{age_max} #{distance_m} #{gender}"
   end
 
-  def full_name
+  def full_name # rubocop:todo Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/AbcSize
     gender_string = gender != 'any' ? gender : ''
     age_string = if age_min.present? && age_max.present?
                    "#{age_min} - #{age_max} #{I18n.t('years')}"
