@@ -22,7 +22,7 @@
   </div>
 </div>
 <div class='row mt-2'>
-  <div class='col-md-6'>
+  <div class='col-md-4'>
     <h3>
       <%= t('latest_added_happenings') %>
     </h3>
@@ -33,7 +33,7 @@
           <h5 class='card-title'><%= happening.name %></h5>
           <%= link_to t('read_more'), happening, class: 'card-link float-right' %>
           <p class='card-text'>
-            <% happening.discipline_happenings.each do |discipline_happening| %>
+            <% happening.discipline_happenings.limit(5).each do |discipline_happening| %>
               <%= discipline_happening.full_name %>
               <br>
             <% end %>
@@ -42,22 +42,42 @@
       </div>
     <% end %>
   </div>
-  <div class='col-md-6'>
+  <div class='col-md-4'>
     <h3>
       <%= t('latest_added_disciplines') %>
     </h3>
     <% Discipline.order(created_at: :asc).last(5).each do |discipline| %>
       <div class='card mt-2'>
         <div class='card-body'>
-          <h5 class='card-title'><%= discipline.name %></h5>
+          <h5 class='card-title'><%= index_for_disciplines_badge_link discipline %></h5>
           <h6>
             <% discipline.activities.each do |activity| %>
               <%= activity.name %>
             <% end %>
           </h6>
           <p class='card-text'>
-            <% discipline.happenings.uniq.each do |happening| %>
+            <% discipline.happenings.limit(5).uniq.each do |happening| %>
               <%= link_to happening.name, happening, class: 'card-link' %>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class='col-md-4'>
+    <h3>
+      <%= t('upcomming_events') %>
+    </h3>
+    <% Happening.where('start_date >= ?', Time.zone.today).order(start_date: :asc).limit(5).each do |happening| %>
+      <div class='card mt-2'>
+        <div class='card-body'>
+          <div class='float-right'><%= happening.venue.name %>, <%= I18n.l happening.start_date, format: :long_with_week %></div>
+          <h5 class='card-title'><%= happening.name %></h5>
+          <%= link_to t('read_more'), happening, class: 'card-link float-right' %>
+          <p class='card-text'>
+            <% happening.discipline_happenings.limit(5).each do |discipline_happening| %>
+              <%= discipline_happening.full_name %>
+              <br>
             <% end %>
           </p>
         </div>

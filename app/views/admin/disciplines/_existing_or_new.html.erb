@@ -11,7 +11,7 @@
     <%= f.radio_button :existing_or_new, 'new', label: t('create_new'), 'data-action': 'activate#enableDisableForValue' %>
   </div>
   <fieldset data-activate-value='existing' class='remote-form__border-section d-none-display <%= 'active' if f.object.existing_or_new != 'new' %>' <%= 'disabled' if f.object.existing_or_new == 'new' %>>
-    <%= f.select :discipline_id, options_from_collection_for_select(Discipline.all, :id, :name, f.object.discipline), prompt: true, disabled: f.object.existing_or_new == 'new' %>
+    <%= f.select :discipline_id, options_from_collection_for_select(Discipline.all, :id, :name, f.object.discipline_id), prompt: true, disabled: f.object.existing_or_new == 'new' %>
   </fieldset>
   <fieldset data-activate-value='new' class='remote-form__border-section d-none-display <%= 'active' if f.object.existing_or_new == 'new' %>' <%= 'disabled' if f.object.existing_or_new != 'new' %>>
     <%= f.fields_for :discipline, include_id: false do |ff| %>

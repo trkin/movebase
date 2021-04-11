@@ -30,11 +30,12 @@
   <%= t_crud('add_new', DisciplineHappening) %>
 <% end %>
 <div class='card-deck' data-controller='sortable'  data-sortable-resource-name-value='discipline_happening'>
-  <% @happening.discipline_happenings.order(:position).each do |discipline_happening| %>
+  <% @happening.discipline_happenings.each do |discipline_happening| %>
     <div class='card card--text mb-4' data-sortable-update-url="<%= admin_discipline_happening_path(discipline_happening) %>" data-sortable-resource-name-value='dsa'>
       <div class='card-body'>
         <%= button_tag_open_modal edit_admin_discipline_happening_path(discipline_happening), title: t_crud('edit', DisciplineHappening), pull_right: true %>
-        <%= detail_view_list discipline_happening, *(DisciplineHappening::FIELDS - [:price_without_discount_cents]), skip_blank: :all %>
+        <%= detail_view_list discipline_happening, *(DisciplineHappening::FIELDS - %i[price_without_discount_cents]), label_class: 'd-none', skip_blank: :all %>
+        <%= index_for_disciplines_badge_link discipline_happening.discipline %>
         <% discipline_happening.discipline_happening_tags.each do |discipline_happening_tag| %>
           <span class='badge badge-success'><%= discipline_happening_tag.tag.name %></span>
         <% end %>

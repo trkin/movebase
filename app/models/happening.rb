@@ -11,7 +11,7 @@ class Happening < ApplicationRecord
   accepts_nested_attributes_for :venue
   belongs_to :club
 
-  has_many :discipline_happenings, dependent: :destroy
+  has_many :discipline_happenings, -> { order position: :asc }, dependent: :destroy
   has_many :disciplines, through: :discipline_happenings
   has_many :links, as: :linkable
 
