@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_10_201148) do
+ActiveRecord::Schema.define(version: 2021_04_12_092511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_04_10_201148) do
     t.string "icon_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "admin_notes"
   end
 
   create_table "activities_disciplines", id: false, force: :cascade do |t|
@@ -116,6 +117,7 @@ ActiveRecord::Schema.define(version: 2021_04_10_201148) do
     t.integer "number_of_relays", default: 1, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "admin_note"
     t.index ["name"], name: "index_disciplines_on_name", unique: true
   end
 
@@ -207,6 +209,7 @@ ActiveRecord::Schema.define(version: 2021_04_10_201148) do
     t.boolean "is_a_city"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "google_map_link"
     t.index ["latitude", "longitude"], name: "index_venues_on_latitude_and_longitude"
   end
 

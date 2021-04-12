@@ -152,6 +152,7 @@ sr-latin:
           youtube: Jutjub
           registration: Prijave
           route_track: Mapa staze
+          facebook_video: Fejsbuk video
   activemodel:
     attributes:
       contact:

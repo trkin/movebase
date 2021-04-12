@@ -2,6 +2,7 @@
   <%= bootstrap_form_for @activity, url: @activity.new_record? ? admin_activities_path : admin_activity_path(@activity), remote: true, layout: :horizontal do |f| %>
     <%= f.text_field :name %>
     <%= f.text_area :description %>
+    <%= f.text_area :admin_notes %>
     <div class='remote-form__actions'>
       <% unless @activity.new_record? %>
         <%= link_to admin_activity_path(@activity), method: :delete, 'data-confirm': t_are_you_sure_to_remove_item_name(@activity.name), title: t_crud('delete', Activity) do %>

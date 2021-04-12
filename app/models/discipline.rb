@@ -2,7 +2,7 @@ class Discipline < ApplicationRecord
   extend Mobility
   translates :name
 
-  FIELDS = %i[name number_of_crew number_of_relays].freeze +
+  FIELDS = %i[name number_of_crew number_of_relays admin_note].freeze +
            [
              {
                activity_ids: [],

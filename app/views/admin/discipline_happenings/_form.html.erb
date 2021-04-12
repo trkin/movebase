@@ -15,7 +15,7 @@
         <%= f.number_field :max_time_s %>
         <%= f.number_field :age_min %>
         <%= f.number_field :age_max %>
-        <%= f.datetime_select :start_time %>
+        <%= f.datetime_select :start_time, minute_step: 5 %>
       </div>
     </div>
     <div class='remote-form__actions'>

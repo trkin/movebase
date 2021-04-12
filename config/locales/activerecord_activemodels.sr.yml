@@ -152,6 +152,7 @@ sr:
           youtube: Јутјуб
           registration: Пријаве
           route_track: Мапа стазе
+          facebook_video: Фејсбук видео
   activemodel:
     attributes:
       contact:

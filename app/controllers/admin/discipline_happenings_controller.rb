@@ -4,9 +4,10 @@ class Admin::DisciplineHappeningsController < Admin::BaseController
 
   def new
     last_discipline_happening = @happening.discipline_happenings.order(:updated_at).last
+    last_attributes = last_discipline_happening&.attributes&.symbolize_keys
+      &.slice(*(DisciplineHappening::FIELDS - %i[name description] + %i[discipline_id])) || {}
     @discipline_happening = @happening.discipline_happenings.new(
-      **last_discipline_happening&.attributes&.symbolize_keys
-      &.slice(*(DisciplineHappening::FIELDS - %i[name description] + %i[discipline_id]))
+      last_attributes
     )
     @discipline_happening.start_time = last_discipline_happening&.start_time || @happening.start_date
 

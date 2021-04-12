@@ -4,6 +4,7 @@
       <div class='col-sm'>
         <%= f.radio_button :kind, :sport_organization, label: Club.human_enum_name(:kind, :sport_organization) %>
         <%= f.radio_button :kind, :personal, label: Club.human_enum_name(:kind, :personal) %>
+        <%= f.radio_button :kind, :federation, label: Club.human_enum_name(:kind, :federation) %>
         <%= f.text_field :name %>
       </div>
       <div class='col-sm'>

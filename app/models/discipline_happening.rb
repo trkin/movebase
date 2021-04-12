@@ -17,14 +17,8 @@ class DisciplineHappening < ApplicationRecord
 
   enum gender: %i[any man women]
 
-  def default_name
-    return if discipline.blank?
-
-    "#{discipline.name} #{age_min} #{age_max} #{distance_m} #{gender}"
-  end
-
   def full_name # rubocop:todo Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/AbcSize
-    gender_string = gender != 'any' ? gender : ''
+    gender_string = gender != 'any' ? I18n.t("#{gender}_short") : ''
     age_string = if age_min.present? && age_max.present?
                    "#{age_min} - #{age_max} #{I18n.t('years')}"
                  elsif age_min.present?

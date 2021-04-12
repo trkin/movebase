@@ -6,7 +6,7 @@
     <%= button_tag_open_modal edit_admin_venue_path(@venue), title: t_crud('edit', Venue), pull_right: true %>
     <div class='row'>
       <div class='col-sm'>
-        <%= detail_view_list @venue, :name, :address, :city %>
+        <%= detail_view_list @venue, :name, :address, :city, :google_map_link %>
       </div>
       <div class='col-sm'>
         <%= detail_view_list @venue, :latitude, :longitude %>

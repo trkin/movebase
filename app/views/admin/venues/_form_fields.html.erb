@@ -18,6 +18,7 @@
       <%= f.text_field :name, disabled: disabled %>
       <%= f.text_field :address, 'data-target': 'google-map-address.address', disabled: disabled %>
       <%= f.text_field :city, help: t('this_value_is_added_to_url_for_better_seo'), disabled: disabled %>
+      <%= f.text_field :google_map_link, disabled: disabled %>
     </div>
     <div class='col'>
       <%= f.text_field :latitude, 'data-target': 'google-map-address.latitude', disabled: disabled %>

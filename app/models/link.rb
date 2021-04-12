@@ -17,6 +17,7 @@ class Link < ApplicationRecord
     youtube
     registration
     route_track
+    facebook_video
   ].each_with_object({}) { |k, o| o[k] = k.to_s }
   enum kind: KINDS
 

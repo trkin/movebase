@@ -152,6 +152,7 @@ en:
           youtube: YouTube
           registration: Registration
           route_track: Trail map
+          facebook_video: Facebook video
   activemodel:
     attributes:
       contact:

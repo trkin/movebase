@@ -19,8 +19,7 @@
           <%= detail_view_one Happening.human_attribute_name(:club), link_to(@happening.club.name, admin_club_path(@happening.club)) %>
           <%= detail_view_one Happening.human_attribute_name(:venue), link_to(@happening.venue.name, admin_venue_path(@happening.venue)) %>
         <% end %>
-        <% @happening.links.each do |link| %>
-        <% end %>
+        <%= link_to t('public_page'), @happening %>
       </div>
     </div>
   </div>
