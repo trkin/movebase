@@ -119,3 +119,5 @@ gem 'trk_datatables', '~>0.2.11'
 
 # sortable
 gem 'acts_as_list'
+
+gem 'sitemap_generator', '~>6.1.2'
