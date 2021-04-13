@@ -9,4 +9,4 @@
 <%= f.number_field :number_of_crew, disabled: disabled %>
 <%= f.number_field :number_of_relays, disabled: disabled %>
 <%= f.select :activity_ids, options_from_collection_for_select(Activity.all, :id, :name, f.object.activity_ids), { prompt: true }, disabled: disabled, multiple: true %>
-<%= f.text_field :admin_note, disabled: disabled %>
+<%= f.text_area :admin_note, disabled: disabled %>

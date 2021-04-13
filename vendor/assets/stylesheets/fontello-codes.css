@@ -1,4 +1,5 @@
 
+.icon-flow-parallel:before { content: '\e800'; } /* '' */
 .icon-mobile:before { content: '\e801'; } /* '' */
 .icon-logout:before { content: '\e802'; } /* '' */
 .icon-cog:before { content: '\e803'; } /* '' */

@@ -76,7 +76,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 
 # pick icons by: fontello open; {select icons}; fontello convert
-gem 'fontello_rails_converter', '~> 0.4.6'
+gem 'fontello_rails_converter', github: 'railslove/fontello_rails_converter'
 
 # bootstrap form
 # use master untill new release includes https://github.com/bootstrap-ruby/bootstrap_form/pull/550

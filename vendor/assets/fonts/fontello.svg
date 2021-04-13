@@ -1,11 +1,13 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
-<metadata>Copyright (C) 2020 by original authors @ fontello.com</metadata>
+<metadata>Copyright (C) 2021 by original authors @ fontello.com</metadata>
 <defs>
 <font id="fontello" horiz-adv-x="1000" >
 <font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="flow-parallel" unicode="&#xe800;" d="M240 650q0-76-72-110l0-378q72-34 72-112 0-50-35-85t-85-35-85 35-35 85q0 78 72 112l0 378q-72 34-72 110 0 50 35 85t85 35 85-35 35-85z m-50-600q0 30-21 50t-49 20-48-20-20-50q0-28 20-48t48-20 49 20 21 48z m-70 532q28 0 49 20t21 48q0 30-21 50t-49 20-48-20-20-50q0-28 20-48t48-20z m448-420q72-34 72-112 0-50-35-85t-85-35-85 35-35 85q0 78 72 112l0 378q-72 34-72 110 0 50 35 85t85 35 85-35 35-85q0-76-72-110l0-378z m-116 488q0-28 20-48t48-20 49 20 21 48q0 30-21 50t-49 20-48-20-20-50z m68-668q28 0 49 20t21 48q0 30-21 50t-49 20-48-20-20-50q0-28 20-48t48-20z" horiz-adv-x="640" />
+
 <glyph glyph-name="mobile" unicode="&#xe801;" d="M480 840q42 0 71-29t29-71l0-780q0-40-29-70t-71-30l-380 0q-40 0-70 30t-30 70l0 780q0 42 30 71t70 29l380 0z m-190-940q30 0 50 15t20 35q0 22-20 36t-50 14q-28 0-49-15t-21-35 21-35 49-15z m210 150l0 660-420 0 0-660 420 0z" horiz-adv-x="580" />
 
 <glyph glyph-name="logout" unicode="&#xe802;" d="M502 0l0 100 98 0 0-100q0-40-29-70t-71-30l-400 0q-40 0-70 30t-30 70l0 700q0 42 30 71t70 29l400 0q42 0 71-29t29-71l0-150-98 0 0 150-402 0 0-700 402 0z m398 326l-198-196 0 120-450 0 0 150 450 0 0 120z" horiz-adv-x="900" />

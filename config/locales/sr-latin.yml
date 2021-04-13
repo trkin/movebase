@@ -30,13 +30,17 @@ sr-latin:
   data_item_name_successfully_changed: Podatak %{item_name} je uspešno promenjen
   data_item_name_successfully_deleted: Podatak %{item_name} je uspešno obrisan
   successfully_created_item_count: Uspešno je napravljen %{item_count}
-  choose_activity: Izaberi aktivnost, a mi ćemo ti predložiti događaje...
+  choose_activity: Izaberi aktivnost da vidiš događaje...
+  choose_equipment_you_want_to_use: Izaberi opremu koju hoćeš da koristiš
   we_are_informative_portal: Ovo je informativni servis gde možeš naći veze ka sportskim dešavanjima, dakle,
   what_will_you_do_on_the_weekend: Šta ćeš raditi za vikend ?
   search: Pronađi
+  search_future_hapennings: Pronađi buduće događaje
+  show_also_pasts_happenings: Prikaži i prošle događaje
   please_select: Molim izaberite
   please_select_item_name: Molim izaberite %{item_name}
   select_item_name: Izaberite %{item_name}
+  add_item_name: Dodaj %{item_name}
   last_message: Poslednja poruka
   contact: Kontakt
   get_in_touch: Javite se
@@ -77,6 +81,7 @@ sr-latin:
   latest_added_disciplines: Nedavno dodate discipline
   upcomming_events: Sledeći događaji
   future_happenings_for_activities: Budući događaji za aktivnosti
+  happenings_for_activities: Događaji za aktivnosti
   happenings_for_disciplines: Događaji za discipline
   years: godina
   man_short: (m)

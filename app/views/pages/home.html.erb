@@ -1,48 +1,42 @@
 <%
     breadcrumb
 %>
-<div class=''>
-  <div class='text-center mt-2'>
-    <h4>
-      <%= t('we_are_informative_portal') %>
-    </h4>
-    <h2>
-      <%= t('what_will_you_do_on_the_weekend') %>
-    </h2>
-  </div>
+<div class='text-center'>
+  <p class='mt-2'>
+    <%= t('we_are_informative_portal') %>
+  </p>
+  <h5>
+    <%= t('what_will_you_do_on_the_weekend') %>
+  </h5>
   <div class='login-wrapper--max-width mx-auto'>
     <div class='login--max-width mx-auto bg-white shadow p-4'>
-      <p class='text-center'><%= t('choose_activity') %></p>
+      <p><%= t('choose_activity') %></p>
 
       <%= bootstrap_form_with url: index_for_activities_happenings_path, method: :get, local: true do |f| %>
-        <%= f.select 'activity_names[]', options_from_collection_for_select(Activity.all, :name, :name, Activity.find_by('name @> ?', {'sr-latin': 'Trčanje'}.to_json)&.name), { label: Activity.model_name.human }, required: true, 'data-select2-initializ': true %>
+        <%= f.select 'activity_names[]', options_from_collection_for_select(Activity.all, :name, :name, Activity.find_by('name @> ?', {'sr-latin': 'Trčanje'}.to_json)&.name), { skip_label: true }, required: true, 'data-select2-initializ': true %>
+        <%= f.hidden_field :future_events, value: true %>
         <%= f.submit t('search'), class: 'btn btn-success btn-block' %>
       <% end %>
     </div>
   </div>
+  <p class='mt-2'>
+    <%= t('or') %>
+  </p>
+  <div class='login-wrapper--max-width mx-auto'>
+    <div class='login--max-width mx-auto bg-white shadow p-4'>
+      <p><%= t('choose_equipment_you_want_to_use') %></p>
+
+      <%= bootstrap_form_with url: index_for_activities_happenings_path, method: :get, local: true do |f| %>
+        <%= f.select 'activity_names[]', options_from_collection_for_select(Activity.all, :name, :name, Activity.find_by('name @> ?', {'sr-latin': 'Trčanje'}.to_json)&.name), { skip_label: true }, required: true, 'data-select2-initializ': true %>
+        <%= f.hidden_field :future_events, value: true %>
+        <%= f.submit t('search'), class: 'btn btn-success btn-block' %>
+      <% end %>
+    </div>
+  </div>
+
 </div>
 <div class='row mt-2'>
-  <div class='col-md-4'>
-    <h3>
-      <%= t('latest_added_happenings') %>
-    </h3>
-    <% Happening.order(created_at: :asc).last(5).each do |happening| %>
-      <div class='card mt-2'>
-        <div class='card-body'>
-          <div class='float-right'><%= happening.venue.name %>, <%= I18n.l happening.start_date, format: :long_with_week %></div>
-          <h5 class='card-title'><%= happening.name %></h5>
-          <%= link_to t('read_more'), happening, class: 'card-link float-right' %>
-          <p class='card-text'>
-            <% happening.discipline_happenings.limit(5).each do |discipline_happening| %>
-              <%= discipline_happening.full_name %>
-              <br>
-            <% end %>
-          </p>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <div class='col-md-4'>
+  <div class='col-md-6 mt-2'>
     <h3>
       <%= t('latest_added_disciplines') %>
     </h3>
@@ -64,7 +58,7 @@
       </div>
     <% end %>
   </div>
-  <div class='col-md-4'>
+  <div class='col-md-6 mt-2'>
     <h3>
       <%= t('upcomming_events') %>
     </h3>

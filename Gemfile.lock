@@ -18,6 +18,16 @@ GIT
       responders
       warden (~> 1.2.3)
 
+GIT
+  remote: https://github.com/railslove/fontello_rails_converter.git
+  revision: 2bc7e117256e1ac969853e12a6ae45021455126e
+  specs:
+    fontello_rails_converter (0.4.6)
+      activesupport
+      launchy
+      rest-client
+      rubyzip (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -142,11 +152,6 @@ GEM
       ruby2_keywords
     faraday-net_http (1.0.1)
     ffi (1.15.0)
-    fontello_rails_converter (0.4.6)
-      activesupport
-      launchy
-      rest-client
-      rubyzip (~> 1.0)
     geocoder (1.6.6)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -403,7 +408,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise!
   exception_notification
-  fontello_rails_converter (~> 0.4.6)
+  fontello_rails_converter!
   geocoder
   jbuilder (~> 2.5)
   letter_opener

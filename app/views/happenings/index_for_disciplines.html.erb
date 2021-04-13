@@ -17,7 +17,7 @@
 <% end %>
 <div class='dropdown d-inline'>
   <a class='btn btn-se dropdown-toggle' href='#' role='button' id='dropdownAddActivity' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-    <%= t('select_item_name', item_name: Discipline.model_name.human(count: 2)) %>
+    <%= t('add_item_name', item_name: Discipline.model_name.human(count: 2)) %>
   </a>
   <div class='dropdown-menu' aria-labelledby='dropdownAddActivity'>
     <% %i[similar_disciplines consists_of_and_used_in_disciplines].each_with_index do |filter, i| %>

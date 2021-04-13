@@ -6,7 +6,11 @@
   names_array = names_array.values if names_array.respond_to? :values
 %>
 
-<h4 class='d-inline pr-2'><%= t('future_happenings_for_activities') %></h4>
+<% if params[:future_events] %>
+  <h4 class='d-inline pr-2'><%= t('future_happenings_for_activities') %></h4>
+<% else %>
+  <h4 class='d-inline pr-2'><%= t('happenings_for_activities') %></h4>
+<% end %>
 <% @datatable.activities.each do |activity| %>
   <span class='show-on-hover'>
     <span class='badge badge-secondary pl-4'>
@@ -20,7 +24,7 @@
 <% end %>
 <div class='dropdown d-inline'>
   <a class='btn btn-se dropdown-toggle' href='#' role='button' id='dropdownAddActivity' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-    <%= t('select_item_name', item_name: Activity.model_name.human(count: 2)) %>
+    <%= t('add_item_name', item_name: Activity.model_name.human(count: 2)) %>
   </a>
   <div class='dropdown-menu' aria-labelledby='dropdownAddActivity'>
     <% Activity.i18n.where.not(name: names_array).each do |activity| %>
@@ -30,5 +34,8 @@
     <% end %>
   </div>
 </div>
+<% if params[:future_events] %>
+  <%= link_to t('show_also_pasts_happenings'), index_for_activities_happenings_path(request.params.except(:future_events)) %>
+<% end %>
 
 <%= @datatable.render_html search_for_activities_happenings_path(activity_names: names_array, format: :json) %>
