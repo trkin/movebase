@@ -121,3 +121,4 @@ gem 'trk_datatables', '~>0.2.11'
 gem 'acts_as_list'
 
 gem 'sitemap_generator', '~>6.1.2'
+gem 'whenever', require: false
