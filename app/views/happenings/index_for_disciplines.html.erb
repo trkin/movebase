@@ -3,7 +3,11 @@
   breadcrumb Happening.model_name.human(count: 2) => nil
 %>
 
-<h4 class='d-inline pr-2'><%= t('happenings_for_disciplines') %></h4>
+<% if params[:future_events] %>
+  <h4 class='d-inline pr-2'><%= t('future_happenings_for_disciplines') %></h4>
+<% else %>
+  <h4 class='d-inline pr-2'><%= t('happenings_for_disciplines') %></h4>
+<% end %>
 <% @datatable.disciplines.each do |discipline| %>
   <span class='show-on-hover'>
     <span class='badge badge-primary pl-4'>
@@ -31,5 +35,9 @@
     <% end %>
   </div>
 </div>
+
+<% if params[:future_events] %>
+  <%= link_to t('show_also_pasts_happenings'), index_for_disciplines_happenings_path(request.params.except(:future_events)) %>
+<% end %>
 
 <%= @datatable.render_html search_for_disciplines_happenings_path(discipline_ids: params[:discipline_ids], format: :json) %>

@@ -1,8 +1,8 @@
 // https://stephanwagner.me/jBox/get_started#tooltips
 const jBox = require('jbox')
 const trkDatatables = require('trk_datatables')
+const CookiesEuBanner = require('cookies-eu-banner')
 import { I18N } from 'const'
-
 document.addEventListener('turbolinks:load', () => {
   // add tooltip to all elements with title <a title='Hi'>
   new jBox('Tooltip', {
@@ -41,4 +41,10 @@ document.addEventListener('turbolinks:load', () => {
   //   # https://github.com/select2/select2/issues/2311#issuecomment-180666626
   //   $(this).focus ->
   //     $(this).select2('open')
+
+  // https://alex-d.github.io/Cookies-EU-banner/
+  new CookiesEuBanner(function () {
+    console.log('cookies accepted')
+  }, true)
+  console.log('turbolinks.load')
 })

@@ -1,9 +1,13 @@
 // show hide with display
-.d-none-display
+.d-none-display-block
   display: none
   &.active
-    // display: initial // this makes divs inline, instead of block
     display: block
+
+.d-none-display-inline
+  display: none
+  &.active
+    display: inline
 
 // display important when you want to combine with d-none (which uses
 // !important) so we need to show important

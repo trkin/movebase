@@ -21,6 +21,11 @@
     <%= 'body__sticky-footer--wrapper' unless login_layout? %>
     <%# <%= 'bg-success' if Rails.application.credentials.is_staging %1> %>
     '>
+    <div id="cookies-eu-banner" style="display: none;">
+      <%= t('by_continuing_to_visit_this_site_you_accept_the_use_of_cookies') %>
+      <a href="./read-more.html" id="cookies-eu-more"><%= t('read_more') %></a>
+      <button id="cookies-eu-accept"><%= t('accept') %></button>
+    </div>
     <% if login_layout? %>
       <%= render 'layouts/login_layout' %>
     <% else %>

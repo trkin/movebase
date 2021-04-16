@@ -1,5 +1,6 @@
 <%
-    breadcrumb
+  breadcrumb
+  running_activity = Activity.find_by('name @> ?', {'sr-latin': 'Trčanje'}.to_json)
 %>
 <div class='text-center'>
   <p class='mt-2'>
@@ -9,31 +10,20 @@
     <%= t('what_will_you_do_on_the_weekend') %>
   </h5>
   <div class='login-wrapper--max-width mx-auto'>
-    <div class='login--max-width mx-auto bg-white shadow p-4'>
+    <div class='login--max-width mx-auto bg-white shadow p-4' data-controller='activate' data-activate-selector='.discipline-tags'>
       <p><%= t('choose_activity') %></p>
-
-      <%= bootstrap_form_with url: index_for_activities_happenings_path, method: :get, local: true do |f| %>
-        <%= f.select 'activity_names[]', options_from_collection_for_select(Activity.all, :name, :name, Activity.find_by('name @> ?', {'sr-latin': 'Trčanje'}.to_json)&.name), { skip_label: true }, required: true, 'data-select2-initializ': true %>
-        <%= f.hidden_field :future_events, value: true %>
-        <%= f.submit t('search'), class: 'btn btn-success btn-block' %>
-      <% end %>
+      <div class='form-inline'>
+        <%= select_tag 'activity_names[]', options_from_collection_for_select(Activity.all, :id, :name, running_activity&.name), class: 'form-control mx-auto', 'data-action': 'activate#enableDisableForValue' %>
+      </div>
+      <p class='mt-2'>
+        <% Discipline.all.each do |discipline| %>
+          <span data-activate-value='<%= discipline.activities.map(&:id).join(',') %>' class='d-none-display-inline <%= 'active' if discipline.activities.include? running_activity %> discipline-tags'>
+            <%= index_for_disciplines_badge_link discipline %>
+          </span>
+        <% end %>
+      </p>
     </div>
   </div>
-  <p class='mt-2'>
-    <%= t('or') %>
-  </p>
-  <div class='login-wrapper--max-width mx-auto'>
-    <div class='login--max-width mx-auto bg-white shadow p-4'>
-      <p><%= t('choose_equipment_you_want_to_use') %></p>
-
-      <%= bootstrap_form_with url: index_for_activities_happenings_path, method: :get, local: true do |f| %>
-        <%= f.select 'activity_names[]', options_from_collection_for_select(Activity.all, :name, :name, Activity.find_by('name @> ?', {'sr-latin': 'Trčanje'}.to_json)&.name), { skip_label: true }, required: true, 'data-select2-initializ': true %>
-        <%= f.hidden_field :future_events, value: true %>
-        <%= f.submit t('search'), class: 'btn btn-success btn-block' %>
-      <% end %>
-    </div>
-  </div>
-
 </div>
 <div class='row mt-2'>
   <div class='col-md-6 mt-2'>

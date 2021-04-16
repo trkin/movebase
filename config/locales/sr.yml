@@ -30,7 +30,7 @@ sr:
   data_item_name_successfully_changed: Податак %{item_name} је успешно промењен
   data_item_name_successfully_deleted: Податак %{item_name} је успешно обрисан
   successfully_created_item_count: Успешно је направљен %{item_count}
-  choose_activity: Изабери активност да видиш догађаје...
+  choose_activity: Изабери активност да видиш дисциплине...
   choose_equipment_you_want_to_use: Изабери опрему коју хоћеш да користиш
   we_are_informative_portal: Ово је информативни сервис где можеш наћи везе ка спортским
     дешавањима, дакле,
@@ -84,9 +84,13 @@ sr:
   latest_added_disciplines: Недавно додате дисциплине
   upcomming_events: Следећи догађаји
   future_happenings_for_activities: Будући догађаји за активности
+  future_happenings_for_disciplines: Будући догађаји за дисциплине
   happenings_for_activities: Догађаји за активности
   happenings_for_disciplines: Догађаји за дисциплине
   years: година
   man_short: "(м)"
   women_short: "(ж)"
   public_page: Јавна страница
+  by_continuing_to_visit_this_site_you_accept_the_use_of_cookies: Наставком посете
+    овој страници, прихватате употребу колачића
+  accept: Прихвати

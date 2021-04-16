@@ -134,7 +134,7 @@ module TextHelper
 
   # f.text_field :phone,
   #              help: f.object.a_phone.blank? && add_alternative_helper(User.human_attribute_name(:a_phone), '#a_phone')
-  # <div id='a_phone' class='<%= 'd-none-display' if f.object.a_phone.blank? %>'>
+  # <div id='a_phone' class='<%= 'd-none-display-block' if f.object.a_phone.blank? %>'>
   #   <%= f.text_field :a_phone, skip_label: true, placeholder: true %>
   def add_alternative_helper(text, selector)
     <<~HTML

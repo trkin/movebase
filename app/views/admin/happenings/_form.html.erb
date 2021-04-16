@@ -9,7 +9,7 @@
       <div class='col-sm'>
         <%= f.text_field :name %>
         <%= f.date_field :start_date, help: !f.object.multi_day? && add_alternative_helper(Happening.human_attribute_name(:end_date), '#end_date') %>
-        <div id='end_date' class='<%= 'd-none-display' unless f.object.multi_day? %>'>
+        <div id='end_date' class='<%= 'd-none-display-block' unless f.object.multi_day? %>'>
           <%= f.date_field :end_date %>
         </div>
         <%= f.text_area :description %>
