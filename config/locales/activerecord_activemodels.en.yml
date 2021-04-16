@@ -101,6 +101,7 @@ en:
       happening:
         name: Name
         club: Organization
+        secondary_club: Secondary club
         venue: Venue
         description: Description
         start_date: Date

@@ -6,7 +6,7 @@
     <%= button_tag_open_modal edit_admin_happening_path(@happening), title: t_crud('edit', Happening), pull_right: true %>
     <div class='row'>
       <div class='col-md'>
-        <%= detail_view_list @happening, *(Happening::FIELDS - [:recurrence]) %>
+        <%= detail_view_list @happening, *(Happening::FIELDS - [:venue_id, :club_id, :secondary_club_id, :recurrence]) %>
         <%= detail_view_list do %>
           <%= detail_view_one Happening.human_attribute_name(:recurrence) do %>
             <%= @happening.recurrence.to_json %>
@@ -18,6 +18,9 @@
         <%= detail_view_list do %>
           <%= detail_view_one Happening.human_attribute_name(:club), link_to(@happening.club.name, admin_club_path(@happening.club)) %>
           <%= detail_view_one Happening.human_attribute_name(:venue), link_to(@happening.venue.name, admin_venue_path(@happening.venue)) %>
+          <% if @happening.secondary_club.present? %>
+            <%= detail_view_one Happening.human_attribute_name(:secondary_club), link_to(@happening.secondary_club.name, admin_club_path(@happening.secondary_club)) %>
+          <% end %>
         <% end %>
         <%= link_to t('public_page'), @happening %>
       </div>

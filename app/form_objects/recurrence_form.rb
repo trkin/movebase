@@ -1,13 +1,13 @@
 class RecurrenceForm
   include ActiveModel::Model
 
-  FIELDS = %i[every day month total custom_name start_number existing_update].freeze
-  attr_accessor :happening, :recurrence
-  attr_accessor(*FIELDS)
+  FIELDS = %i[every month total custom_name start_number existing_update].freeze +
+           [day: []]
+  attr_accessor :happening, :recurrence, *(FIELDS.map { |field| field.is_a?(Symbol) ? field : field.keys.first})
 
   def initialize(*attr)
     super
-    return if every.to_s == 'onetime'
+    return if every.nil? || every.to_s == 'onetime'
 
     self.total = 1 if total.to_i.zero?
     if every.blank? && @happening.recurrence.present?
@@ -15,8 +15,8 @@ class RecurrenceForm
       self.day = @happening.recurrence.to_h[:day]
       self.month = @happening.recurrence.to_h[:month]
     end
-    self.month = nil if month.blank?
-    self.day = Array(day.to_i) if day.is_a? String # '1' => [1]
+    self.month = nil if month.to_i.zero?
+    self.day = day.reject(&:blank?)
     self.existing_update = :future unless existing_update.present?
     @recurrence = Montrose::Recurrence.new(
       every: every,

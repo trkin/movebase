@@ -16,6 +16,7 @@
       </div>
       <div class='col-sm'>
         <%= render 'admin/venues/existing_or_new', f: f %>
+        <%= f.select :secondary_club_id, options_from_collection_for_select(Club.all, :id, :name, f.object.secondary_club_id), prompt: true %>
       </div>
     </div>
     <div class='remote-form__actions'>

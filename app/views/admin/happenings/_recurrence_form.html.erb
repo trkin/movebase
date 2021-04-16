@@ -3,8 +3,8 @@
     <div class='row'>
       <div class='col-sm'>
         <%= f.select :every, t('recurrences_every').invert %>
-        <%= f.select :day, t('date.day_names').map.with_index.map { |d, i| [d, i] } %>
-        <%= f.select :month, t('date.month_names') %>
+        <%= f.select :day, t('date.day_names').map.with_index.map { |d, i| [d, i] }, {}, multiple: true %>
+        <%= f.select :month, t('date.month_names').map.with_index.map { |d, i| [d, i] } %>
       </div>
       <div class='col-sm'>
         <%= f.text_field :custom_name, placeholder: "{{number}} some_name" %>

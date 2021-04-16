@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_092511) do
+ActiveRecord::Schema.define(version: 2021_04_16_205627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -131,7 +131,9 @@ ActiveRecord::Schema.define(version: 2021_04_12_092511) do
     t.datetime "updated_at", precision: 6, null: false
     t.jsonb "description", default: {}
     t.string "recurrence"
+    t.uuid "secondary_club_id"
     t.index ["club_id"], name: "index_happenings_on_club_id"
+    t.index ["secondary_club_id"], name: "index_happenings_on_secondary_club_id"
     t.index ["venue_id"], name: "index_happenings_on_venue_id"
   end
 
@@ -229,6 +231,7 @@ ActiveRecord::Schema.define(version: 2021_04_12_092511) do
   add_foreign_key "discipline_requirements", "disciplines"
   add_foreign_key "discipline_requirements", "requirements"
   add_foreign_key "happenings", "clubs"
+  add_foreign_key "happenings", "clubs", column: "secondary_club_id"
   add_foreign_key "happenings", "venues"
   add_foreign_key "users", "clubs"
 end

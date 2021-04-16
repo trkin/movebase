@@ -64,7 +64,7 @@ class Admin::HappeningsController < Admin::BaseController
     if result.success?
       render json: result.data[:json]
     else
-      render json: { error: result.message }
+      render json: {error: result.message}
     end
   end
 
@@ -74,7 +74,7 @@ class Admin::HappeningsController < Admin::BaseController
 
   def _happening_params
     params.require(:happening).permit(
-      *Happening::FIELDS, :existing_or_new, :venue_id, :club_id,
+      *Happening::FIELDS, :existing_or_new,
       venue_attributes: Venue::FIELDS,
     )
   end

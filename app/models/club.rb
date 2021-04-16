@@ -12,6 +12,7 @@ class Club < ApplicationRecord
   accepts_nested_attributes_for :venue
 
   has_many :happenings, dependent: :destroy
+  has_many :secondary_happenings, foreign_key: :secondary_club_id, class_name: 'Happening'
   has_many :club_users, dependent: :destroy
   # has_many :users, through: :club_users # do not use this since club
   # users can be disabled, so better is to use active_users

@@ -101,6 +101,7 @@ sr-latin:
       happening:
         name: Naziv
         club: Organizacija
+        secondary_club: Druga Organizacija
         venue: Mesto
         description: Opis
         start_date: Datum

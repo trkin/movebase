@@ -107,7 +107,7 @@ gem 'geocoder'
 gem 'rack-cors'
 
 # recurring events
-gem 'montrose'
+gem 'montrose', github: 'rossta/montrose', branch: 'main'
 # use custom start_number
 gem 'mustache'
 

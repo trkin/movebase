@@ -2,15 +2,19 @@ class HappeningsForClubDatatable < TrkDatatables::ActiveRecord
   def columns
     {
       'happenings.id': {hide: true},
+      'happenings.name': {},
       'happenings.start_date': {},
       'venues.name': {title: Venue.model_name.human},
-      'happenings.name': {},
     }
   end
 
   def all_items
     @club = Club.find @view.params[:id]
-    @club.happenings.includes(:venue).references(:venue).order(:start_date)
+    if @club.happenings.present?
+      @club.happenings.includes(:venue).references(:venue).order(:start_date)
+    else
+      @club.secondary_happenings.includes(:venue).references(:venue).order(:start_date)
+    end
   end
 
   def rows(filtered)
@@ -22,9 +26,9 @@ class HappeningsForClubDatatable < TrkDatatables::ActiveRecord
              end
       [
         happening.id,
+        link,
         I18n.l(happening.start_date, format: :long_with_week),
         happening.venue.name,
-        link,
       ]
     end
   end

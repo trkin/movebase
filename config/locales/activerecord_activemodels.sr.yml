@@ -101,6 +101,7 @@ sr:
       happening:
         name: Назив
         club: Организација
+        secondary_club: Друга Организација
         venue: Место
         description: Опис
         start_date: Датум

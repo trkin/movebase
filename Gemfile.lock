@@ -28,6 +28,14 @@ GIT
       rest-client
       rubyzip (~> 1.0)
 
+GIT
+  remote: https://github.com/rossta/montrose.git
+  revision: 1c52ff3497eaa9d4f6b3a4f8342e59867d90fd07
+  branch: main
+  specs:
+    montrose (0.12.0)
+      activesupport (>= 5.2, <= 7.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -200,8 +208,6 @@ GEM
       monetize (~> 1.9.0)
       money (~> 6.13.2)
       railties (>= 3.0)
-    montrose (0.12.0)
-      activesupport (>= 5.2, <= 7.0)
     msgpack (1.4.2)
     multi_json (1.15.0)
     multi_xml (0.6.0)
@@ -420,7 +426,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   mobility (~> 0.8.6)
   money-rails (~> 1.14)
-  montrose
+  montrose!
   mustache
   omniauth-facebook
   omniauth-google-oauth2
