@@ -51,6 +51,10 @@ fontello open
 # select new icons
 bundle exec fontello convert
 ```
+Use in html like
+```
+<i class="demo-icon icon-menu"></i>
+```
 
 I18n uses following locale files
 

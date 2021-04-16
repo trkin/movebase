@@ -45,18 +45,18 @@
         <% end %>
       <% else %>
         <div class='mx-2'>
-          <div class='d-none d-sm-inline'>
-            <%= link_to t('my_devise.register'), new_user_registration_path, class: 'btn btn-info btn--no-padding px-2' %>
-          </div>
+          <%# <div class='d-none d-sm-inline'> %>
+          <%#   <%= link_to t('my_devise.register'), new_user_registration_path, class: 'btn btn-info btn--no-padding px-2' %1> %>
+          <%# </div> %>
           <%= link_to t('my_devise.sign_in'), new_user_session_path, class: 'btn btn-primary btn--no-padding px-2' %>
-          <div class='d-none d-sm-inline'>
-            <%= button_to user_facebook_omniauth_authorize_url(host: Const.common[:default_url][:host]), class: 'btn', form_class: 'd-inline' do %>
-              <i class="demo-icon icon-facebook-official" aria-hidden="true"></i>
-            <% end %>
-            <%= button_to user_google_oauth2_omniauth_authorize_url(host: Const.common[:default_url][:host]), class: 'btn', form_class: 'd-inline' do %>
-              <i class="demo-icon icon-google" aria-hidden="true"></i>
-            <% end %>
-          </div>
+          <%# <div class='d-none d-sm-inline'> %>
+          <%#   <%= button_to user_facebook_omniauth_authorize_url(host: Const.common[:default_url][:host]), class: 'btn', form_class: 'd-inline' do %1> %>
+          <%#     <i class="demo-icon icon-facebook-official" aria-hidden="true"></i> %>
+          <%#   <% end %1> %>
+          <%#   <%= button_to user_google_oauth2_omniauth_authorize_url(host: Const.common[:default_url][:host]), class: 'btn', form_class: 'd-inline' do %1> %>
+          <%#     <i class="demo-icon icon-google" aria-hidden="true"></i> %>
+          <%#   <% end %1> %>
+          <%# </div> %>
         </div>
       <% end %>
     </li>

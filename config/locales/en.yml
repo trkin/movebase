@@ -43,6 +43,7 @@ en:
   add_item_name: Add %{item_name}
   last_message: Last message
   contact: Contact
+  terms: Terms
   get_in_touch: Get in touch
   contact_description: We are grateful for all the good and bad things on the site
     that you report to us.
@@ -93,3 +94,5 @@ en:
   by_continuing_to_visit_this_site_you_accept_the_use_of_cookies: By continuing to
     visit this site, you accept the use of cookies
   accept: Accept
+  about: About
+  cookies: Cookies

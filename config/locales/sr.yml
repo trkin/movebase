@@ -44,6 +44,7 @@ sr:
   add_item_name: Додај %{item_name}
   last_message: Последња порука
   contact: Контакт
+  terms: Услови
   get_in_touch: Јавите се
   contact_description: Захвални смо за све добре и лоше ствари на сајту које нам пријављујете.
   contact_thanks: Хвала за поруку
@@ -94,3 +95,5 @@ sr:
   by_continuing_to_visit_this_site_you_accept_the_use_of_cookies: Наставком посете
     овој страници, прихватате употребу колачића
   accept: Прихвати
+  about: О нама
+  cookies: Колачићи

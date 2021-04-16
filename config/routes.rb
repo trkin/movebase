@@ -21,6 +21,9 @@ Rails.application.routes.draw do
     post 'notify-javascript-error', to: 'pages#notify_javascript_error'
     get 'sample-error-in-sidekiq', to: 'pages#sample_error_in_sidekiq'
     get '/test', to: 'pages#test'
+    get '/cookies', to: 'pages#cookies'
+    get '/terms', to: 'pages#terms'
+    get '/about', to: 'pages#about'
 
     resource :contact
 

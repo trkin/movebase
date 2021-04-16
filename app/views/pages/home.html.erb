@@ -27,9 +27,9 @@
 </div>
 <div class='row mt-2'>
   <div class='col-md-6 mt-2'>
-    <h3>
+    <h5>
       <%= t('latest_added_disciplines') %>
-    </h3>
+    </h5>
     <% Discipline.order(created_at: :asc).last(5).each do |discipline| %>
       <div class='card mt-2'>
         <div class='card-body'>
@@ -49,9 +49,9 @@
     <% end %>
   </div>
   <div class='col-md-6 mt-2'>
-    <h3>
+    <h5>
       <%= t('upcomming_events') %>
-    </h3>
+    </h5>
     <% Happening.where('start_date >= ?', Time.zone.today).order(start_date: :asc).limit(5).each do |happening| %>
       <div class='card mt-2'>
         <div class='card-body'>

@@ -43,6 +43,7 @@ sr-latin:
   add_item_name: Dodaj %{item_name}
   last_message: Poslednja poruka
   contact: Kontakt
+  terms: Uslovi
   get_in_touch: Javite se
   contact_description: Zahvalni smo za sve dobre i loše stvari na sajtu koje nam prijavljujete.
   contact_thanks: Hvala za poruku
@@ -90,3 +91,5 @@ sr-latin:
   public_page: Javna stranica
   by_continuing_to_visit_this_site_you_accept_the_use_of_cookies: Nastavkom posete ovoj stranici, prihvatate upotrebu kolačića
   accept: Prihvati
+  about: O nama
+  cookies: Kolačići
