@@ -2,9 +2,9 @@ module Devise
   class MyRegistrationsController < RegistrationsController
     def create
       super do |user|
+        user.locale = I18n.locale
         if user.valid?
           user.initial_referer = session[:referer]
-          user.locale = I18n.locale
           user.save!
         end
       end

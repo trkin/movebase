@@ -6,14 +6,15 @@ class ParseUrl
   def perform
     uri = URI @url
     case uri.host
-    when 'www.facebook.com'
+    when 'www.facebook.com', 'web.facebook.com'
       facebook uri
     else
-      Notify.message 'ParseUrl_not_supported ' + @url
-      Error.new 'Not supported'
+      msg = "ParseUrl_not_supported #{@url}"
+      Notify.message msg
+      Error.new msg
     end
   rescue URI::InvalidURIError => e
-    Error.new e.message
+    Error.new "ParseUrl #{e.message}"
   end
 
   def facebook(uri)
@@ -37,6 +38,6 @@ class ParseUrl
 
     Result.new 'OK', json: result
   rescue ArgumentError => e
-    Error.new e.message
+    Error.new "ParseUrl#facebook #{e.message}"
   end
 end

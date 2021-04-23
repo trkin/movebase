@@ -169,3 +169,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 0 */12 * * * AWS_CONFIG_FILE=/home/ubuntu/movebase/.elbas_keys certbot -q renew
 ```
+
+* node version is defined in .github/workflows/test_to_staging.yml, .node-version
+* ruby version is defined in Gemfile, config/deploy.rb and .github/workflows/test_to_staging.yml

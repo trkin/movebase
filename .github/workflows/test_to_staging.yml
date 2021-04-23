@@ -1,4 +1,4 @@
-name: Test and deploy to staging
+name: Test
 
 on:
   push:
@@ -11,15 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RAILS_ENV: test
+      # those are used to connect from Rails
       PGHOST: localhost
       PGUSER: move_index
+      PGPASSWORD: postgres
     services:
       postgres:
         image: postgres
         env:
           POSTGRES_USER: move_index
           POSTGRES_DB: move_index_test
-          POSTGRES_PASSWORD: ""
+          POSTGRES_PASSWORD: postgres
         ports: ["5432:5432"]
         # needed because the postgres container does not provide a healthcheck
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
@@ -29,10 +31,10 @@ jobs:
         options: --entrypoint redis-server
     steps:
       - uses: actions/checkout@v1
-      - name: Set up Ruby 2.6
-        uses: actions/setup-ruby@v1
+      - name: Set up Ruby 2.6.3
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6.x
+          ruby-version: 2.6.3
       - uses: actions/cache@v1
         with:
           path: vendor/bundle
@@ -42,7 +44,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
-          node-version: 10.13.0
+          node-version: 14.7.0
       - name: Get yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -70,17 +72,3 @@ jobs:
       - name: Run system tests
         run: |
           bundle exec rails test:system
-  staging:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Heroku staging
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_APP_NAME: "move-index"
-        # if: github.ref == 'refs/heads/master' && job.status == 'success'
-        run: |
-          echo $HEROKU_API_KEY $HEROKU_APP_NAME
-          echo git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git origin/master:master -f
-          git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git origin/master:master -f

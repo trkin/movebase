@@ -7,10 +7,10 @@ class HappeningsForDisciplinesDatatableTest < ActiveSupport::TestCase
     )
   end
 
-  test 'find kayaking happenings: regata, personal' do
+  test 'find kayaking happenings: regatta, personal' do
     results = HappeningsForDisciplinesDatatable.new(sample_view_params(discipline_ids: [disciplines(:sprint_kayak).id])).all_items
 
-    assert_includes results, happenings(:kayak_regata)
+    assert_includes results, happenings(:kayak_regatta)
     assert_not_includes results, happenings(:personal_long_kayaking)
   end
 

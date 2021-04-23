@@ -1,46 +1,46 @@
-kayak_regata__sprint_kayak__senior_500_m:
+kayak_regatta__sprint_kayak__senior_500_m:
   name:
     en: K1 Senior 500m men
   discipline: sprint_kayak
-  happening: kayak_regata
+  happening: kayak_regatta
   age_min: 16
   distance_m: 500
   gender: <%= DisciplineHappening.genders[:man] %>
 
-kayak_regata__sprint_kayak_for2__senior_500_m:
+kayak_regatta__sprint_kayak_for2__senior_500_m:
   name:
     en: K2 senior 500m men
   discipline: sprint_kayak_for2
-  happening: kayak_regata
+  happening: kayak_regatta
   age_min: 16
   distance_m: 500
   gender: <%= DisciplineHappening.genders[:man] %>
 
-kayak_regata__sprint_kayak__junior_500_m:
+kayak_regatta__sprint_kayak__junior_500_m:
   name:
     en: K1 Junior 500m
   discipline: sprint_kayak
-  happening: kayak_regata
+  happening: kayak_regatta
   age_min: 15
   age_max: 18
   distance_m: 500
   gender: <%= DisciplineHappening.genders[:man] %>
 
-kayak_regata__sprint_kayak__junior_200_w:
+kayak_regatta__sprint_kayak__junior_200_w:
   name:
     en: K1 Junior 200m women
   discipline: sprint_kayak
-  happening: kayak_regata
+  happening: kayak_regatta
   age_min: 15
   age_max: 18
   distance_m: 200
   gender: <%= DisciplineHappening.genders[:women] %>
 
-kayak_regata__sprint_kayak_without_registration:
+kayak_regatta__sprint_kayak_without_registration:
   name:
     en: Without registration
   discipline: sprint_kayak
-  happening: kayak_regata
+  happening: kayak_regatta
 
 personal_long_kayaking:
   name:

@@ -43,3 +43,12 @@ set :rbenv_ruby, '2.6.3'
 set :rbenv_type, :user
 
 set :assets_dependencies, %w[app/javascript app/assets vendor/assets Gemfile.lock yarn.lock]
+
+# https://github.com/javan/whenever/blob/master/lib/whenever/capistrano/v3/tasks/whenever.rake
+set :whenever_roles, -> { :worker }
+# https://github.com/javan/whenever/wiki/rbenv-and-capistrano-Notes
+set :whenever_environment, fetch(:stage)
+set :whenever_variables, (lambda do
+  "'environment=#{fetch :whenever_environment}" \
+  "&rbenv_root=#{fetch :rbenv_path}'"
+end)

@@ -2,7 +2,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 
-Dir[Rails.root.join('test/a/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('test/a/**/*.rb')].sort.each { |f| require f }
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
@@ -28,5 +28,9 @@ class ActiveSupport::TestCase
 
   def response_json
     HashWithIndifferentAccess.new JSON.parse response.body
+  end
+
+  def setup
+    host! 'example.com' if is_a? ActionDispatch::IntegrationTest
   end
 end

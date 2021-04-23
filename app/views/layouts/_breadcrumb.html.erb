@@ -23,7 +23,8 @@
             <%= text %>
           <% end %>
         <% else %>
-          <span id='breadcrumb-last'>
+          <%# hide last not link item on small devices %>
+          <span class='d-none d-sm-inline'>
             <%= text %>
           </span>
         <% end %>

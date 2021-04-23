@@ -80,7 +80,21 @@ cap production rails:logs
 
 # Tests
 
-Run tests with `rake`
+Run integration and other non browser tests
+
+```
+rake
+# run specific test
+rails test test/controllers/devise/my_registrattions_controller_test.rb:6
+```
+Run system tests (in chrome browser). Enable headfull chrome in
+`test/application_system_test_case.rb'
+
+```
+rails test:system
+# run specific test
+rails test test/system/links_test.rb:40
+```
 
 # Production
 

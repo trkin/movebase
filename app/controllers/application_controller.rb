@@ -32,6 +32,7 @@ class ApplicationController < ActionController::Base
   def _redirect_to_root_domain
     # request.host is www.movebase.link, request.domain is movebase.link
     return if request.host == request.domain
+    return if request.host == '127.0.0.1' # return for system test
 
     redirect_to root_url(host: request.domain)
   end

@@ -5,7 +5,7 @@ class HappeningsControllerTest < ActionDispatch::IntegrationTest
     get index_for_disciplines_happenings_path
     assert_response :success
 
-    happening = happenings(:kayak_regata)
+    happening = happenings(:kayak_regatta)
     assert_select 'td', happening.name
   end
 
@@ -13,11 +13,11 @@ class HappeningsControllerTest < ActionDispatch::IntegrationTest
     activity = activities(:running)
     get index_for_activities_happenings_path(activity_names: [activity.name])
 
-    assert_select 'td', {text: happenings(:kayak_regata).name, count: 0}
+    assert_select 'td', {text: happenings(:kayak_regatta).name, count: 0}
   end
 
   test 'show' do
-    happening = happenings(:kayak_regata)
+    happening = happenings(:kayak_regatta)
     get happening_path(happening)
     assert_select 'dd', happening.name
   end

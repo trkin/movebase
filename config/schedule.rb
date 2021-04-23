@@ -1,29 +1,35 @@
-# Use this file to easily define all of your cron jobs.
-#
-# It's helpful, but not entirely necessary to understand cron before proceeding.
-# http://en.wikipedia.org/wiki/Cron
+# https://github.com/javan/whenever/issues/75#issuecomment-380747
+# https://github.com/javan/whenever/wiki/rbenv-and-capistrano-Notes
+set :path, '/home/ubuntu/movebase/current'
+if @rbenv_root
+  # when calling using capistrano than set correct ruby and env
+  set :rbenv_exec, "#{rbenv_root}/bin/rbenv exec"
+else
+  set :rbenv_exec, ''
+end
 
-# Example:
-#
-# set :output, "/path/to/my/cron_log.log"
-#
-# every 2.hours do
-#   command "/usr/bin/some_great_command"
-#   runner "MyModel.some_method"
-#   rake "some:great:rake:task"
-# end
-#
-# every 4.days do
-#   runner "AnotherModel.prune_old_records"
-# end
+# Make sure that log/cron folder exists: mkdir ~/movebase/current/log/cron
 
-# Learn more: http://github.com/javan/whenever
-set :output, '/home/ubuntu/movebase/current/log/cron_log.log'
+# Example: runner 'MyClass.some_function' (please use only one word, no space,
+# brackets...)
+job_type :runner, %(cd :path &&
+   start=`date` &&
+  :rbenv_exec bundle exec rails runner -e :environment :task 2>&1 |
+  (echo $start :task started; cat -; echo `date` :task finished)
+  >> ':path/log/cron/:task.log' 2>&1
+)
+
+job_type :rake, %(cd :path &&
+   start=`date` &&
+  :rbenv_exec bundle exec rake :task |
+  (echo $start :task started; cat -; echo `date` :task finished)
+  >> ':path/log/cron/:task.log' 2>&1
+)
 
 every :reboot do
-  runner 'puts Discipline.all.count'
+  runner 'MyService.new.perform_and_puts'
 end
 
 every 1.hour do
-  rake '-s sitemap:refresh'
+  rake 'sitemap:refresh'
 end

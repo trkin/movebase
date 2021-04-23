@@ -7,10 +7,10 @@ class HappeningsForActivityNamesDatatableTest < ActiveSupport::TestCase
     )
   end
 
-  test 'find kayaking happenings: regata, personal' do
+  test 'find kayaking happenings: regatta, personal' do
     results = HappeningsForActivityNamesDatatable.new(sample_view_params(activity_names: [activities(:kayaking).name])).all_items
 
-    assert_includes results, happenings(:kayak_regata)
+    assert_includes results, happenings(:kayak_regatta)
     assert_includes results, happenings(:personal_long_kayaking)
     assert_includes results, happenings(:quadrathlon_munich)
     refute_includes results, happenings(:half_marathon)
@@ -20,7 +20,7 @@ class HappeningsForActivityNamesDatatableTest < ActiveSupport::TestCase
   #   novi_sad = venues(:novi_sad)
   #   results = SearchHappenings.new(venue_id: novi_sad, activity_id: activities(:kayaking).id).results
 
-  #   assert_includes results, happenings(:kayak_regata)
+  #   assert_includes results, happenings(:kayak_regatta)
   # end
 
   test 'find happening this month' do

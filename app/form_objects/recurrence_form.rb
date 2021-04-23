@@ -16,7 +16,7 @@ class RecurrenceForm
       self.month = @happening.recurrence.to_h[:month]
     end
     self.month = nil if month.to_i.zero?
-    self.day = day.reject(&:blank?)
+    self.day = [day].reject(&:blank?)
     self.existing_update = :future unless existing_update.present?
     @recurrence = Montrose::Recurrence.new(
       every: every,
