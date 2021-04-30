@@ -16,7 +16,7 @@ class LinksTest < ApplicationSystemTestCase
   end
 
   test 'creating a Link' do
-    visit club_path(@link.linkable)
+    visit club_path(@link.linkable, locale: Rails.application.routes.default_url_options[:locale])
     click_on t_crud('add_new', Link)
 
     fill_in 'Url', with: @link.url

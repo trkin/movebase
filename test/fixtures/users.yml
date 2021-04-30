@@ -6,6 +6,9 @@ DEFAULTS: &DEFAULTS
   encrypted_password: <%= encrypted_password %>
   locale: <%= I18n.default_locale %>
 
+user:
+  <<: *DEFAULTS
+
 superadmin:
   <<: *DEFAULTS
   superadmin: true

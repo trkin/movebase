@@ -3,7 +3,7 @@
 </a>
 <div class="dropdown-menu dropdown-menu--without-min-width" aria-labelledby="navbarDropdown">
   <% I18n.available_locales.each do |locale| %>
-    <%= link_to set_locale_path(locale: locale), 'data-turbolinks': false, class: 'dropdown-item' do %>
+    <%= link_to request_path_with_locale(request.path, locale), 'data-turbolinks': false, class: 'dropdown-item' do %>
       <%= t 'emoji', locale: locale %>
       <%= t('language_name', locale: locale) %>
     <% end %>

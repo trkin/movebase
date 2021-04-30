@@ -53,5 +53,8 @@
       <%= render 'layouts/navigation' %>
     <% end %>
     <%= render 'layouts/flash_notice_alert_jbox' %>
+    <% if Rails.env.development? || Rails.env.test? %>
+      <!-- current_user&.email <%= current_user&.email %> -->
+    <% end %>
   </body>
 </html>

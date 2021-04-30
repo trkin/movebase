@@ -1,8 +1,12 @@
 class Admin::UsersController < Admin::BaseController
-  before_action :_set_user, except: %i[index new create]
+  before_action :_set_user, except: %i[index new create search]
 
   def index
-    @users = User.all
+    @datatable = UsersDatatable.new view_context
+  end
+
+  def search
+    render json: UsersDatatable.new(view_context)
   end
 
   def show; end

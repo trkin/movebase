@@ -28,6 +28,7 @@ class LinksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show link' do
+    puts club_path(Club.last)
     get link_url(@link)
     assert_response :success
     assert_select 'dd', @link.linkable_id
