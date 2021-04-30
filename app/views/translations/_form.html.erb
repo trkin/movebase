@@ -1,0 +1,11 @@
+<div id='remote-form'>
+  <%= bootstrap_form_for @translate_form, url: translation_path(@translate_form.record.id, translateable_type: @translate_form.record.class.name), method: :patch, remote: true, layout: :horizontal do |f| %>
+    <%= hidden_field_tag :column_name, params[:column_name] %>
+    <% TranslateForm.underscored_locales.each do |locale| %>
+      <%= f.text_field locale %>
+    <% end %>
+    <div class='remote-form__actions'>
+      <%= f.submit class: 'btn btn-primary'%>
+    </div>
+  <% end %>
+</div>

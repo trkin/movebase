@@ -7,6 +7,11 @@ en:
         few: Users
         other: Users
         accusative: user
+      user_role:
+        one: Role
+        few: Roles
+        other: Roles
+        accusative: role
       activity:
         one: Activity
         few: Activities
@@ -67,6 +72,11 @@ en:
         few: Links
         other: Links
         accusative: link
+      translation:
+        one: Translation
+        few: Translations
+        other: Translations
+        accusative: translation
     attributes:
       user:
         name: Name
@@ -76,6 +86,10 @@ en:
         password_confirmation: Password confirmation
         current_password: Current password
         remember_me: Remember me
+      user_role:
+        roles:
+          support_staff: Support staff
+          club_admin: Admin of the organization
       activity:
         name: Name
         description: Description

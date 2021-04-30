@@ -1,3 +1,8 @@
+<%#
+  dropdown contains main my account links
+  current_user is present
+  on responsive we show also all hidden links from navigation
+%>
 <nav id='sidebar' class=''>
   <div class='d-flex align-items-center'>
     <div class='text-secondary'><%= truncate current_user.email, length: 34 %></div>
@@ -13,7 +18,19 @@
     <%= link_to "<i class='demo-icon icon-wrench mx-1'></i>#{t('my_account')}".html_safe, my_account_path, class: "list-group-item list-group-item-action text-primary #{'active' if params[:controller] == 'my_accounts'}" %>
     <%= link_to "<i class='demo-icon icon-question-circle-o mx-1' aria-hidden='true'></i>#{t('contact')}".html_safe, contact_path, class: "list-group-item list-group-item-action text-primary #{'active' if params[:controller] == 'pages' && params[:action] == 'contact'}" %>
     <div class='d-sm-none'>
-      <%# here are the links that we hide in navigation on responsive %>
+      <%# Here are the links that we hide in navigation on responsive and show in sidebar %>
+      <% if allowed_to?(:translations?, Object, with: AdminPolicy) ||
+        allowed_to?(:index, Activity) %>
+        <span class='text-success'>
+          <%= t('admin_pages') %>
+        </span>
+        <% if allowed_to? :translations?, Object, with: AdminPolicy %>
+          <%= link_to "<i class='demo-icon icon-user-o mx-1'></i>#{Translation.model_name.human(count: 2)}".html_safe, translations_path, class: "list-group-item list-group-item-action text-primary #{'active' if params[:controller] == 'translations'}" %>
+        <% end %>
+        <% if allowed_to? :index?, Activity %>
+          <%= link_to "<i class='demo-icon icon-flow-tree mx-1'></i>#{Activity.model_name.human(count: 2)}".html_safe, activities_path, class: "list-group-item list-group-item-action text-primary #{'active' if params[:controller] == 'activities'}" %>
+        <% end %>
+      <% end %>
       <% if current_user.superadmin? %>
         <span class='text-success'>
           <%= t('admin_pages') %>

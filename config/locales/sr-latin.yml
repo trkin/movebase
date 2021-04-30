@@ -48,6 +48,7 @@ sr-latin:
   contact_description: Zahvalni smo za sve dobre i loše stvari na sajtu koje nam prijavljujete.
   contact_thanks: Hvala za poruku
   admin_pages: Admin strane
+  super_admin_pages: Superadmin strane
   only_for_superadmin: Samo za super administratora
   send: Pošalji
   log_in_as: Uloguj se kao
@@ -93,3 +94,4 @@ sr-latin:
   accept: Prihvati
   about: O nama
   cookies: Kolačići
+  translations: Prevodi

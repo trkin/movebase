@@ -19,7 +19,7 @@ class VenuesController < ApplicationUserController
   # JS
   def create
     @venue = Venue.new
-    update_and_render_or_redirect_in_js @venue, _venue_params, ->(id) { venue_path(id) }
+    update_and_render_or_redirect_in_js @venue, _venue_params, ->(venue) { venue_path(venue) }
   end
 
   # JS

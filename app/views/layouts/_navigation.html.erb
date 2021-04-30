@@ -1,5 +1,7 @@
-<%# on responsive there are two different horizontal navigations, one for admin and one for non admin
-  breakpoint is sm
+<%#
+  main navigation on the right
+  current_user might be nil
+  on responsive we show only first couple of links, others are shown from sidebar dropdown
 %>
 <%
   on_the_side ||= false
@@ -40,23 +42,30 @@
       <% end %>
     </li>
 
-    <% if current_user&.superadmin? %>
-      <li class='nav-item d-none d-sm-block'>
-        <span class='text-success'>
-          <%= t('admin_pages') %>
-        </span>
-      </li>
-      <li class='nav-item d-none d-sm-block'>
-        <%= link_to "<i class='demo-icon icon-gauge-1 mx-1'></i>#{t('dashboard')}".html_safe, admin_dashboard_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/dashboard'}" %>
-        <%= link_to "<i class='demo-icon icon-user-o mx-1'></i>#{User.model_name.human(count: 2)}".html_safe, admin_users_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/users'}" %>
-        <%= link_to "<i class='demo-icon icon-flow-tree mx-1'></i>#{Activity.model_name.human(count: 2)}".html_safe, admin_activities_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/activities'}" %>
-        <%= link_to "<i class='demo-icon icon-flow-parallel mx-1'></i>#{Discipline.model_name.human(count: 2)}".html_safe, admin_disciplines_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/disciplines'}" %>
-        <%= link_to "<i class='demo-icon icon-bicycle mx-1'></i>#{Requirement.model_name.human(count: 2)}".html_safe, admin_requirements_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/requirements'}" %>
-        <%= link_to "<i class='demo-icon icon-location-outline mx-1'></i>#{Venue.model_name.human(count: 2)}".html_safe, admin_venues_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/venues'}" %>
-        <%= link_to "<i class='demo-icon icon-home-outline mx-1'></i>#{Club.model_name.human(count: 2)}".html_safe, admin_clubs_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/clubs'}" %>
-        <%= link_to "<i class='demo-icon icon-megaphone mx-1'></i>#{Happening.model_name.human(count: 2)}".html_safe, admin_happenings_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/happenings'}" %>
-        <%= link_to "<i class='demo-icon icon-link mx-1'></i>#{Link.model_name.human(count: 2)}".html_safe, links_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/links'}" %>
-      </li>
+    <% if current_user %>
+      <% if allowed_to?(:translations?, Object, with: AdminPolicy) %>
+        <li class='nav-item d-none d-sm-block'>
+          <%= link_to "<i class='demo-icon icon-language mx-1'></i>#{t('translations')}".html_safe, translations_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'translations'}" %>
+        </li>
+      <% end %>
+
+      <% if current_user.superadmin? %>
+        <li class='nav-item d-none d-sm-block'>
+          <span class='text-success'>
+            <%= t('super_admin_pages') %>
+          </span>
+        </li>
+        <li class='nav-item d-none d-sm-block'>
+          <%= link_to "<i class='demo-icon icon-gauge-1 mx-1'></i>#{t('dashboard')}".html_safe, admin_dashboard_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/dashboard'}" %>
+          <%= link_to "<i class='demo-icon icon-user-o mx-1'></i>#{User.model_name.human(count: 2)}".html_safe, admin_users_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/users'}" %>
+          <%= link_to "<i class='demo-icon icon-flow-parallel mx-1'></i>#{Discipline.model_name.human(count: 2)}".html_safe, admin_disciplines_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/disciplines'}" %>
+          <%= link_to "<i class='demo-icon icon-bicycle mx-1'></i>#{Requirement.model_name.human(count: 2)}".html_safe, admin_requirements_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/requirements'}" %>
+          <%= link_to "<i class='demo-icon icon-location-outline mx-1'></i>#{Venue.model_name.human(count: 2)}".html_safe, admin_venues_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/venues'}" %>
+          <%= link_to "<i class='demo-icon icon-home-outline mx-1'></i>#{Club.model_name.human(count: 2)}".html_safe, admin_clubs_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/clubs'}" %>
+          <%= link_to "<i class='demo-icon icon-megaphone mx-1'></i>#{Happening.model_name.human(count: 2)}".html_safe, admin_happenings_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/happenings'}" %>
+          <%= link_to "<i class='demo-icon icon-link mx-1'></i>#{Link.model_name.human(count: 2)}".html_safe, links_path, class: "nav-link nav-link--no-padding rounded-0 #{'active' if params[:controller] == 'admin/links'}" %>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 

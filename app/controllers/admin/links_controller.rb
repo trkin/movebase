@@ -23,7 +23,7 @@ class Admin::LinksController < Admin::BaseController
   def create
     @link = Link.new
 
-    update_and_render_or_redirect_in_js @link, _link_params, ->(id) { link_path(id) }
+    update_and_render_or_redirect_in_js @link, _link_params, ->(link) { link_path(link) }
   end
 
   def update

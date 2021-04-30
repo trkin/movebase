@@ -19,7 +19,7 @@ class Admin::UsersController < Admin::BaseController
   # JS
   def create
     @user = User.new
-    update_and_render_or_redirect_in_js @user, _user_params, ->(id) { admin_user_path(id) }
+    update_and_render_or_redirect_in_js @user, _user_params, ->(user) { admin_user_path(user) }
   end
 
   # JS

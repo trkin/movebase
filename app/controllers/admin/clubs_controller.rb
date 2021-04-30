@@ -29,7 +29,7 @@ class Admin::ClubsController < Admin::BaseController
   # JS
   def create
     @club = Club.new
-    update_and_render_or_redirect_in_js @club, _club_params, ->(id) { admin_club_path(id) }
+    update_and_render_or_redirect_in_js @club, _club_params, ->(club) { admin_club_path(club) }
   end
 
   # JS

@@ -28,7 +28,7 @@ class <%= controller_class_name %>Controller < ApplicationController
   def create
     @<%= singular_table_name %> = <%= orm_class.build(class_name) %>
 
-    update_and_render_or_redirect_in_js @<%= singular_table_name %>, _<%= singular_table_name %>_params, ->(id) { <%= singular_table_name %>_path(id) }
+    update_and_render_or_redirect_in_js @<%= singular_table_name %>, _<%= singular_table_name %>_params, ->(<%= singular_table_name %>) { <%= singular_table_name %>_path(<%= singular_table_name %>) }
   end
 
   def update

@@ -49,6 +49,7 @@ en:
     that you report to us.
   contact_thanks: Thank you for the message
   admin_pages: Admin pages
+  super_admin_pages: Superadmin pages
   only_for_superadmin: Only for superadmins
   send: Send
   log_in_as: Login as
@@ -96,3 +97,4 @@ en:
   accept: Accept
   about: About
   cookies: Cookies
+  translations: Translations

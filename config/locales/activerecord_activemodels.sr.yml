@@ -7,6 +7,11 @@ sr:
         few: Корисника
         other: Корисници
         accusative: корисника
+      user_role:
+        one: Улога
+        few: Улоге
+        other: Улога
+        accusative: улогу
       activity:
         one: Активност
         few: Активности
@@ -67,6 +72,11 @@ sr:
         few: Везе
         other: Веза
         accusative: везу
+      translation:
+        one: Превод
+        few: Преводи
+        other: Преводи
+        accusative: превод
     attributes:
       user:
         name: Назив
@@ -76,6 +86,10 @@ sr:
         password_confirmation: Потврда лозинке
         current_password: Тренутна лозинка
         remember_me: Запамти ме
+      user_role:
+        roles:
+          support_staff: Подршка
+          club_admin: Админ организације
       activity:
         name: Назив
         description: Опис

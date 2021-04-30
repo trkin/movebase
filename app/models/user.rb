@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :club_users, dependent: :destroy
   has_many :clubs, through: :club_users, dependent: :destroy
   belongs_to :club, optional: true
+  has_many :user_roles, dependent: :destroy
 
   validates :email, :locale, presence: true
 
@@ -61,5 +62,9 @@ class User < ApplicationRecord
     else
       company_users.find_by(company: company).destroy!
     end
+  end
+
+  def roles
+    user_roles.map(&:role)
   end
 end

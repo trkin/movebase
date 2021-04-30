@@ -19,7 +19,7 @@ class Admin::ActivitiesController < Admin::BaseController
   # JS
   def create
     @activity = Activity.new
-    update_and_render_or_redirect_in_js @activity, _activity_params, ->(id) { admin_activity_path(id) }
+    update_and_render_or_redirect_in_js @activity, _activity_params, ->(activity) { activity_path(activity) }
   end
 
   # JS

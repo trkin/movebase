@@ -19,7 +19,7 @@ class Admin::RequirementsController < Admin::BaseController
   # JS
   def create
     @requirement = Requirement.new
-    update_and_render_or_redirect_in_js @requirement, _requirement_params, ->(id) { admin_requirement_path(id) }
+    update_and_render_or_redirect_in_js @requirement, _requirement_params, ->(requirement) { admin_requirement_path(requirement) }
   end
 
   # JS

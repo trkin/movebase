@@ -66,11 +66,40 @@ app/javascript/const.js
 
 Use helpers to translate
 ```
-yml_google_translate_api.rb config/locales/sr-latin.yml sr_to_cyr en
-yml_google_translate_api.rb config/locales/activerecord_activemodels.sr-latin.yml sr_to_cyr en
+yml_google_translate_api.rb config/locales/sr-latin.yml sr_to_cyr en_humanize
+yml_google_translate_api.rb config/locales/activerecord_activemodels.sr-latin.yml sr_to_cyr en_humanize
 ```
 
 # Capistrano
+
+Here are some example tasks:
+
+```
+cap production rails:logs
+```
+
+# Capistrano
+
+Here are some example tasks:
+
+```
+c# Capistrano
+
+Here are some example tasks:
+
+```
+cap pro# Capistrano
+
+Here are some example tasks:
+
+```
+cap production rails:logs
+```
+
+# Tests
+
+Run integration and other non browser tests
+
 
 Here are some example tasks:
 

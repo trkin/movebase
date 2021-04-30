@@ -49,6 +49,7 @@ sr:
   contact_description: Захвални смо за све добре и лоше ствари на сајту које нам пријављујете.
   contact_thanks: Хвала за поруку
   admin_pages: Админ стране
+  super_admin_pages: Суперадмин стране
   only_for_superadmin: Само за супер администратора
   send: Пошаљи
   log_in_as: Улогуј се као
@@ -97,3 +98,4 @@ sr:
   accept: Прихвати
   about: О нама
   cookies: Колачићи
+  translations: Преводи

@@ -1,0 +1,3 @@
+support_staff:
+  user: support_staff
+  role: <%= UserRole.roles[:support_staff] %>

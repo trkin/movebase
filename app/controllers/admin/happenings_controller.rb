@@ -46,7 +46,7 @@ class Admin::HappeningsController < Admin::BaseController
     @happening = Happening.new(
       club_id: params[:club_id]
     )
-    update_and_render_or_redirect_in_js @happening, _happening_params, ->(id) { admin_happening_path(id) }
+    update_and_render_or_redirect_in_js @happening, _happening_params, ->(happening) { admin_happening_path(happening) }
   end
 
   # JS

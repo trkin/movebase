@@ -1,0 +1,9 @@
+<%
+  breadcrumb Activity.model_name.human(count: 2) => activities_path, @activity.name => nil
+%>
+<div class='card'>
+  <div class='card-body'>
+    <%= button_tag_open_modal edit_activity_path(@activity), title: t_crud('edit', Activity), pull_right: true %>
+    <%= detail_view_list @activity, *Activity::FIELDS %>
+  </div>
+</div>

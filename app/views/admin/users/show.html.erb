@@ -7,3 +7,17 @@
     <%= detail_view_list @user, :name, :email %>
   </div>
 </div>
+<%= button_tag_open_modal new_admin_user_user_role_path(@user) do %>
+  <i class="demo-icon icon-plus" aria-hidden="true"></i>
+  <%= t_crud('add_new', UserRole) %>
+<% end %>
+<div class='card-deck'>
+  <% @user.user_roles.each do |user_role| %>
+    <div class='card card--text mb-4'>
+      <div class='card-body'>
+        <%= UserRole.human_enum_name :role, user_role.role %>
+        <%= button_tag_open_modal edit_admin_user_role_path(user_role), title: t_crud('edit', UserRole), pull_right: true %>
+      </div>
+    </div>
+  <% end %>
+</div>

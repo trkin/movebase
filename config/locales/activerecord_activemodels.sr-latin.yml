@@ -7,6 +7,11 @@ sr-latin:
         few: Korisnika
         other: Korisnici
         accusative: korisnika
+      user_role:
+        one: Uloga
+        few: Uloge
+        other: Uloga
+        accusative: ulogu
       activity:
         one: Aktivnost
         few: Aktivnosti
@@ -67,6 +72,11 @@ sr-latin:
         few: Veze
         other: Veza
         accusative: vezu
+      translation:
+        one: Prevod
+        few: Prevodi
+        other: Prevodi
+        accusative: prevod
     attributes:
       user:
         name: Naziv
@@ -76,6 +86,10 @@ sr-latin:
         password_confirmation: Potvrda lozinke
         current_password: Trenutna lozinka
         remember_me: Zapamti me
+      user_role:
+        roles:
+          support_staff: Podrška
+          club_admin: Admin organizacije
       activity:
         name: Naziv
         description: Opis

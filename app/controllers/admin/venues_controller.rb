@@ -19,7 +19,7 @@ class Admin::VenuesController < Admin::BaseController
   # JS
   def create
     @venue = Venue.new
-    update_and_render_or_redirect_in_js @venue, _venue_params, ->(id) { admin_venue_path(id) }
+    update_and_render_or_redirect_in_js @venue, _venue_params, ->(venue) { admin_venue_path(venue) }
   end
 
   # JS

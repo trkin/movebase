@@ -73,10 +73,23 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :translations do
+      collection do
+        post :search
+      end
+    end
+
+    resources :activities do
+      collection do
+        post :search
+      end
+    end
+
     namespace :admin do
       get 'dashboard', to: 'dashboard#index'
-      resources :users
-      resources :activities
+      resources :users do
+        resources :user_roles
+      end
       resources :clubs do
         resources :activity_clubs
         collection do

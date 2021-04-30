@@ -28,7 +28,7 @@
         <div class='card card--text'>
           <div class='card-body'>
             <%= button_to 'X', admin_activity_club_path(activity_club), class: 'btn btn-sm btn-outline-danger btn--no-padding px-1 edit-button', title: t_crud('delete', ActivityClub), method: :delete, 'data-confirm': t('are_you_sure') %>
-            <%= link_to activity_club.activity.name, admin_activity_path(activity_club.activity) %>
+            <%= link_to activity_club.activity.name, activity_path(activity_club.activity) %>
           </div>
         </div>
       <% end %>

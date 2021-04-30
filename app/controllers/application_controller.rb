@@ -100,4 +100,12 @@ class ApplicationController < ActionController::Base
     end
   end
   # rubocop:enable Metrics/MethodLength, Metrics/AbcSize, Metrics/PerceivedComplexity
+
+  rescue_from ActionPolicy::Unauthorized do |exception|
+    message = "#{exception.message} #{exception.policy} #{exception.rule}"
+    respond_to do |format|
+      format.html { redirect_to root_path, alert: message }
+      format.json { render json: {error_message: message, error_status: :bad_request}, status: :bad_request}
+    end
+  end
 end

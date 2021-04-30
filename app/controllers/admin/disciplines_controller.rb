@@ -19,7 +19,7 @@ class Admin::DisciplinesController < Admin::BaseController
   # JS
   def create
     @discipline = Discipline.new
-    update_and_render_or_redirect_in_js @discipline, _discipline_params, ->(id) { admin_discipline_path(id) }
+    update_and_render_or_redirect_in_js @discipline, _discipline_params, ->(discipline) { admin_discipline_path(discipline) }
   end
 
   # JS
