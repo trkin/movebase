@@ -1,2 +1,15 @@
-
+<ul class='nav nav-tabs'>
+  <% [Activity, Club].each do |klass| %>
+    <li class='nav-item'>
+      <%= link_to klass.model_name.human, translations_path(model: klass.name), class: "nav-link #{'active' if params[:model] == klass.name}" %>
+    </li>
+  <% end %>
+</ul>
+<ul class='nav nav-tabs'>
+  <% @json_columns.each do |column| %>
+    <li class='nav-item'>
+      <%= link_to column, translations_path(model: @klass.name, column: column), class: "nav-link #{'active' if params[:column] == column.to_s}" %>
+    </li>
+  <% end %>
+</ul>
 <%= @datatable.render_html search_translations_path(format: :json) %>

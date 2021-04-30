@@ -168,6 +168,11 @@ en:
           registration: Registration
           route_track: Trail map
           facebook_video: Facebook video
+      translation:
+        translateable_id: Translation for
+        column_name: Name
+        column_value_translated: Translation
+        column_value: All translations
   activemodel:
     attributes:
       contact:

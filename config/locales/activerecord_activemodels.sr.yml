@@ -168,6 +168,11 @@ sr:
           registration: Пријаве
           route_track: Мапа стазе
           facebook_video: Фејсбук видео
+      translation:
+        translateable_id: Превод за
+        column_name: Назив
+        column_value_translated: Превод
+        column_value: Сви преводи
   activemodel:
     attributes:
       contact:

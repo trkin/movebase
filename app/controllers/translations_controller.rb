@@ -3,7 +3,17 @@ class TranslationsController < ApplicationController
     authorize! Object, to: :translations?, with: AdminPolicy
   end
 
-  def index
+  def index # rubocop:todo Metrics/CyclomaticComplexity
+    unless [Activity, Discipline, Club].map(&:name).include?(params[:model])
+      redirect_to translations_path(model: 'Activity', column: 'name') and return
+    end
+
+    @klass = params[:model].constantize
+    @json_columns = @klass.columns.select { |column| column.type == :jsonb }.map(&:name)
+    unless @json_columns.include?(params[:column])
+      redirect_to translations_path(model: params[:model], column: @json_columns.first) and return
+    end
+
     @datatable = TranslationsDatatable.new view_context
   end
 

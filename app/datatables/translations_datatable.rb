@@ -5,18 +5,17 @@ class TranslationsDatatable < BaseDatatable
       'translations.translateable_id': {},
       'translations.translateable_type': {hide: true},
       'translations.column_name': {},
+      'string_calculated_in_db.column_value_translated': {search: false, title: @view.t('activerecord.attributes.translation.column_value_translated')},
       'translations.column_value': {},
-      '': {},
+      '': {title: @view.t('actions')},
     }
   end
 
   def all_items
+    model = @view.params[:model].constantize
+    column = @view.params[:column]
     sql = <<~SQL.squish
-      (
-        (SELECT 'Activity' AS translateable_type, id AS translateable_id, 'name' AS column_name, name AS column_value FROM activities)
-        UNION
-        (SELECT 'Activity' AS translateable_type, id AS translateable_id, 'description' AS column_name, description AS column_value FROM activities)
-      ) as translations
+      (SELECT '#{model}' AS translateable_type, id AS translateable_id, '#{column}' AS column_name, #{column} AS column_value, #{column}->'#{I18n.locale}' as column_value_translated FROM #{model.table_name}) as translations
     SQL
     Translation.from([Arel.sql(sql)])
   end
@@ -30,6 +29,7 @@ class TranslationsDatatable < BaseDatatable
         @view.link_to(translation.translateable, translation.translateable),
         translation.translateable_type,
         translation.column_name,
+        translation.column_value_translated,
         translation.column_value,
         edit_link,
       ]

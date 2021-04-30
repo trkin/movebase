@@ -168,6 +168,11 @@ sr-latin:
           registration: Prijave
           route_track: Mapa staze
           facebook_video: Fejsbuk video
+      translation:
+        translateable_id: Prevod za
+        column_name: Naziv
+        column_value_translated: Prevod
+        column_value: Svi prevodi
   activemodel:
     attributes:
       contact:
