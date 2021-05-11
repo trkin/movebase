@@ -1,25 +1,18 @@
 class TranslateForm
   include ActiveModel::Model
 
-  def self.underscored_locales
-    I18n.available_locales.map(&:to_s).map(&:underscore)
-  end
-
-  FIELDS = [:column_name, *underscored_locales].freeze
+  FIELDS = %i[column_name locale column_value].freeze
   attr_accessor :record, *FIELDS
 
   def initialize(attributes)
     super
 
-    self.class.underscored_locales.each do |locale|
-      send "#{locale}=", record.send("#{column_name}_backend").read(locale.tr('_', '-'))
-    end
+    self.locale ||= I18n.locale
+    self.column_value ||= record.send("#{column_name}_backend").read(locale)
   end
 
   def save
-    self.class.underscored_locales.each do |locale|
-      record.send("#{column_name}_backend").write(locale.tr('_', '-'), send(locale))
-    end
+    record.send("#{column_name}_backend").write(locale, column_value)
     record.save!
     true
   end

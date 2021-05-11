@@ -124,3 +124,7 @@ gem 'sitemap_generator', '~>6.1.2'
 gem 'whenever', require: false
 
 gem 'action_policy'
+
+# to help in translations
+gem 'cyrillizer'
+gem 'google-cloud-translate-v2'

@@ -91,4 +91,8 @@ class ApplicationController < ActionController::Base
   def default_url_options(_options = {})
     {locale: I18n.locale}
   end
+
+  def after_sign_in_path_for(resource)
+    helpers.request_path_with_locale stored_location_for(resource), resource.locale
+  end
 end

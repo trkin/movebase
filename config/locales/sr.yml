@@ -99,3 +99,6 @@ sr:
   about: О нама
   cookies: Колачићи
   translations: Преводи
+  already_exists_count_blank_source_count_successfully_translated_count: Већ постоји
+    %{already_exists_count}, нема изворне реци %{blank_source_count}, успешно преведено
+    %{successfully_translated_count}

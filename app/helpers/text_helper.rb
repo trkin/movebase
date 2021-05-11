@@ -115,14 +115,18 @@ module TextHelper
     end
   end
 
-  def button_tag_open_modal(url, text: t('edit'), title: nil, pull_right: false)
+  def button_tag_open_modal(url, attrs = {}) # rubocop:todo Metrics/MethodLength
+    text, title, pull_right = attrs.extract!(:text, :title, :pull_right).values
+    text ||= t('edit')
     title ||= text
     tag.button(
+      type: 'button', # instead of 'submit' so we can nest inside other forms
       'data-controller': 'modal',
       'data-modal-url': url,
       'data-action': 'modal#open',
       'data-modal-title': title,
       class: "btn text-primary #{'edit-button' if pull_right}",
+      **attrs,
     ) do
       if block_given?
         yield

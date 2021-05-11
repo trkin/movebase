@@ -30,6 +30,20 @@ class DeviseUserRegistrationAndLoginTest < ApplicationSystemTestCase
     assert_equal I18n.default_locale.to_s, user.locale
   end
 
+  test 'login should redirect to user locale' do
+    user = users(:kayak_admin)
+    user.locale = 'sr'
+    user.save!
+
+    visit admin_discipline_path(:en, disciplines(:sprint_kayak))
+    fill_in User.human_attribute_name(:email), with: user.email
+    fill_in User.human_attribute_name(:password), with: 'password'
+    click_on t('my_devise.sign_in')
+
+    assert_user_logged_in_with_email user.email
+    assert_equal '/sr', page.current_path
+  end
+
   test 'register user already exists' do
     email = users(:kayak_admin).email
     manual_register email

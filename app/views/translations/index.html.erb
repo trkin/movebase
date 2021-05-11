@@ -1,5 +1,5 @@
 <ul class='nav nav-tabs'>
-  <% [Activity, Club].each do |klass| %>
+  <% TranslationsDatatable::CLASSES.each do |klass| %>
     <li class='nav-item'>
       <%= link_to klass.model_name.human, translations_path(model: klass.name), class: "nav-link #{'active' if params[:model] == klass.name}" %>
     </li>
@@ -8,8 +8,20 @@
 <ul class='nav nav-tabs'>
   <% @json_columns.each do |column| %>
     <li class='nav-item'>
-      <%= link_to column, translations_path(model: @klass.name, column: column), class: "nav-link #{'active' if params[:column] == column.to_s}" %>
+      <%= link_to column, translations_path(model: @klass.name, column_name: column), class: "nav-link #{'active' if params[:column_name] == column.to_s}" %>
     </li>
   <% end %>
 </ul>
-<%= @datatable.render_html search_translations_path(format: :json) %>
+<%= bootstrap_form_with url: update_multiple_translations_path, local: true, html: { 'data-controller': 'multiple' } do |form| %>
+  <%= form.hidden_field :model, value: params[:model] %>
+  <%= form.hidden_field :column_name, value: params[:column_name] %>
+  <div class='form-inline d-none-opacity' data-multiple-target='buttons'>
+    <div class='form-group'>
+      <input data-multiple-target='selected'>
+      <%= form.select :from_locale, options_for_select(I18n.available_locales, selected: params[:from_locale]) %>
+      <%= form.select :to_locale, options_for_select(I18n.available_locales, selected: params[:to_locale]) %>
+      <%= button_tag t('update') %>
+    </div>
+  </div>
+  <%= @datatable.render_html search_translations_path(model: params[:model], column_name: params[:column_name], format: :json) %>
+<% end %>

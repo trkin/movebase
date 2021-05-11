@@ -5,7 +5,7 @@ module RequestHelper
 
   def request_path_with_locale(path, locale)
     regexp = /#{I18n.available_locales.map { |l| "\/#{l}\\b" }.join('|')}/
-    if path == '/' # rubocop:todo Style/CaseLikeIf
+    if path == '/' || path.nil?
       "/#{locale}/"
     elsif path.match regexp
       path.sub regexp, "/#{locale}"

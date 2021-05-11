@@ -1,4 +1,4 @@
-module PagesHelper
+module BreadcrumbHelper
   def login_layout(login_title = nil)
     @login_title = login_title
     @login_layout = true

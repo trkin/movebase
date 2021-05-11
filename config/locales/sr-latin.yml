@@ -95,3 +95,4 @@ sr-latin:
   about: O nama
   cookies: Kolačići
   translations: Prevodi
+  already_exists_count_blank_source_count_successfully_translated_count: Već postoji %{already_exists_count}, nema izvorne reči %{blank_source_count}, uspešno prevedeno %{successfully_translated_count}

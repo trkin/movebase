@@ -98,3 +98,6 @@ en:
   about: About
   cookies: Cookies
   translations: Translations
+  already_exists_count_blank_source_count_successfully_translated_count: There is
+    already %{already_exists_count}, missing original word %{blank_source_count}, successfully
+    translated %{successfully_translated_count}

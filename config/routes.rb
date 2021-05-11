@@ -78,6 +78,7 @@ Rails.application.routes.draw do
       resources :translations do
         collection do
           post :search
+          post :update_multiple
         end
       end
 
