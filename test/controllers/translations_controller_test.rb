@@ -10,7 +10,7 @@ class TranslationsControllerTest < ActionDispatch::IntegrationTest
 
   test 'see disciplines' do
     sign_in users(:support_staff)
-    get translations_path
+    get translations_path(model: 'Activity', column_name: 'name')
     assert_response :success
   end
 end

@@ -3,7 +3,7 @@
     <%= hidden_field_tag :column_name, params[:column_name] %>
     <%= f.static_control :column_name, skip_label: true %>
     <%= f.select :locale, options_for_select(I18n.available_locales, selected: f.object.locale), skip_label: true %>
-    <%= f.text_field :column_value, skip_label: true %>
+    <%= f.text_field :column_value, skip_label: true, 'data-test': 'translate-form-column-value' %>
     <div class='remote-form__actions'>
       <%= f.submit t(:update), class: 'btn btn-primary' %>
     </div>

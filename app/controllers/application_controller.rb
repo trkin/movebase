@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
   #    @subscriber = current_user.company.subscribers.new
   #    update_and_render_or_redirect_in_js @subscriber, _subscriber_params, ->(subscriber) { subscriber_path(subscriber) }
   #  end
-  def update_and_render_or_redirect_in_js(item, item_params, redirect_path_or_proc, partial = 'form', notice = nil)
+  def update_and_render_or_redirect_in_js(item, item_params, redirect_path_or_proc = nil, partial = 'form', notice = nil)
     notice ||= if item.new_record?
                  helpers.t_notice('successfully_created', item.class)
                else

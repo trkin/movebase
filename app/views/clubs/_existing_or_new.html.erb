@@ -1,0 +1,26 @@
+<%#
+  f - form builder
+  f.object.model need to accepts_nested_attributes_for and allow_params for club
+%>
+<%
+  f.object.build_club if f.object.club.blank?
+  enabled_existing = f.object.existing_or_new_club == 'existing'
+%>
+<div data-controller='activate' data-activate-selector='fieldset'>
+    <%= f.radio_button :existing_or_new_club, 'new', checked: !enabled_existing, label: t('create_new'), 'data-action': 'activate#enableDisableForValue' %>
+  <fieldset data-activate-value='new' class='remote-form__border-section' <%= 'disabled' if enabled_existing %>>
+    <%= f.fields_for :club, include_id: false do |ff| %>
+      <div class='form-inline'>
+        <%= ff.radio_button :kind, :sport_organization, label: Club.human_enum_name(:kind, :sport_organization), disabled: enabled_existing %>
+        <%= ff.radio_button :kind, :personal, label: Club.human_enum_name(:kind, :personal), disabled: enabled_existing %>
+        <%= ff.radio_button :kind, :federation, label: Club.human_enum_name(:kind, :federation), disabled: enabled_existing %>
+      </div>
+
+      <%= ff.text_field :name, disabled: enabled_existing, 'data-controller': 'form', 'data-action': 'form#limit_select_options', 'data-form-selector': '#select-club-id' %>
+    <% end %>
+  </fieldset>
+  <%= f.radio_button :existing_or_new_club, 'existing', checked: enabled_existing, label: t('pick_existing'), 'data-action': 'activate#enableDisableForValue' %>
+  <fieldset data-activate-value='existing' class='remote-form__border-section' <%= 'disabled' unless enabled_existing %>>
+    <%= f.select :club_id, options_from_collection_for_select(Club.all, :id, :name, f.object.club_id), { disabled: !enabled_existing }, size: Const.multiselect_size, id: 'select-club-id' %>
+  </fieldset>
+</div>

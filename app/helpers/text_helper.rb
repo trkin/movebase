@@ -152,8 +152,8 @@ module TextHelper
       .html_safe
   end
 
-  def index_for_disciplines_badge_link(discipline, **attrs)
-    link_to index_for_disciplines_happenings_path(discipline_ids: [discipline.id]), class: attrs[:class] do
+  def happenings_for_discipline_badge_link(discipline, **attrs)
+    link_to happenings_path(discipline_ids: [discipline.id]), class: attrs[:class] do
       "<span class='badge' style='color: white; background-color: #{color_for_discipline_id[discipline.id]}'>
         #{discipline.name}
       </span>".html_safe

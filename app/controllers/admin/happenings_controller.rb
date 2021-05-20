@@ -59,22 +59,13 @@ class Admin::HappeningsController < Admin::BaseController
     redirect_to admin_happenings_path, notice: helpers.t_notice('successfully_deleted', Happening)
   end
 
-  def parse_url
-    result = ParseUrl.new(params[:url]).perform
-    if result.success?
-      render json: result.data[:json]
-    else
-      render json: {error: result.message}
-    end
-  end
-
   def _set_happening
     @happening = Happening.find params[:id]
   end
 
   def _happening_params
     params.require(:happening).permit(
-      *Happening::FIELDS, :existing_or_new,
+      *Happening::FIELDS, :existing_or_new_venue,
       venue_attributes: Venue::FIELDS,
     )
   end

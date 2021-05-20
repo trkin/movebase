@@ -1,0 +1,20 @@
+<%#
+  f - form builder
+  f.object.model need to accepts_nested_attributes_for and allow_params for discipline
+%>
+<%
+  f.object.build_discipline if f.object.discipline.blank?
+  enabled_new = f.object.existing_or_new_discipline == 'new'
+%>
+<div data-controller='activate' data-activate-selector='fieldset'>
+  <%= f.radio_button :existing_or_new_discipline, 'new', label: t('create_new'), 'data-action': 'activate#enableDisableForValue' %>
+  <fieldset data-activate-value='new' class='remote-form__border-section' <%= 'disabled' unless enabled_new %>>
+    <%= f.fields_for :discipline, include_id: false do |ff| %>
+      <%= ff.text_field :name, disabled: !enabled_new, 'data-controller': 'form', 'data-action': 'form#limit_select_options', 'data-form-selector': '#select-discipline-id' %>
+    <% end %>
+  </fieldset>
+  <%= f.radio_button :existing_or_new_discipline, 'existing', checked: !enabled_new, label: t('pick_existing'), 'data-action': 'activate#enableDisableForValue' %>
+  <fieldset data-activate-value='existing' class='remote-form__border-section' <%= 'disabled' if enabled_new %>>
+    <%= f.select :discipline_id, options_from_collection_for_select(Discipline.all, :id, :name, f.object.discipline_id), { disabled: enabled_new }, size: Const.multiselect_size, id: 'select-discipline-id' %>
+  </fieldset>
+</div>

@@ -4,18 +4,30 @@
 %>
 <%
    f.object.build_venue if f.object.venue.blank?
+  enabled_existing = f.object.existing_or_new_venue == 'existing'
 %>
 <div data-controller='activate' data-activate-selector='fieldset'>
-  <div class='form-inline'>
-    <%= f.radio_button :existing_or_new, 'existing', checked: f.object.existing_or_new.blank? || f.object.existing_or_new == 'existing', label: t('pick_existing'), 'data-action': 'activate#enableDisableForValue' %>
-    <%= f.radio_button :existing_or_new, 'new', label: t('create_new'), 'data-action': 'activate#enableDisableForValue' %>
-  </div>
-  <fieldset data-activate-value='existing' class='remote-form__border-section d-none-display-block <%= 'active' unless f.object.existing_or_new == 'new' %>' <%= 'disabled' if f.object.existing_or_new == 'new' %>>
-    <%= f.select :venue_id, options_from_collection_for_select(Venue.all, :id, :name, f.object.venue_id), prompt: true, disabled: f.object.existing_or_new == 'new' %>
-  </fieldset>
-  <fieldset data-activate-value='new' class='remote-form__border-section d-none-display-block <%= 'active' if f.object.existing_or_new == 'new' %>' <%= 'disabled' unless f.object.existing_or_new == 'new' %>>
+  <%= f.radio_button :existing_or_new_venue, 'new', checked: !enabled_existing, label: t('create_new'), 'data-action': 'activate#enableDisableForValue' %>
+  <fieldset data-activate-value='new' class='remote-form__border-section' <%= 'disabled' if enabled_existing %>>
     <%= f.fields_for :venue, include_id: false do |ff| %>
-      <%= render 'venues/form_fields', f: ff, disabled: f.object.existing_or_new != 'new' %>
+      <div
+        data-controller='google-map-address'
+        data-action='
+        googleMapAddressInitMap@window->google-map-address#googleMapAddressInitMap
+        googleMapAddressDragend@window->google-map-address#googleMapAddressDragEnd
+        googleMapAddressPlaceChanged@window->google-map-address#googleMapAddressPlaceChanged
+        '
+        >
+        <%= ff.text_field :name, disabled: enabled_existing, 'data-controller': 'form', 'data-action': 'form#limit_select_options', 'data-form-selector': '#select-venue-id' %>
+        <%= ff.text_field :address, 'data-target': 'google-map-address.address', disabled: enabled_existing %>
+        <%= ff.hidden_field :latitude, 'data-target': 'google-map-address.latitude', disabled: enabled_existing %>
+        <%= ff.hidden_field :longitude, 'data-target': 'google-map-address.longitude', disabled: enabled_existing %>
+        <div class='map map--300px' data-target='google-map-address.map'></div>
+      </div>
     <% end %>
+  </fieldset>
+  <%= f.radio_button :existing_or_new_venue, 'existing', checked: enabled_existing, label: t('pick_existing'), 'data-action': 'activate#enableDisableForValue' %>
+  <fieldset data-activate-value='existing' class='remote-form__border-section' <%= 'disabled' unless enabled_existing %>>
+    <%= f.select :venue_id, options_from_collection_for_select(Venue.all, :id, :name, f.object.venue_id), { disabled: !enabled_existing }, size: Const.multiselect_size, id: 'select-venue-id' %>
   </fieldset>
 </div>

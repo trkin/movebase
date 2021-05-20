@@ -4,7 +4,6 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
@@ -24,9 +23,11 @@ import 'select2' // globally assign select2 fn to $ element
 import 'controllers'
 
 // our js stuff
-import 'turbolinks.load'
+import 'dom_loaded'
 
 // our stylesheet
 import 'stylesheet/post_css'
 import 'stylesheet/application'
 
+
+import "controllers"

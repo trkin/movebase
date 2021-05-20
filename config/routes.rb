@@ -37,10 +37,8 @@ Rails.application.routes.draw do
       resources :happenings do
         collection do
           post :search
-          get :index_for_activities
-          post :search_for_activities
-          get :index_for_disciplines
-          post :search_for_disciplines
+          get :new_from_link
+          post :edit_from_link
         end
         resources :links
       end

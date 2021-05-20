@@ -4,13 +4,15 @@ class DisciplineHappening < ApplicationRecord
 
   acts_as_list
 
-  FIELDS = %i[name description gender distance_m elevation_m max_time_s age_min
-              age_max price_without_discount_cents start_time position].freeze
-
-  attr_accessor :existing_or_new
+  FIELDS = %i[
+    discipline_id existing_or_new_discipline name description gender distance_m elevation_m max_time_s
+    age_min age_max price_without_discount_cents start_time position
+  ].freeze
 
   belongs_to :discipline
   accepts_nested_attributes_for :discipline
+  attr_accessor :existing_or_new_discipline
+
   belongs_to :happening
 
   has_many :discipline_happening_tags, dependent: :destroy

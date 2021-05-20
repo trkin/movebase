@@ -12,7 +12,7 @@
   <span class='show-on-hover'>
     <span class='badge badge-primary pl-4'>
       <%= discipline.name %>
-      <% remove_path = index_for_disciplines_happenings_path(params.merge(discipline_ids: (params[:discipline_ids] || []) - [discipline.id])) %>
+      <% remove_path = happenings_path(params.merge(discipline_ids: Array(params[:discipline_ids]) - [discipline.id])) %>
       <%= link_to remove_path do %>
         <i class='demo-icon icon-cancel show-on-hover-target btn-danger' title='<%= t_crud('drop', Discipline) %>'></i>
       <% end %>
@@ -26,7 +26,7 @@
   <div class='dropdown-menu' aria-labelledby='dropdownAddActivity'>
     <% %i[similar_disciplines consists_of_and_used_in_disciplines].each_with_index do |filter, i| %>
       <% @datatable.send(filter).each do |discipline| %>
-        <% add_path = index_for_disciplines_happenings_path(params.except(:controller, :action, :commit).merge(discipline_ids: (params[:discipline_ids] || []) + [discipline.id])) %>
+        <% add_path = happenings_path(params.except(:controller, :action, :commit).merge(discipline_ids: Array(params[:discipline_ids]).append(discipline.id))) %>
         <%= link_to discipline.name, add_path, class:'dropdown-item' %>
       <% end %>
       <% if i < 1 %>
@@ -37,7 +37,22 @@
 </div>
 
 <% if params[:future_events] %>
-  <%= link_to t('show_also_pasts_happenings'), index_for_disciplines_happenings_path(request.params.except(:future_events)) %>
+  <%= link_to t('show_also_pasts_happenings'), happenings_path(request.params.except(:future_events)) %>
 <% end %>
 
-<%= @datatable.render_html search_for_disciplines_happenings_path(discipline_ids: params[:discipline_ids], format: :json) %>
+<% if current_user.present? && allowed_to?(:create?, Happening) %>
+  <div class='box'>
+    <% if params[:discipline_ids].present? %>
+      <% discipline = Discipline.find params[:discipline_ids].first %>
+      <%= button_tag_open_modal new_happening_path(discipline_id: discipline.id) do %>
+        <i class="demo-icon icon-plus" aria-hidden="true"></i>
+        <%= t('add_new_happening_for_discipline_name', discipline_name: discipline.name) %>
+      <% end %>
+    <% end %>
+    <%= button_tag_open_modal new_from_link_happenings_path(discipline_ids: params[:discipline_ids]) do %>
+      <i class="demo-icon icon-plus" aria-hidden="true"></i>
+      <%= t('add_new_happening_from_link') %>
+    <% end %>
+  </div>
+<% end %>
+<%= @datatable.render_html search_happenings_path(discipline_ids: params[:discipline_ids], format: :json) %>

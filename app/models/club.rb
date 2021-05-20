@@ -6,10 +6,9 @@ class Club < ApplicationRecord
 
   enum kind: %i[sport_organization personal federation]
 
-  attr_accessor :existing_or_new
-
-  belongs_to :venue
+  belongs_to :venue, optional: true
   accepts_nested_attributes_for :venue
+  attr_accessor :existing_or_new_venue
 
   has_many :happenings, dependent: :destroy
   has_many :secondary_happenings, foreign_key: :secondary_club_id, class_name: 'Happening'
@@ -21,5 +20,5 @@ class Club < ApplicationRecord
   has_many :activities, through: :activity_clubs
   has_many :links, as: :linkable
 
-  validates :name, :venue, presence: true
+  validates :name, presence: true
 end

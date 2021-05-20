@@ -1,0 +1,18 @@
+<%#
+  f - form builder
+  disabled - default is false
+%>
+<%
+  disabled ||= false
+%>
+<div class='row'>
+  <div class='col'>
+    <%= f.radio_button :kind, :sport_organization, label: Club.human_enum_name(:kind, :sport_organization), disabled: disabled %>
+    <%= f.radio_button :kind, :personal, label: Club.human_enum_name(:kind, :personal), disabled: disabled %>
+    <%= f.radio_button :kind, :federation, label: Club.human_enum_name(:kind, :federation), disabled: disabled %>
+    <%= f.text_field :name, disabled: disabled %>
+  </div>
+  <div class='col'>
+    <%= render 'venues/existing_or_new', f: f %>
+  </div>
+</div>

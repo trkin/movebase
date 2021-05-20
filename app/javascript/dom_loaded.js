@@ -3,7 +3,8 @@ const jBox = require('jbox')
 const trkDatatables = require('trk_datatables')
 const CookiesEuBanner = require('cookies-eu-banner')
 import { I18N } from 'const'
-document.addEventListener('turbolinks:load', () => {
+
+document.addEventListener('DOMContentLoaded', () => {
   // add tooltip to all elements with title <a title='Hi'>
   new jBox('Tooltip', {
     attach: '[title]'
@@ -46,5 +47,5 @@ document.addEventListener('turbolinks:load', () => {
   new CookiesEuBanner(function () {
     console.log('cookies accepted')
   }, true)
-  console.log('turbolinks.load')
+  console.log('DOMContentLoaded')
 })

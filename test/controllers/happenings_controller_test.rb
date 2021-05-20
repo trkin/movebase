@@ -1,17 +1,17 @@
 require 'test_helper'
 
 class HappeningsControllerTest < ActionDispatch::IntegrationTest
-  test 'index_for_activities blank' do
-    get index_for_disciplines_happenings_path
+  test 'index discipline_ids blank' do
+    get happenings_path
     assert_response :success
 
     happening = happenings(:kayak_regatta)
     assert_select 'td', happening.name
   end
 
-  test 'index_for_activities running' do
-    activity = activities(:running)
-    get index_for_activities_happenings_path(activity_names: [activity.name])
+  test 'index triathlon' do
+    triathlon = disciplines(:triathlon)
+    get happenings_path(discipline_ids: [triathlon.id])
 
     assert_select 'td', {text: happenings(:kayak_regatta).name, count: 0}
   end

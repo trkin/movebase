@@ -25,7 +25,7 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
   Discipline.find_each do |discipline|
-    add index_for_disciplines_happenings_path(discipline_ids: [discipline.id])
+    add happenings_path(discipline_ids: [discipline.id])
   end
   Happening.find_each do |happening|
     add happening_path(happening), lastmod: happening.updated_at

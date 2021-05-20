@@ -1,0 +1,10 @@
+<div id='remote-form'>
+  <%= bootstrap_form_with model: @add_happening_from_link_form, url: edit_from_link_happenings_path, remote: true, layout: :vertical do |f| %>
+    <%= f.text_field :link, placeholder: 'https://trka.rs/event/210', skip_label: true, autofocus: true, required: true %>
+    <%= f.text_field :name, 'data-controller': 'form', 'data-action': 'form#limit_select_options', 'data-form-selector': '#select-discipline-id', skip_label: true, placeholder: t('search_item_name', item_name: Discipline.model_name.human(count: 2)) %>
+    <%= f.select :discipline_id, options_from_collection_for_select(Discipline.all, :id, :name, @add_happening_from_link_form.discipline_id), { skip_label: true }, size: Const.multiselect_size, id: 'select-discipline-id', required: true %>
+    <div class='remote-form__actions'>
+      <%= f.submit t('add'), class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

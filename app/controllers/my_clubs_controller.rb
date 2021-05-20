@@ -30,7 +30,7 @@ class MyClubsController < ApplicationUserController
 
   def _club_params
     params.require(:club).permit(
-      *Club::FIELDS, :existing_or_new, :venue_id,
+      *Club::FIELDS, :existing_or_new_venue, :venue_id,
       venue_attributes: Venue::FIELDS,
     )
   end

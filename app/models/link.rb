@@ -23,4 +23,20 @@ class Link < ApplicationRecord
 
   belongs_to :linkable, polymorphic: true
   validates :url, :kind, presence: true
+
+  def self.determine_kind_from_url(url)
+    uri = URI url
+    case uri.host
+    when %w[f.me www.facebook.com]
+      :facebook_page
+    when %w[instagram.com]
+      :instagram_page
+    when %w[twitter.com]
+      :twitter_page
+    when %w[youtube.com]
+      :youtube
+    else
+      :website
+    end
+  end
 end

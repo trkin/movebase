@@ -36,6 +36,7 @@ sr:
     дешавањима, дакле,
   what_will_you_do_on_the_weekend: Шта ћеш радити за викенд ?
   search: Пронађи
+  search_item_name: Претражи %{item_name}
   search_future_hapennings: Пронађи будуће догађаје
   show_also_pasts_happenings: Прикажи и прошле догађаје
   please_select: Молим изаберите
@@ -102,3 +103,7 @@ sr:
   already_exists_count_blank_source_count_successfully_translated_count: Већ постоји
     %{already_exists_count}, нема изворне реци %{blank_source_count}, успешно преведено
     %{successfully_translated_count}
+  add_new_happening_from_link: Нова дисциплина помоћу линка
+  add_new_happening_for_discipline_name: Додај нови догађај за %{discipline_name}
+  select_discipline_for_new_event: Изабери дисциплину за нови догађај
+  not_implemented_for_item_name: није направљен за %{item_name}

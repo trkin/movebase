@@ -22,6 +22,10 @@ class Const
     )
   end
 
+  def self.multiselect_size
+    3
+  end
+
   def self.hash_or_error_if_key_does_not_exists(hash)
     # https://stackoverflow.com/questions/30528699/why-isnt-an-exception-thrown-when-the-hash-value-doesnt-exist
     # raise if key does not exists hash[:non_exists] or hash.values_at[:non_exists]

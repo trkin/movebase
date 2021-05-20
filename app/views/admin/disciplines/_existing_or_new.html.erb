@@ -7,15 +7,15 @@
 %>
 <div data-controller='activate' data-activate-selector='fieldset'>
   <div class='form-inline'>
-    <%= f.radio_button :existing_or_new, 'existing', checked: f.object.existing_or_new.blank? || f.object.existing_or_new == 'existing', label: t('pick_existing'), 'data-action': 'activate#enableDisableForValue' %>
-    <%= f.radio_button :existing_or_new, 'new', label: t('create_new'), 'data-action': 'activate#enableDisableForValue' %>
+    <%= f.radio_button :existing_or_new_discipline, 'existing', checked: f.object.existing_or_new_discipline.blank? || f.object.existing_or_new_discipline == 'existing', label: t('pick_existing'), 'data-action': 'activate#enableDisableForValue' %>
+    <%= f.radio_button :existing_or_new_discipline, 'new', label: t('create_new'), 'data-action': 'activate#enableDisableForValue' %>
   </div>
-  <fieldset data-activate-value='existing' class='remote-form__border-section d-none-display-block <%= 'active' if f.object.existing_or_new != 'new' %>' <%= 'disabled' if f.object.existing_or_new == 'new' %>>
-    <%= f.select :discipline_id, options_from_collection_for_select(Discipline.all, :id, :name, f.object.discipline_id), prompt: true, disabled: f.object.existing_or_new == 'new' %>
+  <fieldset data-activate-value='existing' class='remote-form__border-section d-none-display-block <%= 'active' if f.object.existing_or_new_discipline != 'new' %>' <%= 'disabled' if f.object.existing_or_new_discipline == 'new' %>>
+    <%= f.select :discipline_id, options_from_collection_for_select(Discipline.all, :id, :name, f.object.discipline_id), prompt: true, disabled: f.object.existing_or_new_discipline == 'new' %>
   </fieldset>
-  <fieldset data-activate-value='new' class='remote-form__border-section d-none-display-block <%= 'active' if f.object.existing_or_new == 'new' %>' <%= 'disabled' if f.object.existing_or_new != 'new' %>>
+  <fieldset data-activate-value='new' class='remote-form__border-section d-none-display-block <%= 'active' if f.object.existing_or_new_discipline == 'new' %>' <%= 'disabled' if f.object.existing_or_new_discipline != 'new' %>>
     <%= f.fields_for :discipline, include_id: false do |ff| %>
-      <%= render 'admin/disciplines/form_fields', f: ff, disabled: f.object.existing_or_new != 'new' %>
+      <%= render 'admin/disciplines/form_fields', f: ff, disabled: f.object.existing_or_new_discipline != 'new' %>
     <% end %>
   </fieldset>
 </div>

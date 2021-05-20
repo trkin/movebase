@@ -18,7 +18,7 @@
       <p class='mt-2'>
         <% Discipline.all.each do |discipline| %>
           <span data-activate-value='<%= discipline.activities.map(&:id).join(',') %>' class='d-none-display-inline <%= 'active' if discipline.activities.include? running_activity %> discipline-tags'>
-            <%= index_for_disciplines_badge_link discipline %>
+            <%= happenings_for_discipline_badge_link discipline %>
           </span>
         <% end %>
       </p>
@@ -33,7 +33,7 @@
     <% Discipline.order(created_at: :asc).last(5).each do |discipline| %>
       <div class='card mt-2'>
         <div class='card-body'>
-          <h5 class='card-title'><%= index_for_disciplines_badge_link discipline %></h5>
+          <h5 class='card-title'><%= happenings_for_discipline_badge_link discipline %></h5>
           <h6>
             <% discipline.activities.each do |activity| %>
               <%= activity.name %>

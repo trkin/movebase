@@ -19,9 +19,11 @@ class TranslationsTest < ApplicationSystemTestCase
 
   test 'updating' do
     visit translations_path
-    find("data-test=[#{@activity.id}]").click
+    find("[data-test='#{@activity.id}']").click
 
-    click_on I18n.t('Submit')
-    assert_selector 'dd', text: 'blabla'
+    find('[data-test=translate-form-column-value]').set('blabla')
+    click_on I18n.t('update')
+    assert_notice t_notice('successfully_updated', TranslateForm)
+    assert_selector 'td', text: 'blabla'
   end
 end

@@ -49,7 +49,7 @@ class Admin::DisciplineHappeningsController < Admin::BaseController
 
   def _discipline_happening_params
     params.require(:discipline_happening).permit(
-      *DisciplineHappening::FIELDS, :existing_or_new, :discipline_id,
+      *DisciplineHappening::FIELDS, :existing_or_new_discipline, :discipline_id,
       discipline_attributes: Discipline::FIELDS,
     )
   end

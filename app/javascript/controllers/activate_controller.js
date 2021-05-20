@@ -60,13 +60,13 @@ export default class extends Controller {
     let elements = []
     for (let selector of selectors.split(',')) {
       if (selector[0] == '#') {
-        let element_by_id = document.getElementById(selector.substring(1))
+        let element_by_id = this.element.getElementById(selector.substring(1))
         if (element_by_id) elements.push(element_by_id)
       } else if (selector[0] == '.') {
-        let elements_by_class = document.getElementsByClassName(selector.substring(1))
+        let elements_by_class = this.element.getElementsByClassName(selector.substring(1))
         elements = elements.concat(Array.from(elements_by_class))
       } else {
-        let elements_by_tag_name = document.getElementsByTagName(selector)
+        let elements_by_tag_name = this.element.getElementsByTagName(selector)
         elements = elements.concat(Array.from(elements_by_tag_name))
       }
     }

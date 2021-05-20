@@ -35,6 +35,7 @@ sr-latin:
   we_are_informative_portal: Ovo je informativni servis gde možeš naći veze ka sportskim dešavanjima, dakle,
   what_will_you_do_on_the_weekend: Šta ćeš raditi za vikend ?
   search: Pronađi
+  search_item_name: Pretraži %{item_name}
   search_future_hapennings: Pronađi buduće događaje
   show_also_pasts_happenings: Prikaži i prošle događaje
   please_select: Molim izaberite
@@ -96,3 +97,7 @@ sr-latin:
   cookies: Kolačići
   translations: Prevodi
   already_exists_count_blank_source_count_successfully_translated_count: Već postoji %{already_exists_count}, nema izvorne reči %{blank_source_count}, uspešno prevedeno %{successfully_translated_count}
+  add_new_happening_from_link: Nova disciplina pomoću linka
+  add_new_happening_for_discipline_name: Dodaj novi događaj za %{discipline_name}
+  select_discipline_for_new_event: Izaberi disciplinu za novi događaj
+  not_implemented_for_item_name: nije napravljen za %{item_name}
