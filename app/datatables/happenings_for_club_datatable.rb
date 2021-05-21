@@ -1,10 +1,10 @@
 class HappeningsForClubDatatable < TrkDatatables::ActiveRecord
   def columns
     {
-      'happenings.id': {hide: true},
+      'happenings.id': { hide: true },
       'happenings.name': {},
       'happenings.start_date': {},
-      'venues.name': {title: Venue.model_name.human},
+      'venues.name': { title: Venue.model_name.human },
     }
   end
 

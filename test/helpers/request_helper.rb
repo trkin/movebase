@@ -19,7 +19,6 @@ class RequestHelperTest < ActionView::TestCase
     assert_dom_equal expected, actual
   end
 
-
   test '#request_path_with_locale no locale in path' do
     actual = request_path_with_locale '/123/english', 'en'
     expected = '/en/123/english'

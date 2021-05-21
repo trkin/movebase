@@ -7,7 +7,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'send message' do
-    post contact_path, params: {contact: {email: 'my@email.com', text: 'hi'}}
+    post contact_path, params: { contact: { email: 'my@email.com', text: 'hi' } }
     follow_redirect!
     assert_notice t('contact_thanks')
   end

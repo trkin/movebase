@@ -1,4 +1,10 @@
 # https://www.latlong.net/
+venue:
+  name:
+    en: fixture venue
+  latitude: 45.267136
+  longitude: 19.833549
+
 novi_sad:
   name:
     en: Novi Sad

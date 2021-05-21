@@ -1,3 +1,8 @@
+club:
+  name:
+    en: fixture club
+  venue: venue
+
 kayak:
   name:
     en: Kayak club

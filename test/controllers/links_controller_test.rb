@@ -13,15 +13,15 @@ class LinksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should search' do
-    post search_links_path, params: {search: {value: @link.linkable_id}}
+    post search_links_path, params: { search: { value: @link.linkable_id } }
     assert_match @link.linkable_id, response_json[:data].join
-    post search_links_path, params: {search: {value: 'blabla'}}
+    post search_links_path, params: { search: { value: 'blabla' } }
     refute_match @link.linkable_id, response_json[:data].join
   end
 
   test 'should create link' do
     assert_difference('Link.count') do
-      post links_path, params: {link: {kind: @link.kind, linkable_id: @link.linkable_id, linkable_type: @link.linkable_type, url: @link.url}}
+      post links_path, params: { link: { kind: @link.kind, linkable_id: @link.linkable_id, linkable_type: @link.linkable_type, url: @link.url } }
     end
 
     assert_js_redirected_to 'reload'
@@ -34,7 +34,7 @@ class LinksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update link' do
-    patch link_url(@link), params: {link: {kind: @link.kind, linkable_id: @link.linkable_id, linkable_type: @link.linkable_type, url: @link.url}}
+    patch link_url(@link), params: { link: { kind: @link.kind, linkable_id: @link.linkable_id, linkable_type: @link.linkable_type, url: @link.url } }
     assert_js_redirected_to link_path(@link)
   end
 

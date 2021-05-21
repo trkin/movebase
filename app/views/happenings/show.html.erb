@@ -14,6 +14,9 @@
 <% end %>
 <div class='card'>
   <div class='card-body'>
+    <% if current_user.present? && allowed_to?(:update?, @happening) %>
+      <%= button_tag_open_modal edit_happening_path(@happening), title: t_crud('edit', Happening), pull_right: true %>
+    <% end %>
     <div class='row'>
       <div class='col-md-4'>
         <%= detail_view_list @happening, :name, :description, skip_blank: :all %>
@@ -37,9 +40,6 @@
         <%# <% end %1> %>
       </div>
       <div class='col-md-8'>
-        <% if current_user&.superadmin? %>
-          <%= link_to t_crud('edit', Happening), admin_happening_path(@happening), class: 'float-right' %>
-        <% end %>
         <%= render 'links/list', item: @happening %>
         <% if @happening.secondary_club.present? %>
           <%= link_to @happening.secondary_club.name, club_path(@happening.secondary_club) %>
@@ -52,28 +52,38 @@
   <% unless @happening.multi_discipline? || @happening.disciplines.blank? %>
     <%= happenings_for_discipline_badge_link @happening.disciplines.last, class: 'float-right' %>
   <% end %>
-  <h3 class=''>
+  <strong class=''>
     <%= Discipline.model_name.human(count: @happening.discipline_happenings.size) %>
-  </h3>
+  </strong>
+  <% if current_user.present? && allowed_to?(:update, @happening) %>
+    <%= button_tag_open_modal new_happening_discipline_happening_path(@happening) do %>
+      <i class="demo-icon icon-plus" aria-hidden="true"></i>
+      <%= t_crud('add_new', DisciplineHappening) %>
+    <% end %>
+  <% end %>
 </div>
 <div class='card mt-2'>
-  <div class='card-body'>
+  <div class='card-body' <%= "data-controller='sortable'" if current_user.present? && allowed_to?(:update?, @happening) %>  data-sortable-resource-name-value='discipline_happening'>
     <% @happening.discipline_happenings.each do |discipline_happening| %>
-      <% if discipline_happening.start_time.present? && discipline_happening.start_time != @happening.start_date.to_datetime %>
-        <% if discipline_happening.start_time.to_date != @happening.start_date %>
-          <%= I18n.l discipline_happening.start_time, format: :only_time %>
-        <% else %>
-          <%= I18n.l discipline_happening.start_time, format: :day_month_and_time %>
+      <div class='' data-sortable-update-url="<%= discipline_happening_path(discipline_happening) %>" data-sortable-resource-name-value='not_important'>
+        <% if discipline_happening.start_time.present? && discipline_happening.start_time != @happening.start_date.to_datetime %>
+          <% if discipline_happening.start_time.to_date != @happening.start_date %>
+            <%= I18n.l discipline_happening.start_time, format: :only_time %>
+          <% else %>
+            <%= I18n.l discipline_happening.start_time, format: :day_month_and_time %>
+          <% end %>
         <% end %>
-      <% end %>
-      <%= discipline_happening.full_name %>
-      <% if @happening.multi_discipline? %>
-        <%= happenings_for_discipline_badge_link discipline_happening.discipline, class: 'float-right' %>
-      <% end %>
-      <% discipline_happening.discipline_happening_tags.each do |discipline_happening_tag| %>
-        <span class='badge badge-success'><%= discipline_happening_tag.tag.name %></span>
-      <% end %>
-      <br>
+        <%= discipline_happening.full_name %>
+        <% if @happening.multi_discipline? %>
+          <%= happenings_for_discipline_badge_link discipline_happening.discipline, class: 'float-right' %>
+        <% end %>
+        <% discipline_happening.discipline_happening_tags.each do |discipline_happening_tag| %>
+          <span class='badge badge-success'><%= discipline_happening_tag.tag.name %></span>
+        <% end %>
+        <% if current_user.present? && allowed_to?(:update?, @happening) %>
+          <%= button_tag_open_modal edit_discipline_happening_path(discipline_happening), title: t_crud('edit', DisciplineHappening) %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>

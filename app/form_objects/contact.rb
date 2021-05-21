@@ -3,6 +3,7 @@ class Contact
   include Recaptcha::Adapters::ControllerMethods
 
   attr_accessor :email, :text, :g_recaptcha_response, :current_user, :remote_ip
+
   validates_format_of :email, with: Devise.email_regexp
   validates :text, :email, presence: true
 

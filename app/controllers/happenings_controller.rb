@@ -1,5 +1,5 @@
 class HappeningsController < ApplicationController
-  before_action :_set_happening, only: %i[show]
+  before_action :_set_happening, only: %i[show edit destroy]
 
   def index
     @datatable = HappeningsForDisciplinesDatatable.new view_context
@@ -13,51 +13,52 @@ class HappeningsController < ApplicationController
 
   def new
     @happening = Happening.new
+    authorize! @happening, to: :update?
     @happening.discipline_happenings.build discipline_id: params[:discipline_id]
-    render partial: 'form', layout: false
+    render partial: 'new_form', layout: false
   end
 
   def edit
-    render partial: 'form', layout: false
+    authorize! @happening
+    render partial: 'edit_form', layout: false
   end
 
   def new_from_link
+    authorize!
     @add_happening_from_link_form = AddHappeningFromLinkForm.new link: params[:link], discipline_id: params[:discipline_ids]&.first
     render layout: false
   end
 
   def edit_from_link
+    authorize!
     @add_happening_from_link_form = AddHappeningFromLinkForm.new _add_happening_from_link_form_params
     if @add_happening_from_link_form.save
       @happening = @add_happening_from_link_form.happening
-      partial = 'form'
+      partial = 'new_form'
     else
       flash.now[:alert] = @add_happening_from_link_form.errors.full_messages.to_sentence
       partial = 'new_from_link'
     end
-    render js: %(
-      var form = document.getElementById('remote-form');
-      var parent = form.parentNode;
-      var new_form = document.createElement('div');
-      new_form.innerHTML = '#{helpers.j helpers.render(partial) + helpers.render('layouts/flash_notice_alert_jbox')}';
-      parent.replaceChild(new_form, form);
-
+    render js: _replace_remote_form_with_partial(partial) + %(
       window.dispatchEvent(new Event('resize'));
     )
   end
 
   # JS
   def create
+    authorize!
     @happening = Happening.new
     update_and_render_or_redirect_in_js @happening, _happening_params, ->(happening) { happening_path(happening) }
   end
 
   # JS
   def update
+    authorize! @happening
     update_and_render_or_redirect_in_js @happening, _happening_params
   end
 
   def destroy
+    authorize! @happening
     @happening.destroy!
     redirect_to happenings_path, notice: helpers.t_notice('successfully_deleted', Happening)
   end

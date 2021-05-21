@@ -3,7 +3,7 @@ class RecurrenceForm
 
   FIELDS = %i[every month total custom_name start_number existing_update].freeze +
            [day: []]
-  attr_accessor :happening, :recurrence, *(FIELDS.map { |field| field.is_a?(Symbol) ? field : field.keys.first})
+  attr_accessor :happening, :recurrence, *(FIELDS.map { |field| field.is_a?(Symbol) ? field : field.keys.first })
 
   def initialize(*attr)
     super
@@ -33,8 +33,7 @@ class RecurrenceForm
 
   def get_name(index)
     m = Mustache.new
-    message = m.render(custom_name.to_s, number: start_number.to_i + index)
-    message
+    m.render(custom_name.to_s, number: start_number.to_i + index)
   end
 
   def all_existing_events_except_self

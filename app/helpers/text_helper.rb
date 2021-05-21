@@ -116,7 +116,8 @@ module TextHelper
   end
 
   def button_tag_open_modal(url, attrs = {}) # rubocop:todo Metrics/MethodLength
-    text, title, pull_right = attrs.extract!(:text, :title, :pull_right).values
+    text, title, pull_right = attrs.values_at(:text, :title, :pull_right)
+    attrs.extract! :text, :title, :pull_right
     text ||= t('edit')
     title ||= text
     tag.button(

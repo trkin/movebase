@@ -62,11 +62,11 @@ class BuildHappeningFromLink
     happening = nil
     Mobility.with_locale 'sr-latin' do
       happening = Happening.new name: latin_happening_name, start_date: start_date
-      club = Club.find_by name: latin_club_name
+      club = Club.i18n.find_by(name: latin_club_name) || Mobility.with_locale('en') { Club.i18n.find_by(name: latin_club_name) }
       if club.present?
         happening.club = club
       else
-        happening.club_attributes = {name: latin_club_name}
+        happening.club_attributes = { name: latin_club_name }
       end
       array_of_discipline_happening_distance_and_name.each do |distance_and_name|
         reg_result = distance_and_name.match(/\[(\d*.\d*) km\] (.*)/)

@@ -13,7 +13,7 @@ class HappeningsControllerTest < ActionDispatch::IntegrationTest
     triathlon = disciplines(:triathlon)
     get happenings_path(discipline_ids: [triathlon.id])
 
-    assert_select 'td', {text: happenings(:kayak_regatta).name, count: 0}
+    assert_select 'td', { text: happenings(:kayak_regatta).name, count: 0 }
   end
 
   test 'show' do
@@ -26,5 +26,10 @@ class HappeningsControllerTest < ActionDispatch::IntegrationTest
     happening = happenings(:kayaking_no_discipline)
     get happening_path(happening)
     assert_select 'dd', happening.name
+  end
+
+  test 'edit' do
+    happening = happenings(:kayak_regatta)
+    get edit_happening_path(happening)
   end
 end

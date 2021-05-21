@@ -41,6 +41,7 @@ Rails.application.routes.draw do
           post :edit_from_link
         end
         resources :links
+        resources :discipline_happenings
       end
 
       resource :my_account do

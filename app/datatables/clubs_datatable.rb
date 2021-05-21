@@ -1,10 +1,10 @@
 class ClubsDatatable < BaseDatatable
   def columns
     {
-      'clubs.id': {hide: true},
+      'clubs.id': { hide: true },
       'clubs.name': {},
-      'venues.name': {title: Venue.model_name.human},
-      'activities.name': {title: Activity.model_name.human(count: 2), search: false, order: false},
+      'venues.name': { title: Venue.model_name.human },
+      'activities.name': { title: Activity.model_name.human(count: 2), search: false, order: false },
     }
   end
 

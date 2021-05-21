@@ -1,8 +1,8 @@
 <div id='remote-form'>
-  <%= bootstrap_form_for @discipline_happening, url: @discipline_happening.new_record? ? admin_happening_discipline_happenings_path(@discipline_happening.happening) : admin_discipline_happening_path(@discipline_happening), remote: true, layout: :horizontal do |f| %>
+  <%= bootstrap_form_for @discipline_happening, url: @discipline_happening.new_record? ? happening_discipline_happenings_path(@discipline_happening.happening) : discipline_happening_path(@discipline_happening), remote: true, layout: :horizontal do |f| %>
     <div class='row'>
       <div class='col-md'>
-        <%= render 'admin/disciplines/existing_or_new', f: f %>
+        <%= render 'disciplines/existing_or_new', f: f %>
       </div>
       <div class='col-md'>
         <%= f.text_field :name %>
@@ -20,7 +20,7 @@
     </div>
     <div class='remote-form__actions'>
       <% unless @discipline_happening.new_record? %>
-        <%= link_to admin_discipline_happening_path(@discipline_happening), method: :delete, 'data-confirm': t_are_you_sure_to_remove_item_name(@discipline_happening.name), title: t_crud('delete', DisciplineHappening) do %>
+        <%= link_to discipline_happening_path(@discipline_happening), method: :delete, 'data-confirm': t_are_you_sure_to_remove_item_name(@discipline_happening.name), title: t_crud('delete', DisciplineHappening) do %>
           <i class="demo-icon icon-trash-empty text-danger" aria-hidden="true"></i>
         <% end %>
       <% end %>

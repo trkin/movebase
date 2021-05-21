@@ -20,16 +20,16 @@ class Discipline < ApplicationRecord
   # DisciplineAssociation
   has_many :discipline_associations, dependent: :destroy
   has_many :consists_of_disciplines,
-           -> { where(discipline_associations: {kind: DisciplineAssociation.kinds[:consists_of]}) },
+           -> { where(discipline_associations: { kind: DisciplineAssociation.kinds[:consists_of] }) },
            through: :discipline_associations, source: :associated
   has_many :inversed_discipline_associations,
            dependent: :destroy, class_name: 'DisciplineAssociation',
            foreign_key: :associated, inverse_of: :associated
   has_many :used_in_disciplines,
-           -> { where(discipline_associations: {kind: DisciplineAssociation.kinds[:consists_of]}) },
+           -> { where(discipline_associations: { kind: DisciplineAssociation.kinds[:consists_of] }) },
            through: :inversed_discipline_associations, source: :discipline
   has_many :similar_disciplines,
-           -> { where(discipline_associations: {kind: DisciplineAssociation.kinds[:similar]}) },
+           -> { where(discipline_associations: { kind: DisciplineAssociation.kinds[:similar] }) },
            through: :discipline_associations, source: :associated
 
   enum kind: %i[basic]

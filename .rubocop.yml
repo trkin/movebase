@@ -108,11 +108,6 @@ Style/LambdaCall:
 # Lint/RedudantSplatExpansion:
 #   Enabled: false
 
-# for hash arguments, no need for space: assert_equal({a: 1}, result)
-# https://gist.github.com/Integralist/3822807d3c91281af22d
-Layout/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space
-
 # new pending cops
 Style/HashEachMethods:
   Enabled: true

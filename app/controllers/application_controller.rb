@@ -68,28 +68,32 @@ class ApplicationController < ActionController::Base
       end
     else
       flash.now[:alert] = item.errors.full_messages.to_sentence
-      render js: %(
+      render js: _replace_remote_form_with_partial(partial)
+    end
+  end
+  # rubocop:enable Metrics/MethodLength, Metrics/AbcSize, Metrics/PerceivedComplexity
+
+  def _replace_remote_form_with_partial(partial)
+    %(
         var form = document.getElementById('remote-form');
         var parent = form.parentNode;
         var new_form = document.createElement('div');
         new_form.innerHTML = '#{helpers.j helpers.render(partial) + helpers.render('layouts/flash_notice_alert_jbox')}';
         parent.replaceChild(new_form, form);
-      )
-    end
+    )
   end
-  # rubocop:enable Metrics/MethodLength, Metrics/AbcSize, Metrics/PerceivedComplexity
 
-  rescue_from ActionPolicy::Unauthorized do |exception|
-    message = "#{exception.message} #{exception.policy} #{exception.rule}"
-    respond_to do |format|
-      format.html { redirect_to root_path, alert: message }
-      format.json { render json: {error_message: message, error_status: :bad_request}, status: :bad_request }
-    end
-  end
+  # rescue_from ActionPolicy::Unauthorized do |exception|
+  #   message = "#{exception.message} #{exception.policy} #{exception.rule}"
+  #   respond_to do |format|
+  #     format.html { redirect_to root_path, alert: message }
+  #     format.json { render json: { error_message: message, error_status: :bad_request }, status: :bad_request }
+  #   end
+  # end
 
   # https://stackoverflow.com/questions/8224245/rails-routes-with-optional-scope-locale/8237800#8237800
   def default_url_options(_options = {})
-    {locale: I18n.locale}
+    { locale: I18n.locale }
   end
 
   def after_sign_in_path_for(resource)

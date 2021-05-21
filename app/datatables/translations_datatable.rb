@@ -4,11 +4,11 @@ class TranslationsDatatable < BaseDatatable
   def columns
     {
       'translations.translateable_id': {},
-      'translations.translateable_type': {hide: true},
+      'translations.translateable_type': { hide: true },
       'translations.column_name': {},
-      'string_calculated_in_db.column_value_translated': {search: false, title: @view.t('activerecord.attributes.translation.column_value_translated')},
+      'string_calculated_in_db.column_value_translated': { search: false, title: @view.t('activerecord.attributes.translation.column_value_translated') },
       'translations.column_value': {},
-      '': {title: "<input type='checkbox' data-action='multiple#toggleAll'> #{@view.t('actions')}".html_safe},
+      '': { title: "<input type='checkbox' data-action='multiple#toggleAll'> #{@view.t('actions')}".html_safe },
     }
   end
 
@@ -24,9 +24,9 @@ class TranslationsDatatable < BaseDatatable
   def rows(filtered)
     filtered.map do |translation|
       edit_link = @view.check_box_tag('record_ids[]', translation.translateable_id, false, 'data-action': 'multiple#toggle') +
-        @view.button_tag_open_modal(
-        @view.edit_translation_path(translation.translateable_id, model: translation.translateable_type, column_name: translation.column_name), title: @view.t_crud('edit', Translation), 'data-test': translation.translateable_id
-      )
+                  @view.button_tag_open_modal(
+                    @view.edit_translation_path(translation.translateable_id, model: translation.translateable_type, column_name: translation.column_name), title: @view.t_crud('edit', Translation), 'data-test': translation.translateable_id
+                  )
       [
         @view.link_to(translation.translateable, translation.translateable),
         translation.translateable_type,

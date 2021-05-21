@@ -1,12 +1,12 @@
 class HappeningsForDisciplinesDatatable < BaseDatatable
   def columns
     {
-      'happenings.id': {hide: true},
+      'happenings.id': { hide: true },
       'happenings.name': {},
       'happenings.start_date': {},
-      'venues.name': {title: Venue.model_name.human},
-      'clubs.name': {title: Club.model_name.human},
-      'clubs.id': {hide: true},
+      'venues.name': { title: Venue.model_name.human },
+      'clubs.name': { title: Club.model_name.human },
+      'clubs.id': { hide: true },
     }
   end
 
@@ -40,7 +40,7 @@ class HappeningsForDisciplinesDatatable < BaseDatatable
 
   def all_items
     all = Happening.left_outer_joins(discipline_happenings: :discipline)
-    all = all.where(discipline_happenings: {discipline: disciplines}) if disciplines.present?
+    all = all.where(discipline_happenings: { discipline: disciplines }) if disciplines.present?
     all = all.joins(:club, :venue)
     all = all.order(:start_date)
     all.distinct

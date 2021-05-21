@@ -1,7 +1,7 @@
 class ActivitiesDatatable < BaseDatatable
   def columns
     {
-      'activities.id': {hide: true},
+      'activities.id': { hide: true },
       'activities.name': {},
     }
   end
