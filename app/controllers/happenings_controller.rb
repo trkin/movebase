@@ -1,5 +1,6 @@
 class HappeningsController < ApplicationController
   before_action :_set_happening, only: %i[show edit destroy]
+  before_action :authenticate_user!, except: %i[index search show]
 
   def index
     @datatable = HappeningsForDisciplinesDatatable.new view_context
@@ -25,7 +26,7 @@ class HappeningsController < ApplicationController
 
   def new_from_link
     authorize!
-    @add_happening_from_link_form = AddHappeningFromLinkForm.new link: params[:link], discipline_id: params[:discipline_ids]&.first
+    @add_happening_from_link_form = AddHappeningFromLinkForm.new url: params[:url], discipline_id: params[:discipline_ids]&.first
     render layout: false
   end
 

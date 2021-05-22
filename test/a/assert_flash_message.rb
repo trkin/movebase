@@ -9,6 +9,12 @@ class ActionDispatch::IntegrationTest
     assert_select '[data-test=notice-holder]', text
   end
 
+  def assert_alert_in_js(text)
+    matches = response.body.match(/data-flash-message=\\'(.*?)\\'/)
+    assert matches, "Can not find data-flash-message='' in response.body=#{response.body}"
+    assert_equal matches[1], text
+  end
+
   def assert_field_error(text)
     assert_select 'div.invalid-feedback', text
   end

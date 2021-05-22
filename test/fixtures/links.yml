@@ -1,4 +1,4 @@
-kayak_link:
-  linkable: kayak (Club)
+link:
+  linkable: club (Club)
   kind: <%= Link.kinds[:website] %>
-  url: http://kayak.com
+  url: http://club.com

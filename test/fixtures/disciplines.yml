@@ -1,3 +1,8 @@
+discipline:
+  name:
+    en: Fixture discipline
+  activities: activity
+
 sprint_kayak:
   name:
     en: Sprint kayak

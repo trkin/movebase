@@ -6,12 +6,13 @@ class HappeningPolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    true
+  end
+
   def update?
     user.roles.include?(UserRole.roles[:support_staff])
   end
 
-  # show, index ...
-  def manage?
-    true
-  end
+  alias_rule :edit_from_link?, :new_from_link?, to: :update?
 end

@@ -83,13 +83,15 @@ class ApplicationController < ActionController::Base
     )
   end
 
-  # rescue_from ActionPolicy::Unauthorized do |exception|
-  #   message = "#{exception.message} #{exception.policy} #{exception.rule}"
-  #   respond_to do |format|
-  #     format.html { redirect_to root_path, alert: message }
-  #     format.json { render json: { error_message: message, error_status: :bad_request }, status: :bad_request }
-  #   end
-  # end
+  rescue_from ActionPolicy::Unauthorized do |exception|
+    raise exception if Rails.env.development?
+
+    message = "#{exception.message} #{exception.policy} #{exception.rule}"
+    respond_to do |format|
+      format.html { redirect_to root_path, alert: message }
+      format.json { render json: { error_message: message, error_status: :bad_request }, status: :bad_request }
+    end
+  end
 
   # https://stackoverflow.com/questions/8224245/rails-routes-with-optional-scope-locale/8237800#8237800
   def default_url_options(_options = {})
