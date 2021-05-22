@@ -15,7 +15,12 @@
         <%= f.number_field :max_time_s %>
         <%= f.number_field :age_min %>
         <%= f.number_field :age_max %>
-        <%= f.datetime_select :start_time, minute_step: 5 %>
+        <div data-controller='activate' data-activate-selector='fieldset'>
+          <%= check_box_tag :blank_start_time, '1', f.object.start_time.present?, 'data-action': 'activate#enableDisableForValue' %>
+          <fieldset data-activate-value='1' class='' <%= 'disabled' if f.object.start_time.blank? %>>
+            <%= f.datetime_select :start_time, minute_step: 5 %>
+          </fieldset>
+        </div>
       </div>
     </div>
     <div class='remote-form__actions'>

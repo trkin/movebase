@@ -1,3 +1,9 @@
+discipline__happening:
+  name:
+    en: Fixture Discipline Happening
+  discipline: discipline
+  happening: happening
+
 kayak_regatta__sprint_kayak__senior_500_m:
   name:
     en: K1 Senior 500m men

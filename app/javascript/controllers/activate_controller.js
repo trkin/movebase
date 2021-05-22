@@ -29,12 +29,25 @@ export default class extends Controller {
     this.element.innerHTML = ''
   }
 
-  // this is for radio button with some VALUE
-  // enable and disable targets which has data value that contains VALUE
+  // This is for radio button with some VALUE or for checkbox
+  // enable and disable targets which has data value that contains radio button VALUE
+  //
+  // <%= f.radio_button :existing_or_new_club, 'new', checked: !enabled_existing, label: t('create_new'), 'data-action': 'activate#enableDisableForValue' %>
+  // <fieldset data-activate-value='new' class='' <%= 'disabled' if enabled_existing %>>
+  // </fieldset>
+  // <%= f.radio_button :existing_or_new_club, 'existing', checked: enabled_existing, label: t('pick_existing'), 'data-action': 'activate#enableDisableForValue' %>
+  // <fieldset data-activate-value='existing' class='' <%= 'disabled' unless enabled_existing %>>
+  // </fieldset>
+  //
+  // also enable fieldset with checkbox value
+  //   <%= check_box_tag :blank_start_time, '1', f.object.start_time.present?, 'data-action': 'activate#enableDisableForValue' %>
+  //   <fieldset data-activate-value='1' class='' <%= 'disabled' if f.object.start_time.blank? %>>
+  //   </fieldset>
   enableDisableForValue(event) {
     let selector = this.data.get('selector')
     let elements = this._findElements(selector)
     let value = event.target.value
+    if (event.target.type == 'checkbox' && !event.target.checked) value = 'not_important_unchecked_value'
     for (let element of elements) {
       if (element.dataset.activateValue.indexOf(value) != -1) {
 

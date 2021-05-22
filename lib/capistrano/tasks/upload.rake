@@ -1,6 +1,6 @@
 namespace :upload do
   desc <<~HERE_DOC
-    Upload files.
+    Upload files. Show full description with: cap -D upload:files
     Use 'restart' to restart the server
     Use 'all' to upload all changes files not staged for commit (git diff --name-only)
 

@@ -1,4 +1,4 @@
-class VenuesController < ApplicationUserController
+class VenuesController < ApplicationController
   before_action :_set_venue, except: %i[index new create]
 
   def index
