@@ -1,5 +1,5 @@
 class HappeningsController < ApplicationController
-  before_action :_set_happening, only: %i[show edit destroy]
+  before_action :_set_happening, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[index search show]
 
   def index
@@ -49,13 +49,13 @@ class HappeningsController < ApplicationController
   def create
     authorize!
     @happening = Happening.new
-    update_and_render_or_redirect_in_js @happening, _happening_params, ->(happening) { happening_path(happening) }
+    update_and_render_or_redirect_in_js @happening, _happening_params, ->(happening) { happening_path(happening) }, 'new_form'
   end
 
   # JS
   def update
     authorize! @happening
-    update_and_render_or_redirect_in_js @happening, _happening_params
+    update_and_render_or_redirect_in_js @happening, _happening_params, nil, 'edit_form'
   end
 
   def destroy

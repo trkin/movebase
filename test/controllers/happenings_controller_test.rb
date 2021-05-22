@@ -80,4 +80,19 @@ class HappeningsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_alert_in_js 'Url has already been taken'
   end
+
+  test 'create failed' do
+    sign_in users(:support_staff)
+
+    post happenings_path(happening: { name: 'a' })
+    assert_alert_in_js 'Venue must exist, Organization must exist, Date can\'t be blank, and End date can\'t be blank'
+  end
+
+  test 'update failed' do
+    happening = happenings(:happening)
+    sign_in users(:support_staff)
+
+    patch happening_path(happening), params: { happening: { name: '' } }
+    assert_alert_in_js "Name can't be blank"
+  end
 end

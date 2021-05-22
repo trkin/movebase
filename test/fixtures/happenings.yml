@@ -1,3 +1,11 @@
+happening:
+  name:
+    en: Fixture happening
+  venue: venue
+  club: club
+  start_date: <%= Time.zone.today + 1.day %>
+  end_date: <%= Time.zone.today + 2.day %>
+
 kayak_regatta:
   name:
     en: May's First kayak regatta

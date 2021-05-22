@@ -11,8 +11,11 @@ class ActionDispatch::IntegrationTest
 
   def assert_alert_in_js(text)
     matches = response.body.match(/data-flash-message=\\'(.*?)\\'/)
+    # text = "Name can't be blank"
+    # escaped_text = "Name can\\\\&#39;t be blank"
+    escaped_text = ActionController::Base.helpers.j ERB::Util.html_escape ActionController::Base.helpers.j text
     assert matches, "Can not find data-flash-message='' in response.body=#{response.body}"
-    assert_equal matches[1], text
+    assert_equal matches[1], escaped_text
   end
 
   def assert_field_error(text)
