@@ -6,7 +6,8 @@
   <% next unless link.visible? %>
   <%= Link.human_enum_name :kind, link.kind %>:
   <%= link_to link.url do %>
-    <%= link.url %>
+    <i class="demo-icon icon-link-ext"></i>
+    <%= link.short_url %>
   <% end %>
   <% if current_user&.superadmin? %>
     <%= link_to link_path(link), method: :delete, 'data-confirm': t_are_you_sure_to_remove_item_name(link.url), title: t_crud('delete', Link) do %>

@@ -39,4 +39,9 @@ class Link < ApplicationRecord
       :website
     end
   end
+
+  def short_url
+    uri = URI url
+    "#{uri.host}#{uri.path}".truncate 20
+  end
 end

@@ -1,6 +1,7 @@
 class HappeningPolicy < ApplicationPolicy
   # By default, ActionPolicy::Base adds one alias: alias_rule :new?, to: :create?.
   alias_rule :create?, :edit?, :destroy?, to: :update?
+  alias_rule :edit_from_link?, :new_from_link?, to: :update?
 
   def index?
     true
@@ -13,6 +14,4 @@ class HappeningPolicy < ApplicationPolicy
   def update?
     user.roles.include?(UserRole.roles[:support_staff])
   end
-
-  alias_rule :edit_from_link?, :new_from_link?, to: :update?
 end

@@ -63,16 +63,9 @@
   <% end %>
 </div>
 <div class='card mt-2'>
-  <div class='card-body' <%= "data-controller='sortable'" if current_user.present? && allowed_to?(:update?, @happening) %>  data-sortable-resource-name-value='discipline_happening'>
+  <div class='card-body' <%= "data-controller=sortable" if current_user.present? && allowed_to?(:update?, @happening) %>  data-sortable-resource-name-value='discipline_happening'>
     <% @happening.discipline_happenings.each do |discipline_happening| %>
       <div class='' data-sortable-update-url="<%= discipline_happening_path(discipline_happening) %>" data-sortable-resource-name-value='not_important'>
-        <% if discipline_happening.start_time.present? && discipline_happening.start_time != @happening.start_date.to_datetime %>
-          <% if discipline_happening.start_time.to_date != @happening.start_date %>
-            <%= I18n.l discipline_happening.start_time, format: :only_time %>
-          <% else %>
-            <%= I18n.l discipline_happening.start_time, format: :day_month_and_time %>
-          <% end %>
-        <% end %>
         <%= discipline_happening.full_name %>
         <% if @happening.multi_discipline? %>
           <%= happenings_for_discipline_badge_link discipline_happening.discipline, class: 'float-right' %>

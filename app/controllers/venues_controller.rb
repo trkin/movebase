@@ -1,5 +1,6 @@
 class VenuesController < ApplicationController
   before_action :_set_venue, except: %i[index new create]
+  before_action :authorize!
 
   def index
     @venues = Venue.all

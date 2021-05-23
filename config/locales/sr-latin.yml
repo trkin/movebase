@@ -101,3 +101,5 @@ sr-latin:
   add_new_happening_for_discipline_name: Dodaj novi događaj za %{discipline_name}
   select_discipline_for_new_event: Izaberi disciplinu za novi događaj
   not_implemented_for_item_name: nije napravljen za %{item_name}
+  limit_time_name: Limit %{time_name}
+  elevation_m_name: Uspon %{m_name}

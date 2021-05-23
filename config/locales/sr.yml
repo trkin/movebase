@@ -107,3 +107,5 @@ sr:
   add_new_happening_for_discipline_name: Додај нови догађај за %{discipline_name}
   select_discipline_for_new_event: Изабери дисциплину за нови догађај
   not_implemented_for_item_name: није направљен за %{item_name}
+  limit_time_name: Лимит %{time_name}
+  elevation_m_name: Успон %{m_name}

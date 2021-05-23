@@ -45,7 +45,7 @@ class Happening < ApplicationRecord
 
   def start_date_and_end_date_string
     if multi_day?
-      "#{I18n.l start_date, format: :long} - #{I18n.l end_date, format: :long}"
+      "#{I18n.l start_date, format: :long_with_week} - #{I18n.l end_date, format: :long_with_week}"
     else
       I18n.l start_date, format: :long_with_week
     end

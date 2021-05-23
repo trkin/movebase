@@ -3,7 +3,7 @@
 %>
 <div class='card'>
   <div class='card-body'>
-    <% if current_user.present? && allowed_to?(:update, @venue) %>
+    <% if current_user.present? && allowed_to?(:update?, @venue) %>
       <%= button_tag_open_modal edit_venue_path(@venue), title: t_crud('edit', Venue), pull_right: true %>
     <% end %>
     <div class='row'>

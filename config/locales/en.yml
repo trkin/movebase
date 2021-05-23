@@ -106,3 +106,5 @@ en:
   add_new_happening_for_discipline_name: Add new event for %{discipline_name}
   select_discipline_for_new_event: Choose discipline for a new event
   not_implemented_for_item_name: not made for %{item_name}
+  limit_time_name: Limit %{time_name}
+  elevation_m_name: Elevation %{m_name}

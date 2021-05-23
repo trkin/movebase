@@ -20,6 +20,13 @@ class DisciplineHappening < ApplicationRecord
   enum gender: %i[any man women]
 
   def full_name # rubocop:todo Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/AbcSize
+    time_string = if start_time.present?
+                    if !happening.multi_day? && start_time.to_date == happening.start_date
+                      I18n.l start_time, format: :only_time
+                    else
+                      I18n.l start_time, format: :day_month_and_time
+                    end
+                  end
     gender_string = gender != 'any' ? I18n.t("#{gender}_short") : ''
     age_string = if age_min.present? && age_max.present?
                    "#{age_min} - #{age_max} #{I18n.t('years')}"
@@ -39,6 +46,11 @@ class DisciplineHappening < ApplicationRecord
                       else
                         ''
                       end
-    "#{name} #{age_string} #{distance_string} #{gender_string}"
+    elevation_string = I18n.t('elevation_m_name', m_name: "#{elevation_m}m") if elevation_m.present?
+    limit_string = if max_time_s.present?
+                     I18n.t('limit_time_name',
+                            time_name: ActionController::Base.helpers.distance_of_time_in_words(max_time_s))
+                   end
+    "#{time_string} #{name} #{age_string} #{distance_string} #{elevation_string} #{gender_string} #{limit_string}"
   end
 end
