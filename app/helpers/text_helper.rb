@@ -37,6 +37,7 @@ module TextHelper
     "<span title='#{time.to_s :long}'>#{time.to_s :short}</span>".html_safe
   end
 
+  # <%= detail_view_list @link, *Link::FIELDS %>
   def detail_view_list(item = nil, *fields, label_class: 'col-xl-2 dt__long--min-width', skip_blank: [])
     content_tag 'dl', class: 'row' do
       if block_given?
@@ -50,6 +51,7 @@ module TextHelper
   # if you use two detail views than label_class: 'col-sm-4'
   def detail_view(item, *fields, label_class: 'col-xl-2 dt__long--min-width', skip_blank: [])
     res = fields.map do |field|
+      field = field.keys.first if field.is_a? Hash
       if (skip_blank == :all || skip_blank.include?(field)) && item.send(field).blank?
         ''.html_safe
       else

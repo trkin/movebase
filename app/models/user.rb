@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :omniauthable
 
-  FIELDS = %i[name email password password_confirmation].freeze
+  FIELDS = %i[name locale email password password_confirmation].freeze
 
   has_many :club_users, dependent: :destroy
   has_many :clubs, through: :club_users, dependent: :destroy

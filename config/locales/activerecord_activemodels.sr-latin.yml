@@ -77,6 +77,11 @@ sr-latin:
         few: Prevodi
         other: Prevodi
         accusative: prevod
+      todo:
+        one: Zadatak
+        few: Zadatka
+        other: Zadataka
+        accusative: zadatak
     attributes:
       user:
         name: Naziv

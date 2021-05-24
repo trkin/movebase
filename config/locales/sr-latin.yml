@@ -30,7 +30,7 @@ sr-latin:
   data_item_name_successfully_changed: Podatak %{item_name} je uspešno promenjen
   data_item_name_successfully_deleted: Podatak %{item_name} je uspešno obrisan
   successfully_created_item_count: Uspešno je napravljen %{item_count}
-  choose_activity: Izaberi aktivnost da vidiš discipline...
+  choose_activity: Izaberi aktivnost pa klikni na disciplinu...
   choose_equipment_you_want_to_use: Izaberi opremu koju hoćeš da koristiš
   we_are_informative_portal: Ovo je informativni servis gde možeš naći veze ka sportskim dešavanjima, dakle,
   what_will_you_do_on_the_weekend: Šta ćeš raditi za vikend ?

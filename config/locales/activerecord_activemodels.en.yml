@@ -77,6 +77,11 @@ en:
         few: Translations
         other: Translations
         accusative: translation
+      todo:
+        one: Todo
+        few: Todos
+        other: Todos
+        accusative: todo
     attributes:
       user:
         name: Name

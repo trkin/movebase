@@ -1,0 +1,5 @@
+DEFAULTS: &DEFAULTS
+  title: MyString
+
+my_todo:
+  <<: *DEFAULTS

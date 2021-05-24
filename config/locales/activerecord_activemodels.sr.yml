@@ -77,6 +77,11 @@ sr:
         few: Преводи
         other: Преводи
         accusative: превод
+      todo:
+        one: Задатак
+        few: Задатка
+        other: Задатака
+        accusative: задатак
     attributes:
       user:
         name: Назив

@@ -1,0 +1,16 @@
+DEFAULTS: &DEFAULTS
+  name: $LABEL name
+
+parent_league:
+  <<: *DEFAULTS
+
+league2020:
+  <<: *DEFAULTS
+  parent_league: parent_league
+
+league2021:
+  <<: *DEFAULTS
+  parent_league: parent_league
+
+league:
+  <<: *DEFAULTS

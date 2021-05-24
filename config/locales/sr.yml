@@ -30,7 +30,7 @@ sr:
   data_item_name_successfully_changed: Податак %{item_name} је успешно промењен
   data_item_name_successfully_deleted: Податак %{item_name} је успешно обрисан
   successfully_created_item_count: Успешно је направљен %{item_count}
-  choose_activity: Изабери активност да видиш дисциплине...
+  choose_activity: Изабери активност па кликни на дисциплину...
   choose_equipment_you_want_to_use: Изабери опрему коју хоћеш да користиш
   we_are_informative_portal: Ово је информативни сервис где можеш наћи везе ка спортским
     дешавањима, дакле,

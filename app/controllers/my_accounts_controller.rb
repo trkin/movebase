@@ -22,7 +22,12 @@ class MyAccountsController < ApplicationUserController
     @user = current_user
     partial = 'form'
     partial = params[:partial] if %w[change_email].include? params[:partial]
-    update_and_render_or_redirect_in_js @user, _user_params, my_account_path, partial
+    redirect_path = if _user_params[:locale].present?
+                      my_account_path(locale: _user_params[:locale])
+                    else
+                      my_account_path
+                    end
+    update_and_render_or_redirect_in_js @user, _user_params, redirect_path, partial
   end
 
   def update_password

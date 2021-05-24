@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_26_095123) do
+ActiveRecord::Schema.define(version: 2021_05_23_213716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -121,6 +121,15 @@ ActiveRecord::Schema.define(version: 2021_04_26_095123) do
     t.index ["name"], name: "index_disciplines_on_name", unique: true
   end
 
+  create_table "happening_leagues", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "happening_id", null: false
+    t.uuid "league_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["happening_id"], name: "index_happening_leagues_on_happening_id"
+    t.index ["league_id"], name: "index_happening_leagues_on_league_id"
+  end
+
   create_table "happenings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "venue_id", null: false
     t.uuid "club_id", null: false
@@ -135,6 +144,14 @@ ActiveRecord::Schema.define(version: 2021_04_26_095123) do
     t.index ["club_id"], name: "index_happenings_on_club_id"
     t.index ["secondary_club_id"], name: "index_happenings_on_secondary_club_id"
     t.index ["venue_id"], name: "index_happenings_on_venue_id"
+  end
+
+  create_table "leagues", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.jsonb "name", default: {}
+    t.uuid "parent_league_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["parent_league_id"], name: "index_leagues_on_parent_league_id"
   end
 
   create_table "links", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -162,6 +179,12 @@ ActiveRecord::Schema.define(version: 2021_04_26_095123) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_tags_on_name", unique: true
+  end
+
+  create_table "todos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "user_roles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -241,9 +264,12 @@ ActiveRecord::Schema.define(version: 2021_04_26_095123) do
   add_foreign_key "discipline_happenings", "happenings"
   add_foreign_key "discipline_requirements", "disciplines"
   add_foreign_key "discipline_requirements", "requirements"
+  add_foreign_key "happening_leagues", "happenings"
+  add_foreign_key "happening_leagues", "leagues"
   add_foreign_key "happenings", "clubs"
   add_foreign_key "happenings", "clubs", column: "secondary_club_id"
   add_foreign_key "happenings", "venues"
+  add_foreign_key "leagues", "leagues", column: "parent_league_id"
   add_foreign_key "user_roles", "users"
   add_foreign_key "users", "clubs"
 end

@@ -29,7 +29,7 @@ en:
   data_item_name_successfully_changed: "%{item_name} successfully changed"
   data_item_name_successfully_deleted: "%{item_name} successfully deleted"
   successfully_created_item_count: Successfully made %{item_count}
-  choose_activity: Select an activity to see the disciplines ...
+  choose_activity: Select an activity than click on discipline ...
   choose_equipment_you_want_to_use: Choose the equipment you want to use
   we_are_informative_portal: This is an information service where you can find links
     to sporting events, so

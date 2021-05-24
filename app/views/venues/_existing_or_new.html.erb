@@ -4,7 +4,7 @@
 %>
 <%
    f.object.build_venue if f.object.venue.blank?
-  enabled_existing = f.object.existing_or_new_venue == 'existing'
+  enabled_existing = f.object.existing_or_new_venue == 'existing' || f.object.venue_id.present?
 %>
 <div data-controller='activate' data-activate-selector='fieldset'>
   <%= f.radio_button :existing_or_new_venue, 'new', checked: !enabled_existing, label: t('create_new'), 'data-action': 'activate#enableDisableForValue' %>

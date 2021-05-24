@@ -1,8 +1,8 @@
-<% I18n.available_locales.each do |locale| %>
-  <p>
-    <%= link_to set_locale_path(locale: locale), 'data-turbolinks': false do %>
-      <%= t 'emoji', locale: locale %>
-      <%= t('language_name', locale: locale) %>
-    <% end %>
-  </p>
-<% end %>
+<div id='remote-form'>
+  <%= bootstrap_form_for current_user, url: my_account_path, remote: true, layout: :horizontal do |f| %>
+    <%= f.select :locale, options_for_select(I18n.available_locales.map {|locale| [t('language_name', locale: locale), locale]}, selected: current_user.locale), {}, size: I18n.available_locales.size %>
+    <div class='remote-form__actions'>
+      <%= f.submit class: 'btn btn-primary'%>
+    </div>
+  <% end %>
+</div>

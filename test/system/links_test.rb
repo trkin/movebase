@@ -2,7 +2,7 @@ require 'application_system_test_case'
 
 class LinksTest < ApplicationSystemTestCase
   setup do
-    @link = links(:kayak_link)
+    @link = links(:link)
     sign_in users(:superadmin)
   end
 

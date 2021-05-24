@@ -21,15 +21,18 @@ export default class extends Controller {
   limit_select_options(event) {
     const value = event.currentTarget.value
     const select = document.querySelector(this.data.get('selector'))
-    const options = Array.from(select.options)
-    options.forEach(option => {
+    if (this.selectOptionsTarget === undefined) {
+      this.selectOptionsTarget = Array.from(select.options)
+    }
+    this.selectOptionsTarget.forEach(option => {
       option.remove()
       option.selected = false
     })
-    const matchArray = options.filter(option => {
+    const matchArray = this.selectOptionsTarget.filter(option => {
       const regex = new RegExp(value, 'gi')
       return option.text.match(regex)
     })
     select.append(...matchArray)
+    console.log(`limit_select_options ${value} ${matchArray.length}`)
   }
 }
