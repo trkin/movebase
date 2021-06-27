@@ -78,23 +78,16 @@ Here are some example tasks:
 cap production rails:logs
 ```
 
-# Capistrano
+# SSL
 
-Here are some example tasks:
-
-```
-c# Capistrano
-
-Here are some example tasks:
+Free https ssl certificate is obtained using Let's encrypt.
+You can find a command that is used for renewal
 
 ```
-cap pro# Capistrano
-
-Here are some example tasks:
-
+cat /etc/cron.d/certbot
+sudo AWS_CONFIG_FILE=/home/ubuntu/movebase/.elbas_keys certbot -q renew
 ```
-cap production rails:logs
-```
+See logs `less /var/log/syslog` or `vi /var/log/letsencrypt/letsencrypt.log`
 
 # Tests
 

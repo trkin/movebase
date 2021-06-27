@@ -51,6 +51,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # irbtools includes interactive_editor gem (vim inside irb)\
+  # just create ~/.irbrc with\
+  # require "rubygems"\
+  # require "irbtools"\
+  gem 'irbtools', require: 'irbtools/binding'
 end
 
 group :test do

@@ -11,8 +11,8 @@ class AddHappeningFromLinkForm
     return false if _already_proccessed?
 
     result = BuildHappeningFromLink.new(url, discipline_id).perform
+    @happening = result.data.happening
     if result.success?
-      @happening = result.data.happening
       true
     else
       errors.add(:url, result.message)

@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class BuildHappeningFromLinkTest < ActiveSupport::TestCase
+  #
+  #  trka.rs
+  #
+
   test 'trkars existing discipline new club' do
     link = 'https://trka.rs/event/210/'
     VCR.use_cassette :trkars_event do
@@ -28,7 +32,7 @@ class BuildHappeningFromLinkTest < ActiveSupport::TestCase
     end
   end
 
-  test 'trkars existingi discipline existing club' do
+  test 'trkars existing discipline existing club' do
     link = 'https://trka.rs/event/210/'
     club = clubs(:club)
     club.name = 'AK Hajduk maraton tim Kula'
@@ -58,5 +62,12 @@ class BuildHappeningFromLinkTest < ActiveSupport::TestCase
         happening.save!
       end
     end
+  end
+
+  #
+  # facebook.com/events
+  #
+
+  test 'facebook existing discipline new club' do
   end
 end
