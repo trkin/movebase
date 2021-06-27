@@ -1,0 +1,111 @@
+---
+de:
+  site_title: Meine App
+  emoji: DE
+  home: Der Beginn
+  language: Sprache
+  language_name: German
+  google: Google
+  facebook: Facebook
+  sent_messages:
+    one: "%{count} Nachrichten wurden gesendet"
+    few: "%{count} Nachrichten wurden gesendet"
+    other: "%{count} Nachrichten wurden gesendet"
+  add: Hinzufügen
+  add_new: Füge einen neuen hinzu
+  add_more: Mehr hinzufügen
+  show: Sehen
+  create: Mach es
+  edit: Bearbeiten
+  edit_item_name: Feld %{item_name} bearbeiten Edit
+  update: Aktualisieren
+  delete: Löschen
+  drop: Schmeiss es weg
+  are_you_sure: Bist du sicher ?
+  are_you_sure_to_remove_item_name: Möchten Sie %{item_name} wirklich löschen?
+  read_more: Weiterlesen
+  data_item_name_successfully_created: Daten %{item_name} wurde erfolgreich erstellt
+  data_item_name_successfully_updated: Daten %{item_name} wurde erfolgreich aktualisiert
+  data_item_name_successfully_changed: Daten %{item_name} erfolgreich geändert
+  data_item_name_successfully_deleted: Daten %{item_name} wurde erfolgreich gelöscht
+  successfully_created_item_count: "%{item_count} . erfolgreich gemacht"
+  choose_activity: Wählen Sie eine Aktivität aus und klicken Sie auf Disziplin ...
+  choose_equipment_you_want_to_use: Wählen Sie die Ausrüstung, die Sie verwenden möchten
+  we_are_informative_portal: Dies ist ein Informationsdienst, in dem Sie Links zu
+    Sportveranstaltungen finden, also
+  what_will_you_do_on_the_weekend: Was machst du am Wochenende?
+  search: Finde es
+  search_item_name: Suche %{item_name}
+  search_future_hapennings: Finden Sie zukünftige Veranstaltungen
+  show_also_pasts_happenings: Auch vergangene Events anzeigen
+  please_select: Bitte auswählen
+  please_select_item_name: Bitte wählen Sie %{item_name}
+  select_item_name: Wählen Sie %{item_name}
+  add_item_name: "%{item_name} . hinzufügen"
+  last_message: Letzte Nachricht
+  contact: Kontakt
+  terms: Bedingungen
+  get_in_touch: Kontakt
+  contact_description: Wir sind dankbar für all die guten und schlechten Dinge auf
+    der Seite, die Sie uns melden.
+  contact_thanks: Danke für die Nachricht
+  admin_pages: Admin-Seite
+  super_admin_pages: Superadmin-Seite
+  only_for_superadmin: Nur für Superadministratoren
+  send: Senden
+  log_in_as: Anmelden als
+  dashboard: Der Beginn
+  my_account: Mein Konto
+  my_clubs: Meine Organisationen
+  my_club: Meine Organisation
+  change_item_name: "%{item_name} . ändern"
+  this_value_is_added_to_url_for_better_seo: Dieser Wert wird der URL für eine bessere
+    SEO hinzugefügt
+  pick_existing: Wählen Sie ein vorhandenes aus
+  create_new: Erstelle einen neuen
+  sign_up_with: Anmelden mit
+  or: oder
+  ad_on_top: Ihre Anzeige oben auf der Seite
+  ad_on_top_description: Schauen Sie sich unsere Bannerfläche zum Sonderpreis an.
+    Nächstes Jahr werden sich die Preise ändern, also beeilen Sie sich.
+  ad_on_bottom: Bieten Sie Unterkunft oder Transport für diese Veranstaltung an?
+  ad_on_bottom_description: Ihr Angebot finden Sie hier
+  ad_on_side: Werbung
+  ad_on_side_description: Banner für einen Sportverein, Event oder Ausrüstung
+  actions: Aktionen
+  activity_name_and_used_in_activities_name: "%{activity_name} und damit verbundene
+    Aktivitäten: %{activities_name}"
+  recurrences_every:
+    onetime: Es passiert nicht wieder
+    day: Täglich
+    week: Wöchentlich
+    month: Monatlich
+    year: Pro Jahr
+  can_not_be_less_than_item_name: Darf nicht kleiner als %{item_name} . sein
+  and_related: und dergleichen
+  latest_added_happenings: Kürzlich hinzugefügte Veranstaltungen
+  latest_added_disciplines: Kürzlich hinzugefügte Disziplinen
+  upcomming_events: Folgende Veranstaltungen
+  future_happenings_for_activities: Zukünftige Veranstaltungen für Aktivitäten
+  future_happenings_for_disciplines: Zukünftige Veranstaltungen für Disziplinen
+  happenings_for_activities: Veranstaltungen für Aktivitäten
+  happenings_for_disciplines: Veranstaltungen für Disziplinen
+  years: Jahre
+  man_short: "(m)"
+  women_short: "(weiblich)"
+  public_page: Öffentliche Seite
+  by_continuing_to_visit_this_site_you_accept_the_use_of_cookies: Wenn Sie diese Website
+    weiterhin besuchen, akzeptieren Sie die Verwendung von Cookies
+  accept: Akzeptieren
+  about: Über uns
+  cookies: Kekse
+  translations: Übersetzungen
+  already_exists_count_blank_source_count_successfully_translated_count: Es gibt bereits
+    %{already_exists_count}, kein Originalwort %{blank_source_count}, erfolgreich
+    übersetzt %{successfully_translated_count}
+  add_new_happening_from_link: Eine neue Disziplin per Link
+  add_new_happening_for_discipline_name: Neues Ereignis für %{discipline_name} . hinzufügen
+  select_discipline_for_new_event: Disziplin für eine neue Veranstaltung wählen
+  not_implemented_for_item_name: nicht gemacht für %{item_name}
+  limit_time_name: Grenze %{time_name}
+  elevation_m_name: Aufstieg %{m_name}

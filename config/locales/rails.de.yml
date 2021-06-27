@@ -1,0 +1,247 @@
+---
+de:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Validierung fehlgeschlagen: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Datensatz kann nicht gelöscht werden, da eine abhängige %{record}
+            . vorhanden ist
+          has_many: Datensatz kann nicht gelöscht werden, da abhängige %{record} .
+            vorhanden sind
+  date:
+    abbr_day_names:
+    - Sonne.
+    - Mo.-Fr.
+    - Di
+    - Heiraten.
+    - Do
+    - Fr.
+    - Sa.
+    abbr_month_names:
+    - 
+    - Jan.
+    - Februar
+    - Beschädigen
+    - April
+    - Kann
+    - Juni
+    - Juli
+    - August
+    - September
+    - Okt
+    - November
+    - Dezember
+    day_names:
+    - Sonntag
+    - Montag
+    - Dienstag
+    - Mittwoch
+    - Donnerstag
+    - Freitag
+    - Samstag
+    formats:
+      default: "% d /% m /% Y"
+      long: "% B% e,% Y"
+      long_with_week: "% A% e% B,% Y"
+      short: "% e% b"
+    month_names:
+    - 
+    - Januar
+    - Februar
+    - März
+    - April
+    - Kann
+    - Juni
+    - Juli
+    - August
+    - September
+    - Oktober
+    - November
+    - Dezember
+    order:
+    - Tag
+    - Monat
+    - Jahr
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: gegen %{count} Uhr
+        few: gegen %{count} Uhr
+        many: ca. %{count} Stunden
+        other: ca. %{count} Stunden
+      about_x_months:
+        one: ca. %{count} Monate
+        few: ca. %{count} Monate
+        many: ca. %{count} Monate
+        other: ca. %{count} Monate
+      about_x_years:
+        one: ungefähr %{count} Jahre
+        few: ungefähr %{count} Jahre
+        many: ungefähr %{count} Jahre
+        other: ungefähr %{count} Jahre
+      almost_x_years:
+        one: fast %{count} Jahre
+        few: fast %{count} Jahre
+        many: fast %{count} Jahre
+        other: fast %{count} Jahre
+      half_a_minute: Eine halbe Minute
+      less_than_x_seconds:
+        one: weniger als %{count} Sekunden
+        few: weniger als %{count} Sekunden
+        many: weniger als %{count} Sekunden
+        other: weniger als %{count} Sekunden
+      less_than_x_minutes:
+        one: weniger als %{count} Minuten
+        few: weniger als %{count} Minuten
+        many: weniger als %{count} Minuten
+        other: weniger als %{count} Minuten
+      over_x_years:
+        one: über %{count} Jahre
+        few: über %{count} Jahre
+        many: über %{count} Jahre
+        other: über %{count} Jahre
+      x_seconds:
+        one: "%{count} Sekunden"
+        few: "%{count} Sekunden"
+        many: "%{count} Sekunden"
+        other: "%{count} Sekunden"
+      x_minutes:
+        one: "%{count} Minuten"
+        few: "%{count} Minuten"
+        many: "%{count} Minuten"
+        other: "%{count} Minuten"
+      x_days:
+        one: "%{count} Tage"
+        few: "%{count} Tage"
+        many: "%{count} Tage"
+        other: "%{count} Tage"
+      x_months:
+        one: "%{count} Monat"
+        few: "%{count} Monate"
+        many: "%{count} Monate"
+        other: "%{count} Monate"
+    prompts:
+      second: Sekunden
+      minute: Minute
+      hour: Eine Uhr
+      day: Tag
+      month: Monat
+      year: Jahr
+  errors:
+    format: Feld %{attribute} %{message}
+    messages:
+      accepted: muss akzeptiert werden
+      blank: wir dürfen nicht leer sein
+      confirmation: stimmt der Bestätigung nicht zu
+      empty: wir dürfen nicht leer sein
+      equal_to: muss gleich %{count} . sein
+      even: es muss dampfig sein
+      exclusion: ist reserviert
+      greater_than: muss größer als %{count} . sein
+      greater_than_or_equal_to: muss größer oder gleich %{count} . sein
+      inclusion: nicht in der Liste
+      invalid: nicht richtig
+      less_than: muss kleiner als %{count} . sein
+      less_than_or_equal_to: muss kleiner oder gleich %{count} . sein
+      model_invalid: 'Validierung fehlgeschlagen: %{errors}'
+      not_a_number: keine Zahl
+      not_an_integer: keine ganze Zahl
+      odd: es muss seltsam sein
+      other_than: muss sich von %{count} . unterscheiden
+      present: muss leer sein
+      required: muss existieren
+      taken: ist schon besetzt
+      too_long:
+        one: ist zu lang (maximal %{count} Zeichen)
+        few: ist zu lang (maximal %{count} Zeichen)
+        many: ist zu lang (maximal %{count} Zeichen)
+        other: ist zu lang (maximal %{count} Zeichen)
+      too_short:
+        one: ist zu kurz (Minimum sind %{count} Zeichen)
+        few: ist zu kurz (Minimum sind %{count} Zeichen)
+        many: ist zu kurz (Minimum sind %{count} Zeichen)
+        other: ist zu kurz (Minimum sind %{count} Zeichen)
+      wrong_length:
+        one: nicht die richtige Länge (sollte %{count} Zeichen sein)
+        few: nicht die richtige Länge (sollte %{count} Zeichen sein)
+        many: nicht die richtige Länge (sollte %{count} Zeichen sein)
+        other: nicht die richtige Länge (sollte %{count} Zeichen sein)
+    template:
+      body: 'Bitte überprüfen Sie die folgenden Felder:'
+      header:
+        one: 'Fehler beim Speichern von %{model}: %{count} Fehler.'
+        few: 'Ich konnte %{model}: %{count} Fehler nicht speichern.'
+        many: 'Ich konnte %{model}: %{count} Fehler nicht speichern.'
+        other: 'Ich konnte %{model}: %{count} Fehler nicht speichern.'
+  helpers:
+    select:
+      prompt: Bitte auswählen
+    submit:
+      create: Machen Sie %{model}
+      submit: "%{model} . speichern"
+      update: "%{model} . bearbeiten"
+  number:
+    currency:
+      format:
+        delimiter: ",,"
+        format: "% n% u"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: LÄRM
+    format:
+      delimiter: "."
+      precision: 3
+      separator: ",,"
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "% n% u"
+        units:
+          billion: Eine Billion
+          million: Million
+          quadrillion: Billiarde
+          thousand: Eintausend
+          trillion: Eine Billion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "% n% u"
+        units:
+          byte:
+            one: Byte
+            few: Bytes
+            many: Bytes
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "% n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ", ich"
+      two_words_connector: ich
+      words_connector: ",,"
+  time:
+    am: AM
+    formats:
+      default: "% a% b% d% H:% M:% S% Z% Y"
+      long: "% B% d,% Y% H:% M"
+      short: "% d% b% H:% M"
+      only_time: "% I:% M% p"
+      day_month_and_time: "% e% B @% I:% M% p"
+    pm: PN

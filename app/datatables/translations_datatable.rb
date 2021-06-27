@@ -1,6 +1,7 @@
 # rubocop:disable Layout/LineLength
 class TranslationsDatatable < BaseDatatable
-  CLASSES = [Activity, Club].freeze
+  CLASSES = [Activity, Club, Discipline, Happening, DisciplineHappening, Venue, Tag, Requirement].freeze
+  CLASSES_THAT_HAS_SHOW_PAGE = [Activity, Club].freeze
   def columns
     {
       'translations.translateable_id': {},
@@ -23,12 +24,17 @@ class TranslationsDatatable < BaseDatatable
 
   def rows(filtered)
     filtered.map do |translation|
+      show_link = if CLASSES_THAT_HAS_SHOW_PAGE.include?(@view.params[:model].constantize)
+                    @view.link_to(translation.translateable, translation.translateable)
+                  else
+                    translation.translateable
+                  end
       edit_link = @view.check_box_tag('record_ids[]', translation.translateable_id, false, 'data-action': 'multiple#toggle') +
                   @view.button_tag_open_modal(
                     @view.edit_translation_path(translation.translateable_id, model: translation.translateable_type, column_name: translation.column_name), title: @view.t_crud('edit', Translation), 'data-test': translation.translateable_id
                   )
       [
-        @view.link_to(translation.translateable, translation.translateable),
+        show_link,
         translation.translateable_type,
         translation.column_name,
         translation.column_value_translated,

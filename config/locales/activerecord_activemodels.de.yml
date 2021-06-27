@@ -1,0 +1,198 @@
+---
+de:
+  activerecord:
+    models:
+      user:
+        one: Benutzer
+        few: Benutzer
+        other: Benutzer
+        accusative: Benutzer
+      user_role:
+        one: Die Rolle
+        few: Rollen
+        other: Die Rolle
+        accusative: Rolle
+      activity:
+        one: Aktivität
+        few: Aktivitäten
+        other: Aktivitäten
+        accusative: Aktivität
+      activity_club:
+        one: Aktivität
+        few: Aktivitäten
+        other: Aktivitäten
+        accusative: Aktivität
+      club:
+        one: Organisation
+        few: Organisation
+        other: Organisationen
+        accusative: Organisation
+      venue:
+        one: Platz
+        few: Setzt
+        other: Setzt
+        accusative: Platz
+      happening:
+        one: Eine Veranstaltung
+        few: Veranstaltungen
+        other: Veranstaltungen
+        accusative: eine Veranstaltung
+      discipline:
+        one: Disziplin
+        few: Disziplin
+        other: Disziplin
+        accusative: Disziplin
+      discipline_happening:
+        one: Disziplin
+        few: Disziplin
+        other: Disziplin
+        accusative: Disziplin
+      discipline_requirement:
+        one: Bedingung
+        few: Bedingungen
+        other: Bedingungen
+        accusative: Bedingung
+      discipline_association:
+        one: Verband
+        few: Verbände
+        other: Verbände
+        accusative: Verband
+      requirement:
+        one: Bedingung
+        few: Bedingungen
+        other: Bedingungen
+        accusative: Bedingung
+      club_user:
+        one: Mitglied
+        few: Mitglied
+        other: Mitglieder
+        accusative: Mitglied
+      link:
+        one: Verknüpfung
+        few: Anschlüsse
+        other: Verknüpfung
+        accusative: Verbindung
+      translation:
+        one: Übersetzung
+        few: Übersetzungen
+        other: Übersetzungen
+        accusative: Übersetzung
+      todo:
+        one: Zuordnung
+        few: Aufgabe
+        other: Aufgaben
+        accusative: Zuordnung
+    attributes:
+      user:
+        name: Name
+        locale: Sprache
+        email: Email
+        password: Passwort
+        password_confirmation: Kennwort bestätigen
+        current_password: Jetziges Passwort
+        remember_me: Mich erinnern
+      user_role:
+        roles:
+          support_staff: Unterstützung
+          club_admin: Administrator der Organisation
+      activity:
+        name: Name
+        description: Beschreibung
+      club:
+        name: Name
+        long_name: Vollständiger Name
+        website: Website
+        email: Email
+        phone: Telefon
+        kinds:
+          sport_organization: Verein
+          personal: Persönlich
+          federation: Allianz
+      venue:
+        name: Name
+        latitude: Breite
+        longitude: Längengrad
+        address: Adresse
+        city: Stadt
+        state: Äußere
+        country: Land
+        zip: PLZ
+      happening:
+        name: Name
+        club: Organisation
+        secondary_club: Eine andere Organisation
+        venue: Platz
+        description: Beschreibung
+        start_date: Datum
+        end_date: Fertigstellungstermin
+        website: Website
+        recurrence: Wiederholt
+      discipline:
+        name: Name
+        number_of_crew: Anzahl der Mitglieder
+        number_of_relays: Anzahl der Änderungen
+        kinds:
+          similar: Ähnlich
+          consists_of: Besteht aus
+      discipline_happening:
+        name: Name
+        description: Beschreibung
+        gender: Geschlecht
+        distance_m: Länge (m)
+        elevation_m: Höhe (m)
+        max_time_s: Maximale Zeit (s)
+        age_min: Jahr
+        age_max: Jahr bis
+        price_without_discount_cents: Preis ohne Rabatt
+        start_time: Der Beginn
+        genders:
+          any: Irgendein
+          man: männlich
+          women: Damen
+      requirement:
+        name: Name
+        description: Beschreibung
+      link:
+        kind: Art
+        url: Adresse
+        kinds:
+          website: Website
+          email: Email
+          phone: Telefon
+          long_name: Vollständiger Name
+          results: die Ergebnisse
+          photos: Fotos
+          facebook_page: Facebook Seite
+          facebook_event: Facebook-Event
+          facebook_group: Facebook-Gruppe
+          instagram_page: Instagram
+          twitter_page: Twitter
+          viber_group: Viber-Gruppe
+          wikipedia: Wikipedia
+          youtube: Youtube
+          registration: Anwendungen
+          route_track: Pistenplan
+          facebook_video: Facebook-Video
+      translation:
+        translateable_id: Übersetzung für
+        column_name: Name
+        column_value_translated: Übersetzung
+        column_value: Alle Übersetzungen
+  activemodel:
+    attributes:
+      contact:
+        email: Email
+        text: Botschaft
+      recurrence_form:
+        every: Wiederholt
+        day: Tag
+        week: Sonntag
+        month: Monat
+        hour: Eine Uhr
+        min: Minute
+        total: In Summe
+        custom_name: Benutzerdefinierter Name
+        start_number: Anfangsnummer
+        existing_update: Bestehende aktualisieren
+        future: Die Zukunft
+        all: Alle
