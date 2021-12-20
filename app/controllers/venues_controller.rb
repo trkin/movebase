@@ -1,4 +1,4 @@
-class VenuesController < ApplicationController
+class VenuesController < ApplicationUserController
   before_action :_set_venue, except: %i[index new create]
   before_action :authorize!
 

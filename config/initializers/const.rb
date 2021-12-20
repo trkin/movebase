@@ -11,6 +11,7 @@ class Const
       default_url: {
         host: (Rails.env.production? ? 'movebase.link' : 'localhost'),
         port: (Rails.env.development? ? Rack::Server.new.options[:Port] : nil),
+        protocol: Rails.env.production? ? 'https' : 'http',
         locale: I18n.default_locale,
       },
     )
