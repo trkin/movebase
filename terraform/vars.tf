@@ -24,3 +24,8 @@ variable "PATH_TO_PUBLIC_KEY" {
 variable "NOTIFICATION_EMAIL" {
   default = "duleorlovic@gmail.com"
 }
+
+variable "DB_PASSWORD" {
+  description = "RDS posgres user password"
+  sensitive   = true
+}

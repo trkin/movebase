@@ -11,7 +11,7 @@
 # todo: long tutorial https://hiveit.co.uk/techshop/terraform-aws-vpc-example/
 resource "aws_lb" "movebase-lb" {
   name            = "movebase-lb"
-  security_groups = [aws_security_group.movebase-allow-ssh-and-all-egress.id, aws_security_group.movebase-allow-80.id]
+  security_groups = [aws_security_group.movebase-security-group-allow-ssh-and-all-egress.id, aws_security_group.movebase-security-group-allow-80.id]
   subnets         = [aws_subnet.movebase-subnet-public-1.id, aws_subnet.movebase-subnet-public-2.id]
   tags = {
     Name = "movebase-lb"

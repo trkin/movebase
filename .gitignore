@@ -34,3 +34,6 @@ yarn-debug.log*
 /config/credentials/test.key
 .rake_tasks~
 terraform/.terraform
+terraform/terraform.tfvars
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup

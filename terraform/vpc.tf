@@ -1,3 +1,4 @@
+# you can use module https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
 resource "aws_vpc" "movebase-vpc" {
   cidr_block           = "10.0.0.0/16"

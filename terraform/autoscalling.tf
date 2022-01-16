@@ -4,7 +4,7 @@ resource "aws_launch_configuration" "movebase-launchconfig" {
   image_id        = var.AMIS[var.AWS_REGION]
   instance_type   = "t2.micro"
   key_name        = aws_key_pair.movebase-key-pair.key_name
-  security_groups = [aws_security_group.movebase-allow-ssh-and-all-egress.id]
+  security_groups = [aws_security_group.movebase-security-group-allow-ssh-and-all-egress.id]
 }
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group
