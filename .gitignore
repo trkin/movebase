@@ -33,3 +33,4 @@ yarn-debug.log*
 
 /config/credentials/test.key
 .rake_tasks~
+terraform/.terraform
