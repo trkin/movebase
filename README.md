@@ -120,6 +120,15 @@ rails test test/system/links_test.rb:40
 
 # Production
 
+Terraform on AWS ECS
+
+State file `terraform/terraform.tfstate` is in S3.
+We use env from `config/keys/movebase.sh`
+```
+export TF_VARS_DB_PASSWORD = ""
+```
+and store key in `config/keys/my
+
 Make sure you can access production server
 ```
 ssh root@$PRODUCTION_IP

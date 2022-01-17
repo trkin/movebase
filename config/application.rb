@@ -20,5 +20,7 @@ module MoveIndex
     config.active_job.queue_adapter = :sidekiq
     # also check config/initializers/const.rb
     I18n.available_locales = %i[en sr sr-latin de]
+
+    config.hosts << %w[movebase.com movebase.link]
   end
 end

@@ -24,6 +24,7 @@ default: &default
 development:
   <<: *default
   database: move_index_production
+  url: postgres://postgres:6aa6118d32678d0fea@movebase-db-instance.ctwtmkajief0.eu-central-1.rds.amazonaws.com:5432/movebase_production
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

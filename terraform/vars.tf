@@ -14,11 +14,11 @@ variable "AMIS" {
 }
 
 variable "PATH_TO_PRIVATE_KEY" {
-  default = "mykey"
+  default = "~/config/keys/movebase"
 }
 
 variable "PATH_TO_PUBLIC_KEY" {
-  default = "mykey.pub"
+  default = "~/config/keys/movebase.pub"
 }
 
 variable "NOTIFICATION_EMAIL" {
@@ -26,6 +26,30 @@ variable "NOTIFICATION_EMAIL" {
 }
 
 variable "DB_PASSWORD" {
-  description = "RDS posgres user password"
+  description = "RDS postgres user password"
   sensitive   = true
+}
+
+variable "ECS_INSTANCE_TYPE" {
+  default = "t2.micro"
+}
+
+# Full List: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html
+variable "ECS_AMIS" {
+  type = map(string)
+  default = {
+    us-east-1 = "ami-1924770e"
+    us-west-2 = "ami-56ed4936"
+    eu-west-1 = "ami-c8337dbb"
+    eu-central-1 = "ami-0dc66d9ab40653776"
+  }
+}
+
+# this is used to disable service untill we have first MOVEBASE_VERSION
+variable "MOVEBASE_SERVICE_ENABLE" {
+  default = "0"
+}
+
+variable "MOVEBASE_VERSION" {
+  default = "0"
 }

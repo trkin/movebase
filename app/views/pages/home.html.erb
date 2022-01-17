@@ -4,6 +4,11 @@
 %>
 <div class='text-center'>
   <p class='mt-2'>
+    <h1>
+      <%=
+ActiveRecord::Base.connection_config
+%>
+    </h1>
     <%= t('we_are_informative_portal') %>
   </p>
   <h5>
