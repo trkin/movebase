@@ -32,7 +32,7 @@ Gems:
 Pull production data with
 ```
 rails db:drop
-heroku pg:pull postgresql-curly-88828 move_index_development
+heroku pg:pull postgresql-curly-88828 movebase_development
 ```
 
 Secrets are stored in `config/credentials/development.yml.erb` and you can edit

@@ -16,7 +16,7 @@ namespace :db do
     end
   end
 
-  db_name = 'move_index_production'.freeze
+  db_name = 'movebase_production'.freeze
   desc "Load dump to database #{db_name}. It will override any existing data"
   task :load do
     run_locally do

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.6.8'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.x'
@@ -75,7 +75,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # user authentication
 # https://stackoverflow.com/a/65732099
-gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
+gem "devise"
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 # https://stackoverflow.com/a/66155946/287166
@@ -85,8 +85,7 @@ gem 'omniauth-rails_csrf_protection'
 gem 'fontello_rails_converter', github: 'railslove/fontello_rails_converter'
 
 # bootstrap form
-# use master untill new release includes https://github.com/bootstrap-ruby/bootstrap_form/pull/550
-gem 'bootstrap_form', git: 'https://github.com/bootstrap-ruby/bootstrap_form.git'
+gem "bootstrap_form"
 
 # translation
 gem 'mobility', '~> 0.8.6'
