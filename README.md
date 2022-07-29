@@ -29,6 +29,16 @@ Gems:
 
 # Development
 
+Download the source, install dependencies and run rails server
+```
+git clone git@github.com:trkin/movebase.git
+cd movebase
+bundle
+yarn
+rails db:setup
+rails s
+```
+
 Pull production data with
 ```
 rails db:drop
