@@ -11,6 +11,7 @@
 #
 # redeploying is targeting only ecs_service (which includes task_definition)
 # cd terraform && terraform apply -target aws_ecs_service.movebase-ecs-service -var MOVEBASE_SERVICE_ENABLE=1 -var MOVEBASE_VERSION=$GIT_SHA -auto-approve
+# aws ecs update-service --cluster movebase-ecs-cluster --service movebase-ecs-service --force-new-deployment
 resource "aws_ecr_repository" "movebase-ecr-repository" {
   name = "movebase-ecr-repository"
 }
@@ -78,9 +79,9 @@ resource "aws_ecs_service" "movebase-ecs-service" {
     container_name = "movebase-container"
     container_port = 3000
   }
-  lifecycle {
-    ignore_changes = [task_definition]
-  }
+  # lifecycle {
+  #   ignore_changes = [task_definition]
+  # }
 }
 
 
